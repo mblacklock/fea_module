@@ -1,0 +1,20 @@
+# Local previews, verification output, and working copies
+/.tmp_exam_review/
+/output/
+/tmp/
+/week01 - Copy/
+/week01/KB5034_Week_1_Introduction.pptx
+
+# Generated files from ABAQUS runs
+*.com
+*.dat
+*.lck
+*.msg
+*.odb
+*.prt
+*.sta
+
+# Editor and operating-system noise
+__pycache__/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,37 @@
+*Heading
+KB5034 Week 1 - linear elastic axial bar
+** Units: N, mm, MPa. Teaching example authored for this lesson.
+** L=1000 mm, A=10 mm^2, E=200000 MPa, F=5000 N.
+*Node, nset=ALLNODES
+1, 0., 0., 0.
+2, 1000., 0., 0.
+*Element, type=T3D2, elset=BAR
+1, 1, 2
+*Nset, nset=FIXED
+1,
+*Nset, nset=TIP
+2,
+*Material, name=ELASTIC_MATERIAL
+*Elastic
+200000., 0.3
+*Solid Section, elset=BAR, material=ELASTIC_MATERIAL
+10.,
+** Suppress transverse DOFs in this purely axial 1D idealisation.
+*Boundary
+ALLNODES, 2, 3, 0.
+FIXED, 1, 1, 0.
+*Step, name=AXIAL_LOAD, nlgeom=NO
+*Static
+1., 1.
+*Cload
+TIP, 1, 5000.
+*Output, field
+*Node Output
+U, RF
+*Element Output
+S, E
+*Node Print, nset=ALLNODES
+U, RF
+*El Print, elset=BAR
+S, E
+*End Step
