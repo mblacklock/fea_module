@@ -1,7 +1,7 @@
 <!--
 author:   Matthew Blacklock
 email:    matthew.blacklock@northumbria.ac.uk
-version:  0.6.0
+version:  1.0.0
 language: en
 mode:     Presentation
 icon: ../logo.png
