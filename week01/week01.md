@@ -1,7 +1,7 @@
 <!--
 author:   Matthew Blacklock
 email:    matthew.blacklock@northumbria.ac.uk
-version:  0.5.0
+version:  0.6.0
 language: en
 mode:     Presentation
 icon: ../logo.png
@@ -81,11 +81,11 @@ No preparation is required before your first session.
 - **A. Introduction:** meet the team and explore the module.
 - **B. Review:** 1D stress-strain and run a simple ABAQUS model.
 
-<!-- <br>
+<br>
 
 **Independent study**
 
-- **C. Prepare:** study axial stress and trusses for Week 2. -->
+- **C. Prepare:** study axial stress and trusses for Week 2.
 
 
 {{1}}
@@ -129,15 +129,16 @@ Dr Matthew Blacklock
 style="display: block; margin-left: auto; margin-right: auto;width: 70%;"
 -->
 
-## Mechanics in our research
-
+{{1}}
+********************
 **Fatigue & Failure Analysis of Medical Implants**
 
 Dr Farnoosh Farhad
 
-![Engine and micro-CT image of CMC](images/2_farnoosh.png)<!--
+![Fatigue & Failure Analysis of Medical Implants](images/2_farnoosh.png)<!--
 style="display: block; margin-left: auto; margin-right: auto;width: 80%;"
 -->
+********************
 
 ## Approach to Teaching & Learning
 <br>
@@ -308,204 +309,295 @@ In-class problems – Feedback provided in class
 ## Weekly Timeline
 <br>
 
-<svg viewBox="0 0 1060 290" width="90%" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1080 360" width="95%"
+     style="display:block; margin:auto;"
+     xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="Weekly timeline: study before class; quiz, if set, due at 11.59pm on the Wednesday before; Thursday lectorials for both groups; analytical and/or ABAQUS problems, if set, due at 11.59pm on the Wednesday after.">
 
-  <!-- Arrowhead definition -->
   <defs>
-    <marker id="arrowhead"
-            markerWidth="10"
-            markerHeight="7"
-            refX="9"
-            refY="3.5"
-            orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    <marker id="weekly-sequence-arrow" markerWidth="10" markerHeight="10"
+            refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#526271"/>
     </marker>
   </defs>
 
-  <!-- Time arrow -->
-  <text x="555" y="28"
-        font-size="26"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    Time
+  <!-- Before the lectorial -->
+  <rect x="12" y="20" width="304" height="320" rx="20"
+        fill="#e5f0d5" stroke="#66823e" stroke-width="3"/>
+  <text x="164" y="65" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">
+    Before class
+  </text>
+  <text x="164" y="112" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="164">Study videos and</tspan>
+    <tspan x="164" dy="30">module material</tspan>
+  </text>
+  <rect x="34" y="175" width="260" height="145" rx="15"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="3"/>
+  <text x="164" y="215" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="164" font-weight="700">Quiz (if set)</tspan>
+    <tspan x="164" dy="36">Due Wednesday before</tspan>
+    <tspan x="164" dy="35">11.59pm</tspan>
   </text>
 
-  <line x1="345" y1="54"
-        x2="740" y2="54"
-        stroke="black"
-        stroke-width="4"
-        marker-end="url(#arrowhead)"/>
+  <line x1="322" y1="175" x2="373" y2="175"
+        stroke="#526271" stroke-width="2"
+        marker-end="url(#weekly-sequence-arrow)"/>
 
-  <!-- Box 1 -->
-  <rect x="10" y="92"
-        width="230" height="148"
-        fill="#dbe8bd"
-        stroke="black"
-        stroke-width="1"/>
-
-  <text x="125" y="143"
-        font-size="25"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    <tspan x="125" dy="0">Students study</tspan>
-    <tspan x="125" dy="30">module material</tspan>
-    <tspan x="125" dy="30">BEFORE class</tspan>
+  <!-- Thursday session -->
+  <rect x="386" y="20" width="308" height="320" rx="20"
+        fill="#dfeaf7" stroke="#4a86c5" stroke-width="3"/>
+  <text x="540" y="65" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">
+    Thursday lectorial
+  </text>
+  <text x="540" y="105" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="21">
+    Problem solving and activities
+  </text>
+  <rect x="402" y="132" width="276" height="82" rx="14"
+        fill="white" stroke="#4a86c5" stroke-width="2"/>
+  <text x="540" y="163" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="540">Group 2</tspan>
+    <tspan x="540" dy="30" font-size="20">9.30am–12pm, TRY 001</tspan>
+  </text>
+  <rect x="402" y="229" width="276" height="82" rx="14"
+        fill="white" stroke="#4a86c5" stroke-width="2"/>
+  <text x="540" y="260" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="540">Group 1</tspan>
+    <tspan x="540" dy="30" font-size="20">1–3.30pm, TRY 001</tspan>
   </text>
 
-  <!-- Box 2 -->
-  <rect x="286" y="92"
-        width="258" height="148"
-        rx="24" ry="24"
-        fill="#f3dada"
-        stroke="black"
-        stroke-width="1"/>
+  <line x1="700" y1="175" x2="751" y2="175"
+        stroke="#526271" stroke-width="2"
+        marker-end="url(#weekly-sequence-arrow)"/>
 
-  <text x="415" y="128"
-        font-size="24"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    <tspan x="415" dy="0">Students complete</tspan>
-    <tspan x="415" dy="29">quiz and computer</tspan>
-    <tspan x="415" dy="29">software problem</tspan>
-    <tspan x="415" dy="29">BEFORE class</tspan>
+  <!-- After the lectorial -->
+  <rect x="764" y="20" width="304" height="320" rx="20"
+        fill="#e5f0d5" stroke="#66823e" stroke-width="3"/>
+  <text x="916" y="65" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">
+    After class
   </text>
-
-  <!-- Central ellipse -->
-  <ellipse cx="685" cy="161"
-           rx="107" ry="69"
-           fill="#dbe8bd"
-           stroke="black"
-           stroke-width="1"/>
-
-  <text x="685" y="125"
-        font-size="24"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    <tspan x="685" dy="0">In class</tspan>
-    <tspan x="685" dy="29">problem</tspan>
-    <tspan x="685" dy="29">solving and</tspan>
-    <tspan x="685" dy="29">activities</tspan>
+  <text x="916" y="110" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="916">Reflect on learning</tspan>
+    <tspan x="916" dy="30">outcomes</tspan>
   </text>
-
-  <text x="685" y="261"
-        font-size="22"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    2.5hr Lectorial
+  <rect x="786" y="175" width="260" height="145" rx="15"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="3"/>
+  <text x="916" y="209" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="21">
+    <tspan x="916" font-weight="700">Analytical &amp;/or ABAQUS</tspan>
+    <tspan x="916" dy="29" font-weight="700">problem (if set)</tspan>
+    <tspan x="916" dy="29">Due Wednesday after</tspan>
+    <tspan x="916" dy="29">11.59pm</tspan>
   </text>
-
-  <!-- Box 4 -->
-  <rect x="840" y="87"
-        width="220" height="143"
-        rx="23" ry="23"
-        fill="#f3dada"
-        stroke="black"
-        stroke-width="1"/>
-
-  <text x="950" y="120"
-        font-size="23"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif">
-    <tspan x="950" dy="0">Students reflect</tspan>
-    <tspan x="950" dy="30">on learning</tspan>
-    <tspan x="950" dy="30">outcomes for</tspan>
-    <tspan x="950" dy="30">each topic</tspan>
-  </text>
-
 </svg>
 
-{{1}}
-<svg viewBox="0 0 1080 260"
-     width="85%"
+<br>
+
+    {{1}}
+***********************************
+<svg viewBox="0 0 1080 450" width="95%"
      style="display:block; margin:auto;"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <!-- Thursday background band -->
-  <rect x="18" y="133"
-        width="998" height="120"
-        fill="#dfeaf7"/>
-
-  <!-- Day labels -->
-  <text x="28" y="80"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="23"
-        font-weight="700">
-    Wednesday
+     xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="Assessment due weeks: quizzes in weeks 2, 3, 5, 10 and 11; analytical problems in weeks 4, 7, 8, 9 and 10; ABAQUS problems in weeks 3, 4, 7, 11 and 12. All listed items are due Wednesday at 23:59.">
+  <text x="540" y="38" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">
+    Assessment deadlines by week
   </text>
-
-  <text x="28" y="201"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="23"
-        font-weight="700">
-    Thursday
+  <text x="540" y="70" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="20">
+    Wednesdays, 23:59 · Each item: 10 marks and 2% of the module mark
   </text>
-
-  <!-- Lectorial Group 2 -->
-  <rect x="165" y="144"
-        width="292" height="103"
-        rx="18" ry="18"
-        fill="white"
-        stroke="#4a86c5"
-        stroke-width="3"/>
-
-  <text x="311" y="188"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="22">
-    <tspan x="311" dy="0">Lectorial Group 2</tspan>
-    <tspan x="311" dy="29">9.30am – 12pm, TRY 001</tspan>
+  <!-- Quizzes -->
+  <rect x="12" y="98" width="142" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="3"/>
+  <text x="83" y="147" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">
+    Quizzes
   </text>
-
-  <!-- Lectorial Group 1 -->
-  <rect x="471" y="144"
-        width="292" height="103"
-        rx="18" ry="18"
-        fill="white"
-        stroke="#4a86c5"
-        stroke-width="3"/>
-
-  <text x="617" y="188"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="22">
-    <tspan x="617" dy="0">Lectorial Group 1</tspan>
-    <tspan x="617" dy="29">1 – 3.30pm, TRY 001</tspan>
+  <rect x="166" y="98" width="170" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="2"/>
+  <text x="251" y="130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 2
   </text>
-
-  <!-- Wednesday quiz submission -->
-  <rect x="778" y="23"
-        width="213" height="103"
-        rx="18" ry="18"
-        fill="white"
-        stroke="red"
-        stroke-width="3"/>
-
-  <text x="884" y="68"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="22">
-    <tspan x="884" dy="0">Quiz Submission</tspan>
-    <tspan x="884" dy="29">11.59pm</tspan>
+  <text x="251" y="160" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Trusses 1
   </text>
-
-  <!-- Thursday ABAQUS submission -->
-  <rect x="778" y="144"
-        width="213" height="103"
-        rx="18" ry="18"
-        fill="white"
-        stroke="red"
-        stroke-width="3"/>
-
-  <text x="884" y="174"
-        text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="22">
-    <tspan x="884" dy="0">ABAQUS</tspan>
-    <tspan x="884" dy="29">Submission</tspan>
-    <tspan x="884" dy="29">11.59pm</tspan>
+  <rect x="346" y="98" width="170" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="2"/>
+  <text x="431" y="130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 3
   </text>
-
+  <text x="431" y="160" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Trusses 2
+  </text>
+  <rect x="526" y="98" width="170" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="2"/>
+  <text x="611" y="130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 5
+  </text>
+  <text x="611" y="160" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Beams
+  </text>
+  <rect x="706" y="98" width="170" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="2"/>
+  <text x="791" y="130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 10
+  </text>
+  <text x="791" y="160" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Plane stress
+  </text>
+  <rect x="886" y="98" width="170" height="84" rx="14"
+        fill="#fff7f5" stroke="#be3f38" stroke-width="2"/>
+  <text x="971" y="130" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 11
+  </text>
+  <text x="971" y="160" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Shells
+  </text>
+  <!-- Analytical -->
+  <rect x="12" y="197" width="142" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="3"/>
+  <text x="83" y="246" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">
+    Analytical
+  </text>
+  <rect x="166" y="197" width="170" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="2"/>
+  <text x="251" y="229" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 4
+  </text>
+  <text x="251" y="259" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Trusses
+  </text>
+  <rect x="346" y="197" width="170" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="2"/>
+  <text x="431" y="229" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 7
+  </text>
+  <text x="431" y="259" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Beams
+  </text>
+  <rect x="526" y="197" width="170" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="2"/>
+  <text x="611" y="229" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 8
+  </text>
+  <text x="611" y="259" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Torsion
+  </text>
+  <rect x="706" y="197" width="170" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="2"/>
+  <text x="791" y="229" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 9
+  </text>
+  <text x="791" y="259" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Plane stress 1
+  </text>
+  <rect x="886" y="197" width="170" height="84" rx="14"
+        fill="#f0f6fd" stroke="#4a86c5" stroke-width="2"/>
+  <text x="971" y="229" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 10
+  </text>
+  <text x="971" y="259" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Plane stress 2
+  </text>
+  <!-- ABAQUS -->
+  <rect x="12" y="296" width="142" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="3"/>
+  <text x="83" y="345" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">
+    ABAQUS
+  </text>
+  <rect x="166" y="296" width="170" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="2"/>
+  <text x="251" y="328" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 3
+  </text>
+  <text x="251" y="358" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Trusses 1
+  </text>
+  <rect x="346" y="296" width="170" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="2"/>
+  <text x="431" y="328" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 4
+  </text>
+  <text x="431" y="358" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Trusses 2
+  </text>
+  <rect x="526" y="296" width="170" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="2"/>
+  <text x="611" y="328" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 7
+  </text>
+  <text x="611" y="358" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Beams
+  </text>
+  <rect x="706" y="296" width="170" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="2"/>
+  <text x="791" y="328" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 11
+  </text>
+  <text x="791" y="358" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Plane stress
+  </text>
+  <rect x="886" y="296" width="170" height="84" rx="14"
+        fill="#f1f7e9" stroke="#66823e" stroke-width="2"/>
+  <text x="971" y="328" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">
+    Week 12
+  </text>
+  <text x="971" y="358" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Shells
+  </text>
+  <text x="540" y="427" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">
+    Weeks 4 and 7: both analytical and ABAQUS problems are due.
+  </text>
 </svg>
+
+Feedback is provided immediately on submission.
+
+Additionally, you must submit your workings (analytical) and input files (ABAQUS) for all problems by 23:59 on Thursday 17th December 2026.
+***********************************
 
 ## Should I do the online work?
 <br>
