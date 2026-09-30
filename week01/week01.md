@@ -14,6 +14,10 @@ script: ../course-links.js
 
 @style
 
+.lia-slide > .lia-slide__container {
+    padding-top: 1.5rem !important;
+}
+
 :root {
   --nu-orange: #f28c28;
   --nu-blue: #4f81bd;

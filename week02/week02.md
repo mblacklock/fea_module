@@ -13,6 +13,11 @@ script: ../course-links.js
 @course: <a href="@1" data-lia-course="true">@0</a>
 
 @style
+
+.lia-slide > .lia-slide__container {
+    padding-top: 1.5rem !important;
+}
+
 h2 {
   border-left: 0.35rem solid #f28c28;
   font-family: Arial, Helvetica, sans-serif !important;
