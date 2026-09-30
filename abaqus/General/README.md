@@ -22,4 +22,6 @@ These standalone guides introduce ABAQUS and the basic input-file workflow. Foll
 
 [Download the shared example: intro.inp](IntroToABAQUS/files/intro.inp)
 
+The example matches the Week 1 axial-bar hand calculation: 1000 mm length, 10 mm² area, 200 GPa elastic modulus and 5 kN axial load.
+
 @[course(Week 1 lesson)](../../week01/week01.md) · @[course(All ABAQUS tutorial categories)](../README.md)

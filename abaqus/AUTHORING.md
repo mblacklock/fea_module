@@ -10,12 +10,16 @@
 | General/OpeningABAQUS/OpeningABAQUS.md | Wk1_2_Opening ABAQUS and setting the work directory.docx | General_OpeningABAQUS |
 | General/CreatingRunningJob/CreatingRunningJob.md | Wk1_3_Creating and running a job.docx | General_CreatingRunningJob |
 | General/ViewingInterpretingResults/ViewingInterpretingResults.md | Wk1_4_Viewing and interpreting results.docx | General_ViewingInterpretingResults |
+| Topic1/IntroToInputFiles/IntroToInputFiles.md | Wk2_1_Learning Outcome 1.2 - Introduction to ABAQUS input files.docx | `t1w1/Truss_IntroInputFiles_img01`–`img21` |
+| Topic1/MultipleTrussElements/MultipleTrussElements.md | Wk2_2_Learning Outcome 1.2 - Multiple 1D truss elements with different section properties.docx | `t1w1/Truss_MultipleElements_img01`–`img10` |
 
-All 27 supplied screenshots were copied unchanged. The canonical practice file is `General/IntroToABAQUS/files/intro.inp`, copied unchanged from `General_IntroToABAQUS/intro.inp`. The setup, job and results tutorials link to this one copy. Keep the library folders together when sharing the full sequence.
+The screenshots originated in the supplied General folders. The model diagram, annotated input-file screenshot and selected results screenshots were updated to match the Week 1 axial-bar calculation. The canonical practice file is `General/IntroToABAQUS/files/intro.inp`; it was adapted from `General_IntroToABAQUS/intro.inp`. The setup, job and results tutorials link to this one copy. Keep the library folders together when sharing the full sequence.
 
-The original workflow and screenshots are retained. The first tutorial preserves the supplied wording and sequence from its source PDF; only navigation and LiaScript reveal markup were added. The other tutorials were adapted for standalone use, with prerequisites, completion checks and troubleshooting. Added qualifications cover version-dependent menus, writable local drives, input-file compatibility and edition-dependent CAD import. Displacement magnitude is defined as the Euclidean norm, correcting the source's ambiguous description of a “magnitude sum”. Historic campus policies and assessment details are not presented as current universal requirements.
+The first two tutorials use a mix of sidebar sections and click reveals. Tutorials 3 and 4 follow the original Word text in its original order, with numbered sidebar headings, reveal markup, prerequisites and navigation added around it. The displacement-magnitude description and spelling errors identified in the original results tutorial have been corrected in the student page.
 
-The tutorial model is separate from the Week 1 class model. `intro.inp` uses 110 mm, 45 mm², 149000 MPa and 195 N, with node labels 100 and 200. The class model uses 1000 mm, 10 mm², 200000 MPa and 5000 N, with node labels 1 and 2. Both the weekly lesson and tutorials identify this distinction.
+The tutorial input file matches the Week 1 class calculation: `intro.inp` uses 1000 mm, 10 mm², 200000 MPa and 5000 N, with node labels 100 and 200. Use this shared file for the Week 1 introductory tutorials. The separate `week01/other-files/week01_axial_bar.inp` is not part of the student workflow.
+
+The two Topic 1 tutorials are standalone LiaScript pages linked from Week 2 and the library index. Their Word prose is retained in sequence. The numbered `t1w1` images were renamed descriptively and copied into the tutorial image folders; each page uses the diagrams or screenshots that help explain a step, with copyable code blocks for the input file. `Truss_MultipleElements_img11_VariablePropertiesProblem.png` is a separate problem diagram and is kept in the image folder for later use. The first Word file states 210 MPa in its opening paragraph, while the material definition and worked result use 210 GPa (210000 MPa); the student page uses 210 GPa consistently.
 
 ## Preview and links
 
@@ -25,7 +29,7 @@ http://localhost:3010/liascript/index.html?http://localhost:3010/abaqus/README.m
 
 The older port-3009 preview was limited to the Week 1 folder and cannot serve its sibling tutorial folders. Use the new preview for navigation between lessons.
 
-The tutorials default to Textbook mode. They also import Board Mode for classroom demonstrations in Presentation mode. No additional fixed font-size rules are applied.
+The tutorials default to Presentation mode so reveal steps work when opened. Students can switch to Textbook mode to read all content at once. Board Mode provides a font-size control for demonstrations.
 
 `../course-links.js` is a small shared navigation helper. It makes links created with the `course` macro open another Markdown lesson in the same LiaScript reader. Relative file paths remain editable and work both locally and after hosting, without hardcoded localhost URLs in the lessons. For example:
 
@@ -33,7 +37,7 @@ The tutorials default to Textbook mode. They also import Board Mode for classroo
 @[course(Opening ABAQUS)](General/OpeningABAQUS/OpeningABAQUS.md)
 ```
 
-Keep `course-links.js` alongside the `abaqus` and week folders when publishing. Images and `.inp` downloads use ordinary relative Markdown links. This is a local library, not a newly published Git repository.
+Keep `course-links.js` alongside the `abaqus` and week folders when publishing. Images and `.inp` downloads use ordinary relative Markdown links.
 
 ## Future videos
 
@@ -41,14 +45,12 @@ The supplied Word tutorials contain no video URLs. To add a recording, embed it 
 
 ## Verification
 
-The original `intro.inp` completed in Abaqus Learning Edition 2024 with zero analysis errors and zero numerical-problem warnings. Its final output database reports:
+For the current `intro.inp`, the analytical Week 1 calculation predicts:
 
-- U1 at node 100: approximately zero (1.95 × 10⁻³⁴ mm).
-- U1 at node 200: 0.00319911 mm.
-- RF1 at node 100: −195 N.
-- S11: 4.3333335 MPa.
-- E11: 2.9082774 × 10⁻⁵.
+- U1 at node 100: 0 mm.
+- U1 at node 200: 2.5 mm.
+- RF1 at node 100: −5000 N.
+- S11: 500 MPa.
+- E11: 0.0025.
 
-One generic section warning appears during input processing. Original source files were not modified. Run files and the ODB-reading script are preserved in `../tmp/tutorial-verification/`.
-
-All tutorial sections were opened in the local LiaScript renderer. All 27 screenshots loaded, the checked maths produced no rendering errors, and the results tutorial's text quiz accepted the correct unit. Library and next-tutorial links were exercised in the browser. The shared input file was checked byte-for-byte against the supplied original.
+These are analytical expectations, not a recorded Abaqus verification of the adapted file. An earlier Abaqus Learning Edition 2024 run verified the supplied original 110 mm/195 N input file; its results do not apply to the current shared input file. The revised tutorials 3 and 4 were checked against every substantive paragraph in their Word sources, and their sidebar sections and reveal steps were exercised in the local LiaScript renderer. Their local image, input-file, navigation and helper-script paths resolve.

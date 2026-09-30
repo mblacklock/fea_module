@@ -3,7 +3,8 @@ author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
 version: 1.0.0
 language: en
-mode: Textbook
+mode: Presentation
+icon: ../../../logo.png
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
 comment: Introduction to ABAQUS finite element analysis software
 
@@ -24,9 +25,7 @@ script: ../../../course-links.js
 
 <br>
 
-    {{1}}
-***********************************
-**Finite Element Analysis**
+## 1. Finite Element Analysis
 
 Solving a problem using FEA requires 3 main steps:
 
@@ -45,9 +44,7 @@ Typically the steps to create an ABAQUS model are as follows:
 - Mesh Part(s)/Assembly
 - Create Job and Run
 
-***********************************
-
-    {{2}}
+    {{1}}
 ***********************************
 Some of these steps will be familiar from your use of CAD software. Creating and assembling parts can in fact be done through CAD software, such as Solidworks and Catia, and imported into ABAQUS for analysis (feature not available in student edition).
 
@@ -61,42 +58,54 @@ Defining a part using an input file is the most simple option, but requires know
 
 This module will introduce all three methods, but to start with, we will look at input files.
 
-<br>
-
-***********************************
-
-    {{3}}
-***********************************
-**ABAQUS input files**
+## 2. ABAQUS input files
 
 An input file is a text document with the file extension .inp. These files are version neutral and can be opened and run by ABAQUS. Input files can be edited using any text editing software (e.g. notepad, wordpad, notepad++ etc.)
 
 <br>
 
-***********************************
-
-    {{4}}
+    {{1}}
 ***********************************
 **Example problem**
 
 To demonstrate the use of input files, we will solve the following truss problem:
 
-![Original axial truss example](images/General_IntroToABAQUS_img02_TrussExample.png)<!-- width="80%" -->
+![Original axial truss example](images/General_IntroToABAQUS_img02_TrussExample.png)<!-- width="60%" -->
 
 Here we have a single truss fixed on the left hand side with a force acting along x on the right hand side. Geometric and material properties are defined.
 
+<br>
+
+***********************************
+    {{2}}
+***********************************
+
 The input file for this problem is shown below. Constructing input files and usage of various keywords will be covered in future tutorials. For now, consider the highlighted sections:
 
-![Original annotated input file](images/General_IntroToABAQUS_img03_InputFile.png)<!-- width="80%" -->
+![Original annotated input file](images/General_IntroToABAQUS_img03_InputFile.png)<!-- width="60%" -->
 
 This input file can be downloaded here: [intro.inp](files/intro.inp)
 
-To edit the input file, I recommend Notepad++. This is a freely available text editor and is installed on all campus PCs (any other text editor will do). To open the input file, right-click within file explorer and select Edit with Notepad++:
+<br>
 
-![Opening intro.inp using Edit with Notepad++](images/General_IntroToABAQUS_img04_NotepadEdit.png)<!-- width="80%" -->
+***********************************
+    {{3}}
+***********************************
+
+To edit the input file, I recommend Notepad++. This is a freely available text editor. On campus PCs, Notepad is the best choice. To open the input file, right-click within file explorer and select Edit with Notepad++:
+
+![Opening intro.inp using Edit with Notepad++](images/General_IntroToABAQUS_img04_NotepadEdit.png)<!-- width="60%" -->
+
+To open with Notepad, right-click and select *Edit in Notepad*. If this option is not available, select *Open with* and choose Notepad.
 
 The file will open. To change any of the model parameters, simply edit then save the file.
 
-@[course(Next: opening ABAQUS and setting the work directory)](../OpeningABAQUS/OpeningABAQUS.md)
+<br>
+
+***********************************
+    {{4}}
+***********************************
+
+@[course(Next tutorial: opening ABAQUS and setting the work directory)](../OpeningABAQUS/OpeningABAQUS.md)
 
 ***********************************

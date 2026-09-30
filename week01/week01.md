@@ -4,7 +4,7 @@ email:    matthew.blacklock@northumbria.ac.uk
 version:  0.5.0
 language: en
 mode:     Presentation
-icon: images/logo.png
+icon: ../logo.png
 import:   https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
 comment:  KB5034 Week 1 - Module orientation, mechanics recap, and first ABAQUS activity.
 
@@ -46,7 +46,7 @@ input[type="text"] {
 
 # Week 1: Introduction to mechanics and FEA
 
-![Northumbria University Newcastle](images/logo.png)<!--
+![Northumbria University Newcastle](../logo.png)<!--
 style="width: 34%; min-width: 16rem;"
 -->
 
@@ -553,7 +553,26 @@ MLO3.  Apply creativity and curiosity to analyse broadly defined problems, rela
 style="display:block; width:80%; margin:auto;"
 -->
 
-## Finite Element Analyis
+## Quick check: the stress–strain curve
+
+![Blank stress–strain curve](images/9_stress_strain.png)<!--
+style="display:block; width:50%; margin:auto;"
+-->
+
+Sketch the stress-strain curve above and label as many features as you can.
+
+{{1}}
+****************************
+Linking the stress-strain curve to the physical experiment.
+
+<!-- data-sortable="false" -->
+|  |  |  |  |
+|:---:|:---:|:---:|:---:|
+| ![Initial tensile specimen](images/10a_experiment.png) | ![Loaded tensile specimen](images/10b_experiment.png) | ![Necked tensile specimen](images/10c_experiment.png) | ![Fractured tensile specimen](images/10d_experiment.png) |
+| **Initial specimen** | **Under axial load** | **Necking** | **Fracture** |
+****************************
+
+## Finite Element Analysis
 
 <br>
 
@@ -598,6 +617,64 @@ FEA can also represent dynamic events such as impacts, crashes and vibration, bu
 <br>
 Each topic follows the same broad pattern: understand the mechanics, learn how to model the behaviour, and practise deciding *when* and *how* to apply the model to a real structure.
 
+## Quick check: Units - SI units and prefixes
+
+**Base SI units**
+
+<!--
+data-hint-button="2"
+data-solution-button="3"
+-->
+| Mass | Time | Distance |
+|:----:|:----:|:--------:|
+| [[kg]] | [[s]] | [[m]] |
+[[?]] Curiously, g is not the SI unit of mass.
+
+<br>
+
+**Prefixes**
+
+Write 10^n for each prefix in base 10.
+
+<!--
+data-solution-button="3"
+data-type="none"
+-->
+| Prefix | Symbol | Base 10 | Decimal | English word |
+|:------|:------:|:-------:|:-------:|:------------:|
+| Giga  | G | [[10^9]] | 1,000,000,000 | billion |
+| Mega  | M | [[10^6]] | 1,000,000 | million |
+| Kilo  | k | [[10^3]] | 1,000 | thousand |
+| — | — | $10^0$ | 1 | one |
+| centi | c | $10^{-2}$ | 0.01 | hundredth |
+| [[milli]] | m | $10^{-3}$ | 0.001 | thousandth |
+| [[micro]] | μ | $10^{-6}$ | 0.000001 | millionth |
+| [[nano]] | n | $10^{-9}$ | 0.000000001 | billionth |
+
+**Note:** centi is typically not used in engineering.
+
+Tonnes, litres and degrees are common non-SI units that are acceptable to use with SI units.
+
+## Quick check: Units - Consistent units
+
+Some FE software, including ABAQUS, does not prescribe a unit system.  
+You choose the base units, but they must be **consistent** throughout the model.
+
+Complete the missing entries.
+
+<!--
+data-solution-button="3"
+data-type="none"
+-->
+| Mass | Time | Length | Force (derived) | Force (special) | Stress (derived) | Stress (special) |
+|:----:|:----:|:------:|:---------------:|:---------------:|:----------------:|:----------------:|
+| kg    | s | m   | kg·m·s⁻²       | N      | $\frac{\text{N}}{\text{m}²}$       | Pa  |
+| kg    | s | mm  | kg·mm·s⁻²      | [[mN]] | $\frac{\text{mN}}{\text{mm}²}$     | [[kPa]] |
+| tonne | s | mm  | tonne·mm·s⁻²   | [[N]]  | $\frac{\text{N}}{\text{mm}²}$     | [[MPa]] |
+| ktonne | s | mm  | ktonne·mm·s⁻²   | [[kN]] | $\frac{\text{kN}}{\text{mm}²}$     | [[GPa]] |
+
+In Mechanical/Automotive/Aerospace Engineering, mm is the most common length scale of typical structures. Stresses and material properties are usually given in MPa or GPa.
+
 
 ## B. IN CLASS: Review of 1D stress and ABAQUS
 
@@ -615,25 +692,6 @@ There are two tasks to complete:
 <br>
 
 2. **Numerical (FEA)**: Follow the ABAQUS tutorial to run an input file and view the results.
-
-## Quick check: the stress–strain curve
-
-![Blank stress–strain curve](images/9_stress_strain.png)<!--
-style="display:block; width:50%; margin:auto;"
--->
-
-Sketch the stress-strain curve above and label as many features as you can.
-
-{{1}}
-****************************
-Linking the stress-strain curve to the physical experiment.
-
-<!-- data-sortable="false" -->
-|  |  |  |  |
-|:---:|:---:|:---:|:---:|
-| ![Initial tensile specimen](images/10a_experiment.png) | ![Loaded tensile specimen](images/10b_experiment.png) | ![Necked tensile specimen](images/10c_experiment.png) | ![Fractured tensile specimen](images/10d_experiment.png) |
-| **Initial specimen** | **Under axial load** | **Necking** | **Fracture** |
-****************************
 
 ## Task 1: Predict the response of an axial bar
 
@@ -726,193 +784,85 @@ If $E$ doubles while $F$, $A$ and $L$ stay fixed, what happens to $\delta$?
 [( )] It stays the same.
 *****************
 
-## Task 1: SI units and prefixes
+## Task 2: ABAQUS
 
-**Base SI units**
+**IN CLASS · Complete the following ABAQUS tutorials**
 
-<!--
-data-hint-button="2"
-data-solution-button="3"
--->
-| Mass | Time | Distance |
-|:----:|:----:|:--------:|
-| [[kg]] | [[s]] | [[m]] |
-[[?]] Curiously, g is not the SI unit of mass.
+This module will utilise ABAQUS finite element analysis software to solve and analyse a range of structural problems. You will learn how to use ABAQUS and solve a range of problems through the study of guided online tutorial sessions that can be completed in your own time, at your own pace. To test your understanding of each topic, you will complete a short problem and submit through the eLP. This will provide immediate feedback to you.
+
+For today's class, we want you to be able to open and run a simple ABAQUS model using an input file. Complete the following four ABAQUS tutorials:
 
 <br>
 
-**Prefixes**
+1. @[course(Introduction to ABAQUS and input files)](../abaqus/General/IntroToABAQUS/IntroToABAQUS.md)
+2. @[course(Opening ABAQUS and setting the work directory)](../abaqus/General/OpeningABAQUS/OpeningABAQUS.md)
+3. @[course(Creating and running a job)](../abaqus/General/CreatingRunningJob/CreatingRunningJob.md)
+4. @[course(Viewing and interpreting results)](../abaqus/General/ViewingInterpretingResults/ViewingInterpretingResults.md)
 
-Write 10^n for each prefix in base 10.
+<br>
 
-<!--
-data-solution-button="3"
-data-type="none"
--->
-| Prefix | Symbol | Base 10 | Decimal | English word |
-|:------|:------:|:-------:|:-------:|:------------:|
-| Giga  | G | [[10^9]] | 1,000,000,000 | billion |
-| Mega  | M | [[10^6]] | 1,000,000 | million |
-| Kilo  | k | [[10^3]] | 1,000 | thousand |
-| — | — | $10^0$ | 1 | one |
-| centi | c | $10^{-2}$ | 0.01 | hundredth |
-| [[milli]] | m | $10^{-3}$ | 0.001 | thousandth |
-| [[micro]] | μ | $10^{-6}$ | 0.000001 | millionth |
-| [[nano]] | n | $10^{-9}$ | 0.000000001 | billionth |
+Each tutorial includes instructions and screenshots. Pause to perform each step yourself. Record any message or step where you need help.
 
-**Note:** centi is typically not used in engineering.
+<br>
 
-Tonnes, litres and degrees are common non-SI units that are acceptable to use with SI units.
-
-## Task 1: Consistent units
-
-Some FE software, including ABAQUS, does not prescribe a unit system.  
-You choose the base units, but they must be **consistent** throughout the model.
-
-Complete the missing entries.
-
-<!--
-data-solution-button="3"
-data-type="none"
--->
-| Mass | Time | Length | Force (derived) | Force (special) | Stress (derived) | Stress (special) |
-|:----:|:----:|:------:|:---------------:|:---------------:|:----------------:|:----------------:|
-| kg    | s | m   | kg·m·s⁻²       | N      | $\frac{\text{N}}{\text{m}²}$       | Pa  |
-| kg    | s | mm  | kg·mm·s⁻²      | [[mN]] | $\frac{\text{mN}}{\text{mm}²}$     | [[kPa]] |
-| tonne | s | mm  | tonne·mm·s⁻²   | [[N]]  | $\frac{\text{N}}{\text{mm}²}$     | [[MPa]] |
-| ktonne | s | mm  | ktonne·mm·s⁻²   | [[kN]] | $\frac{\text{kN}}{\text{mm}²}$     | [[GPa]] |
-
-In Mechanical/Automotive/Aerospace Engineering, mm is the most common length scale of typical structures. Stresses and material properties are usually given in MPa or GPa.
-
-## First steps in ABAQUS
-
-**IN CLASS · Supported PC activity**
-
-Open and run an existing input file, then compare the output with your prediction. You will create models from scratch later in the module.
-
-![Example of the ABAQUS interface and visualised analysis results](images/abaqus_interface_example.png)
-
---{{0}}--
-This image shows the interface. Your first bar model will look much simpler.
-
-## ABAQUS: supported class practice
-
-**IN CLASS · Apply the tutorial workflow to today's problem**
-
-[Download the Week 1 class input file](other-files/week01_axial_bar.inp)
-
-Use the reusable guides as needed:
-
-1. @[course(Open ABAQUS and set the work directory)](../abaqus/General/OpeningABAQUS/OpeningABAQUS.md).
-2. @[course(Create and run a job)](../abaqus/General/CreatingRunningJob/CreatingRunningJob.md).
-3. @[course(View and interpret the results)](../abaqus/General/ViewingInterpretingResults/ViewingInterpretingResults.md).
-
-**For this class activity**, select `week01_axial_bar.inp`, use a job name such as `week01_bar`, and inspect the final frame of `AXIAL_LOAD`. Probe U1 at node **2**, RF1 at node **1**, and S11 in the bar element.
-
-The standalone tutorials use a different example, `intro.inp`, with nodes 100 and 200. Follow their software steps, but use the class file and node labels above when checking today's 5 kN bar.
-
-## ABAQUS: does the answer make sense?
-
-**IN CLASS · Evidence and judgement**
+{{1}}
+*****************
+**ABAQUS: does the answer make sense?**
 
 <details>
-<summary>Compare your output with the analytical prediction</summary>
+<summary>Compare your output with the analytical prediction. Do the values match?</summary>
 
-| Quantity | Expected result | Physical check |
+<!-- 
+  data-sortable="false"
+  data-type="none"
+-->
+| Value | FEA Result | |
 | --- | --- | --- |
-| Node 2 displacement U1 | +2.5 mm | The bar extends in the load direction |
-| Node 1 reaction RF1 | −5000 N | Reaction balances the applied load |
-| Element axial stress S11 | +500 MPa | Tension, equal to force divided by area |
+| Node 100 displacement U1 | [[0]] mm | This is the fixed end |
+| Node 200 displacement U1 | [[2.5]] mm | The bar extends in the load direction |
+| Node 100 reaction RF1 | [[-5000]] N | Reaction balances the applied load |
+| Element axial stress S11 | [[500]] MPa | Tension, equal to force divided by area |
 
 </details>
 
 Why is there only one element? For this uniform bar under an end load, displacement varies linearly and axial stress is constant. One linear truss element can reproduce this idealised response. This does not establish that one element is sufficient for other structures.
 
-## Before you leave the PC
+*****************
+{{2}}
+*****************
 
-**IN CLASS · Ungraded support check**
+**Before you leave the PC**
 
 Show a member of staff:
 
 - the completed job and where the output file is stored;
 - your measured U1 and its units;
-- one comparison with your hand calculation;
-- one assumption in the model.
+- comparison with your hand calculation.
 
-If you are sharing a PC, swap control so both of you open the results and probe a value. Keep your own notes and save your files to your usual student storage after the analysis finishes.
+Keep your own notes and save your files to your usual student storage after the analysis finishes.
 
-## C. INDEPENDENT STUDY: Review and tutorials
+*****************
 
----
-
-**CLASS STUDY ENDS HERE · INDEPENDENT STUDY STARTS HERE**
-
-Revisit unfinished class activities, then use the four standalone tutorials below. These are also available from the @[course(ABAQUS tutorial library)](../abaqus/General/README.md), so you can return to them in later weeks.
-
-## Week 1 ABAQUS tutorial sequence
-
-**INDEPENDENT STUDY · Read, follow along and check**
-
-This module will utilise ABAQUS finite element analysis software to solve and analyse a range of structural problems. You will learn how to use ABAQUS and solve a range of problems through the study of guided online tutorial sessions that are to be completed in your own time, at your own pace. To test your understanding of each topic, you will complete a short problem and submit through the eLP. This will provide immediate feedback to you.
-
-1. @[course(Introduction to ABAQUS and input files)](../abaqus/General/IntroToABAQUS/IntroToABAQUS.md) — understand the workflow and download `intro.inp`.
-2. @[course(Opening ABAQUS and setting the work directory)](../abaqus/General/OpeningABAQUS/OpeningABAQUS.md) — start a session and organise your files.
-3. @[course(Creating and running a job)](../abaqus/General/CreatingRunningJob/CreatingRunningJob.md) — submit `intro.inp` and check its status.
-4. @[course(Viewing and interpreting results)](../abaqus/General/ViewingInterpretingResults/ViewingInterpretingResults.md) — inspect the output and compare it with a calculation.
-
-Each tutorial includes the original screenshots and a completion check. Pause to perform each step yourself. Record any message or step where you need help.
-
-The original tutorial example uses a **110 mm bar and a 195 N load**. Its expected displacement is approximately **0.003199 mm**. The **class activity** uses a **1000 mm bar and a 5 kN load**, with expected displacement **2.5 mm**.
-
-The following reflection and optional extension refer to the **class activity**.
-
-## Independent practice: explain the model
-
-**INDEPENDENT STUDY · Write short answers in your notes**
-
-1. What is the difference between the `.inp` file and the `.odb` file?
-2. Why do we compare the reaction with the applied force?
-3. Why might the plotted deformation look much larger than 2.5 mm?
-4. What physical behaviour would this linear elastic axial model miss?
-
-<details>
-<summary>Compare your explanation</summary>
-
-The `.inp` file specifies the analysis. The `.odb` file contains its results. Reactions test force equilibrium. The viewer can magnify displacements for visibility. An axial truss model does not represent bending, and a linear elastic material does not represent permanent deformation after yielding.
-
-</details>
-
-## Independent practice: change one thing
-
-**INDEPENDENT STUDY · Optional extension**
-
-Predict the tip displacement if the applied load halves. Save a separate copy of the input file, change the `*Cload` value from `5000.` to `2500.`, and create a job with a new name.
-
-What displacement do you predict, in mm?
-[[1.25]]
-
-Check the new output against your prediction. Explain why this proportional change follows from the model's assumptions.
-
-## D. INDEPENDENT STUDY: Before Week 2
+## C. INDEPENDENT STUDY: Before Week 2
 
 ---
 
 **NEXT SESSION PREPARATION**
 
-- Study the online material in Blackboard's **Week 2: Axial Stress and Truss Elements** area, including its theory videos and ABAQUS tutorials.
+- Study the online material for @[course(**Week 2: Axial Stress and Truss Elements**)](../week02/week02.md), including the theory videos and ABAQUS tutorials.
 - Complete the Week 2 quiz before the session, following the published Blackboard deadline.
 - Bring your working, tutorial notes and questions.
 
-You will begin the first analytical and ABAQUS topic problems during the supported session. Use the current assessment brief for their submission requirements.
+You will begin the first analytical and ABAQUS topic problems during the session.
 
 ## Week 1 completion check
 
 **INDEPENDENT STUDY · Ready to move on?**
 
 - [ ] I can explain the weekly preparation and class-work pattern.
-- [ ] I can choose consistent units and calculate stress, strain and displacement.
-- [ ] I can identify elastic and plastic behaviour on a stress–strain curve.
-- [ ] I have run the supplied input file and checked its results.
+- [ ] I can identify elastic and plastic behaviour on a stress–strain curve and can choose consistent units.
+- [ ] I can calculate stress, strain and displacement for a simple 1D bar problem.
+- [ ] I have run the supplied input file and verified the results against the hand-calc.
 - [ ] I know which Week 2 material to study and where to find the quiz deadline.
 
-If a box remains unticked, write down the specific point you need help with and bring it to the next session.
+If a box remains unticked, ask for help before you leave the session.

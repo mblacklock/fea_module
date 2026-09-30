@@ -3,7 +3,8 @@ author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
 version: 1.0.0
 language: en
-mode: Textbook
+mode: Presentation
+icon: ../../../logo.png
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
 comment: Creating and running a job
 
@@ -16,96 +17,84 @@ script: ../../../course-links.js
 
 **Tutorial 3 of 4 · First used in Week 1 · Independent study or supported practice**
 
-Create an ABAQUS job from an existing input file, submit it and check that the analysis finishes.
+**LO**: In this tutorial, you will learn how to create and run an ABAQUS model from an input file.
 
-**You need:** ABAQUS/CAE open with a writable work directory, and [intro.inp](../IntroToABAQUS/files/intro.inp) saved in that directory. If needed, complete @[course(the setup tutorial)](../OpeningABAQUS/OpeningABAQUS.md) first.
+**You need:** ABAQUS/CAE open with a writable work directory, and [intro.inp](../IntroToABAQUS/files/intro.inp) saved there. If needed, complete @[course(the setup tutorial)](../OpeningABAQUS/OpeningABAQUS.md) first.
 
 @[course(ABAQUS tutorial library)](../README.md) · @[course(Week 1 lesson)](../../../week01/week01.md)
 
-The screenshots show the original ABAQUS/CAE interface. Icons and menu wording may vary in the version installed on your PC. Click a screenshot to enlarge it.
+## 1. The main ABAQUS window
 
-## 1. Find the main controls
+The main ABAQUS window contains quite a lot of options and information. The key features are:
 
-Locate the **Model Tree**, **Module** dropdown, module toolbox and message area.
+![Main ABAQUS window with key features labelled](images/General_CreatingRunningJob_img01_MainWindowOverview.png)
 
-![Main ABAQUS window with model tree, module selector, toolbox and message area labelled](images/General_CreatingRunningJob_img01_MainWindowOverview.png)
+You can either create a model using an input file or create the model within ABAQUS. When creating a model within ABAQUS, I personally use the Module dropdown menu. Start with **Part** and work your way down completing the necessary tasks in each module until you reach **Job**. We will cover creating a model within ABAQUS in a later tutorial.
 
-When building a model in ABAQUS/CAE, you generally work through the modules from **Part** towards **Job**. In this tutorial, the supplied input file already defines the model.
+For this tutorial, we will be using the [intro.inp](../IntroToABAQUS/files/intro.inp) file we downloaded earlier. This must be saved in your current work directory.
 
-## 2. Select the Job module
+## 2. Running a pre-created input file
 
-Open the **Module** dropdown, which initially shows **Part**, and select **Job**.
+To run an input file that has already been created, click on the Module dropdown box that is currently set to **Part**. Then click on **Job**:
 
 ![Module dropdown with Job selected](images/General_CreatingRunningJob_img02_ModuleDropdownJob.png)
 
-The toolbox changes to show job controls.
+<br>
 
-## 3. Create a job from an input file
+    {{1}}
+***********************************
+The sidebar will update. To create a job click the top left icon then change the source to Input file:
 
-Click the **Create Job** icon at the top of the Job toolbox. In the dialogue, change **Source** to **Input file**.
+![Create Job dialogue with Input file source selected](images/General_CreatingRunningJob_img03_CreateJobSourceInputfile.png)
+***********************************
 
-![Create Job dialogue with Input file source and file browser highlighted](images/General_CreatingRunningJob_img03_CreateJobSourceInputfile.png)
+<br>
 
-Click the folder icon to locate your saved `intro.inp` file.
+    {{2}}
+***********************************
+Click the folder and locate a saved input file. Click OK and your file will appear in the textbox. Click *Continue...*:
 
-## 4. Select intro.inp
+![Create Job dialogue showing the selected input file](images/General_CreatingRunningJob_img04_SelectInputfileContinue.png)
+***********************************
 
-Choose `intro.inp` and confirm the file selection. Use **intro** as the job name for this exercise, then click **Continue…**.
+<br>
 
-![Create Job dialogue showing intro.inp and Continue](images/General_CreatingRunningJob_img04_SelectInputfileContinue.png)
+    {{3}}
+***********************************
+The *Edit Job* window will appear. Leave everything as the default and click *OK*:
 
-Check that the displayed path points to your copy of the input file. Your path may differ from the screenshot's `D:\intro.inp`.
+![Edit Job window](images/General_CreatingRunningJob_img05_EditJobWindow.png)
+***********************************
 
-## 5. Accept the job settings
+<br>
 
-The **Edit Job** dialogue appears. Leave the settings at their defaults for this introductory example and click **OK**.
+    {{4}}
+***********************************
+To view your jobs, click the *Job Manager* icon:
 
-![Edit Job dialogue with default settings and OK highlighted](images/General_CreatingRunningJob_img05_EditJobWindow.png)
+![Job Manager icon and window](images/General_CreatingRunningJob_img06_JobManagerIcon.png)
 
-## 6. Open Job Manager and submit
+To run a job select it and click *Submit*. 
+***********************************
 
-Click the **Job Manager** icon. Select your job and click **Submit**.
+<br>
 
-![Job Manager showing the job and Submit button](images/General_CreatingRunningJob_img06_JobManagerIcon.png)
+    {{5}}
+***********************************
 
-The job's initial status may be **None** before you submit it.
+The Status will change from **None** to **Submitted**, then **Running**, and finally **Completed**:
 
-## 7. Watch the job status
+|  |  |  |
+|:---------:|:-------:|:---------:|
+| ![Job Manager with Submitted status](images/General_CreatingRunningJob_img07_StatusSubmitted.png) | ![Job Manager with Running status](images/General_CreatingRunningJob_img08_StatusRunning.png) | ![Job Manager with Completed status](images/General_CreatingRunningJob_img09_StatusCompleted.png) |
 
-The status changes to **Submitted** when the job is sent for processing.
+<br>
 
-![Job Manager showing Submitted status](images/General_CreatingRunningJob_img07_StatusSubmitted.png)
+Once the job is completed, click *Results*.
 
-It changes to **Running** while the solver is working. A small model may pass through these stages too quickly to see each one.
+Note: If there is anything incorrect in the way your model is set up, the status will read Aborted. This is common. Fixing errors in your model is an important skill you must learn.
 
-![Job Manager showing Running status](images/General_CreatingRunningJob_img08_StatusRunning.png)
+<br>
 
-## 8. Confirm completion
-
-When the analysis finishes successfully, the status reads **Completed**. Select the job and click **Results**.
-
-![Job Manager showing Completed status and Results button](images/General_CreatingRunningJob_img09_StatusCompleted.png)
-
-ABAQUS opens the output database in the Visualization module. You will inspect it in the next tutorial.
-
-## If the status is Aborted
-
-**Aborted** means the job did not finish successfully. Open **Monitor** and read the first relevant error message before making a change.
-
-- Check that you selected the intended input file.
-- Check the work directory and that you can write files there.
-- If you edited the model, compare the edited lines with the original file.
-- Save any correction before submitting again.
-
-Debugging is part of modelling. Record the error and ask for help if you cannot explain it. A completed job still needs an engineering check of its results.
-
-## Check your understanding
-
-Which source should you choose to run the downloaded model?
-
-[( )] Model.
-[(X)] Input file.
-
-**Before continuing:** your `intro` job shows **Completed**, and you can open its results.
-
-@[course(Next: viewing and interpreting results)](../ViewingInterpretingResults/ViewingInterpretingResults.md)
+@[course(Next tutorial: viewing and interpreting results)](../ViewingInterpretingResults/ViewingInterpretingResults.md)
+***********************************
