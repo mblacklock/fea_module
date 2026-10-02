@@ -1,7 +1,7 @@
 <!--
 author:   Matthew Blacklock
 email:    matthew.blacklock@northumbria.ac.uk
-version:  0.2.0
+version:  0.3.0
 language: en
 mode:     Presentation
 icon: ../logo.png
@@ -96,9 +96,9 @@ Complete the quick checks before moving on.
 
 ## Video 1: Introduction to Truss Elements
 
-!?[Introduction to Truss Elements](https://elp.northumbria.ac.uk/bbcswebdav/pid-22725446-dt-content-rid-524693242_2/xid-524693242_2)
+!?[Introduction to Truss Elements](https://elp.northumbria.ac.uk/bbcswebdav/xid-560229084_1)
 
-[Open the video in Blackboard](https://elp.northumbria.ac.uk/bbcswebdav/pid-22725446-dt-content-rid-524693242_2/xid-524693242_2) if it does not play here.
+[Open the video in Blackboard](https://elp.northumbria.ac.uk/bbcswebdav/xid-560229084_1) if it does not play here.
 
 {{1}}
 ********************
@@ -120,9 +120,9 @@ An ideal truss element connects nodes and resists extension or shortening along 
 
 <br>
 
-!?[Learning Outcome 1.1: Nodes, degrees of freedom and stiffness-matrix size](https://elp.northumbria.ac.uk/bbcswebdav/pid-22725447-dt-content-rid-524693236_2/xid-524693236_2)
+!?[Learning Outcome 1.1: Nodes, degrees of freedom and stiffness-matrix size](https://elp.northumbria.ac.uk/bbcswebdav/xid-560229085_1)
 
-[Open the video in Blackboard](https://elp.northumbria.ac.uk/bbcswebdav/pid-22725447-dt-content-rid-524693236_2/xid-524693236_2) if it does not play here.
+[Open the video in Blackboard](https://elp.northumbria.ac.uk/bbcswebdav/xid-560229085_1) if it does not play here.
 
 You are encouraged to take your own notes. However, partially filled out notes can be found [here](files/Week%202%20Online%20Video.pdf). You can fill in the blanks while watching the video(s).
 
