@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
@@ -77,7 +77,9 @@ Do not assume this location is writable or suitable on your machine. Choose a fo
 
 **Choose a writable folder**
 
-You may choose a local folder on your current machine, for example, `D:\ABAQUS`. However, this will not be accessible once you log out. Alternatively, create a folder in your OneDrive and set the work directory there.
+You may choose a local folder on your current machine, for example, `c:\Users\w12345678\Downloads\ABAQUS` (where w12345678 is your student number). 
+
+Note: this will not be accessible once you log out. You will need to move any files you wish to keep to your Onedrive. Unfortunately, at present, ABAQUS does not work with directly with a OneDrive folder as the working directory.
 
 Type or browse to the chosen folder and click **OK**.
 
@@ -99,7 +101,7 @@ Before moving on, check that you can find the folder and the `.inp` file in File
 
 ## Keep the files you need
 
-If you are using `D:` as your working directory, this is a temporary local drive that belongs to the PC you are using. It is regularly cleared, and you will not be able to access it from another PC.
+If you are using `c:\Users\w12345678\Downloads\ABAQUS` as your working directory, this is a temporary local drive that belongs to the PC you are using. It is regularly cleared, and you will not be able to access it from another PC.
 
 After a job finishes, copy the files you need to your usual student storage before logging off. Keep the `.inp` model definition and the `.odb` results if you want to inspect them later. Keep a `.cae` file as well when you build a model in the graphical interface.
 

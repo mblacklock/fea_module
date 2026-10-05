@@ -1,7 +1,7 @@
 <!--
 author:   Matthew Blacklock
 email:    matthew.blacklock@northumbria.ac.uk
-version:  1.0.0
+version:  1.0.1
 language: en
 mode:     Presentation
 icon: ../logo.png
@@ -783,7 +783,7 @@ There are two tasks to complete:
 
 <br>
 
-1. **Analytical**: Predict the axial bar's response to a given force. Complete the SI Units and Consistent Units tables.
+1. **Analytical**: Predict the axial bar's response to a given force.
 
 <br>
 

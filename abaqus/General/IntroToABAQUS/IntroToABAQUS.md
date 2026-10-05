@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
@@ -31,6 +31,8 @@ Solving a problem using FEA requires 3 main steps:
 
 ![The three stages of FEA: pre-processing, solving and post-processing](images/General_IntroToABAQUS_img01_FEAThreeSteps.png)<!-- width="60%" -->
 
+    {{1}}
+***********************************
 Typically the steps to create an ABAQUS model are as follows:
 
 - Create Part
@@ -43,8 +45,9 @@ Typically the steps to create an ABAQUS model are as follows:
 - Assign Boundary Conditions and Loads
 - Mesh Part(s)/Assembly
 - Create Job and Run
+***********************************
 
-    {{1}}
+    {{2}}
 ***********************************
 Some of these steps will be familiar from your use of CAD software. Creating and assembling parts can in fact be done through CAD software, such as Solidworks and Catia, and imported into ABAQUS for analysis (feature not available in student edition).
 
@@ -57,6 +60,7 @@ There are three ways to create parts:
 Defining a part using an input file is the most simple option, but requires knowledge of nodal coordinates and element connectivity (this will be explained later). Drawing the parts within ABAQUS is suitable for simple models, but specialist CAD software is needed for more complex structures.
 
 This module will introduce all three methods, but to start with, we will look at input files.
+***********************************
 
 ## 2. ABAQUS input files
 
@@ -84,7 +88,7 @@ The input file for this problem is shown below. Constructing input files and usa
 
 ![Original annotated input file](images/General_IntroToABAQUS_img03_InputFile.png)<!-- width="60%" -->
 
-This input file can be downloaded here: [intro.inp](files/intro.inp)
+This input file can be downloaded here: [intro.inp](files/intro.inp) (right click and *Save link as*)
 
 <br>
 
