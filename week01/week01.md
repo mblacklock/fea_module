@@ -2,70 +2,16 @@
 author:   Matthew Blacklock
 email:    matthew.blacklock@northumbria.ac.uk
 version:  1.0.1
-language: en
 mode:     Presentation
-icon: ../logo.png
-import:   https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
+import:     https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
+            https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
+            ../common/templates.md
 comment:  KB5034 Week 1 - Module orientation, mechanics recap, and first ABAQUS activity.
-
-script: ../course-links.js
-
-@course: <a href="@1" data-lia-course="true">@0</a>
-
-@style
-
-.lia-slide > .lia-slide__container {
-    padding-top: 1.5rem !important;
-}
-
-:root {
-  --nu-orange: #f28c28;
-  --nu-blue: #4f81bd;
-  --nu-ink: #171717;
-  --nu-pale: #f3f4f6;
-}
-
-h2 {
-  border-left: 0.35rem solid var(--nu-orange);
-  font-family: Arial, Helvetica, sans-serif !important;
-  padding-left: 0.7rem;
-}
-
-h1 {
-  color: var(--nu-ink);
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-weight: 700 !important;
-}
-
-table thead {
-  background: var(--nu-pale);
-}
-
-input[type="text"] {
-  min-width: 6rem;
-}
-
-@end
 -->
 
 # Week 1: Introduction to mechanics and FEA
 
-![Northumbria University Newcastle](../logo.png)<!--
-style="width: 34%; min-width: 16rem;"
--->
-
-**KB5034 Mechanics & Finite Element Analysis**<!-- 
-style="font-size: 1.5em;" -->
-
-<br>
-
-**Dr Matthew Blacklock & Dr Farnoosh Farhad**
-
-<br>
-
-*School of Engineering, Physics & Mathematics*<!--
-style="border-top: 2px solid #f28c28; display: inline-block; padding-top: 0.35rem;"
--->
+@moduleTitle(../logo.png)
 
 ## Using module content
 
