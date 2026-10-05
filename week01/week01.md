@@ -793,7 +793,7 @@ There are two tasks to complete:
 
 **IN CLASS · Individual calculation**
 
-![Axially loaded bar with length, area, material and applied force labelled](images/axial_bar_problem.png)
+![Axially loaded bar with length, area, material and applied force labelled](images/11_axial_bar_problem.png)
 
 Take $E=200$ GPa, $L=1000$ mm, $A=10$ mm² and $F=5$ kN.
 
