@@ -19,3 +19,9 @@ Use these LiaScript tutorials in order for Week 2. The first introduces the keyw
 2. @[course(Multiple 1D truss elements with different section properties)](MultipleTrussElements/MultipleTrussElements.md)
 
 @[course(Week 2 lesson)](../../week02/week02.md) · @[course(All ABAQUS tutorial categories)](../README.md)
+
+## Week 3: 2D truss elements and ABAQUS CAE
+
+@[course(Introduction to ABAQUS CAE: 2D truss elements)](Truss2DCAE/Truss2DCAE.md) — build the same 2D truss using an input file and CAE, then compare the results with hand calculations.
+
+@[course(Week 3 lesson)](../../week03/week03.md)

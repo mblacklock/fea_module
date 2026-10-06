@@ -36,3 +36,7 @@ This example uses a 1000 mm bar with a 10 mm² cross-section, an elastic modulus
 **First used in Week 2.** @[course(Open the Topic 1 tutorials)](Topic1/README.md). The single-element input-file tutorial is followed by the two-element tutorial with different section properties.
 
 @[course(Week 1 lesson)](../week01/week01.md) · @[course(Week 2 lesson)](../week02/week02.md)
+
+**Week 3:** @[course(Introduction to ABAQUS CAE: 2D truss elements)](Topic1/Truss2DCAE/Truss2DCAE.md) — create a two-element 2D truss using both an input file and CAE.
+
+@[course(Week 3 lesson)](../week03/week03.md)

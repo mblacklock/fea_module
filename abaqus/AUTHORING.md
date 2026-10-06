@@ -12,6 +12,11 @@
 | General/ViewingInterpretingResults/ViewingInterpretingResults.md | Wk1_4_Viewing and interpreting results.docx | General_ViewingInterpretingResults |
 | Topic1/IntroToInputFiles/IntroToInputFiles.md | Wk2_1_Learning Outcome 1.2 - Introduction to ABAQUS input files.docx | `t1w1/Truss_IntroInputFiles_img01`–`img21` |
 | Topic1/MultipleTrussElements/MultipleTrussElements.md | Wk2_2_Learning Outcome 1.2 - Multiple 1D truss elements with different section properties.docx | `t1w1/Truss_MultipleElements_img01`–`img10` |
+| Topic1/Truss2DCAE/Truss2DCAE.md | Wk3_1_2D truss & CAE.docx | `t1w2/1.png`–`40.png` (24a, 25a and 29a) |
+
+The Week 3 CAE tutorial retains the substantive Word instructions in sequence and uses all 40 numbered screenshots, copied with descriptive `Truss_2DCAE_imgNN_Description.png` names. The original source images are retained. The current Learning Outcome 1.5 supplied for Week 3 replaces the older outcome wording in the Word header. Corrections: `v3` replaces the repeated `v1` in the support condition; both 50 N load components are 35.36 N; boundary-condition questions refer to node 3 rather than the loaded node 2. The source input file and screenshots use T3D2; the planar reference file uses T2D2, consistent with the CAE instructions. Screenshot discrepancies are identified beside the images. The answer checks retain the source results for the rounded 35.36 N components. They have been checked analytically; the new reference file has not been run in ABAQUS.
+
+Week 3 includes the four supplied Panopto recording IDs in teaching order and links to `week03/files/Week 3 Online Videos.pdf`. Week 3 currently contains pre-work only; in-class activities will be added separately.
 
 The screenshots originated in the supplied General folders. The model diagram, annotated input-file screenshot and selected results screenshots were updated to match the Week 1 axial-bar calculation. The canonical practice file is `General/IntroToABAQUS/files/intro.inp`; it was adapted from `General_IntroToABAQUS/intro.inp`. The setup, job and results tutorials link to this one copy. Keep the library folders together when sharing the full sequence.
 

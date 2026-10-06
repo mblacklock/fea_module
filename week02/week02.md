@@ -113,7 +113,7 @@ Work through these tutorials in order.
 
 <br>
 
-- [ ] **Quiz** - Complete the Blackboard Test for 1D Truss Elements in the Week 2 folder on the eLP. This counts towards your assessment.
+- [ ] **Quiz:** Complete the Blackboard Test for 1D Truss Elements in the Week 2 folder on the eLP. This counts towards your assessment.
 - [ ] **Bring to class:** your notes, input files, and any questions from the videos or tutorials.
 
 ## B. IN CLASS: Axial stress and truss elements
