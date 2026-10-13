@@ -28,6 +28,8 @@ The two Topic 1 tutorials are standalone LiaScript pages linked from Week 2 and 
 
 ## Preview and links
 
+`General/RemoteAccess/RemoteAccess.md` is a short guide based on the supplied MyAccess instructions and the three images in its `images/` folder. It uses click reveals for selecting DESKTOPS, choosing an IT room and opening a connection when PCs are available. EB DZ is The Zone; SAN 201 is an alternative suggested by the module leader. Availability figures in the screenshot are illustrative.
+
 Open the entire `LiaScript` folder in VS Code so the preview server can serve the week folders, `abaqus/` and `course-links.js`. Open a tutorial Markdown file and use Alt+L. The current review server serves the whole folder at port 3010:
 
 http://localhost:3010/liascript/index.html?http://localhost:3010/abaqus/README.md

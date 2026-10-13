@@ -31,6 +31,8 @@ Use **Textbook** mode for self-paced reading. Switch to **Presentation** mode fo
 
 This example uses a 1000 mm bar with a 10 mm² cross-section, an elastic modulus of 200 GPa and a 5 kN load. It matches the Week 1 hand calculation.
 
+@[course(Remote access to a campus PC)](General/RemoteAccess/RemoteAccess.md) — connect through MyAccess to an available campus PC for ABAQUS work.
+
 ## Topic 1: Axial stress and truss elements
 
 **First used in Week 2.** @[course(Open the Topic 1 tutorials)](Topic1/README.md). The single-element input-file tutorial is followed by the two-element tutorial with different section properties.

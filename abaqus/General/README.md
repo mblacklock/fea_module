@@ -24,4 +24,8 @@ These standalone guides introduce ABAQUS and the basic input-file workflow. Foll
 
 The example matches the Week 1 axial-bar hand calculation: 1000 mm length, 10 mm² area, 200 GPa elastic modulus and 5 kN axial load.
 
+## Remote access
+
+@[course(Remote access to a campus PC)](RemoteAccess/RemoteAccess.md) — use MyAccess to connect to an available physical PC on campus and work in ABAQUS.
+
 @[course(Week 1 lesson)](../../week01/week01.md) · @[course(All ABAQUS tutorial categories)](../README.md)
