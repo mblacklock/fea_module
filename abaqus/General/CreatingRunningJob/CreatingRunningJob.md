@@ -1,11 +1,12 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
+        ../../../common/templates.md
 comment: Creating and running a job
 
 script: ../../../course-links.js
@@ -22,6 +23,8 @@ script: ../../../course-links.js
 **You need:** ABAQUS/CAE open with a writable work directory, and [intro.inp](../IntroToABAQUS/files/intro.inp) saved there. If needed, complete @[course(the setup tutorial)](../OpeningABAQUS/OpeningABAQUS.md) first.
 
 @[course(ABAQUS tutorial library)](../README.md) · @[course(Week 1 lesson)](../../../week01/week01.md)
+
+@tutorialNavigation(../../../common/images/TutorialNavigation.png)
 
 ## 1. The main ABAQUS window
 

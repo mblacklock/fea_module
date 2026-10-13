@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
@@ -18,6 +18,8 @@ There are two ways to work in ABAQUS on your own computer:
 - **ABAQUS Learning Edition:** install the free, limited edition on your own Windows computer.
 
 Choose an option from the sidebar.
+
+@tutorialNavigation(../../../common/images/TutorialNavigation.png)
 
 ## Remote access to a campus PC
 

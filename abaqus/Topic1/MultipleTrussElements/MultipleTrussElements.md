@@ -1,11 +1,12 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
+        ../../../common/templates.md
 comment: Topic 1 - multiple 1D truss elements with different section properties.
 
 script: ../../../course-links.js
@@ -22,6 +23,8 @@ script: ../../../course-links.js
 <br>
 
 @[course(Topic 1 tutorial library)](../README.md) · @[course(Week 2 lesson)](../../../week02/week02.md)
+
+@tutorialNavigation(../../../common/images/TutorialNavigation.png)
 
 ## 1. Model setup
 

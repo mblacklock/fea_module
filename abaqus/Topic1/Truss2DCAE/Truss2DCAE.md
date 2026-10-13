@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 language: en
 mode: Presentation
 icon: ../../../logo.png
@@ -18,6 +18,7 @@ comment: Topic 1 - two-dimensional truss elements and introduction to ABAQUS CAE
 
 @[course(Topic 1 tutorial library)](../README.md) · @[course(Week 3 lesson)](../../../week03/week03.md)
 
+@tutorialNavigation(../../../common/images/TutorialNavigation.png)
 
 ## 1. Model setup
 

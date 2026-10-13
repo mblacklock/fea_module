@@ -1,11 +1,12 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.1
+version: 1.0.2
 language: en
 mode: Presentation
 icon: ../../../logo.png
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
+        ../../../common/templates.md
 comment: Introduction to ABAQUS finite element analysis software
 
 script: ../../../course-links.js
@@ -24,6 +25,8 @@ script: ../../../course-links.js
 @[course(ABAQUS tutorial library)](../README.md) · @[course(Week 1 lesson)](../../../week01/week01.md)
 
 <br>
+
+@tutorialNavigation(../../../common/images/TutorialNavigation.png)
 
 ## 1. Finite Element Analysis
 
