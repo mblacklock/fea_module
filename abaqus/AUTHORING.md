@@ -28,7 +28,7 @@ The two Topic 1 tutorials are standalone LiaScript pages linked from Week 2 and 
 
 ## Preview and links
 
-`General/RemoteAccess/RemoteAccess.md` is a short guide based on the supplied MyAccess instructions and the three images in its `images/` folder. It uses click reveals for selecting DESKTOPS, choosing an IT room and opening a connection when PCs are available. EB DZ is The Zone; SAN 201 is an alternative suggested by the module leader. Availability figures in the screenshot are illustrative.
+`General/OffCampusAccess/OffCampusAccess.md` combines two options for accessing ABAQUS outside campus, each on its own sidebar page. The MyAccess page uses the three supplied screenshots and click reveals for choosing a room and connecting. EB DZ is The Zone; SAN 201 is an alternative suggested by the module leader. Most rooms are listed after 5 pm on weekdays and at weekends. Availability figures in the screenshot are illustrative. The Learning Edition page includes the supplied download screenshot, vendor link, Windows requirement, University support limitation, 1000-node limit and CAD-import restriction.
 
 Open the entire `LiaScript` folder in VS Code so the preview server can serve the week folders, `abaqus/` and `course-links.js`. Open a tutorial Markdown file and use Alt+L. The current review server serves the whole folder at port 3010:
 
