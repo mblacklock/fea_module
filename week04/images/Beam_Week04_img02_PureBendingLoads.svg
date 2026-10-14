@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" role="img" aria-labelledby="title desc">
+  <title id="title">Free-body diagram of the loaded bar A-B</title>
+  <desc id="desc">Downward loads of 200 newtons at A and B and upward reactions of 200 newtons at C and D. The gaps are 300, 600 and 300 millimetres.</desc>
+  <defs>
+    <marker id="forceArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455" />
+    </marker>
+    <marker id="dimArrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.4" />
+    </marker>
+  </defs>
+  <rect width="1000" height="280" fill="white" />
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49">
+    <text x="500" y="32" text-anchor="middle" font-weight="700">Loaded bar</text>
+  </g>
+  <rect x="100" y="147" width="800" height="12" fill="#d7eaf2" stroke="#4986a1" stroke-width="2" />
+  <g fill="none" stroke="#475569" stroke-width="1.5">
+    <path d="M100 99 V142 M300 99 V142 M700 99 V142 M900 99 V142" />
+    <path d="M105 108 H295" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+    <path d="M305 108 H695" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+    <path d="M705 108 H895" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="23" text-anchor="middle" fill="#253d49">
+    <text x="200" y="95">300 mm</text>
+    <text x="500" y="95">600 mm</text>
+    <text x="800" y="95">300 mm</text>
+  </g>
+  <g stroke="#dc4455" stroke-width="4" fill="none" marker-end="url(#forceArrow)">
+    <path d="M100 60 V144" />
+    <path d="M900 60 V144" />
+    <path d="M300 230 V164" />
+    <path d="M700 230 V164" />
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#dc4455" text-anchor="middle">
+    <text x="100" y="49">200 N</text>
+    <text x="900" y="49">200 N</text>
+    <text x="300" y="262">R<tspan baseline-shift="sub" font-size="17">C</tspan> = 200 N</text>
+    <text x="700" y="262">R<tspan baseline-shift="sub" font-size="17">D</tspan> = 200 N</text>
+  </g>
+  <g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49" text-anchor="middle">
+    <text x="90" y="185">A</text>
+    <text x="310" y="139">C</text>
+    <text x="690" y="139">D</text>
+    <text x="910" y="185">B</text>
+  </g>
+</svg>

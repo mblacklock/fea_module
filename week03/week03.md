@@ -894,4 +894,9 @@ Complete the Week 4 pre-work on beam elements, and bring your notes and any ques
 
 ## Further reading
 
-@FurtherReading(2,Direct stiffness method,3,Truss equations)
+@FurtherReading
+
+@ReadingBook(@LoganBook,@LoganLibrary,```
+- **Chapter 2:** Direct stiffness method
+- **Chapter 3:** Truss equations
+```)

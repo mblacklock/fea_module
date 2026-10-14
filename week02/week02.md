@@ -819,4 +819,9 @@ Complete the Week 3 pre-work on 2D truss elements and bring your notes and quest
 
 ## Further reading
 
-@FurtherReading(2,Direct stiffness method,3,Truss equations)
+@FurtherReading
+
+@ReadingBook(@LoganBook,@LoganLibrary,```
+- **Chapter 2:** Direct stiffness method
+- **Chapter 3:** Truss equations
+```)

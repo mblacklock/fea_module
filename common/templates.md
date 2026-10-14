@@ -1,6 +1,6 @@
 <!--
 author: Matthew Blacklock
-version: 1.0.0
+version: 1.0.1
 icon: ../logo.png
 language: en
 
@@ -37,15 +37,22 @@ style="border-top: 2px solid #f28c28; display: inline-block; padding-top: 0.35re
 
 @LoganLibrary: Access the book through the University Library: [eBook](https://librarysearch.northumbria.ac.uk/permalink/44UON_INST/4o28qe/cdi_askewsholts_vlebooks_9780357676646) | [Physical copy](https://librarysearch.northumbria.ac.uk/permalink/44UON_INST/1pkpso7/alma991003768200503181)
 
+@BeerLibrary: Access the book through the University Library: [eBook](https://librarysearch.northumbria.ac.uk/permalink/44UON_INST/4o28qe/cdi_askewsholts_vlebooks_9789814923163) | [Physical copy](https://librarysearch.northumbria.ac.uk/permalink/44UON_INST/1pkpso7/alma991004311682103181)
+
+@LoganBook: Logan, D. L. – *A First Course in the Finite Element Method*
+
+@BeerBook: Beer et al. – *Mechanics of Materials*
+
 @FurtherReading
 For additional explanation and worked examples:
+@end
 
-**Logan, D. L. – *A First Course in the Finite Element Method***
+@ReadingBook
+**@0**
 
-- **Chapter @0:** @1
-- **Chapter @2:** @3
+@2
 
-@LoganLibrary
+@1
 @end
 
 -->
