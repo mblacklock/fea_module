@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 0.1.0
+version: 1.0.0
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
