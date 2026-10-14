@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 570" role="img" aria-labelledby="title description">
+  <title id="title">ABAQUS problem: two-element 2D truss with a roller support</title>
+  <desc id="description">Node 1 at the upper left and node 3 at the lower left are fixed in x and y. Node 2 at the upper right is restrained horizontally by a roller against a vertical wall and is free to move vertically. Element 1, area C, connects nodes 1 and 2 horizontally. Element 2, area C, connects nodes 3 and 2 diagonally. The horizontal dimension is B mm and vertical dimension is A mm. Both areas are C square millimetres. A downward load D newtons acts at node 2. Young modulus is 200 GPa.</desc>
+  <defs>
+    <marker id="abaqusProblemLoadArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#b51931"/>
+    </marker>
+    <marker id="abaqusProblemAxisArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#647080"/>
+    </marker>
+  </defs>
+  <rect width="740" height="570" fill="white"/>
+  <!-- Supports restrain both translations at nodes 1 and 3. -->
+  <g stroke="#171717" stroke-width="2" fill="#e1e5e9">
+    <path d="M158 115 L130 95 L130 135 Z"/>
+    <path d="M158 435 L130 415 L130 455 Z"/>
+    <path d="M130 80 V150 M130 400 V470" fill="none"/>
+  </g>
+  <g stroke="#8b949d" stroke-width="1.5">
+    <path d="M118 88 L130 100 M118 103 L130 115 M118 118 L130 130 M118 133 L130 145"/>
+    <path d="M118 408 L130 420 M118 423 L130 435 M118 438 L130 450 M118 453 L130 465"/>
+  </g>
+  <!-- Members -->
+  <line x1="160" y1="115" x2="640" y2="115" stroke="#2196a1" stroke-width="12" stroke-linecap="round"/>
+  <line x1="160" y1="435" x2="640" y2="115" stroke="#6b7c8d" stroke-width="12" stroke-linecap="round"/>
+  <!-- Applied load -->
+  <line x1="640" y1="126" x2="640" y2="235" stroke="#b51931" stroke-width="3" marker-end="url(#abaqusProblemLoadArrow)"/>
+  <g fill="#171717">
+    <circle cx="160" cy="115" r="9"/>
+    <circle cx="640" cy="115" r="9"/>
+    <circle cx="160" cy="435" r="9"/>
+  </g>
+  <!-- Dimensions -->
+  <g stroke="#737b83" stroke-width="1.5" fill="none">
+    <path d="M160 485 H640 M160 476 V494 M640 476 V494"/>
+    <path d="M100 115 V435 M91 115 H109 M91 435 H109"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#171717">
+    <text x="164" y="91">1</text>
+    <text x="628" y="91">2</text>
+    <text x="164" y="464">3</text>
+    <text x="400" y="85" text-anchor="middle" fill="#14848f">Area = [C] mm²</text>
+    <text x="460" y="319" text-anchor="middle" fill="#596c7e">Area = [C] mm²</text>
+    <text x="662" y="211" fill="#b51931">[D] N</text>
+    <text x="400" y="517" text-anchor="middle">[B] mm</text>
+    <text x="50" y="285" text-anchor="middle">[A] mm</text>
+  </g>
+  <!-- Roller against a vertical wall: u2 = 0, v2 free. -->
+  <g stroke="#171717" stroke-width="2" fill="#e1e5e9">
+    <path d="M650 115 L675 95 L675 135 Z"/>
+    <circle cx="683" cy="104" r="5" fill="white"/>
+    <circle cx="683" cy="126" r="5" fill="white"/>
+    <path d="M692 80 V150" fill="none"/>
+  </g>
+  <path d="M692 87 L704 99 M692 103 L704 115 M692 119 L704 131 M692 135 L704 147" stroke="#8b949d" stroke-width="1.5" fill="none"/>
+  <text x="480" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#171717">E = 200 GPa</text>
+  <!-- Global axis directions -->
+  <g stroke="#647080" stroke-width="1.7" fill="none">
+    <path d="M55 527 H100" marker-end="url(#abaqusProblemAxisArrow)"/>
+    <path d="M55 527 V482" marker-end="url(#abaqusProblemAxisArrow)"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#647080">
+    <text x="109" y="532">x</text><text x="49" y="471">y</text>
+    <text x="710" y="555" text-anchor="end" font-size="15">Not to scale</text>
+  </g>
+</svg>

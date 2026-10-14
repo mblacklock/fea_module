@@ -36,6 +36,72 @@ table thead {
     background: var(--nu-pale);
 }
 
+.truss-matrix-quiz thead {
+    display: none;
+}
+
+.truss-matrix-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.truss-matrix-factor {
+    flex-shrink: 0;
+}
+
+.truss-matrix-brackets {
+    position: relative;
+    padding: 0.4rem 0.8rem;
+    flex-shrink: 0;
+}
+
+.truss-matrix-brackets::before,
+.truss-matrix-brackets::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0.5rem;
+    border: 2px solid currentColor;
+    pointer-events: none;
+}
+
+.truss-matrix-brackets::before {
+    left: 0;
+    border-right: 0;
+}
+
+.truss-matrix-brackets::after {
+    right: 0;
+    border-left: 0;
+}
+
+.truss-matrix-brackets table {
+    margin: 0;
+}
+
 input[type="text"] {
     min-width: 6rem;
+}
+
+.assembly-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.assembly-diagram img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .assembly-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 760 560" width="760" height="560" role="img" aria-label="Projection of horizontal and vertical displacement components onto a rotated axis">
+  <defs>
+    <marker id="axisArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#727b86"/></marker>
+    <marker id="redArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#df443b"/></marker>
+    <style>
+      .math{font-family:'DejaVu Serif',serif;font-style:italic;font-size:25px}
+      .axis{stroke:#727b86;stroke-width:2.3;stroke-linecap:round}
+      .red{stroke:#df443b;stroke-width:4.4;stroke-linecap:round}
+      .guide{stroke:#929ba4;stroke-width:2;stroke-dasharray:7 7;fill:none}
+      .rightangle{stroke:#59626d;stroke-width:2.2;fill:none;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="760" height="560" fill="#fff"/>
+  <!-- Fixed-size global axes -->
+  <path class="axis" d="M90 435 H630" marker-end="url(#axisArrow)"/>
+  <path class="axis" d="M90 435 V75" marker-end="url(#axisArrow)"/>
+  <text x="645" y="444" class="math" fill="#56616c">x</text>
+  <text x="79" y="58" class="math" fill="#56616c">y</text>
+  <!-- Geometry: angle 35°, horizontal u1=290, vertical u2=225.
+       O=(90,435), H=(380,435), P=(284.64,298.96), V=(284.64,73.96), Q=(390.37,224.96).
+       OP=237.55 and PQ=129.05; HP and VQ each perpendicular to rotated axis. -->
+  <!-- x' direction extended a little past the resultant -->
+  <path d="M90 435 L477 164" stroke="#b1b8c1" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <text x="482" y="158" class="math" fill="#59626d">x′</text>
+  <!-- Known global displacements -->
+  <line x1="90" y1="435" x2="380" y2="435" class="red" marker-end="url(#redArrow)"/>
+  <text x="226" y="470" class="math" fill="#df443b">u₁</text>
+  <line x1="284.64" y1="298.96" x2="284.64" y2="73.96" class="red" marker-end="url(#redArrow)"/>
+  <text x="250" y="175" class="math" fill="#df443b">u₂</text>
+  <!-- Exact perpendicular projection guides -->
+  <path d="M380 435 L284.64 298.96" class="guide"/>
+  <path d="M284.64 73.96 L390.37 224.96" class="guide"/>
+  <!-- The two adjacent projected lengths along x' -->
+  <line x1="90" y1="435" x2="284.64" y2="298.96" stroke="#189c57" stroke-width="6.5" stroke-linecap="round"/>
+  <line x1="284.64" y1="298.96" x2="390.37" y2="224.96" stroke="#246bd2" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Projection labels, set parallel to the inclined line -->
+  <text x="150" y="361" class="math" font-size="23" fill="#138344" transform="rotate(-35 150 361)">u₁ cos α</text>
+  <text x="325" y="321" class="math" font-size="23" fill="#205ec0" transform="rotate(-35 325 321)">u₂ sin α</text>
+  <!-- True square corners: unit axes d=(.819152,-.573576), n=(.573576,.819152) -->
+  <path d="M294.47 292.08 L301.35 301.91 L291.52 308.79" class="rightangle"/>
+  <path d="M380.54 231.85 L373.66 222.02 L383.49 215.14" class="rightangle"/>
+  <!-- Angles alpha at O and at V; the second is between vertical down and the perpendicular V-Q -->
+  <path d="M139 435 A49 49 0 0 0 130.15 406.89" stroke="#323b45" stroke-width="2" fill="none"/>
+  <text x="145" y="425" class="math" font-size="22" fill="#303842">α</text>
+  <path d="M284.64 113.96 A40 40 0 0 0 307.58 106.73" stroke="#323b45" stroke-width="2" fill="none"/>
+  <text x="290" y="130" class="math" font-size="22" fill="#303842">α</text>
+  <!-- Resultant component location -->
+  <circle cx="390.37" cy="224.96" r="5.2" fill="#df443b"/>
+  <text x="406" y="235" class="math" font-size="28" fill="#df443b">u₁′</text>
+  <circle cx="90" cy="435" r="4" fill="#303842"/>
+  <!-- Formula / concise teaching statement -->
+  <line x1="102" y1="491" x2="649" y2="491" stroke="#e1e5e9" stroke-width="1.5"/>
+  <text x="380" y="535" text-anchor="middle" style="font-family:'DejaVu Serif',serif;font-style:italic;font-size:29px" fill="#273241">u₁′ = u₁ cos α + u₂ sin α</text>
+</svg>
