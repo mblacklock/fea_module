@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 0.0.1
+version: 0.0.2
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -47,15 +47,15 @@ A **prismatic member** has a constant cross-sectional shape and size along its l
 
 Equal and opposite couples acting in the **same longitudinal plane** can produce pure bending. The dotted plane in the diagram shows this plane:
 
-![Beam subject to equal and opposite bending couples](images/Beam_Week04_img00_PureBending.svg)<!-- style="width: 55%; display: block; margin: auto;" -->
+![Beam subject to equal and opposite bending couples](images/Beam_Week04_img01_PureBending.svg)<!-- style="width: 55%; display: block; margin: auto;" -->
 
 The weightlifting example shows how forces can also produce a region of pure bending.
 
-![Weightlifter supporting a loaded bar](images/Beam_Week04_img01_Weightlifting.png)<!-- style="width: 45%; display: block; margin: auto;" -->
+![Weightlifter supporting a loaded bar](images/Beam_Week04_img02_Weightlifting.png)<!-- style="width: 45%; display: block; margin: auto;" -->
 
 The weights act downwards and the hands provide upward reaction forces. For the symmetric idealisation shown, neglecting the bar's own weight, the region **between the hands** has zero shear force and a constant bending moment.
 
-![Free-body diagram of the loaded bar A-B](images/Beam_Week04_img02_PureBendingLoads.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
+![Free-body diagram of the loaded bar A-B](images/Beam_Week04_img03_PureBendingLoads.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
 
 Because the loading is symmetric, each hand provides an upward reaction of $200\text{ N}$.
 
@@ -65,7 +65,7 @@ The two overhanging portions therefore transmit equal and opposite moments to th
 
 $$M=200\times300=60\,000\text{ N mm}.$$
 
-![Isolated middle section C-D carrying equal and opposite end couples](images/Beam_Week04_img09_PureBendingMiddleSection.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
+![Isolated middle section C-D carrying equal and opposite end couples](images/Beam_Week04_img04_PureBendingMiddleSection.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
 
 On each side, the downward load and upward reaction cancel as forces. The middle section $C-D$ therefore carries equal and opposite end couples, with no resultant transverse force. The bending moment is constant throughout $C-D$ and the shear force is zero.
 
@@ -89,15 +89,15 @@ Which conditions describe a region of pure bending?
 
 An axial force can produce **bending** when its line of action is offset from the centroidal axis. The offset creates a bending moment. This is **eccentric loading**.
 
-![Clamp applying an eccentric load](images/Beam_Week04_img03_Clamp.png)<!-- style="width: 20%; display: block; margin: auto;" -->
+![Clamp applying an eccentric load](images/Beam_Week04_img05_Clamp.png)<!-- style="width: 20%; display: block; margin: auto;" -->
 
 The timber pushes upwards on the upper jaw and downwards on the lower jaw. These equal and opposite forces act away from the centroidal axis of the straight member of the clamp.
 
-![Clamp diagram showing 50 N jaw forces and a 50 mm offset](images/Beam_Week04_img04_EccentricLoading.svg)<!-- style="width: 30%; display: block; margin: auto;" -->
+![Clamp diagram showing 50 N jaw forces and a 50 mm offset](images/Beam_Week04_img06_EccentricLoading.svg)<!-- style="width: 30%; display: block; margin: auto;" -->
 
 Imagine cutting through the clamp at $C-C'$ and isolating the upper part. The upward force acts at a perpendicular distance of **50 mm** from the centroidal axis of the vertical member.
 
-![Upper clamp free-body diagram showing the applied force and internal axial force and bending moment at C-C prime](images/Beam_Week04_img10_ClampCutSection.svg)<!-- style="width: 30%; display: block; margin: auto;" -->
+![Upper clamp free-body diagram showing the applied force and internal axial force and bending moment at C-C prime](images/Beam_Week04_img07_ClampCutSection.svg)<!-- style="width: 30%; display: block; margin: auto;" -->
 
 To keep this upper part in equilibrium, the cut section must carry:
 
@@ -142,11 +142,11 @@ A transverse force produces a **bending moment** because it acts at a distance f
 
 The cantilever shown is fixed at $B$ and carries a downward force $P$ at its free end $A$.
 
-![Cantilever fixed at B with a downward force P at A and a section marked at C](images/Beam_Week04_img05_TransverseLoading.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
+![Cantilever fixed at B with a downward force P at A and a section marked at C](images/Beam_Week04_img08_TransverseLoading.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
 
 Imagine cutting the beam at $C$, a distance $x$ from $A$, and isolating the segment $A-C$.
 
-![Free-body diagram of A-C showing the upward shear force and clockwise bending moment at the cut](images/Beam_Week04_img11_TransverseCutSection.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
+![Free-body diagram of A-C showing the upward shear force and clockwise bending moment at the cut](images/Beam_Week04_img09_TransverseCutSection.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
 
 To keep this segment in equilibrium, the cut must carry:
 
@@ -183,7 +183,7 @@ Where is the bending moment largest in magnitude for this cantilever?
 
 Imagine longitudinal lines of material running along the beam, often called **fibres**. Under bending, the lines on one side shorten while those on the other side lengthen.
 
-![Beam bent by end couples, with shorter above the upper curve and longer below the lower curve](images/Beam_Week04_img06_BeamDeformation.svg)<!-- style="width: 55%; display: block; margin: auto;" -->
+![Beam bent by end couples, with shorter above the upper curve and longer below the lower curve](images/Beam_Week04_img10_BeamDeformation.svg)<!-- style="width: 55%; display: block; margin: auto;" -->
 
 As the beam bends, the upper fibres shorten and the lower fibres lengthen. These changes in length produce compressive and tensile longitudinal strains. For a linear elastic material, the corresponding longitudinal stress follows Hooke's law:
 
@@ -213,7 +213,7 @@ Here, $I$ is the second moment of area about the neutral axis. The largest bendi
 
 $$|\sigma_{\max}|=\frac{|M|\,y_{\max}}{I}.$$
 
-![Longitudinal bending stress varying linearly from compression above the neutral axis to tension below it](images/Beam_Week04_img12_LinearBendingStress.svg)<!-- style="width: 65%; display: block; margin: auto;" -->
+![Longitudinal bending stress varying linearly from compression above the neutral axis to tension below it](images/Beam_Week04_img11_LinearBendingStress.svg)<!-- style="width: 65%; display: block; margin: auto;" -->
 
 {{1}}
 ********************

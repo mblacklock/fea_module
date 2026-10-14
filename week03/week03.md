@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -83,7 +83,7 @@ At node 1, $u_1$ is the global **horizontal** displacement and $u_2$ is the glob
 
 To find $u_1'$, project each global component onto $x'$ and add its contribution.
 
-![Horizontal and vertical displacement components projected onto the local element axis](images/Truss_Week03_img06_DisplacementProjection.svg)<!-- style="width: 760px; max-width: 100%;" -->
+![Horizontal and vertical displacement components projected onto the local element axis](images/Truss_Week03_img07_DisplacementProjection.svg)<!-- style="width: 760px; max-width: 100%;" -->
 
 **1. Project the horizontal displacement $u_1$**
 
@@ -693,7 +693,7 @@ Apply the zero-displacement boundary conditions, then solve the two remaining eq
 **Rows 1, 2, 5 and 6** contain the unknown support reactions $f_{1x}$, $f_{1y}$, $f_{3x}$ and $f_{3y}$. Set these equations aside while solving for the displacements, then use them to calculate the reactions afterwards.
 
 
-![Global stiffness matrix with restrained rows and columns crossed out and the retained two by two block highlighted](images/Truss_Week03_img07_MatrixReduction.svg)<!-- style="display: block; width: 800px; max-width: 100%; margin-inline: auto;" -->
+![Global stiffness matrix with restrained rows and columns crossed out and the retained two by two block highlighted](images/Truss_Week03_img08_MatrixReduction.svg)<!-- style="display: block; width: 800px; max-width: 100%; margin-inline: auto;" -->
 
 The highlighted **rows and columns 3 and 4** give the reduced system for the unknown displacements $u_2$ and $v_2$ and the known applied loads $f_{2x}$ and $f_{2y}$.
 
@@ -758,7 +758,7 @@ The reduced stiffness matrix is diagonal for this particular example. With incli
 
 <div class="assembly-diagram">
 
-![Two-element truss with fixed nodes 1 and 3, free node 2 and downward load P](images/Truss_Week03_img08_AnalyticalProblem.svg)
+![Two-element truss with fixed nodes 1 and 3, free node 2 and downward load P](images/Truss_Week03_img09_AnalyticalProblem.svg)
 
 </div>
 
@@ -819,7 +819,7 @@ Open the *2D Truss Elements ABAQUS problem* in the Week 3 folder on the eLP and 
 
 <div class="assembly-diagram">
 
-![Two-element truss with fixed nodes 1 and 3, a horizontal restraint at node 2 and a downward load](images/Truss_Week03_img09_ABAQUSProblem.svg)
+![Two-element truss with fixed nodes 1 and 3, a horizontal restraint at node 2 and a downward load](images/Truss_Week03_img10_ABAQUSProblem.svg)
 
 </div>
 
