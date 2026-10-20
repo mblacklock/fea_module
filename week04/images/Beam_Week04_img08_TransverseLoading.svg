@@ -1,19 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Cantilever carrying a transverse end load</title>
   <desc id="desc">A beam of length L is fixed at B on the right and carries a downward force P at A on the left. A section C is marked along the beam.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
   <defs>
-    <marker id="transverseForce" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455"/></marker>
-    <marker id="transverseDimension" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker>
+    <!-- transverseForce: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="transverseForce" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455"  stroke="none"/>
+    </marker>
+    <!-- transverseDimension: Dimension arrowhead, pointing towards the measured endpoint. -->
+    <marker id="transverseDimension" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5" />
+    </marker>
   </defs>
-  <rect width="900" height="220" fill="white"/>
-  <rect x="120" y="108" width="630" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
-  <rect x="750" y="48" width="25" height="145" fill="#ded9c5"/>
-  <path d="M120 36 V104" stroke="#dc4455" stroke-width="4" marker-end="url(#transverseForce)"/>
-  <path d="M400 93 V163" stroke="#475569" stroke-width="1.5" stroke-dasharray="7 6"/>
-  <path d="M130 52 H740" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#transverseDimension)" marker-end="url(#transverseDimension)"/>
-  <rect x="420" y="34" width="30" height="30" fill="white"/>
+  <!-- White canvas background. -->
+  <rect width="900" height="220" fill="white" />
+  <!-- Beam body or isolated beam segment. -->
+  <rect x="120" y="108" width="630" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
+  <!-- Fixed support at the right end of the cantilever. -->
+  <rect x="750" y="48" width="25" height="145" fill="#ded9c5" />
+  <!-- Downward concentrated end load P at A. -->
+  <path d="M120 36 V104" stroke="#dc4455" stroke-width="4" marker-end="url(#transverseForce)" />
+  <!-- Dashed position of section C along the cantilever. -->
+  <path d="M400 93 V163" stroke="#475569" stroke-width="1.5" stroke-dasharray="7 6" />
+  <!-- Dimension line with arrowheads at both measured endpoints. -->
+  <path d="M130 52 H740" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#transverseDimension)" marker-end="url(#transverseDimension)" />
+  <!-- White backing behind a label to hide the line underneath. -->
+  <rect x="420" y="34" width="30" height="30" fill="white" />
   <g font-family="Georgia, serif" font-size="28" font-style="italic" fill="#253d49">
-    <text x="423" y="56">L</text><text x="110" y="183">A</text><text x="720" y="183">B</text><text x="389" y="88">C</text>
+    <!-- Label: L -->
+    <text x="423" y="56">L</text>
+    <!-- Label: A -->
+    <text x="110" y="183">A</text>
+    <!-- Label: B -->
+    <text x="720" y="183">B</text>
+    <!-- Label: C -->
+    <text x="389" y="88">C</text>
+    <!-- Label: P -->
     <text x="90" y="35" fill="#dc4455">P</text>
   </g>
 </svg>

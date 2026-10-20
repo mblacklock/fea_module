@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
+  <title id="title">Positive shear force and bending moment at matching cut faces</title>
+  <desc id="desc">At the right face of a left-hand segment positive shear acts downward and positive moment anticlockwise. At the left face of a right-hand segment the directions reverse.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
+  <defs>
+    <!-- force: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none" />
+    </marker>
+    <!-- dim: Dimension arrowhead, pointing towards the measured endpoint. -->
+    <marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5" />
+    </marker>
+  </defs>
+  <!-- White canvas background. -->
+  <rect width="1000" height="280" fill="white" />
+  <!-- Left-hand beam segment; the facing ends are matching cut faces. -->
+  <rect x="40" y="100" width="260" height="40" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
+  <!-- Right-hand beam segment; the facing ends are matching cut faces. -->
+  <rect x="700" y="100" width="260" height="40" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
+  <!-- Positive shear on the right face of the left-hand segment: downward. -->
+  <path d="M325 85 V155" fill="none" stroke="#dc4455" stroke-width="3" stroke-linecap="butt" marker-end="url(#force)" />
+  <!-- Positive shear on the left face of the right-hand segment: upward. -->
+  <path d="M675 155 V85" fill="none" stroke="#dc4455" stroke-width="3" stroke-linecap="butt" marker-end="url(#force)" />
+  <!-- Positive moment on the right face of the left-hand segment: anticlockwise. -->
+  <path d="M375 160 C415 160 415 80 375 80" fill="none" stroke="#dc4455" stroke-width="3" stroke-linecap="butt" marker-end="url(#force)" />
+  <!-- Opposing positive moment on the left face of the right-hand segment: clockwise. -->
+  <path d="M625 160 C585 160 585 80 625 80" fill="none" stroke="#dc4455" stroke-width="3" stroke-linecap="butt" marker-end="url(#force)" />
+  <!-- Label: V -->
+  <text x="315" y="190" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">V</text>
+  <!-- Label: V -->
+  <text x="665" y="190" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">V</text>
+  <!-- Label: M -->
+  <text x="375" y="190" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49">M</text>
+  <!-- Label: M′ -->
+  <text x="610" y="190" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49">M′</text>
+  <!-- Label: Positive internal actions -->
+  <text x="500" y="35" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="middle">Positive internal actions</text>
+  <!-- Label: Left-hand segment -->
+  <text x="170" y="253" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49" text-anchor="middle">Left-hand segment</text>
+  <!-- Label: Right-hand segment -->
+  <text x="830" y="253" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49" text-anchor="middle">Right-hand segment</text>
+</svg>

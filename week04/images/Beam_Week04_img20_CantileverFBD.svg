@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 290" role="img" aria-labelledby="title desc">
+<title id="title">Complete cantilever free-body diagram</title><desc id="desc">Free end A carries a downward load P. At B the support is replaced by an upward reaction P and a clockwise support reaction moment M_B = PL. Section C is marked a distance x from A.</desc>
+<defs>
+  <!-- Blue applied loads and red reactions or internal actions. -->
+  <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker>
+  <marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none"/></marker>
+  <marker id="dimension" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker>
+</defs>
+<rect width="1000" height="290" fill="white"/>
+
+<!-- Whole beam, with its support replaced by reactions at B. -->
+<rect x="120" y="120" width="630" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+<path d="M120 42 V116" fill="none" stroke="#246bd2" stroke-width="3.5" marker-end="url(#load)"/>
+<path d="M750 235 V163" fill="none" stroke="#dc4455" stroke-width="3.5" marker-end="url(#force)"/>
+<path d="M795 85 C875 85 875 192 795 192" fill="none" stroke="#dc4455" stroke-width="3.5" marker-end="url(#force)"/>
+<!-- Section C is introduced here, before isolating the left-hand segment. -->
+<path d="M440 105 V178" fill="none" stroke="#dc4455" stroke-width="1.5" stroke-dasharray="7 6"/>
+<path d="M120 235 H440" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dimension)" marker-end="url(#dimension)"/>
+<rect x="265" y="217" width="30" height="32" fill="white"/>
+<!-- Span dimension, measured between A and B. -->
+<path d="M120 78 H750" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dimension)" marker-end="url(#dimension)"/>
+<rect x="420" y="60" width="30" height="32" fill="white"/>
+<g font-family="Georgia, serif" font-style="italic" font-size="27" fill="#253d49">
+<text x="425" y="85">L</text><text x="272" y="242">x</text><text x="428" y="205">C</text><text x="105" y="193">A</text><text x="721" y="193">B</text>
+<text x="85" y="42" fill="#246bd2">P</text><text x="750" y="263" text-anchor="middle" fill="#dc4455" font-size="23">R<tspan baseline-shift="sub" font-size="16">B</tspan> = P</text><text x="875" y="146" fill="#dc4455" font-size="24">M<tspan baseline-shift="sub" font-size="16">B</tspan> = PL</text>
+</g></svg>

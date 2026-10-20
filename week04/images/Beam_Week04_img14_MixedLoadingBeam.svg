@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
+  <title id="title">Beam with mixed loading</title>
+  <desc id="desc">A simply supported beam carries a uniform load over its left-hand portion and two concentrated downward forces P1 and P2.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
+  <defs>
+    <!-- force: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none" />
+    </marker>
+    <!-- dim: Dimension arrowhead, pointing towards the measured endpoint. -->
+    <marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5" />
+    </marker>
+    <!-- Blue arrowhead for the applied loads w, P1 and P2. -->
+    <marker id="appliedForce" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none" />
+    </marker>
+  </defs>
+  <!-- White canvas background. -->
+  <rect width="1000" height="260" fill="white" />
+  <!-- Beam body or isolated beam segment. -->
+  <rect x="120" y="110" width="730" height="16" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
+  <!-- Pin support at A and triangular roller support at B. -->
+  <path d="M120 128 L100 168 H140Z M850 128 L830 168 H870Z" fill="#ded9c5" stroke="#8c8b7b" stroke-width="1.5" />
+  <!-- Roller beneath the right-hand support. -->
+  <circle cx="838" cy="177" r="5" fill="#253d49" />
+  <!-- Roller beneath the right-hand support. -->
+  <circle cx="862" cy="177" r="5" fill="#253d49" />
+  <!-- Partial uniform distributed load w. -->
+  <path d="M135 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M175 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M215 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M255 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M295 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M335 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <!-- Label: w -->
+  <text x="230" y="32" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#246bd2" text-anchor="middle">w</text>
+  <!-- Concentrated downward load P1. -->
+  <path d="M460 35 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <!-- Label: P₁ -->
+  <text x="460" y="26" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#246bd2" text-anchor="middle">P₁</text>
+  <!-- Concentrated downward load P2. -->
+  <path d="M700 35 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <!-- Label: P₂ -->
+  <text x="700" y="26" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#246bd2" text-anchor="middle">P₂</text>
+  <!-- Label: A -->
+  <text x="110" y="207" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">A</text>
+  <!-- Label: B -->
+  <text x="840" y="207" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">B</text>
+</svg>

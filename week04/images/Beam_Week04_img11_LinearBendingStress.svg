@@ -1,34 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Linear variation of longitudinal bending stress through the beam depth</title>
   <desc id="desc">The vertical coordinate y is positive upwards from the neutral axis. Horizontal stress arrows point left above the neutral axis for negative compressive stress, and right below it for positive tensile stress. Their lengths increase linearly with distance from the neutral axis, where stress is zero.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
   <defs>
-    <marker id="stressArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#253d49"/></marker>
-    <marker id="yArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455"/></marker>
+    <!-- stressArrow: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="stressArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#253d49"  stroke="none"/>
+    </marker>
+    <!-- yArrow: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="yArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455"  stroke="none"/>
+    </marker>
   </defs>
-  <rect width="800" height="440" fill="white"/>
-  <path d="M190 210 H610" stroke="#929ba4" stroke-width="1.8" stroke-dasharray="7 6"/>
-  <path d="M360 65 V355" stroke="#929ba4" stroke-width="1.8" stroke-dasharray="7 6"/>
-  <path d="M240 70 L480 350" stroke="#4986a1" stroke-width="2.5" fill="none"/>
+  <!-- White canvas background. -->
+  <rect width="800" height="440" fill="white" />
+  <!-- Horizontal neutral-axis guide where the bending stress is zero. -->
+  <path d="M190 210 H610" stroke="#929ba4" stroke-width="1.8" stroke-dasharray="7 6" />
+  <!-- Vertical zero-stress reference line. -->
+  <path d="M360 65 V355" stroke="#929ba4" stroke-width="1.8" stroke-dasharray="7 6" />
+  <!-- Straight stress-profile envelope showing linear variation through the depth. -->
+  <path d="M240 70 L480 350" stroke="#4986a1" stroke-width="2.5" fill="none" />
   <g fill="none" stroke="#253d49" stroke-width="3" marker-end="url(#stressArrow)">
-    <path d="M360 70 H240"/>
-    <path d="M360 105 H270"/>
-    <path d="M360 140 H300"/>
-    <path d="M360 175 H330"/>
-    <path d="M360 245 H390"/>
-    <path d="M360 280 H420"/>
-    <path d="M360 315 H450"/>
-    <path d="M360 350 H480"/>
+    <!-- Longitudinal stress arrows, increasing in length away from the neutral axis. -->
+    <path d="M360 70 H240" />
+    <path d="M360 105 H270" />
+    <path d="M360 140 H300" />
+    <path d="M360 175 H330" />
+    <path d="M360 245 H390" />
+    <path d="M360 280 H420" />
+    <path d="M360 315 H450" />
+    <path d="M360 350 H480" />
   </g>
-  <path d="M360 210 V30" stroke="#dc4455" stroke-width="2.5" fill="none" marker-end="url(#yArrow)"/>
-  <circle cx="360" cy="210" r="4" fill="#253d49"/>
+  <!-- Positive y-axis measured upwards from the neutral axis. -->
+  <path d="M360 210 V30" stroke="#dc4455" stroke-width="2.5" fill="none" marker-end="url(#yArrow)" />
+  <!-- Zero-stress point at the neutral axis. -->
+  <circle cx="360" cy="210" r="4" fill="#253d49" />
   <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49">
+    <!-- Label: Compression -->
     <text x="80" y="82">Compression</text>
+    <!-- Label: σx < 0 -->
     <text x="80" y="115">σ<tspan baseline-shift="sub" font-size="17">x</tspan> &lt; 0</text>
+    <!-- Label: Tension -->
     <text x="535" y="327">Tension</text>
+    <!-- Label: σx > 0 -->
     <text x="535" y="360">σ<tspan baseline-shift="sub" font-size="17">x</tspan> &gt; 0</text>
+    <!-- Label: Neutral axis -->
     <text x="615" y="205">Neutral axis</text>
+    <!-- Label: σx = 0 -->
     <text x="615" y="237">σ<tspan baseline-shift="sub" font-size="17">x</tspan> = 0</text>
   </g>
+  <!-- Label: y -->
   <text x="380" y="40" font-family="Georgia, serif" font-size="28" font-style="italic" fill="#dc4455">y</text>
+  <!-- Label: Stress magnitude increases linearly with distance from the neutral axis. -->
   <text x="400" y="410" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49">Stress magnitude increases linearly with distance from the neutral axis.</text>
 </svg>

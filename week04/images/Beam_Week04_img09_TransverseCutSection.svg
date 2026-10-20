@@ -1,21 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 245" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Free-body diagram of the isolated cantilever segment A-C</title>
   <desc id="desc">The downward end load P acts a distance x from C. At C an upward shear force V of magnitude P and a clockwise bending moment of magnitude P times x maintain equilibrium.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
   <defs>
-    <marker id="cutForce" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455"/></marker>
-    <marker id="cutDimension" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker>
+    <!-- cutForce: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="cutForce" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455"  stroke="none"/>
+    </marker>
+    <!-- cutDimension: Dimension arrowhead, pointing towards the measured endpoint. -->
+    <marker id="cutDimension" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5" />
+    </marker>
   </defs>
-  <rect width="900" height="245" fill="white"/>
-  <rect x="120" y="108" width="280" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+  <!-- White canvas background. -->
+  <rect width="900" height="245" fill="white" />
+  <!-- Beam body or isolated beam segment. -->
+  <rect x="120" y="108" width="280" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
   <g stroke="#dc4455" stroke-width="4" fill="none" marker-end="url(#cutForce)">
-    <path d="M120 36 V104"/>
-    <path d="M400 222 V150"/>
-    <path d="M434 91 C497 110 497 165 434 186"/>
+    <!-- Downward applied load P at the free end A. -->
+    <path d="M120 36 V104" />
+    <!-- Upward balancing shear force V at section C. -->
+    <path d="M400 222 V150" />
+    <!-- Clockwise bending moment at the cut, of magnitude Px. -->
+    <path d="M434 91 C497 110 497 165 434 186" />
   </g>
-  <path d="M130 72 H390" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#cutDimension)" marker-end="url(#cutDimension)"/>
-  <rect x="245" y="54" width="30" height="30" fill="white"/>
+  <!-- Dimension line with arrowheads at both measured endpoints. -->
+  <path d="M130 72 H390" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#cutDimension)" marker-end="url(#cutDimension)" />
+  <!-- White backing behind a label to hide the line underneath. -->
+  <rect x="245" y="54" width="30" height="30" fill="white" />
   <g font-family="Georgia, serif" font-size="28" font-style="italic" fill="#253d49">
-    <text x="248" y="76">x</text><text x="110" y="183">A</text><text x="389" y="99">C</text>
-    <text x="90" y="35" fill="#dc4455">P</text><text x="425" y="222" fill="#dc4455">V</text><text x="510" y="145" fill="#dc4455">M = Px</text>
+    <!-- Label: x -->
+    <text x="248" y="76">x</text>
+    <!-- Label: A -->
+    <text x="110" y="183">A</text>
+    <!-- Label: C -->
+    <text x="389" y="99">C</text>
+    <!-- Label: P -->
+    <text x="90" y="35" fill="#dc4455">P</text>
+    <!-- Label: V -->
+    <text x="425" y="222" fill="#dc4455">V</text>
+    <!-- Label: M = Px -->
+    <text x="510" y="145" fill="#dc4455">M = Px</text>
   </g>
 </svg>

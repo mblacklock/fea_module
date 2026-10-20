@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+<title id="title">Normal bending stress at the fixed end B</title>
+<desc id="desc">At B the internal bending moment is minus PL, so normal stress is PLy/I. The stress varies linearly: tension plus PLc/I at the top, zero at the neutral axis, and compression minus PLc/I at the bottom. Horizontal arrows show signed stress values, with tension plotted to the right.</desc>
+<defs><marker id="stress" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#253d49" stroke="none"/></marker><marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none"/></marker></defs>
+<rect width="900" height="430" fill="white"/>
+<!-- Zero-stress reference and neutral axis. -->
+<path d="M450 65 V355 M200 210 H690" fill="none" stroke="#929ba4" stroke-width="1.7" stroke-dasharray="7 6"/>
+<!-- Linear signed stress distribution: top in tension, bottom in compression. -->
+<path d="M650 80 L250 340" fill="none" stroke="#4986a1" stroke-width="2.5"/>
+<g fill="none" stroke="#253d49" stroke-width="2.8" marker-end="url(#stress)">
+<path d="M450 80 H650"/>
+<path d="M450 112.5 H600"/>
+<path d="M450 145 H550"/>
+<path d="M450 177.5 H500"/>
+<path d="M450 242.5 H400"/>
+<path d="M450 275 H350"/>
+<path d="M450 307.5 H300"/>
+<path d="M450 340 H250"/>
+</g>
+<!-- Positive y is measured upwards from the neutral axis. -->
+<path d="M450 210 V35" fill="none" stroke="#dc4455" stroke-width="2" marker-end="url(#axis)"/>
+<circle cx="450" cy="210" r="4" fill="#253d49"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49">
+<text x="670" y="78">Tension</text><text x="60" y="333">Compression</text>
+<text x="695" y="207">Neutral axis</text><text x="695" y="238">σ<tspan baseline-shift="sub" font-size="16">x</tspan> = 0</text>
+<text x="450" y="405" text-anchor="middle">Positive stress (tension) is plotted to the right.</text>
+</g>
+<g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49">
+<text x="470" y="40" fill="#dc4455">y</text><text x="375" y="85">+c</text><text x="465" y="346">−c</text>
+<text x="670" y="112">+PLc/I</text><text x="60" y="366">−PLc/I</text>
+</g></svg>

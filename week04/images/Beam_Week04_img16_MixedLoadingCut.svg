@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 290" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
+  <title id="title">Free-body diagram of the left-hand segment A-C</title>
+  <desc id="desc">The cut segment carries reaction RA, the distributed load and P1, with positive V downward and positive M anticlockwise at C. P2 lies outside this segment.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
+  <defs>
+    <!-- force: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none" />
+    </marker>
+    <!-- dim: Dimension arrowhead, pointing towards the measured endpoint. -->
+    <marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5" />
+    </marker>
+    <!-- Blue arrowhead for the applied loads w, P1 and P2. -->
+    <marker id="appliedForce" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none" />
+    </marker>
+  </defs>
+  <!-- White canvas background. -->
+  <rect width="1000" height="290" fill="white" />
+  <!-- Beam body or isolated beam segment. -->
+  <rect x="120" y="110" width="480" height="32" fill="#c3dce8" stroke="#4986a1" stroke-width="2" />
+  <!-- Partial uniform distributed load w. -->
+  <path d="M135 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M175 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M215 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M255 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M295 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <path d="M335 48 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <!-- Label: w -->
+  <text x="230" y="32" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#246bd2" text-anchor="middle">w</text>
+  <!-- Concentrated downward load P1. -->
+  <path d="M460 35 V105" fill="none" stroke="#246bd2" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#appliedForce)" />
+  <!-- Label: P₁ -->
+  <text x="460" y="26" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#246bd2" text-anchor="middle">P₁</text>
+  <!-- Upward support reaction at A. -->
+  <path d="M120 215 V147" fill="none" stroke="#dc4455" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#force)" />
+  <!-- Label: RA -->
+  <text x="60" y="233" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#dc4455" text-anchor="start">R<tspan baseline-shift="sub" font-size="18">A</tspan>
+  </text>
+  <!-- Label: A -->
+  <text x="88" y="172" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">A</text>
+  <!-- Label: C -->
+  <text x="573" y="175" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="start">C</text>
+  <!-- Positive internal shear force V, downward on the right cut face. -->
+  <path d="M605 100 V150" fill="none" stroke="#dc4455" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#force)" transform="translate(10 0)" />
+  <!-- Label: V -->
+  <text x="630" y="136" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#dc4455" text-anchor="start">V</text>
+  <!-- Positive internal bending moment M, anticlockwise on the right cut face. -->
+  <path d="M600 186 C675 186 675 66 600 66" fill="none" stroke="#dc4455" stroke-width="3.5" stroke-linecap="butt" marker-end="url(#force)" transform="translate(10 0)" />
+  <!-- Label: M -->
+  <text x="695" y="136" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#dc4455" text-anchor="start">M</text>
+  <!-- Dimension line with arrowheads at both measured endpoints. -->
+  <path d="M125 260 H595" stroke="#475569" stroke-width="1.5" fill="none" marker-start="url(#dim)" marker-end="url(#dim)" />
+  <!-- White backing behind a label to hide the line underneath. -->
+  <rect x="344" y="244" width="32" height="28" fill="white" />
+  <!-- Label: x -->
+  <text x="360" y="265" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#253d49" text-anchor="middle">x</text>
+</svg>

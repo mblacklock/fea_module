@@ -1,46 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Free-body diagram of the loaded bar A-B</title>
   <desc id="desc">Downward loads of 200 newtons at A and B and upward reactions of 200 newtons at C and D. The gaps are 300, 600 and 300 millimetres.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
   <defs>
-    <marker id="forceArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455" />
+    <!-- forceArrow: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="forceArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455"  stroke="none"/>
     </marker>
+    <!-- dimArrow: Dimension arrowhead, pointing towards the measured endpoint. -->
     <marker id="dimArrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.4" />
     </marker>
   </defs>
+  <!-- White canvas background. -->
   <rect width="1000" height="280" fill="white" />
   <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49">
+    <!-- Label: Loaded bar -->
     <text x="500" y="32" text-anchor="middle" font-weight="700">Loaded bar</text>
   </g>
+  <!-- Beam body or isolated beam segment. -->
   <rect x="100" y="147" width="800" height="12" fill="#d7eaf2" stroke="#4986a1" stroke-width="2" />
   <g fill="none" stroke="#475569" stroke-width="1.5">
+    <!-- Extension lines locating the dimension endpoints A, C, D and B. -->
     <path d="M100 99 V142 M300 99 V142 M700 99 V142 M900 99 V142" />
+    <!-- Dimension line with arrowheads at both measured endpoints. -->
     <path d="M105 108 H295" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+    <!-- Dimension line with arrowheads at both measured endpoints. -->
     <path d="M305 108 H695" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+    <!-- Dimension line with arrowheads at both measured endpoints. -->
     <path d="M705 108 H895" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-size="23" text-anchor="middle" fill="#253d49">
+    <!-- Label: 300 mm -->
     <text x="200" y="95">300 mm</text>
+    <!-- Label: 600 mm -->
     <text x="500" y="95">600 mm</text>
+    <!-- Label: 300 mm -->
     <text x="800" y="95">300 mm</text>
   </g>
   <g stroke="#dc4455" stroke-width="4" fill="none" marker-end="url(#forceArrow)">
+    <!-- Downward 200 N weights at the bar ends. -->
     <path d="M100 60 V144" />
     <path d="M900 60 V144" />
+    <!-- Upward 200 N hand reactions. -->
     <path d="M300 230 V164" />
     <path d="M700 230 V164" />
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#dc4455" text-anchor="middle">
+    <!-- Label: 200 N -->
     <text x="100" y="49">200 N</text>
+    <!-- Label: 200 N -->
     <text x="900" y="49">200 N</text>
+    <!-- Label: RC = 200 N -->
     <text x="300" y="262">R<tspan baseline-shift="sub" font-size="17">C</tspan> = 200 N</text>
+    <!-- Label: RD = 200 N -->
     <text x="700" y="262">R<tspan baseline-shift="sub" font-size="17">D</tspan> = 200 N</text>
   </g>
   <g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49" text-anchor="middle">
+    <!-- Label: A -->
     <text x="90" y="185">A</text>
+    <!-- Label: C -->
     <text x="310" y="139">C</text>
+    <!-- Label: D -->
     <text x="690" y="139">D</text>
+    <!-- Label: B -->
     <text x="910" y="185">B</text>
   </g>
 </svg>

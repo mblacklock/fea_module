@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 310" role="img" aria-labelledby="title desc"><title id="title">Simply supported UDL beam: complete free-body diagram</title><desc id="desc">A uniform load w acts across L. Upward reactions at A and B are each wL/2. Section C is x from A.</desc>
+<defs><marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker><marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none"/></marker><marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker></defs><rect width="1000" height="310" fill="white"/>
+<!-- Full beam and applied uniform distributed load. -->
+<rect x="120" y="110" width="630" height="38" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+<g fill="none" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"><path d="M120 42 V105"/><path d="M190 42 V105"/><path d="M260 42 V105"/><path d="M330 42 V105"/><path d="M400 42 V105"/><path d="M470 42 V105"/><path d="M540 42 V105"/><path d="M610 42 V105"/><path d="M680 42 V105"/><path d="M750 42 V105"/></g>
+<!-- Support reactions and section C. -->
+<g fill="none" stroke="#dc4455" stroke-width="3.5" marker-end="url(#force)"><path d="M120 220 V152"/><path d="M750 220 V152"/></g>
+<path d="M507 97 V165" stroke="#dc4455" stroke-width="1.5" stroke-dasharray="7 6"/>
+<!-- Dimensions for the span and cut position. -->
+<path d="M120 280 H750" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/>
+<path d="M120 195 H507" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/><rect x="420" y="262" width="30" height="32" fill="white"/><rect x="298.5" y="177" width="30" height="32" fill="white"/>
+<g font-family="Georgia, serif" font-style="italic" font-size="26" fill="#253d49"><text x="428" y="287">L</text><text x="305.5" y="202">x</text><text x="90" y="164">A</text><text x="760" y="164">B</text><text x="495" y="90" fill="#dc4455">C</text><text x="425" y="30" fill="#246bd2">w</text><text x="120" y="249" text-anchor="middle" fill="#dc4455">R<tspan baseline-shift="sub" font-size="18">A</tspan> = wL/2</text><text x="750" y="249" text-anchor="middle" fill="#dc4455">R<tspan baseline-shift="sub" font-size="18">B</tspan> = wL/2</text></g>
+</svg>

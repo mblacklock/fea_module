@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+<title id="title">Geometry of a beam segment in pure bending</title>
+<desc id="desc">A curved beam segment subtends angle phi at its centre of curvature O. The neutral axis has radius rho and arc length L equals rho phi. A shorter longitudinal line lies y above the neutral axis, towards O, and has radius rho minus y.</desc>
+<defs><marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker><marker id="redDim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#dc4455" stroke-width="1.5"/></marker></defs>
+<rect width="1000" height="540" fill="white"/>
+<!-- Beam boundaries are concentric arcs; the end sections point towards O. -->
+<path d="M233.59 292.15 A290 290 0 0 0 606.41 292.15 L670.69 368.76 A390 390 0 0 1 169.31 368.76Z" fill="#eaf2f6" stroke="#253d49" stroke-width="2.5"/>
+<!-- Radii extended from the centre to the two end sections. -->
+<path d="M420 70 L233.59 292.15 M420 70 L606.41 292.15" fill="none" stroke="#727b86" stroke-width="1.8" stroke-dasharray="7 6"/>
+<!-- Neutral axis and a shorter longitudinal line y towards the centre. -->
+<path d="M201.45 330.45 A340 340 0 0 0 638.55 330.45" fill="none" stroke="#253d49" stroke-width="2" stroke-dasharray="9 7"/>
+<path d="M220.74 307.47 A310 310 0 0 0 619.26 307.47" fill="none" stroke="#dc4455" stroke-width="2.5" stroke-dasharray="9 7"/>
+<!-- Central angle phi, measured between the end-section radii. -->
+<path d="M378.22 119.79 A65 65 0 0 0 461.78 119.79" fill="none" stroke="#475569" stroke-width="1.7"/>
+<circle cx="420" cy="70" r="4" fill="#253d49"/>
+<!-- Radius rho measured on an offset dimension parallel to the right radius. -->
+<path d="M420 70 L510 40 M638.55 330.45 L728.55 300.45" fill="none" stroke="#929ba4" stroke-width="1.3"/>
+<path d="M510 40 L728.55 300.45" fill="none" stroke="#475569" stroke-width="1.7" marker-start="url(#dim)" marker-end="url(#dim)"/>
+<!-- Offset y dimension, with extension lines from the two longitudinal lines. -->
+<path d="M638.55 330.45 L690.55 313.12 M619.26 307.47 L671.26 290.14" fill="none" stroke="#dc4455" stroke-width="1.1"/>
+<path d="M683.55 315.45 L664.26 292.47" fill="none" stroke="#dc4455" stroke-width="1.5" marker-start="url(#redDim)" marker-end="url(#redDim)"/>
+<g font-family="Georgia, serif" font-style="italic" font-size="28" fill="#253d49"><text x="390" y="59">O</text><text x="410" y="158">φ</text><text x="647" y="160">ρ</text><text x="688" y="291" fill="#dc4455">y</text><text x="788" y="362">L = ρφ</text></g>
+<g font-family="Arial, Helvetica, sans-serif" font-size="22"><text x="420" y="440" text-anchor="middle" fill="#253d49">Neutral axis</text><text x="420" y="504" text-anchor="middle" fill="#dc4455">The line above the neutral axis is shorter: its radius is ρ − y.</text></g>
+</svg>

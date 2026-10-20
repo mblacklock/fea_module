@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 740" role="img" aria-labelledby="title desc">
+<title id="title">Central point load: loading, shear-force and bending-moment diagrams</title>
+<desc id="desc">A simply supported beam carries a central downward point load P. Reactions are P/2 at both ends. Shear is plus P/2 on the left and minus P/2 on the right, with a downward jump of P beneath the load. Bending moment has two straight sides, zero at the supports and maximum PL/4 at midspan.</desc>
+<defs>
+<marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker>
+<marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#475569" stroke="none"/></marker>
+<marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker>
+</defs>
+<rect width="1000" height="740" fill="white"/>
+<!-- Simply supported beam, central load and pin/roller supports. -->
+<rect x="120" y="100" width="630" height="30" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+<path d="M435 35 V95" fill="none" stroke="#246bd2" stroke-width="3.5" marker-end="url(#load)"/>
+<path d="M120 130 L103 158 H137Z M750 130 L733 158 H767Z" fill="#ded9c5" stroke="#64748b" stroke-width="1.5"/>
+<path d="M100 164 H140 M730 177 H770" fill="none" stroke="#64748b" stroke-width="1.5"/>
+<circle cx="741" cy="166" r="5" fill="white" stroke="#64748b" stroke-width="1.5"/><circle cx="759" cy="166" r="5" fill="white" stroke="#64748b" stroke-width="1.5"/>
+<!-- Span dimension and vertical guide align the load and both diagrams. -->
+<path d="M120 210 H750" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/>
+<rect x="420" y="192" width="30" height="32" fill="white"/>
+<path d="M435 270 V455 M435 530 V695" fill="none" stroke="#929ba4" stroke-width="1.5" stroke-dasharray="6 6"/>
+<!-- Piecewise constant shear with a downward jump of P at the point load. -->
+<path d="M120 350 V300 H435 V350Z M435 350 V400 H750 V350Z" fill="#e5effb"/>
+<path d="M120 350 V300 H435 V400 H750 V350" fill="none" stroke="#246bd2" stroke-width="3"/>
+<path d="M470 300 V400" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/>
+<!-- Moment is continuous with straight sides and maximum PL/4 at midspan. -->
+<path d="M120 665 L435 540 L750 665Z" fill="#e5effb"/>
+<path d="M120 665 L435 540 L750 665" fill="none" stroke="#246bd2" stroke-width="3"/>
+<!-- Positive vertical ordinates and increasing x point upwards and rightwards. -->
+<g fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#axis)"><path d="M90 350 H815"/><path d="M120 425 V275"/><path d="M90 665 H815"/><path d="M120 695 V530"/></g>
+<g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49"><text x="120" y="25">Central point load</text><text x="120" y="260">Shear-force diagram</text><text x="120" y="495">Bending-moment diagram</text><text x="490" y="382">Drop = P</text><text x="435" y="735" text-anchor="middle">Constant shear on each half gives a straight moment segment.</text></g>
+<g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49"><text x="455" y="43" fill="#246bd2">P</text><text x="85" y="155">A</text><text x="785" y="155">B</text><text x="428" y="217">L</text><text x="795" y="203">R<tspan baseline-shift="sub" font-size="17">A</tspan> = R<tspan baseline-shift="sub" font-size="17">B</tspan> = P/2</text><text x="80" y="282">V</text><text x="80" y="537">M</text><text x="830" y="359">x</text><text x="830" y="674">x</text><text x="95" y="381">0</text><text x="95" y="696">0</text><text x="740" y="335">L</text><text x="740" y="650">L</text><text x="420" y="453">L/2</text><text x="420" y="704">L/2</text><text x="135" y="285">+P/2</text><text x="765" y="408">−P/2</text><text x="455" y="529">PL/4</text></g>
+</svg>

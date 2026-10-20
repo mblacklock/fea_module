@@ -1,26 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" role="img" aria-labelledby="title desc">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Prismatic beam under pure bending</title>
   <desc id="desc">A rectangular prism between A and B with equal and opposite end couples M prime and M.</desc>
+  <!-- Reusable arrowheads, fills and clipping shapes. -->
   <defs>
-    <linearGradient id="front" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5edf5"/><stop offset=".5" stop-color="#8bbcd0"/><stop offset="1" stop-color="#d5edf5"/></linearGradient>
-    <marker id="momentArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455"/></marker>
+    <!-- Blue shading used on the front face of the prism. -->
+    <linearGradient id="front" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d5edf5" />
+      <stop offset=".5" stop-color="#8bbcd0" />
+      <stop offset="1" stop-color="#d5edf5" />
+    </linearGradient>
+    <!-- momentArrow: Arrowhead used by the force, moment or axis paths below. -->
+    <marker id="momentArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10Z" fill="#dc4455"  stroke="none"/>
+    </marker>
   </defs>
-  <rect width="720" height="390" fill="white"/>
-  <path d="M645 334 L80 160" fill="none" stroke="#dc4455" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <!-- White canvas background. -->
+  <rect width="720" height="390" fill="white" />
+  <!-- Bottom edge of the bending plane, drawn behind the prism so the solid hides it. -->
+  <path d="M645 334 L80 160" fill="none" stroke="#dc4455" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" />
   <g stroke="#4986a1" stroke-width="2">
-    <path d="M165 113 L245 73 L570 173 L490 213Z" fill="#e0eff5"/>
-    <path d="M165 113 L490 213 L467 295 L142 195Z" fill="url(#front)"/>
-    <path d="M490 213 L570 173 L547 255 L467 295Z" fill="#a8cfde"/>
+    <!-- Top face of the rectangular prism. -->
+    <path d="M165 113 L245 73 L570 173 L490 213Z" fill="#e0eff5" />
+    <!-- Front face of the rectangular prism. -->
+    <path d="M165 113 L490 213 L467 295 L142 195Z" fill="url(#front)" />
+    <!-- Right end face of the rectangular prism. -->
+    <path d="M490 213 L570 173 L547 255 L467 295Z" fill="#a8cfde" />
   </g>
-  <path d="M80 160 L80 40 L645 214 L645 334" fill="none" stroke="#dc4455" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <!-- Visible dotted edges of the longitudinal bending plane. -->
+  <path d="M80 160 L80 40 L645 214 L645 334" fill="none" stroke="#dc4455" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" />
   <g fill="none" stroke="#dc4455" stroke-width="5" stroke-linecap="round" marker-end="url(#momentArrow)">
-    <path d="M131 179 C89 174 95 96 135 104 C148 106 154 118 154 131" transform="translate(0 -30)"/>
-    <path d="M565 258 C568 270 577 279 591 279 C629 279 634 208 590 201" transform="translate(0 20)"/>
+    <!-- Left applied moment arrow; transform adjusts its vertical position. -->
+    <path d="M131 179 C89 174 95 96 135 104 C148 106 154 118 154 131" transform="translate(0 -30)" />
+    <!-- Right applied moment arrow, opposite to the left couple. -->
+    <path d="M565 258 C568 270 577 279 591 279 C629 279 634 208 590 201" transform="translate(0 20)" />
   </g>
   <g font-family="Georgia, serif" font-style="italic" font-size="30" fill="#dc4455">
-    <text x="120" y="40">M′</text><text x="595" y="187">M</text>
+    <!-- Label: M′ -->
+    <text x="120" y="40">M′</text>
+    <!-- Label: M -->
+    <text x="595" y="187">M</text>
   </g>
   <g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49">
-    <text x="131" y="238">A</text><text x="454" y="336">B</text>
+    <!-- Label: A -->
+    <text x="131" y="238">A</text>
+    <!-- Label: B -->
+    <text x="454" y="336">B</text>
   </g>
 </svg>

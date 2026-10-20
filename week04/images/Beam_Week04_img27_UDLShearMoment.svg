@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc"><title id="title">UDL shear-force and bending-moment diagrams</title><desc id="desc">Shear decreases linearly from plus wL/2 at A to minus wL/2 at B, crossing zero at midspan. Positive bending moment is parabolic, zero at A and B and maximum wL squared over 8 at midspan.</desc>
+<defs><marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker><marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#dc4455" stroke="none"/></marker><marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker></defs><rect width="1000" height="500" fill="white"/>
+<!-- Linear shear distribution and parabolic positive moment distribution. -->
+<path d="M120 110 V50 L750 170 V110Z" fill="#e5effb"/>
+<path d="M120 110 V50 L750 170 V110" fill="none" stroke="#246bd2" stroke-width="3"/>
+<path d="M120 420 Q435 180 750 420Z" fill="#e5effb"/>
+<path d="M120 420 Q435 180 750 420" fill="none" stroke="#246bd2" stroke-width="3"/>
+<!-- Zero axes and midspan guides. -->
+<g fill="none" stroke="#475569" stroke-width="1.5"><path d="M90 110 H815 M120 195 V40 M90 420 H815 M120 450 V270"/></g>
+<path d="M435 110 V195 M435 300 V450" fill="none" stroke="#929ba4" stroke-width="1.5" stroke-dasharray="6 6"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#253d49"><text x="120" y="25">Shear-force diagram</text><text x="120" y="250">Bending-moment diagram</text></g>
+<g font-family="Georgia, serif" font-style="italic" font-size="25" fill="#253d49"><text x="82" y="48">V</text><text x="82" y="280">M</text><text x="830" y="119">x</text><text x="830" y="429">x</text><text x="95" y="141">0</text><text x="95" y="451">0</text><text x="740" y="95">L</text><text x="740" y="405">L</text><text x="420" y="219">L/2</text><text x="420" y="479">L/2</text><text x="145" y="44">+wL/2</text><text x="765" y="179">−wL/2</text><text x="445" y="287">wL²/8</text></g>
+</svg>
