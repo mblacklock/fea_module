@@ -1,46 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" role="img" aria-labelledby="title description">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Reducing the global stiffness matrix using zero-displacement boundary conditions</title>
   <desc id="description">The global stiffness matrix with factor k outside. Columns 1, 2, 5 and 6 multiply prescribed zero displacements. Rows 1, 2, 5 and 6 contain unknown support reactions and are set aside while solving for displacements. Rows and columns 3 and 4 form the highlighted two by two identity matrix for the unknown displacements u2 and v2 and the known applied loads. The full equations are retained for calculating reactions.</desc>
-  <rect width="800" height="550" fill="white"/>
+  <!-- White canvas background. -->
+  <rect width="800" height="550" fill="white" />
   <g font-family="Arial, Helvetica, sans-serif" fill="#171717" text-anchor="middle">
-    <text x="400" y="30" font-size="23">Retain rows and columns 3 and 4</text>
+    <!-- Label: Retain rows and columns 3 and 4 -->
+    <text x="400" y="30" font-size="23">Retain rows and columns 3 and 4</text><!-- Row and column indices. -->
     <g font-size="20" fill="#647080">
-      <text x="250" y="60">1</text><text x="310" y="60">2</text>
-      <text x="370" y="60">3</text><text x="430" y="60">4</text>
-      <text x="490" y="60">5</text><text x="550" y="60">6</text>
-      <text x="95" y="133">1</text><text x="95" y="193">2</text>
-      <text x="95" y="253">3</text><text x="95" y="313">4</text>
-      <text x="95" y="373">5</text><text x="95" y="433">6</text>
-    </g>
+      <!-- Label: 1 -->
+      <text x="250" y="60">1</text><!-- Label: 2 -->
+      <text x="310" y="60">2</text><!-- Label: 3 -->
+      <text x="370" y="60">3</text><!-- Label: 4 -->
+      <text x="430" y="60">4</text><!-- Label: 5 -->
+      <text x="490" y="60">5</text><!-- Label: 6 -->
+      <text x="550" y="60">6</text><!-- Label: 1 -->
+      <text x="95" y="133">1</text><!-- Label: 2 -->
+      <text x="95" y="193">2</text><!-- Label: 3 -->
+      <text x="95" y="253">3</text><!-- Label: 4 -->
+      <text x="95" y="313">4</text><!-- Label: 5 -->
+      <text x="95" y="373">5</text><!-- Label: 6 -->
+      <text x="95" y="433">6</text></g>
+    <!-- Displacement column labels, force row labels and stiffness factor. -->
     <g font-size="24" font-style="italic">
-      <text x="250" y="88">u₁</text><text x="310" y="88">v₁</text>
-      <text x="370" y="88" fill="#087a50">u₂</text><text x="430" y="88" fill="#087a50">v₂</text>
-      <text x="490" y="88">u₃</text><text x="550" y="88">v₃</text>
-      <text x="145" y="133">f₁ₓ</text><text x="145" y="193">f₁ᵧ</text>
-      <text x="145" y="253" fill="#087a50">f₂ₓ</text><text x="145" y="313" fill="#087a50">f₂ᵧ</text>
-      <text x="145" y="373">f₃ₓ</text><text x="145" y="433">f₃ᵧ</text>
-      <text x="195" y="288" font-size="32">k</text>
-    </g>
+      <!-- Label: u₁ -->
+      <text x="250" y="88">u₁</text><!-- Label: v₁ -->
+      <text x="310" y="88">v₁</text><!-- Label: u₂ -->
+      <text x="370" y="88" fill="#087a50">u₂</text><!-- Label: v₂ -->
+      <text x="430" y="88" fill="#087a50">v₂</text><!-- Label: u₃ -->
+      <text x="490" y="88">u₃</text><!-- Label: v₃ -->
+      <text x="550" y="88">v₃</text><!-- Label: f₁ₓ -->
+      <text x="145" y="133">f₁ₓ</text><!-- Label: f₁ᵧ -->
+      <text x="145" y="193">f₁ᵧ</text><!-- Label: f₂ₓ -->
+      <text x="145" y="253" fill="#087a50">f₂ₓ</text><!-- Label: f₂ᵧ -->
+      <text x="145" y="313" fill="#087a50">f₂ᵧ</text><!-- Label: f₃ₓ -->
+      <text x="145" y="373">f₃ₓ</text><!-- Label: f₃ᵧ -->
+      <text x="145" y="433">f₃ᵧ</text><!-- Label: k -->
+      <text x="195" y="288" font-size="32">k</text></g>
   </g>
-  <rect x="340" y="215" width="120" height="120" rx="5" fill="#e0f3ea" stroke="#087a50" stroke-width="3"/>
+  <!-- Highlight the retained two-by-two free-displacement stiffness block. -->
+  <rect x="340" y="215" width="120" height="120" rx="5" fill="#e0f3ea" stroke="#087a50" stroke-width="3" />
+  <!-- Numerical entries of the six-by-six global stiffness matrix. -->
   <g font-family="DejaVu Serif, Georgia, serif" font-size="28" text-anchor="middle" fill="#171717">
-    <text y="134"><tspan x="250">1</tspan><tspan x="310">0</tspan><tspan x="370">−1</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text>
-    <text y="194"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text>
-    <text y="254"><tspan x="250">−1</tspan><tspan x="310">0</tspan><tspan x="370">1</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text>
-    <text y="314"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">1</tspan><tspan x="490">0</tspan><tspan x="550">−1</tspan></text>
-    <text y="374"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text>
-    <text y="434"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">−1</tspan><tspan x="490">0</tspan><tspan x="550">1</tspan></text>
-  </g>
+    <!-- Label: 10−1000 -->
+    <text y="134"><tspan x="250">1</tspan><tspan x="310">0</tspan><tspan x="370">−1</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text><!-- Label: 000000 -->
+    <text y="194"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text><!-- Label: −101000 -->
+    <text y="254"><tspan x="250">−1</tspan><tspan x="310">0</tspan><tspan x="370">1</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text><!-- Label: 00010−1 -->
+    <text y="314"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">1</tspan><tspan x="490">0</tspan><tspan x="550">−1</tspan></text><!-- Label: 000000 -->
+    <text y="374"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">0</tspan><tspan x="490">0</tspan><tspan x="550">0</tspan></text><!-- Label: 000−101 -->
+    <text y="434"><tspan x="250">0</tspan><tspan x="310">0</tspan><tspan x="370">0</tspan><tspan x="430">−1</tspan><tspan x="490">0</tspan><tspan x="550">1</tspan></text></g>
+  <!-- Left and right brackets around the global stiffness matrix. -->
   <g fill="none" stroke="#171717" stroke-width="3">
-    <path d="M230 102 H218 V450 H230"/>
-    <path d="M570 102 H582 V450 H570"/>
+    <path d="M230 102 H218 V450 H230" />
+    <path d="M570 102 H582 V450 H570" />
   </g>
+  <!-- Cross out reaction-force rows and prescribed zero-displacement columns. -->
   <g stroke="#ce3c3c" stroke-width="4" opacity="0.55" stroke-linecap="round">
-    <path d="M232 125 H568 M232 185 H568 M232 365 H568 M232 425 H568"/>
-    <path d="M250 103 V448 M310 103 V448 M490 103 V448 M550 103 V448"/>
+    <path d="M232 125 H568 M232 185 H568 M232 365 H568 M232 425 H568" />
+    <path d="M250 103 V448 M310 103 V448 M490 103 V448 M550 103 V448" />
   </g>
   <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-size="20">
-    <text x="400" y="492" fill="#087a50">Green block: solve for u₂ and v₂.</text>
-    <text x="400" y="525" fill="#171717">Keep the full equations to calculate support reactions afterwards.</text>
-  </g>
+    <!-- Label: Green block: solve for u₂ and v₂. -->
+    <text x="400" y="492" fill="#087a50">Green block: solve for u₂ and v₂.</text><!-- Label: Keep the full equations to calculate support reactions afterwards. -->
+    <text x="400" y="525" fill="#171717">Keep the full equations to calculate support reactions afterwards.</text></g>
 </svg>

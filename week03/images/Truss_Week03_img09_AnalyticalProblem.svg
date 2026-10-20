@@ -1,39 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 570" role="img" aria-labelledby="title description">
+  <!-- Feature guide: comments identify the drawn features. SVG x increases rightwards; y increases downwards. -->
   <title id="title">Analytical problem: two-element 2D truss</title>
   <desc id="description">Node 1 at the upper left and node 3 at the lower left are fixed in x and y. Node 2 is free at the upper right. Element 1, area A1, connects nodes 1 and 2 horizontally. Element 2, area A2, connects nodes 3 and 2 diagonally. The horizontal dimension is B and vertical dimension is H. A downward load P acts at node 2.</desc>
   <defs>
     <marker id="analyticalLoadArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10Z" fill="#b51931"/>
+      <path d="M0 0 L10 5 L0 10Z" fill="#b51931" />
     </marker>
     <marker id="analyticalAxisArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10Z" fill="#647080"/>
+      <path d="M0 0 L10 5 L0 10Z" fill="#647080" />
     </marker>
   </defs>
-  <rect width="740" height="570" fill="white"/>
+  <rect width="740" height="570" fill="white" />
   <!-- Supports restrain both translations at nodes 1 and 3. -->
   <g stroke="#171717" stroke-width="2" fill="#e1e5e9">
-    <path d="M158 115 L130 95 L130 135 Z"/>
-    <path d="M158 435 L130 415 L130 455 Z"/>
-    <path d="M130 80 V150 M130 400 V470" fill="none"/>
+    <path d="M158 115 L130 95 L130 135 Z" />
+    <path d="M158 435 L130 415 L130 455 Z" />
+    <path d="M130 80 V150 M130 400 V470" fill="none" />
   </g>
   <g stroke="#8b949d" stroke-width="1.5">
-    <path d="M118 88 L130 100 M118 103 L130 115 M118 118 L130 130 M118 133 L130 145"/>
-    <path d="M118 408 L130 420 M118 423 L130 435 M118 438 L130 450 M118 453 L130 465"/>
+    <path d="M118 88 L130 100 M118 103 L130 115 M118 118 L130 130 M118 133 L130 145" />
+    <path d="M118 408 L130 420 M118 423 L130 435 M118 438 L130 450 M118 453 L130 465" />
   </g>
   <!-- Members -->
-  <line x1="160" y1="115" x2="640" y2="115" stroke="#2196a1" stroke-width="12" stroke-linecap="round"/>
-  <line x1="160" y1="435" x2="640" y2="115" stroke="#6b7c8d" stroke-width="12" stroke-linecap="round"/>
+  <line x1="160" y1="115" x2="640" y2="115" stroke="#2196a1" stroke-width="12" stroke-linecap="round" />
+  <line x1="160" y1="435" x2="640" y2="115" stroke="#6b7c8d" stroke-width="12" stroke-linecap="round" />
   <!-- Applied load -->
-  <line x1="640" y1="126" x2="640" y2="235" stroke="#b51931" stroke-width="3" marker-end="url(#analyticalLoadArrow)"/>
+  <line x1="640" y1="126" x2="640" y2="235" stroke="#b51931" stroke-width="3" marker-end="url(#analyticalLoadArrow)" />
   <g fill="#171717">
-    <circle cx="160" cy="115" r="9"/>
-    <circle cx="640" cy="115" r="9"/>
-    <circle cx="160" cy="435" r="9"/>
+    <circle cx="160" cy="115" r="9" />
+    <circle cx="640" cy="115" r="9" />
+    <circle cx="160" cy="435" r="9" />
   </g>
   <!-- Dimensions -->
   <g stroke="#737b83" stroke-width="1.5" fill="none">
-    <path d="M160 485 H640 M160 476 V494 M640 476 V494"/>
-    <path d="M100 115 V435 M91 115 H109 M91 435 H109"/>
+    <path d="M160 485 H640 M160 476 V494 M640 476 V494" />
+    <path d="M100 115 V435 M91 115 H109 M91 435 H109" />
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#171717">
     <text x="164" y="91">1</text>
@@ -47,11 +48,12 @@
   </g>
   <!-- Global axis directions -->
   <g stroke="#647080" stroke-width="1.7" fill="none">
-    <path d="M55 527 H100" marker-end="url(#analyticalAxisArrow)"/>
-    <path d="M55 527 V482" marker-end="url(#analyticalAxisArrow)"/>
+    <path d="M55 527 H100" marker-end="url(#analyticalAxisArrow)" />
+    <path d="M55 527 V482" marker-end="url(#analyticalAxisArrow)" />
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#647080">
-    <text x="109" y="532">x</text><text x="49" y="471">y</text>
+    <text x="109" y="532">x</text>
+    <text x="49" y="471">y</text>
     <text x="710" y="555" text-anchor="end" font-size="15">Not to scale</text>
   </g>
 </svg>
