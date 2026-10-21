@@ -42,3 +42,13 @@ This example uses a 1000 mm bar with a 10 mm² cross-section, an elastic modulus
 **Week 3:** @[course(Introduction to ABAQUS CAE: 2D truss elements)](Topic1/Truss2DCAE/Truss2DCAE.md) — create a two-element 2D truss using both an input file and CAE.
 
 @[course(Week 3 lesson)](../week03/week03.md)
+
+## Topic 2: Bending and beam elements
+
+**First used in Week 5.** @[course(Open the Topic 2 tutorials)](Topic2/README.md).
+
+1. @[course(Beam elements in ABAQUS)](Topic2/BeamElements/BeamElements.md) — build a cantilever using an input file and CAE.
+2. @[course(Mesh convergence in ABAQUS)](Topic2/MeshConvergence/MeshConvergence.md) — refine the cantilever mesh and compare linear and cubic beam formulations.
+3. @[course(Distributed loads in ABAQUS)](Topic2/DistributedLoads/DistributedLoads.md) — apply a distributed beam load using an input file and CAE.
+
+@[course(Week 5 lesson)](../week05/week05.md)

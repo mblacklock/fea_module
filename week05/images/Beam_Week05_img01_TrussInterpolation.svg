@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+<title id="title">Displacement interpolation within a two-node truss element</title><desc id="desc">Node 1 at x zero has zero axial displacement. Node 2 at x equals L has displacement 6 mm. The displacement halfway along the element is interpolated from these nodal values; it is not an extra mesh node.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker></defs><rect width="1000" height="320" fill="white"/>
+<!-- Undeformed element with two mesh nodes and an interior evaluation position. -->
+<path d="M140 100 H780" stroke="#253d49" stroke-width="5"/>
+<circle cx="140" cy="100" r="7" fill="#253d49"/><circle cx="780" cy="100" r="7" fill="#253d49"/>
+<path d="M460 85 V205" stroke="#929ba4" stroke-width="1.5" stroke-dasharray="6 6"/>
+<!-- Axial displacement arrows, separate from the undeformed geometry. -->
+<path d="M460 170 H505" fill="none" stroke="#246bd2" stroke-width="3.5" marker-end="url(#arrow)"/>
+<path d="M780 170 H870" fill="none" stroke="#246bd2" stroke-width="3.5" marker-end="url(#arrow)"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49"><text x="140" y="55" text-anchor="middle">Node 1</text><text x="780" y="55" text-anchor="middle">Node 2</text><text x="460" y="270" text-anchor="middle">Evaluate displacement here; no extra node is needed.</text></g>
+<g font-family="Georgia, serif" font-style="italic" font-size="28" fill="#253d49"><text x="140" y="210" text-anchor="middle">u₁ = 0</text><text x="515" y="184" fill="#246bd2">u(x)</text><text x="780" y="210">u₂ = 6 mm</text><text x="140" y="140" text-anchor="middle">x = 0</text><text x="460" y="140" text-anchor="middle">L/2</text><text x="780" y="140" text-anchor="middle">L</text></g></svg>
