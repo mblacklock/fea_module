@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 410" role="img" aria-label="Local planar beam stiffness matrix">
+<rect width="1280" height="410" fill="white"/>
+<!-- Coloured cells distinguish axial stiffness, bending stiffness and uncoupled zero entries. -->
+<rect x='160' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>EA/L</text>
+<rect x='340' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='520' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='700' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−EA/L</text>
+<rect x='880' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='1060' y='25' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='65' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='160' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='340' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>12EI/L³</text>
+<rect x='520' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>6EI/L²</text>
+<rect x='700' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='880' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−12EI/L³</text>
+<rect x='1060' y='85' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='125' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>6EI/L²</text>
+<rect x='160' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='340' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>6EI/L²</text>
+<rect x='520' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>4EI/L</text>
+<rect x='700' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='880' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−6EI/L²</text>
+<rect x='1060' y='145' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='185' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>2EI/L</text>
+<rect x='160' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−EA/L</text>
+<rect x='340' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='520' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='700' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>EA/L</text>
+<rect x='880' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='1060' y='205' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='245' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='160' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='340' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−12EI/L³</text>
+<rect x='520' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−6EI/L²</text>
+<rect x='700' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='880' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>12EI/L³</text>
+<rect x='1060' y='265' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='305' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−6EI/L²</text>
+<rect x='160' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='250' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='340' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='430' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>6EI/L²</text>
+<rect x='520' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='610' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>2EI/L</text>
+<rect x='700' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='790' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>0</text>
+<rect x='880' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='970' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>−6EI/L²</text>
+<rect x='1060' y='325' width='180' height='60' fill='#ffffff'/>
+<text x='1150' y='365' text-anchor='middle' font-family='Cambria, Georgia, serif' font-style='italic' font-size='29'>4EI/L</text>
+<!-- Matrix label and enclosing brackets. -->
+<text x="20" y="217" font-family="Cambria, Georgia, serif" font-size="35" font-style="italic">k<tspan baseline-shift="super" font-size="22">(e)</tspan> =</text>
+<path d="M151 25 H137 V385 H151 M1249 25 H1263 V385 H1249" fill="none" stroke="#222" stroke-width="2.5"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" role="img" aria-label="Two blank axes for sketching the truss shape functions N1 and N2 from x equals zero to L">
+  <defs>
+    <marker id="axis-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#333" stroke="none"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="330" fill="white"/>
+  <!-- First blank coordinate system for drawing in class. -->
+  <g transform="translate(65 0)" font-family="Cambria, Georgia, serif" font-size="25" fill="#333">
+    <path d="M40 265 V45" fill="none" stroke="#333" stroke-width="2" marker-end="url(#axis-arrow)"/>
+    <path d="M40 265 H460" fill="none" stroke="#333" stroke-width="2" marker-end="url(#axis-arrow)"/>
+    <text x="22" y="295">0</text>
+    <text x="473" y="274" font-style="italic">x</text>
+    <text x="17" y="30" font-style="italic">N<tspan baseline-shift="sub" font-size="18">1</tspan>(x)</text>
+  </g>
+  <!-- Second blank coordinate system, using the same scales as the first. -->
+  <g transform="translate(615 0)" font-family="Cambria, Georgia, serif" font-size="25" fill="#333">
+    <path d="M40 265 V45" fill="none" stroke="#333" stroke-width="2" marker-end="url(#axis-arrow)"/>
+    <path d="M40 265 H460" fill="none" stroke="#333" stroke-width="2" marker-end="url(#axis-arrow)"/>
+    <text x="22" y="295">0</text>
+    <text x="473" y="274" font-style="italic">x</text>
+    <text x="17" y="30" font-style="italic">N<tspan baseline-shift="sub" font-size="18">2</tspan>(x)</text>
+  </g>
+</svg>

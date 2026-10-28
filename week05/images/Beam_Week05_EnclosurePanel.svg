@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-label="Thin enclosure panel secured along four edges with pressure acting perpendicular to its surface">
+<defs><marker id="pressure" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker></defs>
+<rect width="1000" height="360" fill="white"/>
+<!-- Perspective view of a thin panel and its perimeter attachment frame. -->
+<path d="M200 145 L690 145 L825 295 L335 295 Z" fill="#dceaf1" stroke="#747f89" stroke-width="12" stroke-linejoin="round"/>
+<!-- Fastener symbols indicate attachment along all four edges. -->
+<g fill="white" stroke="#253d49" stroke-width="2"><circle cx="220" cy="145" r="5"/><circle cx="450" cy="145" r="5"/><circle cx="670" cy="145" r="5"/><circle cx="275" cy="228" r="5"/><circle cx="752" cy="214" r="5"/><circle cx="355" cy="295" r="5"/><circle cx="570" cy="295" r="5"/><circle cx="800" cy="295" r="5"/></g>
+<!-- Pressure arrows act normal to the panel face, shown in perspective. -->
+<path d="M350 65 V185 M490 65 V185 M630 65 V185 M410 115 V245 M550 115 V245 M690 115 V245" stroke="#246bd2" stroke-width="3" marker-end="url(#pressure)"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49" text-anchor="middle"><text x="500" y="40" fill="#246bd2">Pressure across the panel face</text><text x="535" y="340">Thin panel secured around all four edges</text></g>
+</svg>

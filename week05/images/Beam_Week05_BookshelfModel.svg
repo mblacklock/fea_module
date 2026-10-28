@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 320" role="img" aria-label="Slender bookshelf with distributed book loading and end supports, with rectangular cross-section">
+<defs><marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker></defs>
+<rect width="1100" height="320" fill="white"/>
+<!-- Shelf and idealised end supports, with rotation free. -->
+<rect x="120" y="157" width="620" height="23" fill="#cfb995" stroke="#253d49" stroke-width="2"/>
+<path d="M145 181 L125 216 H165 Z M715 181 L695 216 H735 Z" fill="#e3dfcf" stroke="#747f89" stroke-width="1.5"/>
+<g fill="white" stroke="#747f89" stroke-width="1.5"><circle cx="702" cy="224" r="5"/><circle cx="728" cy="224" r="5"/></g>
+<!-- Distributed weight of the books. -->
+<path d="M145 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M240 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M335 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M430 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M525 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M620 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<path d="M715 75 V144" stroke="#246bd2" stroke-width="3" marker-end="url(#load)"/>
+<!-- Section inset shows its width and vertical depth. -->
+<rect x="850" y="157" width="150" height="23" fill="#cfb995" stroke="#253d49" stroke-width="2"/>
+<path d="M850 211 H1000 M850 204 V218 M1000 204 V218 M1025 157 V180 M1018 157 H1032 M1018 180 H1032" fill="none" stroke="#747f89" stroke-width="1.5"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49" text-anchor="middle"><text x="430" y="48">Weight of books</text><text x="430" y="277">Shelf span</text><text x="925" y="120">Cross-section</text><text x="925" y="247">b</text><text x="1050" y="178">h</text></g>
+</svg>

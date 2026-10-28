@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-label="Mesh convergence comparison: linear and cubic beam free-end displacement versus element size"><desc>Vector recreation of the tutorial chart, using points read from its graphic; this is not a new ABAQUS analysis.</desc><rect width="900" height="560" fill="white"/><g font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#384955">
+<!-- Horizontal grid and signed displacement scale. -->
+<path d='M130 45 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='53' text-anchor='end'>-2.0</text>
+<path d='M130 113 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='121' text-anchor='end'>-2.1</text>
+<path d='M130 181 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='189' text-anchor='end'>-2.2</text>
+<path d='M130 249 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='257' text-anchor='end'>-2.3</text>
+<path d='M130 317 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='325' text-anchor='end'>-2.4</text>
+<path d='M130 385 H830' stroke='#dfe4e8' stroke-width='1'/><text x='112' y='393' text-anchor='end'>-2.5</text>
+<path d="M130 45 V385 H830" fill="none" stroke="#87939d" stroke-width="1.6"/>
+<text x='130' y='421' text-anchor='middle'>0</text>
+<text x='363.333333333333' y='421' text-anchor='middle'>100</text>
+<text x='596.666666666667' y='421' text-anchor='middle'>200</text>
+<text x='830' y='421' text-anchor='middle'>300</text>
+<text x="480" y="465" text-anchor="middle">Element size (mm)</text><text x="36" y="215" text-anchor="middle" transform="rotate(-90 36 215)">Free-end displacement (mm)</text>
+<!-- Linear and cubic series, reproduced from the tutorial graphic. -->
+<path d="M249 312.92 L427.5 292.52 L725 220.44" fill="none" stroke="#438dcc" stroke-width="3"/><g fill="#438dcc"><circle cx="249" cy="312.92" r="6"/><circle cx="427.5" cy="292.52" r="6"/><circle cx="725" cy="220.44" r="6"/></g><path d="M249 312.92 H725" fill="none" stroke="#ec7826" stroke-width="3"/><g fill="#ec7826"><circle cx="249" cy="312.92" r="6"/><circle cx="427.5" cy="312.92" r="6"/><circle cx="725" cy="312.92" r="6"/></g>
+<!-- Legend. --><path d="M145 515 H195" stroke="#438dcc" stroke-width="3"/><circle cx="170" cy="515" r="6" fill="#438dcc"/><text x="209" y="523">Linear shape functions</text><path d="M500 515 H550" stroke="#ec7826" stroke-width="3"/><circle cx="525" cy="515" r="6" fill="#ec7826"/><text x="564" y="523">Cubic shape functions</text></g></svg>

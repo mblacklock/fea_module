@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 370" role="img" aria-labelledby="title desc">
+  <title id="title">Interpolated axial displacement in one two-node truss element</title>
+  <desc id="desc">The axial displacement increases linearly from zero millimetres at node 1 to six millimetres at node 2. At one-third of the length it is two millimetres. The continuous colours show interpolation within a single element, not additional mesh nodes.</desc>
+  <defs>
+    <linearGradient id="displacement" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2446b8"/>
+      <stop offset="25%" stop-color="#18b8da"/>
+      <stop offset="50%" stop-color="#5ac765"/>
+      <stop offset="75%" stop-color="#f5cf42"/>
+      <stop offset="100%" stop-color="#d93232"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="370" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#253d49" text-anchor="middle">
+    <text x="550" y="35" font-size="25">Axial displacement u (mm)</text>
+    <!-- A single element coloured by its interpolated displacement, on the undeformed geometry. -->
+    <rect x="130" y="125" width="840" height="65" fill="url(#displacement)" stroke="#253d49" stroke-width="2"/>
+    <circle cx="130" cy="157.5" r="7" fill="white" stroke="#253d49" stroke-width="2"/>
+    <circle cx="970" cy="157.5" r="7" fill="white" stroke="#253d49" stroke-width="2"/>
+    <text x="130" y="83" font-size="23">Node 1</text>
+    <text x="130" y="110" font-size="23">u₁ = 0 mm</text>
+    <text x="970" y="83" font-size="23">Node 2</text>
+    <text x="970" y="110" font-size="23">u₂ = 6 mm</text>
+    <!-- Interior evaluation location; the dashed guide is not a mesh node or boundary. -->
+    <path d="M410 115 V220" stroke="#253d49" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="410" y="246" font-size="23">u = 2 mm</text>
+    <!-- Colour legend uses the same linear scale as the element. -->
+    <rect x="250" y="282" width="600" height="22" fill="url(#displacement)" stroke="#253d49"/>
+    <g font-size="20">
+      <text x="250" y="329">0</text><text x="350" y="329">1</text>
+      <text x="450" y="329">2</text><text x="550" y="329">3</text>
+      <text x="650" y="329">4</text><text x="750" y="329">5</text>
+      <text x="850" y="329">6 mm</text>
+    </g>
+    <text x="550" y="361" font-size="19">One element · two nodes · colours shown on the undeformed geometry</text>
+  </g>
+</svg>

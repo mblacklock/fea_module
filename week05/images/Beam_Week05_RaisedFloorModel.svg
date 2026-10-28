@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-label="Isometric raised-floor panel with pin supports at its four corners and distributed vertical loading">
+  <defs>
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker>
+  </defs>
+  <rect width="1000" height="600" fill="white"/>
+  <!-- Square panel in isometric projection: both horizontal directions lie at 30 degrees. -->
+  <path d="M500 140 L780 301.66 L500 463.32 L220 301.66 Z" fill="#dceaf1" stroke="#253d49" stroke-width="2.5"/>
+  <!-- Visible front edges show the panel thickness. -->
+  <path d="M220 301.66 L500 463.32 L780 301.66 V309.66 L500 471.32 L220 309.66 Z" fill="#b9cbd7" stroke="#253d49" stroke-width="2"/>
+  <path d="M500 463.32 V471.32" stroke="#253d49" stroke-width="2"/>
+  <!-- Pin-support symbols identify idealised corner supports; these are not physical legs. -->
+  <g fill="#e3dfcf" stroke="#697681" stroke-width="2">
+    <path d="M500 140 L482 171 H518 Z"/>
+    <path d="M780 309.66 L762 340.66 H798 Z"/>
+    <path d="M500 471.32 L482 502.32 H518 Z"/>
+    <path d="M220 309.66 L202 340.66 H238 Z"/>
+  </g>
+  <g fill="white" stroke="#253d49" stroke-width="2">
+    <circle cx="500" cy="140" r="4"/><circle cx="780" cy="309.66" r="4"/>
+    <circle cx="500" cy="471.32" r="4"/><circle cx="220" cy="309.66" r="4"/>
+  </g>
+  <!-- Ground lines beneath the pin symbols. -->
+  <path d="M476 175 H524 M756 344.66 H804 M476 506.32 H524 M196 344.66 H244" fill="none" stroke="#697681" stroke-width="2"/>
+  <!-- Equal-length load arrows on a regular 3 by 3 grid in the panel's isometric plane. -->
+  <g fill="none" stroke="#246bd2" stroke-width="3" marker-end="url(#load)">
+    <path d="M500 185.83 V220.83"/>
+    <path d="M570 226.25 V261.25"/>
+    <path d="M640 266.66 V301.66"/>
+    <path d="M430 226.25 V261.25"/>
+    <path d="M500 266.66 V301.66"/>
+    <path d="M570 307.08 V342.08"/>
+    <path d="M360 266.66 V301.66"/>
+    <path d="M430 307.08 V342.08"/>
+    <path d="M500 347.49 V382.49"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#253d49" text-anchor="middle">
+    <text x="500" y="48" fill="#246bd2">Distributed floor loading</text>
+    <text x="500" y="559">One panel with idealised pin supports at its four corners</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" role="img" aria-label="Rigid platform suspended by cables from an overhead support under a central vertical load">
+<defs><marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker></defs>
+<rect width="1000" height="350" fill="white"/>
+<!-- Overhead support, slender suspension cables and rigid platform. -->
+<path d="M210 45 H790" stroke="#747f89" stroke-width="12"/>
+<!-- Short attachments connect the upper pins to the overhead support. -->
+<path d="M300 51 V65 M700 51 V65" stroke="#747f89" stroke-width="5"/>
+<text x="500" y="27" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49">Overhead support</text>
+<path d="M300 65 V220 M700 65 V220" stroke="#168b98" stroke-width="7"/>
+<rect x="220" y="225" width="560" height="25" fill="#b9cbd7" stroke="#253d49" stroke-width="2"/>
+<!-- Freely rotating pin connections at both ends of each rod. -->
+<g fill="white" stroke="#253d49" stroke-width="2.5"><circle cx="300" cy="65" r="8"/><circle cx="700" cy="65" r="8"/><circle cx="300" cy="220" r="8"/><circle cx="700" cy="220" r="8"/></g>
+<!-- Downward platform load. -->
+<path d="M500 252 V315" stroke="#246bd2" stroke-width="3.5" marker-end="url(#load)"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49"><text x="330" y="145">Cable</text><text x="725" y="145">Cable</text><text x="230" y="287">Platform</text><text x="520" y="311" fill="#246bd2">Load</text></g>
+</svg>

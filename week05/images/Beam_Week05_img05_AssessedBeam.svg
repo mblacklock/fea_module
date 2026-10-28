@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 370" role="img" aria-labelledby="title desc"><title id="title">Assessed cantilever beam with a uniformly distributed load</title><desc id="desc">An aluminium cantilever of length A mm is fixed at the left end and carries a downward distributed load D N per metre. Rectangular section width is B mm and depth C mm. Youngs modulus is 69 GPa and Poissons ratio is 0.27. The original assessment diagram uses x along the beam and z vertically.</desc><defs><marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker><marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker></defs><rect width="1120" height="370" fill="white"/>
+<!-- Cantilever geometry and uniform applied load from the assessment brief. -->
+<rect x="125" y="125" width="25" height="120" fill="#ded9c5"/>
+<rect x="150" y="160" width="580" height="40" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+<path d="M160 100 H730" fill="none" stroke="#246bd2" stroke-width="2"/>
+<g fill="none" stroke="#246bd2" stroke-width="3" marker-end="url(#force)"><path d="M160 100 V154"/><path d="M217 100 V154"/><path d="M274 100 V154"/><path d="M331 100 V154"/><path d="M388 100 V154"/><path d="M445 100 V154"/><path d="M502 100 V154"/><path d="M559 100 V154"/><path d="M616 100 V154"/><path d="M673 100 V154"/><path d="M730 100 V154"/></g>
+<!-- Overall length and rectangular section dimensions. -->
+<path d="M150 265 H730" fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"/>
+<rect x="385" y="245" width="110" height="36" fill="white"/>
+<rect x="850" y="160" width="50" height="100" fill="#c3dce8" stroke="#4986a1" stroke-width="2"/>
+<g fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"><path d="M850 125 H900"/><path d="M935 160 V260"/></g>
+<!-- Small axes retain the vertical z label used in the assessment diagram. -->
+<path d="M40 295 H95 M40 295 V240" fill="none" stroke="#475569" stroke-width="1.5"/>
+<path d="M89 291 L95 295 L89 299 M36 246 L40 240 L44 246" fill="none" stroke="#475569" stroke-width="1.5"/>
+<g font-family="Georgia, serif" font-style="italic" font-size="28" fill="#253d49"><text x="350" y="73" fill="#246bd2">q = [D] N/m</text><text x="390" y="273">[A] mm</text><text x="825" y="108">[B] mm</text><text x="955" y="217">[C] mm</text><text x="102" y="305">x</text><text x="27" y="230">z</text></g>
+<text x="185" y="335" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#253d49">Aluminium: E = 69 GPa, ν = 0.27</text></svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 325" role="img" aria-labelledby="title desc"><title id="title">Two equal beam elements in a cantilever</title><desc id="desc">Nodes 1, 2 and 3 lie on a horizontal cantilever fixed at node 1. Elements 1 and 2 each have length L and the same EI. A downward force P acts at node 3. Node 2 is shared.</desc><defs><marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#246bd2" stroke="none"/></marker><marker id="dim" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#475569" stroke-width="1.5"/></marker></defs><rect width="1000" height="325" fill="white"/>
+<!-- Fixed support and the two connected elements. -->
+<rect x="115" y="75" width="25" height="135" fill="#ded9c5"/>
+<path d="M140 140 H470" stroke="#246bd2" stroke-width="8"/><path d="M470 140 H800" stroke="#d73535" stroke-width="8"/>
+<g fill="#253d49"><circle cx="140" cy="140" r="7"/><circle cx="470" cy="140" r="7"/><circle cx="800" cy="140" r="7"/></g>
+<!-- Applied load at node 3 and individual element lengths. -->
+<path d="M800 50 V130" fill="none" stroke="#246bd2" stroke-width="3.5" marker-end="url(#force)"/>
+<g fill="none" stroke="#475569" stroke-width="1.5" marker-start="url(#dim)" marker-end="url(#dim)"><path d="M140 235 H470"/><path d="M470 235 H800"/></g>
+<rect x="290" y="217" width="30" height="32" fill="white"/><rect x="620" y="217" width="30" height="32" fill="white"/>
+<g font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#253d49"><text x="140" y="183" text-anchor="middle">1</text><text x="470" y="183" text-anchor="middle">2</text><text x="800" y="183" text-anchor="middle">3</text><text x="290" y="112" fill="#246bd2">Element 1</text><text x="620" y="112" fill="#d73535">Element 2</text></g>
+<g font-family="Georgia, serif" font-style="italic" font-size="28" fill="#253d49"><text x="298" y="244">L</text><text x="628" y="244">L</text><text x="825" y="64" fill="#246bd2">P</text><text x="430" y="54">EI constant</text><text x="140" y="300">v₁ = φ₁ = 0</text></g></svg>

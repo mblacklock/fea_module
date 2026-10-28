@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Interpolated transverse displacement within one beam element</title>
+  <desc id="desc">One beam element of length 300 mm has left-end displacement and rotation zero, right-end displacement minus 6 mm and rotation minus 0.03 radians. Cubic interpolation gives minus 1.875 mm at the midpoint.</desc>
+  <defs>
+    <!-- Spatial colour stops follow v = -9(x/L)^2 + 3(x/L)^3 mm. -->
+    <linearGradient id="beam-colour" gradientUnits="userSpaceOnUse" x1="130" y1="0" x2="970" y2="0">
+      <stop offset="0" stop-color="#2446b8"/>
+      <stop offset="0.1" stop-color="#2350ba"/>
+      <stop offset="0.2" stop-color="#216bc2"/>
+      <stop offset="0.3" stop-color="#1d96ce"/>
+      <stop offset="0.4" stop-color="#1bb9d2"/>
+      <stop offset="0.5" stop-color="#29bcbd"/>
+      <stop offset="0.6" stop-color="#4ac58a"/>
+      <stop offset="0.7" stop-color="#7ac95f"/>
+      <stop offset="0.8" stop-color="#d6cd48"/>
+      <stop offset="0.9" stop-color="#ef9a3d"/>
+      <stop offset="1" stop-color="#d93232"/>
+    </linearGradient>
+    <linearGradient id="legend" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2446b8"/><stop offset="25%" stop-color="#18b8da"/>
+      <stop offset="50%" stop-color="#5ac765"/><stop offset="75%" stop-color="#f5cf42"/>
+      <stop offset="100%" stop-color="#d93232"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="430" fill="white"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#253d49" text-anchor="middle">
+    <text x="550" y="35" font-size="25">Transverse displacement v (mm)</text>
+    <!-- Undeformed centreline and a magnified deflected centreline. -->
+    <path d="M130 145 H970" fill="none" stroke="#929ba4" stroke-width="2" stroke-dasharray="7 6"/>
+    <path d="M130 145 C410 145 690 190 970 235" fill="none" stroke="url(#beam-colour)" stroke-width="22"/>
+    <circle cx="130" cy="145" r="6" fill="white" stroke="#253d49" stroke-width="2"/>
+    <circle cx="970" cy="235" r="6" fill="white" stroke="#253d49" stroke-width="2"/>
+    <text x="160" y="78" font-size="22">Node 1</text>
+    <text x="160" y="107" font-size="22">v₁ = 0, φ₁ = 0</text>
+    <text x="870" y="78" font-size="22">Node 2</text>
+    <text x="870" y="107" font-size="22">v₂ = −6 mm, φ₂ = −0.03 rad</text>
+    <!-- Midpoint guide identifies an interpolated value, not an extra node. -->
+    <path d="M550 145 V260" stroke="#253d49" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="550" y="289" font-size="23">v(L/2) = −1.875 mm</text>
+    <!-- Legend gives signed transverse displacement, rather than displacement magnitude. -->
+    <rect x="250" y="325" width="600" height="22" fill="url(#legend)" stroke="#253d49"/>
+    <g font-size="20">
+      <text x="250" y="374">0</text><text x="350" y="374">−1</text>
+      <text x="450" y="374">−2</text><text x="550" y="374">−3</text>
+      <text x="650" y="374">−4</text><text x="750" y="374">−5</text>
+      <text x="850" y="374">−6 mm</text>
+    </g>
+    <text x="550" y="412" font-size="19">One element · two nodes · dashed line: undeformed centreline</text>
+  </g>
+</svg>
