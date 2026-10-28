@@ -28,4 +28,8 @@ The example matches the Week 1 axial-bar hand calculation: 1000 mm length, 10 mm
 
 @[course(Accessing ABAQUS outside campus)](OffCampusAccess/OffCampusAccess.md) — connect to a campus PC through MyAccess or install the free ABAQUS Learning Edition on your own computer.
 
+## Importing CAD geometry
+
+@[course(Importing a CAD file into ABAQUS)](ImportingCAD/ImportingCAD.md) — import the supplied STEP spring geometry and adjust the curve display.
+
 @[course(Week 1 lesson)](../../week01/week01.md) · @[course(All ABAQUS tutorial categories)](../README.md)

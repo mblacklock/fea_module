@@ -33,6 +33,8 @@ This example uses a 1000 mm bar with a 10 mm² cross-section, an elastic modulus
 
 @[course(Accessing ABAQUS outside campus)](General/OffCampusAccess/OffCampusAccess.md) — remote access through MyAccess or the free ABAQUS Learning Edition for your own computer.
 
+@[course(Importing a CAD file into ABAQUS)](General/ImportingCAD/ImportingCAD.md) — import STEP geometry and adjust the curve display; includes the spring CAD file used in the optional Week 5 problem.
+
 ## Topic 1: Axial stress and truss elements
 
 **First used in Week 2.** @[course(Open the Topic 1 tutorials)](Topic1/README.md). The single-element input-file tutorial is followed by the two-element tutorial with different section properties.

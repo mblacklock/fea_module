@@ -10,7 +10,7 @@ script: ../course-links.js
 @course: <a href="@1" data-lia-course="true">@0</a>
 
 @tutorialNavigation
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 > **Following this tutorial:** Use the **right arrow → at the bottom of the page** to reveal the next step or move to the next page. Use the **left arrow ←** to go back. To see all steps at once, select **Textbook mode** from the menu at the top.
 @end

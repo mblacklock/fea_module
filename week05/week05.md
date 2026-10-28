@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -40,6 +40,8 @@ By the end of this week, students will be able to:
 <br>
 
 **2.6. Compare** the order of shape functions for beam and truss elements.
+
+<br>
 
 **2.7. Determine** when modelling with beam elements is appropriate for real engineering structures based on the features/limitations of the element.
 
@@ -1057,12 +1059,15 @@ Use the tutorials again if you need to revisit a procedure:
 
 Analyse the cylindrical spring using **3D beam elements**. Use the force value $[A]$ supplied in the optional Blackboard question.
 
+**Tutorial:** @[course(Importing a CAD file into ABAQUS)](../abaqus/General/ImportingCAD/ImportingCAD.md).
+
 [Download the spring CAD geometry: SPRING.stp](files/SPRING.stp)
 
 ![Original ABAQUS tutorial model of the spring, with one end clamped and an axial force applied at the other](images/Beam_Week05_OptionalSpringModel.png)<!-- style="width: 80%; display: block; margin: auto;" -->
 
 The spring is **clamped at one end** and carries a force $F_x=[A]$ N at the other. Use a circular beam cross-section of radius $r$.
 
+<!-- data-type="None" -->
 | Material property | Value |
 |:--|:--|
 | Material | Steel |
@@ -1078,6 +1083,8 @@ $$\max |U_2|\leq 10\text{ mm}.$$
 
 <details>
 <summary><strong>Reveal starting points</strong></summary>
+
+Follow @[course(Importing a CAD file into ABAQUS)](../abaqus/General/ImportingCAD/ImportingCAD.md) to import the spring geometry.
 
 Import the STEP file into ABAQUS/CAE as a 3D deformable part. Assign the steel material, circular beam section and a suitable beam orientation, then mesh the wire geometry with 3D beam elements.
 

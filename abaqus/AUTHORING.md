@@ -10,6 +10,7 @@
 | General/OpeningABAQUS/OpeningABAQUS.md | Wk1_2_Opening ABAQUS and setting the work directory.docx | General_OpeningABAQUS |
 | General/CreatingRunningJob/CreatingRunningJob.md | Wk1_3_Creating and running a job.docx | General_CreatingRunningJob |
 | General/ViewingInterpretingResults/ViewingInterpretingResults.md | Wk1_4_Viewing and interpreting results.docx | General_ViewingInterpretingResults |
+| General/ImportingCAD/ImportingCAD.md | Wk7_1_Importing a CAD file.docx | All 11 embedded Word images, copied as `General_ImportingCAD_img01`–`img11` |
 | Topic1/IntroToInputFiles/IntroToInputFiles.md | Wk2_1_Learning Outcome 1.2 - Introduction to ABAQUS input files.docx | `t1w1/Truss_IntroInputFiles_img01`–`img21` |
 | Topic1/MultipleTrussElements/MultipleTrussElements.md | Wk2_2_Learning Outcome 1.2 - Multiple 1D truss elements with different section properties.docx | `t1w1/Truss_MultipleElements_img01`–`img10` |
 | Topic1/Truss2DCAE/Truss2DCAE.md | Wk3_1_2D truss & CAE.docx | `t1w2/1.png`–`40.png` (24a, 25a and 29a) |
@@ -61,6 +62,8 @@ Five recordings are in a separate optional sequence after the required completio
 Official references used to check the corrections: [beam element library](https://docs.software.vt.edu/abaqusv2023/English/SIMACAEELMRefMap/simaelm-r-beamlibrary.htm), [beam section orientation](https://docs.software.vt.edu/abaqusv2025/English/SIMACAEELMRefMap/simaelm-c-beamcrosssection.htm), and [distributed loads](https://docs.software.vt.edu/abaqusv2025/English/SIMACAEPRCRefMap/simaprc-c-loaddistributed.htm).
 
 ## Adding recordings
+
+The General CAD-import tutorial retains the substantive instructions from `Wk7_1_Importing a CAD file.docx` in sequence, with numbered sidebar sections and click reveals. It includes its own `files/SPRING.stp`, copied unchanged from the supplied source. The source's “student version” note is updated to “Learning Edition”, with a link to the off-campus access guide; “got to” is corrected to “go to”. An added note distinguishes curve-display refinement from mesh refinement. The final source screenshots illustrate subsequent modelling and results, rather than specify values for the optional Week 5 problem. The tutorial is linked from both General and full library indexes and from the Week 5 optional spring problem.
 
 The supplied Word tutorials contain no video URLs. To add a recording, embed it within the corresponding standalone tutorial using `!?[Video title](URL)`, or use a normal link if the authenticated video platform does not permit embedding. Do not duplicate the recording's tutorial content inside each weekly lesson.
 
