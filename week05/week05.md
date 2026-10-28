@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.1
+version: 1.0.2
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -375,7 +375,7 @@ This uses $B$ and virtual work to integrate the beam stiffness terms and recover
 
 **SUPPORTED CLASS STUDY STARTS HERE**
 
-We will use the pre-work to interpret beam behaviour, assemble a small model and begin the assessed ABAQUS beam problem.
+We will use the pre-work to interpret beam behaviour, assemble a small model and work on an ABAQUS beam problem.
 
 Keep your own notes and workings. The dropdowns contain reference answers for revision.
 
@@ -977,26 +977,83 @@ The zero coupling entry between $v_2$ and $\phi_2$ here results from cancellatio
 
 </details>
 
-## ABAQUS Problem: Beam Elements
+## In-class ABAQUS Problem: Beam Elements
 
-**Start the assessed beam problem in class. Use your own values from Blackboard.**
+**Use the same values below so we can compare results in class.**
 
-Model the aluminium cantilever under a uniformly distributed load using **linear and cubic beam elements**. Check mesh convergence and obtain the maximum vertical displacement requested in the assignment.
+Model the aluminium cantilever under a uniformly distributed load using **linear and cubic beam elements**. Check mesh convergence and determine the maximum downward vertical displacement.
 
-![Assessed aluminium cantilever with a distributed load and variable length and rectangular section dimensions](images/Beam_Week05_img05_AssessedBeam.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
+![Class aluminium cantilever: length 600 mm, section 20 by 30 mm and downward distributed load 100 N/m](images/Beam_Week05_ClassBeam.svg)<!-- style="width: 90%; display: block; margin: auto;" -->
 
+<!-- data-type="None" -->
 | Quantity | Value |
 |:--|:--|
-| Beam length | [A] mm |
-| Section width | [B] mm |
-| Section depth | [C] mm |
+| Beam length | 600 mm |
+| Section width | 20 mm |
+| Section depth | 30 mm |
 | Young's modulus | 69 GPa |
 | Poisson's ratio | 0.27 |
-| Downward distributed load | [D] N/m |
+| Downward distributed load | 100 N/m |
 
-Use the assignment's required answer format and precision. Keep the input and message files from your final analyses.
+**Complete the convergence table.** Click a blank result cell and enter the signed vertical displacement at the free end in mm (downwards is negative). Select **Plot curves** to compare the linear and cubic results. Keep a copy of your results in your notes.
 
-## Plan the ABAQUS Model
+<!-- data-type="none" -->
+| Number of elements | Element length (mm) | Linear deflection (mm) | Cubic deflection (mm) |
+|:--:|:--:|:--:|:--:|
+| 1 | 600 | <span contenteditable="true" role="textbox" aria-label="Linear result for 1 elements" data-convergence="linear" data-elements="1" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> | <span contenteditable="true" role="textbox" aria-label="Cubic result for 1 elements" data-convergence="cubic" data-elements="1" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> |
+| 2 | 300 | <span contenteditable="true" role="textbox" aria-label="Linear result for 2 elements" data-convergence="linear" data-elements="2" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> | <span contenteditable="true" role="textbox" aria-label="Cubic result for 2 elements" data-convergence="cubic" data-elements="2" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> |
+| 3 | 200 | <span contenteditable="true" role="textbox" aria-label="Linear result for 3 elements" data-convergence="linear" data-elements="3" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> | <span contenteditable="true" role="textbox" aria-label="Cubic result for 3 elements" data-convergence="cubic" data-elements="3" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> |
+| 6 | 100 | <span contenteditable="true" role="textbox" aria-label="Linear result for 6 elements" data-convergence="linear" data-elements="6" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> | <span contenteditable="true" role="textbox" aria-label="Cubic result for 6 elements" data-convergence="cubic" data-elements="6" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> |
+| 10 | 60 | <span contenteditable="true" role="textbox" aria-label="Linear result for 10 elements" data-convergence="linear" data-elements="10" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> | <span contenteditable="true" role="textbox" aria-label="Cubic result for 10 elements" data-convergence="cubic" data-elements="10" style="display:inline-block; min-width:6em; min-height:1.4em;"></span> |
+
+<script input="submit" default="Plot curves" modify="false">
+const counts = [1, 2, 3, 6, 10];
+const read = (series, n) => {
+  const cell = document.querySelector(`[data-convergence="${series}"][data-elements="${n}"]`);
+  const text = cell ? cell.textContent.trim().replace("−", "-") : "";
+  return text !== "" && Number.isFinite(Number(text)) ? Number(text) : null;
+};
+const rows = counts.map(n => [n, read("linear", n), read("cubic", n)]);
+if (rows.filter(row => row[1] !== null).length >= 2 && rows.filter(row => row[2] !== null).length >= 2) {
+  let chart = "<!-- data-type='line' data-show data-title='Maximum-deflection convergence' data-xlabel='Number of elements' data-ylabel='Maximum deflection (mm)' -->\n";
+  chart += "| Number of elements | Linear (mm) | Cubic (mm) |\n|:--:|:--:|:--:|\n";
+  chart += rows.map(row => "| " + row.map(value => value === null ? "" : value).join(" | ") + " |").join("\n");
+  send.dispatch("week05-convergence-native", chart);
+} else {
+  send.dispatch("week05-convergence-native", "Enter at least two numeric results for each formulation, then select Plot curves.");
+}
+"Plot curves"
+</script>
+
+<script style="display:block" modify="false">
+send.register("week05-convergence-native", content => send.liascript(content));
+""
+</script>
+
+Continue refining if needed. Compare successive results for each element formulation: does further refinement make a meaningful difference to the maximum deflection?
+
+<details>
+<summary><strong>Reveal reference result</strong></summary>
+
+For the common class values, the **analytical bending reference** for a cantilever under a uniformly distributed load is:
+
+$$v_{\max}=-\frac{qL^4}{8EI}.$$
+
+Using N and mm:
+
+$$q=0.1\text{ N/mm},\qquad E=69000\text{ N/mm}^2,\qquad I=\frac{20\times30^3}{12}=45000\text{ mm}^4.$$
+
+Therefore:
+
+$$v_{\max}=-\frac{0.1\times600^4}{8\times69000\times45000}\approx\boxed{-0.522\text{ mm}}.$$
+
+The analytical reference is **−0.522 mm**. Compare this with your converged results; the linear and cubic elements may give slightly different values.
+
+</details>
+
+Keep the input and message files from your final analyses.
+
+**Plan the ABAQUS Model**
 
 Before building the model, identify:
 
@@ -1009,7 +1066,7 @@ Before building the model, identify:
 <details>
 <summary><strong>Reveal setup checks</strong></summary>
 
-Follow the planar workflow from the tutorials using B21 and B23. The assessment sketch labels the vertical axis $z$; in a 2D planar CAE model, use $x$ along the beam and $y$ vertically. Apply the load and read displacement in that model's vertical direction, U2.
+Follow the planar workflow from the tutorials using B21 and B23. The sketch labels the vertical axis $z$; in a 2D planar CAE model, use $x$ along the beam and $y$ vertically. Apply the load and read displacement in that model's vertical direction, U2.
 
 If you instead build the model in the global $x$–$z$ plane in 3D, use the corresponding 3D beam types, load in $z$, and read U3. Constrain all six active DOFs at the fixed end. Keep the cross-section orientation consistent with the intended vertical section depth.
 
@@ -1039,11 +1096,13 @@ Monitor the free-end vertical displacement using the same physical point after e
 - [ ] I can map the shared displacement and rotation DOFs when assembling two beam elements.
 - [ ] I can explain why a completed job alone is not evidence of mesh convergence.
 - [ ] I can choose an appropriate element type for a real structure and explain the assumptions and limitations of that choice.
-- [ ] I have started the assessed ABAQUS beam problem and recorded what remains to be completed.
+- [ ] I have worked on the class ABAQUS beam problem and recorded my results and any remaining questions.
 
 ## C. INDEPENDENT STUDY: After class
 
-Finish the assessed ABAQUS beam problem, including the comparison of linear and cubic elements and a mesh-convergence check. Submit the requested answer by the deadline shown on Blackboard.
+The assessed ABAQUS beam problem uses the same modelling approach as the class problem, but **your dimensions and load are different**. Find your individual values on Blackboard and update the geometry, section and loading accordingly. Repeat the comparison of linear and cubic elements and the mesh-convergence check for your own model.
+
+Submit your own result using the assignment's required answer format and precision, by the deadline shown on Blackboard. Do not submit the common class-values result.
 
 Keep your convergence results and the input and message files corresponding to your final analyses. Add the required files to your ABAQUS file-submission assignment; you can save it as a draft while completing the remaining problems, then submit the complete assignment by its final deadline.
 
