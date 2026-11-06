@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Torque versus angle of twist in an elastic torsion test</title>
+  <desc id="desc">A straight line through the origin. With torque on the vertical axis and angle of twist in radians on the horizontal axis, its slope is JG divided by L.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+  </defs>
+  <style>text{font-family:Arial,Helvetica,sans-serif;font-size:25px;fill:#304955}.math{font-family:Georgia,serif;font-style:italic}.axis{fill:none;stroke:#304955;stroke-width:2.5;marker-end:url(#axis)}</style>
+  <rect width="600" height="600" fill="white"/>
+  <!-- Torque and angle-of-twist axes. -->
+  <path d="M110 500 H510" class="axis"/>
+  <path d="M110 500 V100" class="axis"/>
+  <text x="90" y="530" text-anchor="end">0</text>
+  <text x="130" y="70" text-anchor="middle">Torque, T (N mm)</text>
+  <text x="310" y="565" text-anchor="middle">Angle of twist, φ (rad)</text>
+  <!-- Linear elastic torque–rotation relationship, with no numerical data implied. -->
+  <path d="M110 500 L470 140" fill="none" stroke="#007c88" stroke-width="4"/>
+  <text x="270" y="115">Elastic range: T = (JG/L)φ</text>
+  <!-- Rise/run triangle on the straight line. -->
+  <path d="M230 380 H390 V220" fill="none" stroke="#d33d50" stroke-width="2.5"/>
+  <text x="310" y="418" text-anchor="middle" class="math">Δφ</text>
+  <text x="408" y="310" class="math">ΔT</text>
+</svg>

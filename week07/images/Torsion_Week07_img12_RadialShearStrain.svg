@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Shear strain increases linearly with radius</title>
+  <desc id="desc">A straight line from zero strain at the shaft axis to maximum strain at the outer radius c. The horizontal axis is radial distance rho and the vertical axis is shear strain gamma.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+  </defs>
+  <style>text{font-family:Georgia,'Times New Roman',serif;font-size:28px;fill:#304955}.math{font-style:italic}.axis{fill:none;stroke:#304955;stroke-width:2;marker-end:url(#axis)}.guide{fill:none;stroke:#8a99a2;stroke-width:1.5;stroke-dasharray:6 6}</style>
+  <rect width="800" height="420" fill="white"/>
+  <!-- Radial distance and shear-strain axes. -->
+  <path d="M150 330 H720" class="axis"/>
+  <path d="M150 330 V45" class="axis"/>
+  <text x="735" y="340" class="math">ρ</text>
+  <text x="133" y="40" class="math">γ</text>
+  <text x="130" y="356" text-anchor="end">0</text>
+  <!-- Linear radial distribution and the maximum at the outside surface. -->
+  <path d="M150 80 H650 V330" class="guide"/>
+  <path d="M150 330 L650 80" fill="none" stroke="#007c88" stroke-width="4"/>
+  <circle cx="650" cy="80" r="5" fill="#007c88"/>
+  <text x="131" y="87" text-anchor="end" class="math">γ<tspan baseline-shift="sub" font-size="19">max</tspan></text>
+  <text x="650" y="363" text-anchor="middle" class="math">c</text>
+  <text x="400" y="405" text-anchor="middle" style="font-family:Arial,Helvetica,sans-serif;font-size:22px">Distance from the shaft axis</text>
+</svg>

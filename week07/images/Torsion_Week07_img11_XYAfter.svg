@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="550 0 450 430" role="img" aria-labelledby="title desc">
+  <title id="title">Highlighted material element after twisting</title>
+  <desc id="desc">An initially rectangular element under complementary shear stresses deforms into a parallelogram. The change in the initially right angle is gamma xy; the resulting interior angle is pi over two minus gamma xy.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+    <marker id="shear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d94b62"/></marker>
+  </defs>
+  <style>text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#304955}.math{font-family:Georgia,'Times New Roman',serif;font-style:italic}.axis{fill:none;stroke:#304955;stroke-width:2;marker-end:url(#axis)}.shear{fill:none;stroke:#d94b62;stroke-width:2.7;marker-end:url(#shear)}.angle{fill:none;stroke:#d94b62;stroke-width:2}</style>
+  <rect width="1000" height="430" fill="white"/>
+  <!-- Coordinate axes and the deformed material element. -->
+  <text x="780" y="42" text-anchor="middle">After deformation</text>
+  <path d="M590 380 H950" class="axis"/>
+  <path d="M590 380 V80" class="axis"/>
+  <text x="961" y="389" class="math">x</text><text x="575" y="70" class="math">y</text>
+  <path d="M650 300 H850 L910 140 H710 Z" fill="#fbedf0" stroke="#d94b62" stroke-width="2.5"/>
+  <!-- Original vertical direction and its change gamma_xy. -->
+  <path d="M650 300 V140" fill="none" stroke="#85949e" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <path d="M650 228 A72 72 0 0 1 675.28 232.58" class="angle"/>
+  <text x="649" y="205" class="math" style="fill:#d94b62">γ<tspan baseline-shift="sub" font-size="17">xy</tspan></text>
+  <!-- Interior angle after shear: pi/2 minus gamma_xy. -->
+  <path d="M692 300 A42 42 0 0 0 664.75 260.67" class="angle"/>
+  <text x="712" y="275" class="math" style="fill:#d94b62">π/2 − γ<tspan baseline-shift="sub" font-size="17">xy</tspan></text>
+</svg>

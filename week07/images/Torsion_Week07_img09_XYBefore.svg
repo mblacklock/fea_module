@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 430" role="img" aria-labelledby="title desc">
+  <title id="title">Highlighted material element before twisting</title>
+  <desc id="desc">An initially rectangular element under complementary shear stresses deforms into a parallelogram. The change in the initially right angle is gamma xy; the resulting interior angle is pi over two minus gamma xy.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+    <marker id="shear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d94b62"/></marker>
+  </defs>
+  <style>text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#304955}.math{font-family:Georgia,'Times New Roman',serif;font-style:italic}.axis{fill:none;stroke:#304955;stroke-width:2;marker-end:url(#axis)}.shear{fill:none;stroke:#d94b62;stroke-width:2.7;marker-end:url(#shear)}.angle{fill:none;stroke:#d94b62;stroke-width:2}</style>
+  <rect width="1000" height="430" fill="white"/>
+  <!-- Coordinate axes around the initially rectangular element. -->
+  <text x="240" y="42" text-anchor="middle">Before deformation</text>
+  <path d="M70 380 H400" class="axis"/>
+  <path d="M70 380 V80" class="axis"/>
+  <text x="411" y="389" class="math">x</text><text x="55" y="70" class="math">y</text>
+  <!-- Initial material element with four complementary shear-stress arrows. -->
+  <rect x="150" y="140" width="180" height="160" fill="#fbedf0" stroke="#d94b62" stroke-width="2.5"/>
+  <path d="M165 110 H315" class="shear"/>
+  <path d="M360 285 V155" class="shear"/>
+  <path d="M315 330 H165" class="shear"/>
+  <path d="M120 155 V285" class="shear"/>
+  <text x="240" y="92" text-anchor="middle" class="math" style="fill:#d94b62">τ<tspan baseline-shift="sub" font-size="17">xy</tspan></text>
+  <path d="M150 282 H168 V300" fill="none" stroke="#71858e" stroke-width="1.5"/>
+</svg>

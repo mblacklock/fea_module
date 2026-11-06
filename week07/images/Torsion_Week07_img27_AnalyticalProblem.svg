@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370" role="img" aria-labelledby="title">
+<title id="title">Solid transmission shaft carrying power P at speed N; required diameter d</title>
+<defs>
+  <!-- Arrowheads for axes, dimensions and applied torque. -->
+  <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+  <marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d33d50"/></marker>
+</defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#304955} .math{font-family:Georgia,serif;font-style:italic} .line{fill:none;stroke:#304955;stroke-width:2.5} .dim{fill:none;stroke:#52626c;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)} .red{fill:none;stroke:#d33d50;stroke-width:3;marker-end:url(#red)} .guide{fill:none;stroke:#87959c;stroke-width:1.6;stroke-dasharray:6 6}</style>
+<rect width="1000" height="370" fill="white"/>
+
+<!-- Solid shaft and circular end section. -->
+<path d="M200 110 C155 110 155 250 200 250 H755 V110 Z" fill="#dcebf0" stroke="#304955" stroke-width="2.5"/>
+<ellipse cx="755" cy="180" rx="40" ry="70" fill="#b9d7e2" stroke="#304955" stroke-width="2.5"/>
+<!-- Rotation/torque indicator, without introducing a numerical torque. -->
+<path d="M813 108 C887 88 895 257 815 266" class="red"/>
+<text x="900" y="190" class="math">N rpm</text>
+<!-- Power entering and leaving the shaft. -->
+<path d="M70 180 H145" class="line" marker-end="url(#axis)"/>
+<text x="110" y="150" text-anchor="middle" class="math">P</text>
+<!-- Diameter dimension outside the end section. -->
+<path d="M755 110 H836 M755 250 H836" class="guide"/>
+<path d="M828 110 V250" class="dim"/>
+<rect x="813" y="163" width="30" height="33" fill="white"/><text x="828" y="189" text-anchor="middle" class="math">d</text>
+<text x="470" y="45" text-anchor="middle">Solid circular transmission shaft</text>
+<text x="470" y="330" text-anchor="middle">Given: power P, speed N, shear yield strength τᵧ and factor of safety n</text>
+
+</svg>

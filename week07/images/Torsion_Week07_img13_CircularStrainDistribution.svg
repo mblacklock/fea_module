@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Shear strain along a radius of the circular shaft</title>
+  <desc id="desc">The circular cross-section has zero shear strain at its centre. Bars along a radius increase linearly in height, reaching maximum shear strain at the outer surface c. Bar height represents strain magnitude, not a force or displacement.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+  </defs>
+  <style>text{font-family:Georgia,'Times New Roman',serif;font-size:28px;fill:#304955}.math{font-style:italic}.axis{fill:none;stroke:#304955;stroke-width:2;marker-end:url(#axis)}.strain{fill:none;stroke:#d94b62;stroke-width:2.2}</style>
+  <rect width="800" height="420" fill="white"/>
+  <!-- Physical circular shaft cross-section and a radius to the outer surface. -->
+  <circle cx="300" cy="245" r="120" fill="#eaf3f6" stroke="#438ba2" stroke-width="2.5"/>
+  <path d="M300 245 H420" fill="none" stroke="#304955" stroke-width="2"/>
+  <circle cx="300" cy="245" r="4" fill="#304955"/>
+  <!-- Diagram height above the selected radius represents shear-strain magnitude. -->
+  <path d="M300 245 V45" class="axis"/>
+  <text x="280" y="39" class="math">γ</text>
+  <path d="M320 245 V216.67 M340 245 V188.33 M360 245 V160 M380 245 V131.67 M400 245 V103.33 M420 245 V75" class="strain"/>
+  <path d="M300 245 L420 75" fill="none" stroke="#007c88" stroke-width="3.5"/>
+  <text x="438" y="81" class="math">γ<tspan baseline-shift="sub" font-size="19">max</tspan></text>
+  <text x="353" y="277" class="math">ρ</text>
+  <text x="420" y="280" text-anchor="middle" class="math">c</text>
+  <!-- Leader identifies the outer-surface location of the maximum. -->
+  <path d="M478 183 L449 214 L420 245" fill="none" stroke="#52646d" stroke-width="1.5"/>
+  <text x="484" y="175" style="font-family:Arial,Helvetica,sans-serif;font-size:23px">Maximum at</text>
+  <text x="484" y="205" style="font-family:Arial,Helvetica,sans-serif;font-size:23px">the surface</text>
+  <text x="400" y="405" text-anchor="middle" style="font-family:Arial,Helvetica,sans-serif;font-size:22px">Bar height represents shear strain</text>
+</svg>

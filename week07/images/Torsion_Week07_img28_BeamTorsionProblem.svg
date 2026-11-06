@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" role="img" aria-labelledby="title desc">
+  <title id="title">Circular beam shaft under an end torque</title>
+  <desc id="desc">The beam centreline follows global x from fixed node 1 to free node 2. The length is 1000 mm, the solid circular diameter is 30 mm, and a positive torque of 200 N m acts about x at node 2.</desc>
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
+    <marker id="torque" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d94b62"/></marker>
+    <marker id="dimension" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#52646d"/></marker>
+  </defs>
+  <style>text{font-family:Arial,Helvetica,sans-serif;font-size:25px;fill:#304955}.math{font-family:Georgia,serif;font-style:italic}.line{fill:none;stroke:#304955;stroke-width:2}.dim{fill:none;stroke:#52646d;stroke-width:1.5;marker-start:url(#dimension);marker-end:url(#dimension)}</style>
+  <rect width="1000" height="340" fill="white"/>
+  <!-- Fixed support and beam centreline, aligned with global x. -->
+  <path d="M170 85 V210 M150 105 L170 85 M150 130 L170 110 M150 155 L170 135 M150 180 L170 160 M150 205 L170 185" class="line"/>
+  <path d="M170 150 H650" fill="none" stroke="#007c88" stroke-width="5"/>
+  <circle cx="170" cy="150" r="6" fill="#304955"/><circle cx="650" cy="150" r="6" fill="#304955"/>
+  <text x="180" y="185">1</text><text x="635" y="185">2</text>
+  <text x="410" y="110" text-anchor="middle">Circular-section beam</text>
+  <!-- Extend the shaft axis through the centre of the torque loop. -->
+  <path d="M650 150 H720" fill="none" stroke="#85949e" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <!-- Torque wraps around the x-axis in a plane normal to the shaft. -->
+  <path d="M662.5 201.96 A25 60 0 1 0 637.5 201.96" fill="none" stroke="#d94b62" stroke-width="3.5" marker-end="url(#torque)"/>
+  <text x="685" y="52" text-anchor="middle" style="fill:#d94b62">T = 200 N m about x</text>
+  <!-- Length dimension and positive global x direction. -->
+  <path d="M170 205 V247 M650 205 V247" fill="none" stroke="#85949e" stroke-width="1.4"/>
+  <path d="M170 231 H650" class="dim"/>
+  <rect x="322" y="211" width="176" height="36" fill="white"/>
+  <text x="410" y="237" text-anchor="middle">L = 1000 mm</text>
+  <path d="M365 290 H485" class="line" marker-end="url(#axis)"/><text x="500" y="299" class="math">x</text>
+  <!-- Solid circular section, drawn separately from the wire model. -->
+  <circle cx="875" cy="155" r="49" fill="#dcebf0" stroke="#438ba2" stroke-width="2"/>
+  <path d="M826 155 H924" class="dim"/>
+  <text x="875" y="245" text-anchor="middle">d = 30 mm</text>
+  <text x="875" y="280" text-anchor="middle" style="font-size:21px">Solid circular section</text>
+</svg>
