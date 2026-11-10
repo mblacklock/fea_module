@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370" role="img" aria-labelledby="title">
-<title id="title">Solid transmission shaft carrying power P at speed N; required diameter d</title>
+<title id="title">Solid transmission shaft with applied torque T; given power P and speed N; required diameter d</title>
 <defs>
   <!-- Arrowheads for axes, dimensions and applied torque. -->
   <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#304955"/></marker>
@@ -11,12 +11,10 @@
 <!-- Solid shaft and circular end section. -->
 <path d="M200 110 C155 110 155 250 200 250 H755 V110 Z" fill="#dcebf0" stroke="#304955" stroke-width="2.5"/>
 <ellipse cx="755" cy="180" rx="40" ry="70" fill="#b9d7e2" stroke="#304955" stroke-width="2.5"/>
-<!-- Rotation/torque indicator, without introducing a numerical torque. -->
+<!-- Applied torque calculated from given power and rotational speed. -->
 <path d="M813 108 C887 88 895 257 815 266" class="red"/>
-<text x="900" y="190" class="math">N rpm</text>
-<!-- Power entering and leaving the shaft. -->
-<path d="M70 180 H145" class="line" marker-end="url(#axis)"/>
-<text x="110" y="150" text-anchor="middle" class="math">P</text>
+<text x="905" y="190" class="math" fill="#d33d50">T</text>
+<!-- Power P and speed N are operating conditions, not applied forces. -->
 <!-- Diameter dimension outside the end section. -->
 <path d="M755 110 H836 M755 250 H836" class="guide"/>
 <path d="M828 110 V250" class="dim"/>
