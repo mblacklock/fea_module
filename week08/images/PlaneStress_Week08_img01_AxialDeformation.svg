@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title">
+  <title id="title">Axial tension produces extension and positive axial strain</title>
+  <defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="900" height="440" fill="white"/>
+
+  <!-- Undeformed reference bar and its original length. -->
+  <text x="70" y="45">Before loading</text>
+  <rect class="outline" x="155" y="80" width="520" height="58"/>
+  <!-- Fixed support: the left end has zero axial displacement. -->
+  <path d="M155 70 V148" fill="none" stroke="#29434f" stroke-width="4"/>
+  <path d="M155 70 l-16 12 M155 82 l-16 12 M155 94 l-16 12 M155 106 l-16 12 M155 118 l-16 12 M155 130 l-16 12 M155 142 l-16 12" fill="none" stroke="#596773" stroke-width="2"/>
+  <path class="extension" d="M155 145 V185 M675 145 V185"/>
+  <path class="dim" d="M155 170 H675"/>
+  <text class="math" x="406" y="204">L</text>
+  <!-- Extended bar: dashed end position is the original end; the blue arrow is the applied tensile force. -->
+  <text x="70" y="235">After loading</text>
+  <rect class="outline" x="155" y="270" width="590" height="58"/>
+  <!-- Fixed support: the left end has zero axial displacement. -->
+  <path d="M155 260 V338" fill="none" stroke="#29434f" stroke-width="4"/>
+  <path d="M155 260 l-16 12 M155 272 l-16 12 M155 284 l-16 12 M155 296 l-16 12 M155 308 l-16 12 M155 320 l-16 12 M155 332 l-16 12" fill="none" stroke="#596773" stroke-width="2"/>
+  <path class="guide" d="M675 250 V375"/>
+  <path class="load" d="M745 299 H830"/>
+  <text class="math" x="797" y="285">P</text>
+  <path class="extension" d="M745 335 V380"/>
+  <path class="dim" d="M675 362 H745"/>
+  <text class="math" x="702" y="397">δ</text>
+
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-labelledby="title">
+  <title id="title">Plane-stress element showing the three retained in-plane stress components</title>
+  <defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="900" height="470" fill="white"/>
+
+  <!-- Normal stress is blue; shear stress is teal. Both are shown in their positive senses. -->
+  <rect class="outline" x="310" y="140" width="250" height="200"/>
+  <path class="load" d="M560 240 H700"/>
+<path class="load" d="M310 240 H170"/>
+<path class="load" d="M435 140 V45"/>
+<path class="load" d="M435 340 V435"/>
+  <text class="math" x="650" y="224">σₓ</text><text class="math" x="177" y="224">σₓ</text>
+  <text class="math" x="451" y="67">σᵧ</text><text class="math" x="453" y="430">σᵧ</text>
+  <g stroke="#008b85" stroke-width="3" fill="none">
+    <path d="M590 315 V165 M280 165 V315 M335 110 H535 M535 370 H335"/>
+  </g>
+  <!-- Explicit teal arrowheads avoid inheriting the normal-load colour. -->
+  <g fill="#008b85"><path d="M582 180 L590 165 L598 180 Z"/><path d="M272 300 L280 315 L288 300 Z"/><path d="M520 102 L535 110 L520 118 Z"/><path d="M350 362 L335 370 L350 378 Z"/></g>
+  <text class="math" x="607" y="180" style="fill:#008b85">τₓᵧ</text><text class="math" x="480" y="93" style="fill:#008b85">τᵧₓ</text>
+  <path class="axis" d="M90 370 H170"/>
+<path class="axis" d="M90 370 V290"/>
+  <text class="math" x="180" y="378">x</text><text class="math" x="82" y="280">y</text>
+
+</svg>

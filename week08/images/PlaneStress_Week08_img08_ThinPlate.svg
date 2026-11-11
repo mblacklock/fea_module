@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title">
+<title id="title">Upright thin plate with five in-plane forces and a representative plane-stress element</title>
+  <defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+    <!-- Applied forces are red; the local stress element uses blue normal and teal shear arrows. -->
+    <marker id="force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#dc4455" stroke="none"/></marker>
+    <marker id="shear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L9 5" fill="none" stroke="#008b85" stroke-width="1.8" stroke-linecap="butt"/></marker>
+    <!-- Opposite barb side for the vertical shear arrows. -->
+    <marker id="shearVertical" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 9 L9 5" fill="none" stroke="#008b85" stroke-width="1.8" stroke-linecap="butt"/></marker>
+    <style>.force{stroke-linecap:butt;fill:none;stroke:#dc4455;stroke-width:3;marker-end:url(#force)} .shear{stroke-linecap:butt;fill:none;stroke:#008b85;stroke-width:2.4;marker-end:url(#shear)}</style>
+  </defs>
+<rect width="900" height="620" fill="white"/>
+
+  <!-- Upright thin plate: x is along its sloping width, y is vertical and z is through its thickness. -->
+  <path d="M300 100 L314 92 L660.41 292 L646.41 300 Z" fill="#edf4f6" stroke="#29434f" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M646.41 300 L660.41 292 V552 L646.41 560 Z" fill="#b9d4df" stroke="#29434f" stroke-width="2.5" stroke-linejoin="round"/>
+  <path class="outline" d="M300 100 L646.41 300 V560 L300 360 Z"/>
+  <!-- Five illustrative forces act along x or y at the mid-plane of the plate thickness. -->
+  <path class="force" d="M280 80 L370 132"/>
+  <path class="force" d="M480 196 V86"/>
+  <path class="force" d="M653.41 190 V296"/>
+  <path class="force" d="M653.41 426 L748.67 481"/>
+  <path class="force" d="M350 380.83 V481"/>
+  <g class="math" style="fill:#dc4455">
+    <text x="269" y="63" style="fill:#dc4455">F<tspan baseline-shift="sub" font-size="19">1</tspan></text>
+    <text x="495" y="96" style="fill:#dc4455">F<tspan baseline-shift="sub" font-size="19">2</tspan></text>
+    <text x="669" y="194" style="fill:#dc4455">F<tspan baseline-shift="sub" font-size="19">3</tspan></text>
+    <text x="764" y="491" style="fill:#dc4455">F<tspan baseline-shift="sub" font-size="19">4</tspan></text>
+    <text x="363" y="480" style="fill:#dc4455">F<tspan baseline-shift="sub" font-size="19">5</tspan></text>
+  </g>
+  <!-- Representative in-plane stress element, lying in the broad face of the plate. -->
+  <path d="M437 275 L523.6 325 V391 L437 341 Z" fill="#f8fbfc" stroke="#596773" stroke-width="1.8"/>
+  <!-- Normal stresses on opposite x and y faces of the small element. -->
+  <path class="load" d="M523.6 358 L562.57 380.5"/>
+  <path class="load" d="M437 308 L398.03 285.5"/>
+  <path class="load" d="M480.3 300 V261"/>
+  <path class="load" d="M480.3 366 V405"/>
+  <!-- Complementary shear stresses close to the local element edges, using single-sided arrowheads. -->
+  <path class="shear" d="M449.66 273.07 L518.94 313.07"/>
+  <path class="shear" d="M510.94 392.93 L441.66 352.93"/>
+  <path class="shear" d="M531.6 385 V331" style="marker-end:url(#shearVertical)"/>
+  <path class="shear" d="M429 281 V335" style="marker-end:url(#shearVertical)"/>
+  <!-- Three equal-length axes match the plate and the local stress element. -->
+  <path class="axis" d="M120 265 V175"/>
+  <path class="axis" d="M120 265 L197.94 310"/>
+  <path class="axis" d="M120 265 L42.06 310"/>
+  <text class="math" x="111" y="162">y</text>
+  <text class="math" x="207" y="323">x</text>
+  <text class="math" x="22" y="323">z</text>
+  <!-- The leader identifies the constant, small thickness at the exposed edge. -->
+  <path class="extension" d="M705 553 L654 526"/>
+  <text class="math" x="718" y="567">t</text>
+
+</svg>

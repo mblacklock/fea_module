@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+<title id="title">Tension in y produces extension in y and Poisson contraction in x</title>
+<defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+<rect width="900" height="520" fill="white"/>
+
+  <!-- Deformed material element. Shape changes are schematic, with equal applied stresses in the combined case. -->
+  <rect class="outline" x="339" y="90" width="222" height="300"/>
+  <!-- The same original square is retained in all three views as the deformation reference. -->
+  <rect class="guide" x="330" y="120" width="240" height="240"/>
+
+  <!-- Tensile normal stress in y on the upper and lower faces. -->
+  <path class="load" d="M450.0 90 V25"/>
+  <path class="load" d="M450.0 390 V455"/>
+  <text class="math" x="468.0" y="45">σ<tspan baseline-shift="sub" font-size="20">y</tspan></text><text class="math" x="468.0" y="456">σ<tspan baseline-shift="sub" font-size="20">y</tspan></text>
+
+  <!-- Equal-length x and y axes; z is normal to this view. -->
+  <path class="axis" d="M110 350 H195"/>
+  <path class="axis" d="M110 350 V265"/>
+  <text class="math" x="205" y="358">x</text><text class="math" x="101" y="253">y</text>
+  <!-- Legend for the common reference shape and the deformed element. -->
+  <path class="guide" d="M215 480 H275"/><text class="small" x="285" y="487">Original shape</text>
+  <path d="M530 480 H590" fill="none" stroke="#29434f" stroke-width="2.5"/><text class="small" x="600" y="487">Deformed shape</text>
+
+</svg>

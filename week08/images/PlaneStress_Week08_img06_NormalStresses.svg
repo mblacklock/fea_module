@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="title">
+  <title id="title">Normal stresses act perpendicular to the faces of a three-dimensional material element</title>
+  <defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="900" height="500" fill="white"/>
+
+
+  <!-- Three equal-size faces form an isometric cube. -->
+  <path class="outline" d="M470 90 L600 165 L470 240 L340 165 Z"/>
+  <path d="M470 240 L600 165 V315 L470 390 Z" fill="#c6dde5" stroke="#29434f" stroke-width="2.5" stroke-linejoin="round"/>
+  <path class="outline" d="M340 165 L470 240 V390 L340 315 Z"/>
+  <!-- Positive tensile normal stresses: each arrow starts at a face centre and follows its projected normal. -->
+  <path class="load" d="M470 165 V35"/>
+  <text class="math" x="491" y="57">σ<tspan font-size="20" baseline-shift="sub">y</tspan></text>
+  <path class="load" d="M535 240 L665 315"/>
+  <text class="math" x="660" y="286">σ<tspan font-size="20" baseline-shift="sub">x</tspan></text>
+  <path class="load" d="M405 240 L275 315"/>
+  <text class="math" x="255" y="286">σ<tspan font-size="20" baseline-shift="sub">z</tspan></text>
+  <!-- Equal-length axes: y is vertical; x and z are 30 degrees below horizontal. -->
+  <path class="axis" d="M120 310 V225"/>
+  <path class="axis" d="M120 310 L193.61 352.5"/>
+  <path class="axis" d="M120 310 L46.39 352.5"/>
+  <text class="math" x="111" y="213">y</text>
+  <text class="math" x="204" y="364">x</text>
+  <text class="math" x="24" y="364">z</text>
+
+</svg>

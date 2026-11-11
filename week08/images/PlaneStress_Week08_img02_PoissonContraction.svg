@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title">
+  <title id="title">A bar in axial tension lengthens and contracts laterally</title>
+  <defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="900" height="440" fill="white"/>
+
+  <!-- Dashed rectangle is the original shape, overlaid on the deformed shape. -->
+  <rect class="guide" x="180" y="130" width="480" height="150"/>
+  <rect class="outline" x="145" y="150" width="550" height="110"/>
+  <!-- Applied tensile forces and global directions. -->
+  <path class="load" d="M145 205 H55"/>
+<path class="load" d="M695 205 H795"/>
+  <text class="math" x="68" y="190">P</text><text class="math" x="755" y="190">P</text>
+  <path class="axis" d="M95 365 H170"/>
+<path class="axis" d="M95 365 V290"/>
+  <text class="math" x="180" y="373">x</text><text class="math" x="85" y="280">y</text>
+  <!-- Dimension lines compare the original and deformed widths. -->
+  <path class="extension" d="M660 130 H860 M660 280 H860"/>
+  <path class="dim" d="M845 130 V280"/>
+  <text class="math" x="860" y="215">b</text>
+  <!-- Legend distinguishes the reference shape from the deformed bar. -->
+  <path class="guide" d="M265 380 H330"/><text class="small" x="345" y="387">Original shape</text>
+  <path d="M565 380 H630" stroke="#29434f" stroke-width="2.5"/><text class="small" x="645" y="387">Deformed shape</text>
+
+</svg>
