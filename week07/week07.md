@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 1.0.0
+version: 1.0.1
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -645,6 +645,64 @@ With torque in N mm and allowable stress in MPa, the diameter is in mm. Select a
 Your result depends on the material properties and assumptions you justify. This calculation checks torsional strength; it does not check a twist limit, bending, fatigue or local stress concentrations.
 
 </details>
+
+{{1}}
+********************
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+**1. Calculate the transmitted torque**
+
+Convert the power to watts, using $1\text{ hp}\approx745.7\text{ W}$:
+
+$$P=1341(745.7)\approx1.000\times10^6\text{ W}.$$
+
+This is approximately **one megawatt (1 MW)**. Koenigsegg describes its earlier [One:1](https://www.koenigsegg.com/model/one1) as the world's first production **megacar**, because it produced 1 MW of power. The [Agera RS](https://www.koenigsegg.com/model/agera-rs) used in this problem was available with an optional 1 MW engine upgrade.
+
+The rotational frequency is:
+
+$$f=\frac{7800}{60}=130\text{ rps}.$$
+
+Therefore:
+
+$$T=\frac{P}{2\pi f}
+\approx\frac{1.000\times10^6}{2\pi(130)}
+=1224.27\text{ N m}
+=1.22427\times10^6\text{ N mm}.$$
+
+**2. Determine the allowable shear stress**
+
+For this worked example, take the material's **shear yield strength** as $\tau_Y=320\text{ MPa}$. With a factor of safety of five:
+
+$$\tau_{\mathrm{allow}}=\frac{\tau_Y}{n}
+=\frac{320}{5}=\boxed{64\text{ MPa}}.$$
+
+Here, 320 MPa is assumed to be a **shear** yield strength. A published tensile strength must not be substituted as though it were a shear yield strength. If you use different material data, state the value and justify your allowable stress.
+
+**3. Calculate the minimum diameter**
+
+For a solid circular shaft:
+
+$$J=\frac{\pi d^4}{32},\qquad c=\frac{d}{2},\qquad
+\tau_{\max}=\frac{Tc}{J}=\frac{16T}{\pi d^3}.$$
+
+Set the maximum stress equal to the allowable stress and rearrange:
+
+$$d_{\min}=\left(\frac{16T}{\pi\tau_{\mathrm{allow}}}\right)^{1/3}
+=\left(\frac{16(1.22427\times10^6)}{\pi(64)}\right)^{1/3}
+=\boxed{46.01\text{ mm}}.$$
+
+**4. Select and check a practical diameter**
+
+The calculated minimum diameter is 46.01 mm. Select a practical nominal diameter of **50 mm**, rounding upwards to satisfy the strength requirement. Its maximum shear stress is:
+
+$$\tau_{\max}=\frac{16(1.22427\times10^6)}{\pi(50)^3}
+=\boxed{49.88\text{ MPa}}<64\text{ MPa}.$$
+
+The 50 mm shaft meets the torsional-strength requirement for the assumed material strength and loading. The factor of safety has already been included in the allowable stress; do not apply it a second time.
+
+</details>
+********************
 
 ## Analytical Problem: Transmission Shaft Design
 
