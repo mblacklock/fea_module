@@ -1,12 +1,12 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 0.0.1
+version: 0.0.2
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
         ../common/templates.md
-comment: KB5034 Week 8 - Topic 3: multiaxial stress, strain and plane stress; before-class study.
+comment: KB5034 Week 8 - Topic 3: multiaxial stress, strain and plane stress; before-class and in-class study.
 -->
 
 # Week 8: 2D Stresses & Plane Stress Elements
@@ -501,6 +501,365 @@ Including the factor outside the matrix, each shear diagonal entry is $G=E/[2(1+
 - [ ] I can use the plane-stress equations to relate stress and strain.
 
 Bring any questions to class. We will use these ideas to solve numerical stress–strain problems.
+
+## B. IN-CLASS STUDY: Multiaxial Stress and Plane Stress
+
+**LECTORIAL STARTS HERE**
+
+We will use the stress–strain relationships to calculate deformation, decide when plane stress is an appropriate approximation and begin the analytical problem for this week.
+
+Show the equations, substitutions and units in your notes. The worked solutions are included in dropdowns so that you can return to them for revision.
+
+## Retrieval: Stress, Strain and Plane Stress
+
+**1. An isotropic bar is pulled in $x$ and is free to contract laterally. For positive Poisson's ratio, what happens in $y$?**
+
+<!-- data-solution-button="3" -->
+[( )] It extends.
+[(X)] It contracts.
+[( )] Its length in $y$ cannot change because $\sigma_y=0$.
+
+{{1}}
+********************
+**2. Which components are retained in an $x$–$y$ plane-stress model?**
+
+<!-- data-solution-button="3" -->
+[(X)] $\sigma_x$, $\sigma_y$ and $\tau_{xy}$.
+[( )] $\sigma_x$, $\sigma_y$ and $\sigma_z$.
+[( )] $\varepsilon_x$, $\varepsilon_y$ and $\varepsilon_z$.
+********************
+
+{{2}}
+********************
+**3. In plane stress, must the thickness remain unchanged?**
+
+<!-- data-solution-button="3" -->
+[( )] Yes, because $\sigma_z=0$.
+[(X)] No. In-plane normal stresses can produce through-thickness strain.
+********************
+
+## Worked Example: Measuring Elastic Properties
+
+A circular specimen is subjected to an axial tensile load. The measured extension and reduction in diameter are given below. Assume uniform uniaxial stress in the gauge length and small, linear-elastic deformation.
+
+![Tensile specimen with axial and lateral measurements](images/PlaneStress_Week08_img10_PoissonProblem.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+<!-- data-type="none" -->
+| Quantity | Symbol | Value |
+|:--|:--:|:--|
+| Original gauge length | $L$ | 500 mm |
+| Original radius | $r$ | 8 mm |
+| Tensile force | $P$ | 12 kN |
+| Axial extension | $\delta_x$ | 300 μm |
+| Change in diameter | $\Delta d$ | −2.4 μm |
+
+Determine **Young's modulus** and **Poisson's ratio**. Use the original dimensions when calculating the engineering strains.
+
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+The original diameter is $d=2r=16\text{ mm}$, and the cross-sectional area is:
+
+$$A=\pi r^2=\pi(8)^2=201.06\text{ mm}^2.$$
+
+Convert the measured changes to mm:
+
+$$\delta_x=0.300\text{ mm},\qquad \Delta d=-0.0024\text{ mm}.$$
+
+The axial stress and strain are:
+
+$$\sigma_x=\frac{12000}{201.06}=59.68\text{ MPa},\qquad
+\varepsilon_x=\frac{0.300}{500}=0.000600.$$
+
+Hence:
+
+$$E=\frac{\sigma_x}{\varepsilon_x}
+=\frac{59.68}{0.000600}
+=\boxed{99.47\text{ GPa}}.$$
+
+The lateral strain uses the **diameter change divided by the original diameter**:
+
+$$\varepsilon_y=\frac{\Delta d}{d}
+=\frac{-0.0024}{16}=-0.000150.$$
+
+Therefore:
+
+$$\nu=-\frac{\varepsilon_y}{\varepsilon_x}
+=-\frac{-0.000150}{0.000600}=\boxed{0.25}.$$
+
+The measured changes are in different directions. Divide each change by the original dimension in that same direction.
+
+</details>
+
+{{1}}
+********************
+**Quick check**
+
+Why is $\Delta d$ divided by 16 mm when calculating the lateral strain?
+
+<!-- data-solution-button="3" -->
+[(X)] The measured change is a diameter change, so its reference dimension is the original diameter.
+[( )] The axial gauge length is irrelevant to every part of the calculation.
+[( )] Strain is calculated by multiplying a displacement by its original dimension.
+********************
+
+## Problem: Stress and Deformation of a Thin Plate
+
+A thin rectangular plate carries uniform in-plane stresses. The broad faces are free, and the plate is free to change thickness. Treat the material as homogeneous, isotropic and linearly elastic.
+
+![Positive in-plane normal and shear stresses](images/PlaneStress_Week08_img09_PlaneStressElement.svg)<!-- style="width: 60%; display: block; margin: auto;" -->
+
+<!-- data-type="none" -->
+| Quantity | Symbol | Value |
+|:--|:--:|:--|
+| Young's modulus | $E$ | 200 GPa |
+| Poisson's ratio | $\nu$ | 0.30 |
+| Normal stress in $x$ | $\sigma_x$ | 80 MPa |
+| Normal stress in $y$ | $\sigma_y$ | 40 MPa |
+| Shear stress | $\tau_{xy}$ | 30 MPa |
+| Original length in $x$ | $L_x$ | 100 mm |
+| Original length in $y$ | $L_y$ | 60 mm |
+| Original thickness | $t$ | 2 mm |
+
+1. Calculate $\varepsilon_x$, $\varepsilon_y$ and $\gamma_{xy}$.
+2. Determine the changes in the two in-plane lengths.
+3. Calculate $\varepsilon_z$ and the change in thickness.
+4. Explain why the material can become longer in both $x$ and $y$, despite the Poisson effect.
+
+<details>
+<summary><strong>Reveal solution</strong></summary>
+
+With $E=200000\text{ MPa}$:
+
+$$\varepsilon_x=\frac{80-0.30(40)}{200000}
+=\boxed{0.000340},$$
+
+$$\varepsilon_y=\frac{40-0.30(80)}{200000}
+=\boxed{0.0000800},$$
+
+$$G=\frac{200000}{2(1+0.30)}=76923.08\text{ MPa},\qquad
+\gamma_{xy}=\frac{30}{76923.08}=\boxed{0.000390\text{ rad}}.$$
+
+To first order in the small strains, the changes in the original in-plane lengths are:
+
+$$\delta_x=\varepsilon_xL_x=0.000340(100)=\boxed{0.0340\text{ mm}},$$
+
+$$\delta_y=\varepsilon_yL_y=0.0000800(60)=\boxed{0.00480\text{ mm}}.$$
+
+Through the thickness:
+
+$$\varepsilon_z=-\frac{0.30}{200000}(80+40)
+=\boxed{-0.000180},$$
+
+$$\Delta t=\varepsilon_z t=-0.000180(2)
+=\boxed{-0.000360\text{ mm}}.$$
+
+In each in-plane direction, the direct extension exceeds the lateral contraction caused by the other tensile stress. The net normal strains in $x$ and $y$ are therefore both positive. The thickness decreases.
+
+</details>
+
+## Discussion: Is Plane Stress Appropriate?
+
+For each case, decide whether an $x$–$y$ plane-stress model represents the behaviour described. Explain your decision in terms of **geometry, loading and constraints**.
+
+**1. A thin plate is pulled along its edges.** Its broad faces are free and the loads act in the plate's mid-plane. Consider a region away from the grips.
+
+<!-- data-solution-button="3" -->
+[(X)] Plane stress is appropriate.
+[( )] Plane stress is inappropriate.
+****************************************
+The plate is thin, loading is in-plane and the broad faces are free of traction. Away from local grip effects, through-thickness stresses can be neglected.
+****************************************
+
+{{1}}
+********************
+**2. The same plate is prevented from changing thickness by rigid restraints on its broad faces.**
+
+<!-- data-solution-button="3" -->
+[( )] Plane stress is appropriate because the plate is thin.
+[(X)] The plane-stress assumption must be reconsidered because the restraints can generate $\sigma_z$.
+****************************************
+Free Poisson contraction has been prevented. The restraints can produce a through-thickness reaction stress, so setting $\sigma_z=0$ is generally incompatible with this constraint.
+****************************************
+********************
+
+{{2}}
+********************
+**3. A thin horizontal plate carries a downward load on its broad face and bends substantially.**
+
+<!-- data-solution-button="3" -->
+[( )] An $x$–$y$ plane-stress continuum model can represent this out-of-plane bending.
+[(X)] A model with out-of-plane bending behaviour is needed, such as a plate or shell formulation.
+****************************************
+An $x$–$y$ plane-stress continuum model has in-plane displacement degrees of freedom. It cannot represent the out-of-plane deflection and bending required here. We will study shell elements later in the module.
+****************************************
+********************
+
+## Break
+
+**10 minutes**
+
+## Worked Example: Equal Pressure on All Faces
+
+We will use the three-dimensional stress–strain equations to calculate the pressure and deformation of a block. This also gives an example where plane stress is **not** appropriate.
+
+![Rectangular block with equal inward pressure on every face](images/PlaneStress_Week08_img11_UniformPressure.svg)<!-- style="width: 70%; display: block; margin: auto;" -->
+
+<!-- data-type="none" -->
+| Quantity | Symbol | Value |
+|:--|:--:|:--|
+| Original dimension in $x$ | $L_x$ | 40 mm |
+| Original dimension in $y$ | $L_y$ | 20 mm |
+| Original dimension in $z$ | $L_z$ | 30 mm |
+| Young's modulus | $E$ | 210 GPa |
+| Poisson's ratio | $\nu$ | 0.27 |
+| Change in dimension in $x$ | $\delta_x$ | −1.5 μm |
+
+An equal, uniform pressure $p$ acts on all six faces. Assume small, linear-elastic deformation.
+
+Determine the pressure magnitude and the changes in the dimensions in $y$ and $z$.
+
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+Pressure acts inwards, so the normal stresses are compressive:
+
+$$\sigma_x=\sigma_y=\sigma_z=-p.$$
+
+There are no shear stresses in these axes. Substituting into the normal-strain equation:
+
+$$\varepsilon_x=\frac{\sigma_x-\nu\sigma_y-\nu\sigma_z}{E}
+=\frac{-p+\nu p+\nu p}{E}
+=-\frac{p(1-2\nu)}{E}.$$
+
+The measured shortening gives:
+
+$$\varepsilon_x=\frac{-0.0015}{40}=-0.0000375.$$
+
+Hence the pressure magnitude is:
+
+$$p=-\frac{E\varepsilon_x}{1-2\nu}
+=-\frac{210000(-0.0000375)}{1-2(0.27)}
+=\boxed{17.12\text{ MPa}}.$$
+
+Equal stresses in all three directions give equal normal strains in this isotropic material:
+
+$$\varepsilon_x=\varepsilon_y=\varepsilon_z=-0.0000375.$$
+
+Therefore:
+
+$$\delta_y=\varepsilon_yL_y=-0.0000375(20)
+=\boxed{-0.000750\text{ mm}},$$
+
+$$\delta_z=\varepsilon_zL_z=-0.0000375(30)
+=\boxed{-0.001125\text{ mm}}.$$
+
+The strains are equal, but the changes in length differ because the original dimensions differ. All three dimensions decrease.
+
+</details>
+
+{{1}}
+********************
+**Quick check**
+
+Why is plane stress inappropriate for this block?
+
+<!-- data-solution-button="3" -->
+[( )] The material has a non-zero Poisson's ratio.
+[(X)] Non-zero normal stresses act in all three directions; $\sigma_z$ cannot be neglected.
+[( )] The strains happen to be equal.
+********************
+
+## Analytical Problem: General Stress in Three Dimensions (Q4)
+
+*Assesses generalised Hooke's law for an isotropic material under a three-dimensional stress state.*
+
+The isotropic rectangular block is subjected to an equal compressive pressure $P$ on every face. The measured change in its $x$-direction length is $-0.015\text{ mm}$. Assume linear-elastic behaviour and take compressive normal stress as negative.
+
+![Block under equal compressive pressure with original dimensions in x, y and z](images/PlaneStress_Week08_img12_AnalyticalPressure.svg)<!-- style="width: 75%; display: block; margin: auto;" -->
+
+<!-- data-type="none" -->
+| Quantity | Symbol | Value |
+|:--|:--:|:--|
+| Young's modulus | $E$ | Use your Blackboard value, GPa |
+| Poisson's ratio | $\nu$ | Use your Blackboard value |
+| Initial length in $x$ | $L_x$ | Use your Blackboard value, mm |
+| Initial length in $y$ | $L_y$ | Use your Blackboard value, mm |
+| Initial length in $z$ | $L_z$ | Use your Blackboard value, mm |
+| Measured change in $x$ | $\Delta L_x$ | −0.015 mm |
+
+**Determine the magnitude of the applied pressure $P$. Give your answer in MPa.**
+
+As a check on your working, determine the changes in the $y$ and $z$ lengths; **only the pressure is submitted for marking**. Enter your answer to at least three significant figures.
+
+Begin your calculation in class. Use the values supplied with your Blackboard question, including its measured shortening if this is randomised. Keep a clear record of your equations, substitutions and unit conversions, and retain your workings for the analytical portfolio.
+
+<details>
+<summary><strong>Reveal checks</strong></summary>
+
+- Use the same units for stress and elastic modulus.
+- Calculate the measured strain using the original length in the same direction.
+- Distinguish the positive pressure magnitude from the negative compressive normal stresses.
+- Include the Poisson contributions from the other loaded directions.
+- Equal normal strains do not imply equal changes in length when the original dimensions differ.
+- Check that your final submitted pressure is a positive magnitude in MPa.
+
+</details>
+
+## Week 8 Completion Check
+
+- [ ] I can calculate elastic properties from axial and lateral measurements.
+- [ ] I can account for the Poisson effect when stresses act in more than one direction.
+- [ ] I can calculate normal and engineering shear strains for plane stress.
+- [ ] I can explain when plane stress is appropriate and when it is not.
+- [ ] I can distinguish equal strain from equal change in length.
+- [ ] I have started Q4 and recorded the remaining work and its Blackboard deadline.
+
+## C. INDEPENDENT STUDY: After class
+
+Complete **analytical problem Q4** using your Blackboard values. Submit your numerical answer by the published deadline and keep your workings for the final analytical portfolio.
+
+Review any calculations you found difficult, using the worked solutions above. The optional axial problem on the following page provides additional practice with changes in length.
+
+For next week, study the released Week 9 preparation on stress transformations and principal stresses before the lectorial.
+
+## Optional Practice: A Stepped Axial Bar
+
+A stepped circular bar is subjected to a tensile force $P$. Its material has $E=200\text{ GPa}$ throughout.
+
+![Three segments of a stepped circular bar in series](images/PlaneStress_Week08_img13_SteppedBar.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
+
+1. Determine $P$ such that the total extension is $0.001\text{ mm}$.
+2. Calculate the extension of the central section $BC$.
+
+<details>
+<summary><strong>Reveal solution</strong></summary>
+
+The same internal tensile force passes through each segment. Add their extensions:
+
+$$\delta=\sum_i\frac{PL_i}{EA_i}
+=\frac{P}{E}\left(\frac{50}{\pi(38)^2/4}
++\frac{75}{\pi(25)^2/4}
++\frac{50}{\pi(38)^2/4}\right).$$
+
+The geometric sum is:
+
+$$\sum_i\frac{L_i}{A_i}=0.240963\text{ mm}^{-1}.$$
+
+Therefore:
+
+$$P=\frac{E\delta}{\sum_iL_i/A_i}
+=\frac{200000(0.001)}{0.240963}
+=\boxed{830.0\text{ N}}.$$
+
+For the central segment:
+
+$$\delta_{BC}=\frac{P(75)}{200000\,[\pi(25)^2/4]}
+=\boxed{0.0006341\text{ mm}}.$$
+
+The central segment is both longer and narrower, so it contributes the greatest part of the total extension.
+
+</details>
 
 ## Further reading
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" role="img" aria-labelledby="title">
+<title id="title">Mohr circle with the x face below the normal stress axis for positive xy shear, using an upward ordinate of minus tau</title>
+<defs>
+  <!-- Heads extend slightly beyond the shaft to leave a clean pointed tip. -->
+  <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+  <marker id="grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596773" stroke="none"/></marker>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+    .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+    .axis{fill:none;stroke:#596773;stroke-width:2;stroke-linecap:butt;marker-end:url(#grey)}
+    .rotated{fill:none;stroke:#246bd2;stroke-width:3;stroke-linecap:butt;marker-end:url(#blue)}
+  </style>
+</defs>
+<rect width="900" height="490" fill="white"/>
+
+  <!-- The vertical plotting coordinate is minus tau, matching positive x-face shear plotted below the horizontal axis. -->
+  <path class="axis" d="M95 250 H810"/><path class="axis" d="M180 450 V45"/>
+  <text class="math" x="826" y="260">σ</text><text class="math" x="139" y="40">−τ</text>
+  <!-- Circle centre C and the two diametrically opposite face points X and Y. -->
+  <circle cx="450" cy="250" r="150" fill="none" stroke="#246bd2" stroke-width="3"/>
+  <path d="M360 130 L540 370" fill="none" stroke="#8a959e" stroke-width="2" stroke-dasharray="7 6"/>
+  <path d="M450 250 L540 370" fill="none" stroke="#008b85" stroke-width="3"/>
+  <g fill="#29434f"><circle cx="450" cy="250" r="4"/><circle cx="300" cy="250" r="4"/><circle cx="600" cy="250" r="4"/></g>
+  <g fill="#246bd2"><circle cx="540" cy="370" r="5"/><circle cx="360" cy="130" r="5"/></g>
+  <!-- Symbolic labels avoid giving away the numerical problem reserved for class. -->
+  <text class="math" x="452" y="232">C</text><text class="math" x="501" y="306" style="fill:#008b85">R</text>
+  <text class="math" x="277" y="285">σ<tspan baseline-shift="sub" font-size="20">2</tspan></text>
+  <text class="math" x="589" y="285">σ<tspan baseline-shift="sub" font-size="20">1</tspan></text>
+  <text class="math" x="556" y="398">X (σ<tspan baseline-shift="sub" font-size="20">x</tspan>, −τ<tspan baseline-shift="sub" font-size="20">xy</tspan>)</text>
+  <text class="math" x="215" y="95">Y (σ<tspan baseline-shift="sub" font-size="20">y</tspan>, τ<tspan baseline-shift="sub" font-size="20">xy</tspan>)</text>
+
+</svg>

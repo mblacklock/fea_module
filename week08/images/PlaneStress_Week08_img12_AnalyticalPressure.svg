@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title">
+<title id="title">Analytical Q4: block dimensions and equal inward pressure on all faces</title>
+<defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+<rect width="900" height="520" fill="white"/>
+
+  <!-- Visible faces of a rectangular block; pressure acts inward on every face. -->
+  <path class="outline" d="M280 160 L370 105 H620 L530 160 Z"/>
+  <path d="M530 160 L620 105 V300 L530 355 Z" fill="#c6dde5" stroke="#29434f" stroke-width="2.5"/>
+  <path class="outline" d="M280 160 H530 V355 H280 Z"/>
+  <!-- Inward arrows represent pressure on the three visible faces. Opposite-face pressures are omitted. -->
+  <path class="load" d="M415 40 V130"/>
+  <path class="load" d="M460 40 V130"/>
+  <path class="load" d="M760 205 H575"/>
+  <path class="load" d="M760 260 H575"/>
+  <path class="load" d="M310 330 L400 275"/>
+  <path class="load" d="M360 365 L450 310"/>
+  <text class="math" x="475" y="70">P</text><text class="math" x="730" y="188">P</text>
+  <text class="math" x="275" y="330">P</text>
+  <!-- Global axes match the face-normal directions. -->
+  <path class="axis" d="M120 300 H210"/><path class="axis" d="M120 300 V215"/><path class="axis" d="M120 300 L65 340"/>
+  <text class="math" x="221" y="309">x</text><text class="math" x="110" y="205">y</text><text class="math" x="43" y="357">z</text>
+  <!-- Original dimensions in the x, y and z directions; dimension arrows point towards the extension lines. -->
+  <path class="extension" d="M280 365 V423 M530 365 V423"/>
+  <path class="dim" d="M280 405 H530"/>
+  <rect x="385" y="388" width="40" height="32" fill="white"/>
+  <text class="math" x="390" y="414">L<tspan font-size="19" baseline-shift="sub">x</tspan></text>
+  <path class="extension" d="M260 160 H235 M260 355 H235"/>
+  <path class="dim" d="M245 160 V355"/>
+  <text class="math" x="198" y="265">L<tspan font-size="19" baseline-shift="sub">y</tspan></text>
+  <path class="extension" d="M280 150 V120 M370 95 V65"/>
+  <path class="dim" d="M280 125 L370 70"/>
+  <rect x="302" y="78" width="43" height="32" fill="white"/>
+  <text class="math" x="306" y="103">L<tspan font-size="19" baseline-shift="sub">z</tspan></text>
+  <text class="small" x="275" y="480">The same pressure P acts on all six faces.</text>
+
+</svg>

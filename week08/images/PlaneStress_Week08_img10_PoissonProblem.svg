@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-labelledby="title">
+<title id="title">Tensile test specimen with axial extension and measured reduction in diameter</title>
+<defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+<rect width="900" height="440" fill="white"/>
+
+  <!-- Cylindrical specimen, with the original free-end position shown dashed. -->
+  <path class="outline" d="M190 120 H650 A24 65 0 0 1 650 250 H190 A24 65 0 0 1 190 120 Z"/>
+  <ellipse cx="650" cy="185" rx="24" ry="65" fill="#c6dde5" stroke="#29434f" stroke-width="2.5"/>
+  <path class="guide" d="M605 120 A24 65 0 0 1 605 250"/>
+  <!-- Tensile loading and axial direction. -->
+  <path class="load" d="M170 185 H65"/><path class="load" d="M674 185 H815"/>
+  <text x="52" y="160" class="math">P</text><text x="735" y="160">P = 12 kN</text>
+  <path class="axis" d="M720 340 H815"/><path class="axis" d="M720 340 V270"/>
+  <text class="math" x="826" y="348">x</text><text class="math" x="710" y="260">y</text>
+  <!-- Original gauge length and diameter. -->
+  <path class="extension" d="M190 270 V320 M605 270 V320"/>
+  <path class="dim" d="M190 300 H605"/>
+  <rect x="310" y="281" width="180" height="34" fill="white"/><text x="320" y="307">L = 500 mm</text>
+  <path class="dim" d="M190 120 V250"/><text x="60" y="100">d = 16 mm</text>
+  <text x="300" y="65">Axial extension: δₓ = 0.300 mm</text>
+  <text x="165" y="390">Diameter change: Δd = −0.0024 mm</text>
+
+</svg>

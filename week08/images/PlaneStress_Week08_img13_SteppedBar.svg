@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 355" role="img" aria-labelledby="title">
+<title id="title">Stepped circular bar with three axial segments in series under tension</title>
+<defs>
+    <!-- Arrowheads terminate at the specified end point. -->
+    <marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+    <marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+      .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+      .small{font-size:20px}
+      .outline{fill:#dfedf1;stroke:#29434f;stroke-width:2.5;stroke-linejoin:round}
+      .load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}
+      .axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}
+      .dim{stroke-linecap:butt;fill:none;stroke:#596773;stroke-width:1.8;marker-start:url(#axis);marker-end:url(#axis)}
+      .guide{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:7 6}
+      .extension{stroke:#8a959e;stroke-width:1.5}
+    </style>
+  </defs>
+<rect width="900" height="355" fill="white"/>
+
+  <!-- Stepped profile; the shoulders mark the changes of circular diameter. -->
+  <path class="outline" d="M180 100 H330 V135 H570 V100 H720 V250 H570 V215 H330 V250 H180 Z"/>
+  <path class="guide" d="M160 175 H740"/>
+  <!-- Equal and opposite tensile end forces. -->
+  <path class="load" d="M180 175 H55"/><path class="load" d="M720 175 H845"/>
+  <text class="math" x="75" y="157">P</text><text class="math" x="805" y="157">P</text>
+  <!-- Segment labels and diameters. -->
+  <text class="math" x="171" y="80">A</text><text class="math" x="321" y="80">B</text><text class="math" x="561" y="80">C</text><text class="math" x="711" y="80">D</text>
+  <text class="small" x="205" y="205">d = 38 mm</text><text class="small" x="390" y="180">d = 25 mm</text><text class="small" x="595" y="205">d = 38 mm</text>
+  <!-- Segment dimensions point inward and use extension lines at each shoulder. -->
+  <path class="extension" d="M180 260 V320 M330 260 V320 M570 260 V320 M720 260 V320"/>
+  <path class="dim" d="M180 300 H330"/><path class="dim" d="M330 300 H570"/><path class="dim" d="M570 300 H720"/>
+  <g fill="white"><rect x="212" y="284" width="87" height="32"/><rect x="407" y="284" width="87" height="32"/><rect x="602" y="284" width="87" height="32"/></g>
+  <text x="216" y="307">50 mm</text><text x="411" y="307">75 mm</text><text x="606" y="307">50 mm</text>
+
+</svg>

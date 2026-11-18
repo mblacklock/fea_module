@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title">
+<title id="title">Counterclockwise rotation theta from global x-y axes to local x-prime y-prime axes</title>
+<defs>
+  <!-- Heads extend slightly beyond the shaft to leave a clean pointed tip. -->
+  <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+  <marker id="grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596773" stroke="none"/></marker>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}
+    .math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}
+    .axis{fill:none;stroke:#596773;stroke-width:2;stroke-linecap:butt;marker-end:url(#grey)}
+    .rotated{fill:none;stroke:#246bd2;stroke-width:3;stroke-linecap:butt;marker-end:url(#blue)}
+  </style>
+</defs>
+<rect width="900" height="390" fill="white"/>
+
+  <!-- Both coordinate systems describe the same material point. -->
+  <path class="axis" d="M350 320 H720"/><path class="axis" d="M350 320 V30"/>
+  <text class="math" x="737" y="329">x</text><text class="math" x="340" y="22">y</text>
+  <!-- Rotated orthogonal axes; the physical rotation is positive counterclockwise. -->
+  <path class="rotated" d="M350 320 L661.77 140"/>
+  <path class="rotated" d="M350 320 L200 60.19"/>
+  <text class="math" x="678" y="138" style="fill:#246bd2">x′</text>
+  <text class="math" x="170" y="48" style="fill:#246bd2">y′</text>
+  <!-- Theta is measured from x to x-prime, not from either axis to a shear arrow. -->
+  <path d="M435 320 A85 85 0 0 0 423.61 277.5" fill="none" stroke="#29434f" stroke-width="2"/>
+  <text class="math" x="447" y="300">θ</text>
+  <circle cx="350" cy="320" r="4" fill="#29434f"/>
+
+</svg>
