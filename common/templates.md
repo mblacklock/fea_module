@@ -15,7 +15,7 @@ script: ../course-links.js
 > **Following this tutorial:** Use the **right arrow → at the bottom of the page** to reveal the next step or move to the next page. Use the **left arrow ←** to go back. To see all steps at once, select **Textbook mode** from the menu at the top.
 @end
 
-@Panopto: <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%"><iframe src="https://northumbria.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=@0&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all" style="border: 1px solid #464646; position: absolute; top: 0; left: 0; width: 70%; height: 70%; box-sizing: border-box;" allowfullscreen allow="autoplay"></iframe></div>
+@Panopto: <div style="position: relative; width: 70%; aspect-ratio: 16 / 9;"><iframe src="https://northumbria.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=@0&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all" style="border: 1px solid #464646; position: absolute; inset: 0; width: 100%; height: 100%; box-sizing: border-box;" allowfullscreen allow="autoplay"></iframe></div>
 
 @moduleTitle
 ![Northumbria University Newcastle](../logo.png)<!-- style="width: 34%; min-width: 16rem;" -->
