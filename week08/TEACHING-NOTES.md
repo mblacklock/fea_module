@@ -1,8 +1,8 @@
 # Week 8 solution visibility
 
-The four numerical worked solutions and the fourth plane-stress discussion explanation are currently visible as dropdowns for author review. Their contents remain in `week08.md` inside five `post-class-solution` wrappers. Q4's existing checks and all pre-class feedback are unchanged.
+The four numerical worked solutions and the fourth plane-stress discussion explanation are currently hidden for class. Their contents remain in `week08.md` inside five `post-class-solution` wrappers. Q4's existing checks and all pre-class feedback are unchanged.
 
-Before class, replace each of the five opening tags:
+To hide the solutions before class, each of the five opening tags uses the hidden form below rather than the visible form:
 
 ```html
 <div class="post-class-solution">

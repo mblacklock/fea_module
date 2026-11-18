@@ -583,7 +583,7 @@ Number.isFinite(value) && Math.abs(value - 0.25) <= 0.0005
 Correct. Your Poisson's ratio is consistent with the measured axial and lateral strains.
 ****************************************
 
-<div class="post-class-solution">
+<div class="post-class-solution" style="display: none;" hidden>
 <details>
 <summary><strong>Reveal worked solution</strong></summary>
 
@@ -757,7 +757,7 @@ Correct. Your value and sign are consistent with the specified stresses and mate
 </div>
 </div>
 
-<div class="post-class-solution">
+<div class="post-class-solution" style="display: none;" hidden>
 <details>
 <summary><strong>Reveal solution</strong></summary>
 
@@ -838,7 +838,7 @@ An $x$–$y$ plane-stress continuum model has in-plane displacement degrees of f
 2. Does the presence of the hole automatically invalidate the plane-stress assumption? Explain.
 3. Would plane stress remain appropriate if the plate experienced significant out-of-plane bending?
 
-<div class="post-class-solution">
+<div class="post-class-solution" style="display: none;" hidden>
 <details>
 <summary><strong>Reveal explanation</strong></summary>
 
@@ -965,7 +965,7 @@ Correct. Your value and sign are consistent with the specified stresses and mate
 </div>
 </div>
 
-<div class="post-class-solution">
+<div class="post-class-solution" style="display: none;" hidden>
 <details>
 <summary><strong>Reveal worked solution</strong></summary>
 
@@ -1068,7 +1068,7 @@ A stepped circular bar is subjected to a tensile force $P$. Its material has $E=
 1. Determine $P$ such that the total extension is $0.001\text{ mm}$.
 2. Calculate the extension of the central section $BC$.
 
-<div class="post-class-solution">
+<div class="post-class-solution" style="display: none;" hidden>
 <details>
 <summary><strong>Reveal solution</strong></summary>
 
