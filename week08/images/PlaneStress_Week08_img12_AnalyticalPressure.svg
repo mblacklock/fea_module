@@ -44,8 +44,8 @@
   <path class="load" d="M305 313.333 L335 295"/>
   <path class="load" d="M375 313.333 L405 295"/>
   <path class="load" d="M445 313.333 L475 295"/>
-  <text class="math" x="580" y="80">P</text><text class="math" x="655" y="230">P</text>
-  <text class="math" x="275" y="330">P</text>
+  <text class="math" x="485" y="80">P</text><text class="math" x="655" y="230">P</text>
+  <text class="math" x="325" y="345">P</text>
   <!-- Global axes match the face-normal directions. -->
   <path class="axis" d="M120 300 H210"/><path class="axis" d="M120 300 V215"/><path class="axis" d="M120 300 L65 340"/>
   <text class="math" x="221" y="309">x</text><text class="math" x="110" y="205">y</text><text class="math" x="43" y="357">z</text>
