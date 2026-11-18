@@ -154,6 +154,51 @@ $$\sigma_{x′}+\sigma_{y′}=\sigma_x+\sigma_y.$$
 
 [Open the recording in Panopto](https://northumbria.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f410d510-d838-4450-b3b7-b50300ac1546)
 
+<div class="video-correction" style="background: #fff4df; color: #29434f; border: 1px solid #e6bf83; border-left: 5px solid #d28a20; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0;">
+
+**Correction to Video 4 (1:25)**
+
+The intermediate squared equations in the recording omit the cross terms. The final equation of Mohr's circle is correct.
+
+Write $\sigma_{\mathrm{ave}}=(\sigma_x+\sigma_y)/2$ and let:
+
+$$A=\frac{\sigma_x-\sigma_y}{2},\qquad B=\tau_{xy}.$$
+
+The transformation equations become:
+
+$$\begin{aligned}
+\sigma_{x'}-\sigma_{\mathrm{ave}}&=A\cos(2\theta)+B\sin(2\theta),\\
+\tau_{x'y'}&=-A\sin(2\theta)+B\cos(2\theta).
+\end{aligned}$$
+
+Squaring each equation gives:
+
+**Equation 1**
+
+$$\begin{aligned}
+(\sigma_{x'}-\sigma_{\mathrm{ave}})^2
+={}&A^2\cos^2(2\theta)\\
+&\boxed{+2AB\sin(2\theta)\cos(2\theta)}\\
+&+B^2\sin^2(2\theta).
+\end{aligned}$$
+
+**Equation 2**
+
+$$\begin{aligned}
+\tau_{x'y'}^2
+={}&A^2\sin^2(2\theta)\\
+&\boxed{-2AB\sin(2\theta)\cos(2\theta)}\\
+&+B^2\cos^2(2\theta).
+\end{aligned}$$
+
+The boxed cross terms have opposite signs. They cancel **when the two squared equations are added**, not when each equation is squared individually. Using $\sin^2(2\theta)+\cos^2(2\theta)=1$ gives:
+
+$$\boxed{(\sigma_{x'}-\sigma_{\mathrm{ave}})^2+\tau_{x'y'}^2
+=A^2+B^2
+=\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2.}$$
+
+</div>
+
 **Look for:** Mohr's circle provides a graphical representation of the same stress transformations. Its horizontal coordinate is normal stress; its vertical coordinate represents shear with the stated plotting convention.
 
 The centre and radius are:
@@ -163,7 +208,7 @@ R=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^{\,2}}.$$
 
 ![Mohr's circle with the two original face points, centre and principal-stress intercepts](images/PlaneStress_Week09_img02_MohrsCircle.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
 
-**Plotting convention:** In the diagram, the upward vertical coordinate is $-\tau$. The two face points are therefore labelled by their plotted coordinates:
+**Plotting convention:** The vertical axis is labelled $\tau$, with positive plotted shear upwards. Clockwise shear tendency on an individual face is plotted above the horizontal axis; anticlockwise shear tendency is plotted below it. Determine the sign by considering the shear acting on each individual face. The face-point coordinates are:
 
 $$X=(\sigma_x,-\tau_{xy}),\qquad Y=(\sigma_y,+\tau_{xy}).$$
 

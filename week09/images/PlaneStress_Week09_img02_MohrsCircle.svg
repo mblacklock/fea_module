@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" role="img" aria-labelledby="title">
-<title id="title">Mohr circle with the x face below the normal stress axis for positive xy shear, using an upward ordinate of minus tau</title>
+<title id="title">Mohr circle with positive plotted shear upwards: clockwise face shear above the horizontal axis and anticlockwise face shear below it</title>
 <defs>
   <!-- Heads extend slightly beyond the shaft to leave a clean pointed tip. -->
   <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
@@ -13,9 +13,9 @@
 </defs>
 <rect width="900" height="490" fill="white"/>
 
-  <!-- The vertical plotting coordinate is minus tau, matching positive x-face shear plotted below the horizontal axis. -->
+  <!-- Positive plotted shear is upwards: clockwise face shear plots above the axis, anticlockwise face shear below it. Positive tensor xy shear puts X below and Y above. -->
   <path class="axis" d="M95 250 H810"/><path class="axis" d="M180 450 V45"/>
-  <text class="math" x="826" y="260">σ</text><text class="math" x="139" y="40">−τ</text>
+  <text class="math" x="826" y="260">σ</text><text class="math" x="139" y="40">τ</text>
   <!-- Circle centre C and the two diametrically opposite face points X and Y. -->
   <circle cx="450" cy="250" r="150" fill="none" stroke="#246bd2" stroke-width="3"/>
   <path d="M360 130 L540 370" fill="none" stroke="#8a959e" stroke-width="2" stroke-dasharray="7 6"/>
