@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" role="img" aria-labelledby="title desc">
+<title id="title">Thin plate with a circular hole under in-plane tension</title>
+<desc id="desc">Plan view of a thin plate containing a central circular hole. Equal outward tensile loads act along the left and right edges in the x direction. The broad faces and circular hole surface are traction-free.</desc>
+<defs>
+<marker id="load" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#246bd2" stroke="none"/></marker>
+<marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#354954" stroke="none"/></marker>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-size:24px;fill:#29434f}.math{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px}.load{stroke-linecap:butt;fill:none;stroke:#246bd2;stroke-width:3;marker-end:url(#load)}.axis{stroke-linecap:butt;fill:none;stroke:#354954;stroke-width:2;marker-end:url(#axis)}</style>
+</defs>
+<rect width="860" height="380" fill="white"/>
+<!-- The even-odd fill leaves a true circular opening in the plate. -->
+<path d="M190 65 H670 V235 H190 Z M485 150 A55 55 0 1 0 375 150 A55 55 0 1 0 485 150 Z" fill-rule="evenodd" fill="#dfedf1" stroke="#29434f" stroke-width="2.5"/>
+<!-- Separate paths give every edge traction its own arrowhead. -->
+<path class="load" d="M190 90 H80"/><path class="load" d="M190 150 H80"/><path class="load" d="M190 210 H80"/>
+<path class="load" d="M670 90 H780"/><path class="load" d="M670 150 H780"/><path class="load" d="M670 210 H780"/>
+<text class="math" x="120" y="62">σ</text><text class="math" x="720" y="62">σ</text>
+<!-- The displayed broad face lies in the x-y plane. -->
+<path class="axis" d="M75 335 H135"/><path class="axis" d="M75 335 V275"/>
+<text class="math" x="146" y="345">x</text><text class="math" x="65" y="265">y</text>
+</svg>

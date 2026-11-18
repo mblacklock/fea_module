@@ -22,14 +22,29 @@
   <path class="outline" d="M280 160 L370 105 H620 L530 160 Z"/>
   <path d="M530 160 L620 105 V300 L530 355 Z" fill="#c6dde5" stroke="#29434f" stroke-width="2.5"/>
   <path class="outline" d="M280 160 H530 V355 H280 Z"/>
-  <!-- Inward arrows represent pressure on the three visible faces. Opposite-face pressures are omitted. -->
-  <path class="load" d="M415 40 V130"/>
-  <path class="load" d="M460 40 V130"/>
-  <path class="load" d="M760 205 H575"/>
-  <path class="load" d="M760 260 H575"/>
-  <path class="load" d="M310 330 L400 275"/>
-  <path class="load" d="M360 365 L450 310"/>
-  <text class="math" x="475" y="70">P</text><text class="math" x="730" y="188">P</text>
+  <!-- Six short inward pressure arrows per visible face, uniformly spaced in face coordinates. -->
+  <!-- Top face: three columns and two rows. -->
+  <path class="load" d="M360.2 108.6 V144.6"/>
+  <path class="load" d="M430.2 108.6 V144.6"/>
+  <path class="load" d="M500.2 108.6 V144.6"/>
+  <path class="load" d="M399.8 84.4 V120.4"/>
+  <path class="load" d="M469.8 84.4 V120.4"/>
+  <path class="load" d="M539.8 84.4 V120.4"/>
+  <!-- Right face: two columns and three rows. -->
+  <path class="load" d="M593 186.4 H557"/>
+  <path class="load" d="M629 164.4 H593"/>
+  <path class="load" d="M593 241 H557"/>
+  <path class="load" d="M629 219 H593"/>
+  <path class="load" d="M593 295.6 H557"/>
+  <path class="load" d="M629 273.6 H593"/>
+  <!-- Front face: three columns and two rows, directed into the block along negative z. -->
+  <path class="load" d="M305 243.333 L335 225"/>
+  <path class="load" d="M375 243.333 L405 225"/>
+  <path class="load" d="M445 243.333 L475 225"/>
+  <path class="load" d="M305 313.333 L335 295"/>
+  <path class="load" d="M375 313.333 L405 295"/>
+  <path class="load" d="M445 313.333 L475 295"/>
+  <text class="math" x="580" y="80">P</text><text class="math" x="655" y="230">P</text>
   <text class="math" x="275" y="330">P</text>
   <!-- Global axes match the face-normal directions. -->
   <path class="axis" d="M120 300 H210"/><path class="axis" d="M120 300 V215"/><path class="axis" d="M120 300 L65 340"/>
