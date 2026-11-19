@@ -1010,7 +1010,7 @@ Thus $\sigma_z=0$ does **not** imply $\varepsilon_z=0$: the stresses in the othe
 
 *Assesses generalised Hooke's law for an isotropic material under a three-dimensional stress state.*
 
-The isotropic rectangular block is subjected to an equal compressive pressure $P$ on every face. The measured change in its $x$-direction length is $\delta_x=-0.015\text{ mm}$. Assume linear-elastic behaviour and take compressive normal stress as negative.
+The isotropic rectangular block is subjected to an equal compressive pressure $P$ on every face. The measured change in its $x$-direction length $\delta_x$ is given on Blackboard. Assume linear-elastic behaviour and take compressive normal stress as negative.
 
 ![Block under equal compressive pressure with original dimensions in x, y and z](images/PlaneStress_Week08_img12_AnalyticalPressure.svg)<!-- style="width: 75%; display: block; margin: auto;" -->
 
@@ -1022,7 +1022,7 @@ The isotropic rectangular block is subjected to an equal compressive pressure $P
 | Initial length in $x$ | $L_x$ | Use your Blackboard value, mm |
 | Initial length in $y$ | $L_y$ | Use your Blackboard value, mm |
 | Initial length in $z$ | $L_z$ | Use your Blackboard value, mm |
-| Measured change in $x$ | $\delta_x$ | −0.015 mm |
+| Measured change in $x$ | $\delta_x$ | Use your Blackboard value, mm |
 
 **Determine the magnitude of the applied pressure $P$. Give your answer in MPa.**
 
