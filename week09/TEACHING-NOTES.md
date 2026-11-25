@@ -1,124 +1,521 @@
-# Week 9 delivery and solution release
+# Week 9 — Teaching Notes
 
-## Visibility and release
+## Session overview
 
-The in-class numerical problems are visible. Their worked solutions and numerical circle drawings are hidden in both Presentation and Textbook modes. Retrieval feedback and the failure-criterion decision feedback remain available during class.
+**Module:** KB5034 Mechanics & Finite Element Analysis
 
-Release all four solution blocks together by changing the **single local macro definition** in the header of `week09.md`:
+**Topic:** 2D stresses, stress transformations, principal stresses and failure criteria.
 
-```html
-@Week09Solution: <div class="week09-post-class" style="display: none;" hidden>
-```
+**Duration:** 150-minute lectorial.
 
-to:
+**Learning Outcome 3.2:** Calculate principal stresses for simple engineering structures.
 
-```html
-@Week09Solution: <div class="week09-post-class">
-```
+The session builds on the pre-class videos through student-led numerical problems, live Mohr's circle construction, direct teaching of failure criteria and independent assessed work.
 
-Keep the four uses of `@Week09Solution` and their closing `</div>` tags. This restores the solution dropdowns without changing the problems. Nested dropdowns expose successive parts of a calculation; the shear convention, three construction stages and numerical circle are nested within the first problem's worked-solution dropdown. Numerical answers are not placed in student-visible click reveals or automatic checkers.
+Plane-stress finite element formulation and modelling are covered in Week 10.
 
-Before class, retain the hidden macro above. Preview the selected state before publication. Hiding is for presentation, not access control: raw source remains readable. These are unassessed teaching examples; no Q5 answer key is included. No commit, push or release is automatic.
+## Pre-class preparation
 
-## Suggested 150-minute session
+Students complete five Panopto recordings:
+
+| Video | Topic | Duration |
+|---|---|---:|
+| 1 | Transformations of stresses | 7 min |
+| 2 | Summing forces | 6 min |
+| 3 | Rotating stresses | 11 min |
+| 4 | Mohr's circle | 12 min |
+| 5 | Principal stresses | 11 min |
+| | **Total video duration** | **47 min** |
+
+The supporting LiaScript material includes retrieval questions, reference equations and a completion checklist.
+
+### Video correction
+
+Video 4 contains an intermediate algebraic error at approximately 1:25.
+
+The cross terms are omitted when individually squaring the stress transformation equations. These terms cancel when the two squared equations are added, so the final equation of Mohr's circle is correct.
+
+A written correction is provided directly below the recording. The video does not need to be re-recorded.
+
+## Suggested lectorial schedule
 
 | Minutes | Activity |
-|:--|:--|
-| 0–10 | Retrieval: physical stress state, zero principal shear, 30° to 60° |
-| 10–40 | Individual attempt and paired comparison: 60, 40, 20 MPa problem |
-| 40–65 | Individual-face shear signs; guided circle construction; 50, −10, 40 MPa circle problem |
+|---|---|
+| 0–10 | Retrieval and discussion of stress transformations |
+| 10–40 | Analytical principal-stress problem and live Mohr's circle construction |
+| 40–65 | Independent graphical Mohr's circle problem |
 | 65–75 | Break |
-| 75–100 | Direct teaching: Tresca, von Mises, brittle normal-stress criterion and comparison |
-| 100–130 | Von Mises/250 MPa yield problem; interpretation and start Q5 setup |
-| 130–150 | Optional scarf-joint extension, or further core-problem support |
+| 75–115 | Failure criteria: Tresca, von Mises, brittle fracture and comparison |
+| 115–130 | Independent work on Analytical Problem Q5 |
+| 130–150 | Optional scarf-joint problem or further student support |
 
-The core is 130 minutes; extension is 20 minutes. Adjust within those blocks, especially the 25-minute construction/second-problem block. If construction needs longer, use extension time. Complete the core principal-stress and Q5 preparation before the extension.
+Timings are indicative. Prioritise the core material and assessed problem over the optional extension.
 
-Use OneNote for live working. Students attempt first, compare next, then discuss the calculation together. The hidden source contains a step-by-step reference for the instructor; release the dropdowns after the lectorial. Demonstrate the construction live in OneNote; students add numerical scales, points, centre, radius and angles to their own sketch. The reference diagrams and full construction are retained inside the first problem's hidden post-class solution, rather than as separate student-facing pages.
+## Delivery approach
 
-## Sources inspected
+LiaScript supports live teaching rather than replacing the lecturer's explanation.
 
-- `Sessions/KB5034_Week_9_2D Stresses & Plane Stress Elements.pptx`: text and assets inspected; selected original slides rendered in PowerPoint. Slides 4–9 supply the problems/construction, 11–19 the criteria, 20 the von Mises problem, and 22 the scarf joint.
-- `Sessions/Week 9 - Constructing Mohr's Circle & Problems.pdf`: all six pages rendered and inspected. Page 1 supplies the circle and individual-face shear convention; pages 2–3 the 50, −10, 40 MPa problem; page 4 the first problem; page 6 the scarf-joint calculation.
-- `Principal Stresses.pdf` was **not found** after searching the local teaching workspace. No contents or diagrams from that unavailable source have been invented.
-- Current Week 9 pre-work, Week 8 in-class organisation and `week08/TEACHING-NOTES.md` were inspected. Existing Week 9 pre-class text and shared templates are unchanged; only the local release macro is added to the Week 9 header.
+Use OneNote for:
 
-## Conventions and source discrepancies
+- Worked numerical calculations.
+- Stress element sketches.
+- Mohr's circle construction.
+- Derivation of the Tresca criterion.
+- Construction of failure surfaces.
+- Simplification of von Mises equations for different stress states.
+- The optional scarf-joint calculation.
 
-- Use tensile normal stress positive and positive tensor `tau_xy` upwards on the positive x face. Physical angles are counterclockwise from x to x'. Clockwise individual-face shear plots above the Mohr axis; anticlockwise below. Thus X=(sigma_x,−tau_xy), Y=(sigma_y,+tau_xy). Counterclockwise physical theta maps to counterclockwise circle 2theta from X.
-- The older handwritten first-problem sketch and its circle on page 4 use the opposite graphical shear sense in places, although the principal-angle arithmetic uses positive shear. The new diagrams consistently use the current pre-class convention and the task's positive shear data. No old conflicting sketch is reproduced unchanged.
-- Slide 9's normal-load arrows show **compression** in y despite its unsigned “10 MPa” label. The new problem explicitly states sigma_y=−10 MPa, matching handwritten pages 1–2.
-- The handwritten page-5 problem with sigma_x=−60 MPa is a different example; it is not substituted for either required activity.
-- The source calls brittle failure “yielding” and uses yield-strength notation. The new page correctly describes **fracture**, using separate tensile and compressive strength magnitudes. The square illustrates equal strengths only.
-- The scarf-joint slide draws its plane at 25° to horizontal, while the handwritten solution transforms through a **normal angle** of 25° and obtains the shear-controlled 1.25 kN result. The module leader selected the handwritten 1.25 kN interpretation. The recreated diagram and text explicitly use x' (plane normal) at +25° to x, hence the plane is 65° to horizontal. The alternative original plane-angle interpretation would give a 0.779 kN normal-stress limit and is not mixed into the student activity.
-- The normalised Tresca hexagon, von Mises ellipse and brittle square recreate the original surfaces. The experimental comparison image is copied unchanged from slide 19 (`image26.png`); its Dowling (1993) attribution is retained beside it.
+Students should attempt the numerical problems independently before comparing their approaches with neighbours and discussing the solutions.
 
-## Verified numerical reference
+Numerical answer checkers provide immediate feedback without requiring students to access the full worked solutions.
 
-Angles below are physical x-to-x' angles, modulo 180°. The first principal orientation carries the larger in-plane principal stress; its perpendicular carries the smaller.
+## Stress and angle conventions
 
-| Case | Verified results |
-|:--|:--|
-| 60, 40, 20 MPa | C=50 MPa; R=22.3606798 MPa; principal stresses 72.3606798 and 27.6393202 MPa; principal angles 31.7174744° and 121.7174744°; maximum in-plane shear +R at −13.2825256°, −R at 76.7174744°. Absolute 3D maximum shear is 36.1803399 MPa. |
-| 50, −10, 40 MPa | C=20 MPa; R=50 MPa; principal stresses 70 and −30 MPa; principal angles 26.5650512° and 116.5650512°; maximum in-plane shear +50 MPa at −18.4349488°, −50 MPa at 71.5650512°. Normal stress there is 20 MPa. Absolute 3D maximum shear is also 50 MPa. |
-| Von Mises, first state | sqrt(4000)=63.2455532 MPa; factor of safety 250/sqrt(4000)=3.9528471; no first yield predicted. |
-| Scarf joint | A=800 mm²; normal limit 3583.30236 N; shear limit 1253.19100 N; governing load 1.25 kN in shear. At the unrounded limit, normal stress is 0.279784595 MPa and shear magnitude 0.600 MPa. |
+Use the following conventions consistently throughout the session:
 
-The in-plane principal labels do not imply that the zero third principal stress is always the smallest. Tresca includes all three. Factor-of-safety load multiplication assumes proportional loading and the same linear-elastic stress solution.
+- Tensile normal stress is positive.
+- Positive tensor shear acts in positive y on the positive x face.
+- Physical rotation angles are positive anticlockwise from x to x'.
+- On Mohr's circle, clockwise individual-face shear tendency plots above the horizontal axis.
+- Anticlockwise individual-face shear tendency plots below the horizontal axis.
 
-## Validation completed
+Consequently, the original face points are:
 
-- Independently evaluated both stress transformations at each principal and maximum-shear orientation, including tensor shear signs. Cross-checked von Mises using component and three-principal-stress forms; checked scarf-joint force limits in N and MPa.
-- Checked the normalised von Mises ellipse and Tresca hexagon against their equations. Numerical circle axes cross at zero normal stress; X/Y coordinates and counterclockwise angle arcs use the agreed plotting convention.
-- Inspected every new SVG, checked XML and local image references, and exercised all new class pages in the local LiaScript renderer with no detected mathematical rendering errors or broken images. All four added retrieval/decision quizzes passed.
-- Tested all three guided construction stages. Confirmed the four solution blocks are hidden in Presentation and Textbook modes. A temporary ignored preview with the single macro switched to visible successfully rendered and expanded all four solution blocks and their nested parts.
-- Pre-class body and further reading are preserved exactly. The only pre-class-header addition is the local release macro. Shared templates and assessment files are unchanged. No ABAQUS analysis is required or claimed.
+$$X=(\sigma_x,-\tau_{xy})$$
 
-## Construction consolidated into the first worked solution
+$$Y=(\sigma_y,+\tau_{xy})$$
 
-The former individual-face shear and guided-construction pages are now within part 5 of the first problem's solution dropdown. All diagrams, plotting explanations and numerical results are retained. The reference equations are unchanged. The class construction is demonstrated live in OneNote. There are four uses of the same release macro; its definition and single-switch release procedure are unchanged.
+With this convention, anticlockwise physical rotation corresponds to anticlockwise rotation around Mohr's circle from X.
 
-The first problem's five numbered solution parts match its five question parts: principal stresses; principal orientations; maximum in-plane shear magnitude; shear orientations and signs; circle construction. The individual-face convention and full construction are subsections of part 5.
+The angle around Mohr's circle is twice the physical rotation angle.
 
-Graphical stress representations are supplied in solution parts 2 and 4, following the handwritten sketches. The student question no longer asks to sketch a principal element: part 5 asks only for Mohr's circle. Both new drawings use the first problem's values (60, 40, 20 MPa), rather than the second example's 70/−30/50 MPa results. Principal stresses are 72.36 and 27.64 MPa; maximum in-plane shear is 22.36 MPa with both normal stresses 50 MPa. The two illustrated orientations differ by 45°.
+For plane stress, sigma_1 and sigma_2 denote the larger and smaller in-plane principal stresses. The through-thickness principal stress is zero.
 
-The two initial graphical representations have been replaced by one large composite under solution part 4. The original stress state has dotted rays at +31.72° and −13.28°, with the 45° separation shown. Equivalent principal and maximum-in-plane-shear representations are placed along those directions. All values and sign conventions remain unchanged.
+Do not assume that the zero through-thickness principal stress is necessarily the smallest of all three principal stresses.
 
+## Retrieval
 
-## Failure criteria: live-teaching adaptation of original slides
+Establish that students understand:
 
-This section follows the original PowerPoint, slides 11–19. Source slides were inspected visually from their PowerPoint renders and compared with the revised LiaScript pages in Presentation mode. The current layout supersedes the earlier prose-heavy restoration.
+1. Rotating the coordinate axes does not change the physical stress state.
+2. Principal planes have zero shear stress.
+3. The angular movement around Mohr's circle is twice the physical rotation.
 
-- Slides 11–12: the same-sign and opposite-sign Tresca conditions sit side by side above blank axes. There is one completed-hexagon reveal, with the source's short “no yielding inside” statement. The intermediate same-sign SVG is retained as an unused asset; it is no longer an extra teaching step or dropdown.
-- Slide 13: original 3D stress-component illustration, original grouped component equation, and the yielding condition. The half-times-six grouping is restored exactly.
-- Slides 14–15: the component equation is followed by its principal-stress form, blank axes and a single completed-ellipse reveal. The added plane-stress ellipse derivation and explanatory paragraphs have been removed from the teaching page.
-- Slide 16: 3D equations remain visible; 2D and 1D equation spaces remain blank for live completion. Component and principal forms occupy matching side-by-side columns with aligned rows. A single dropdown supplies the completed 2D/1D equations and the equivalent x/y formula used for Q5. The source groups the two forms vertically; the side-by-side layout is the module leader's requested presentation adaptation. Long 3D equations are line-broken to fit these columns without changing their terms.
-- Slide 17: the two maximum-normal-stress conditions, equal-strength assumption, blank axes and one square-surface reveal. One short note acknowledges unequal real tensile/compressive strengths.
-- Slides 18–19: blank comparison axes and one completed Tresca/von Mises overlay reveal precede the original experimental figure. The Dowling (1993) attribution and existing decision quiz/feedback are preserved. Repeated comparison prose has been removed.
+## Problem 1 — Principal stresses and orientations
 
-Necessary notation and technical corrections retained:
+Given:
 
-- Sigma_1 and sigma_2 label the two in-plane principal stresses, as explicitly agreed. Full 3D ordering is defined at the in-class opening. The zero through-thickness principal stress must be included when finding absolute maximum shear; it is not automatically the smallest principal stress. The two-dimensional surface diagrams show the complete principal-coordinate plane, as in the source.
-- Sigma_Y distinguishes yield strength from the normal component sigma_y. Sigma_v is the source's equivalent-stress notation; sigma_VM is retained for the existing numerical problem and Q5 expression. Numbered component subscripts in the source equation are retained.
-- The brittle page uses “fracture” and equal fracture-strength magnitude S in place of the source's “yielding” and yield-strength label. This avoids treating brittle fracture as ductile yielding; no alternative brittle model is added.
-- In uniaxial loading, equivalent stress is the magnitude of the sole nonzero principal stress, regardless of tension/compression or its position in the ordered 3D set. It is denoted sigma in the completed 1D principal expression, rather than assuming sigma_1 is always the nonzero stress.
-- SVG surfaces retain identical geometry, labels and scale between each blank/completed pair (700 by 580 viewBox, 160 pixels per strength unit). Completed surfaces are hidden initially behind one independent teaching dropdown per page. These are not controlled by the post-class worked-solution release switch.
+- sigma_x = 60 MPa
+- sigma_y = 40 MPa
+- tau_xy = 20 MPa
 
-Longer instructor reminders: for same-sign in-plane stresses, zero is an extreme stress and twice the absolute maximum shear is max(abs(sigma_1), abs(sigma_2)). For opposite signs, zero is intermediate and twice the absolute maximum shear is abs(sigma_1-sigma_2). These give the axis-parallel and diagonal Tresca boundaries respectively. For plane stress, setting sigma_33=tau_23=tau_31=0 in the general von Mises equation gives the component reduction; inserting a zero principal stress gives the in-plane ellipse. These explanations are delivered live rather than printed as paragraphs on the teaching pages.
+Students calculate the principal stresses, principal orientations, maximum in-plane shear stress and corresponding orientations.
 
-Validation: reviewed the rendered Presentation pages against source slides 11, 13–17 and 18–19; tested all four surface dropdowns and the completed-equations dropdown. Confirmed four blank 2D/1D equation spaces and matching row alignment in both columns. No detected math-rendering errors or equation overflow. All image links resolve and SVGs parse. Actual axis paths, ticks, labels and viewBoxes match exactly across each blank/completed pair. Exact text comparisons against the pre-edit snapshot confirm that all material before the failure-criteria introduction and from the numerical von Mises problem onwards is unchanged; this includes all released pre-class material, principal/Mohr problems and answers, release macros, Q5 preparation and the scarf joint. No original source equation, case or illustration was unavailable.
+Use substitution into the transformation equations to establish which principal angle corresponds to the larger principal stress and to determine the signs of the transformed shear stresses.
 
+### Numerical reference
 
-Presentation adjustment: all four blank/completed surface pairs are displayed at full available width, capped at 48rem. The blank axes now omit strength-intercept ticks and labels (sigma_Y or S), so these can be added live. Completed surfaces retain their strength labels; the axis geometry and stress scale are unchanged.
+| Quantity | Result |
+|---|---:|
+| Circle centre | 50 MPa |
+| Circle radius | 22.36 MPa |
+| Larger in-plane principal stress | 72.36 MPa |
+| Smaller in-plane principal stress | 27.64 MPa |
+| Larger principal stress orientation | 31.72° |
+| Smaller principal stress orientation | 121.72° |
+| Maximum in-plane shear magnitude | 22.36 MPa |
+| Positive maximum shear orientation | -13.28° |
+| Negative maximum shear orientation | 76.72° |
+| Normal stress on maximum shear planes | 50 MPa |
+| Absolute maximum shear stress | 36.18 MPa |
 
+Equivalent physical orientations differing by 180° are acceptable.
 
-Von Mises pages 17 and 18 are now combined as “Von Mises Stress and Failure Surface”. The original stress-state illustration, general equation, yielding condition and principal form are retained; the duplicate general equation is removed. A blank plane-stress equation precedes the blank axes for live completion. One dropdown reveals the zero-through-thickness substitution, simplified equation, yield-boundary equation and completed ellipse. The separate 3D/2D/1D consolidation activity is unchanged. This added live algebraic step connects the principal equation to the ellipse without extra explanatory prose.
+The distinction between maximum in-plane shear and absolute maximum shear becomes important when introducing Tresca.
 
+### Live Mohr's circle construction
 
-Brittle-page notation now uses sigma_F for uniaxial fracture strength, consistently with sigma_Y for yielding. The equal-strength square and single reveal are retained. Unequal tensile/compressive strength magnitudes sigma_Ft and sigma_Fc give limits -sigma_Fc to +sigma_Ft on both axes, shifting the square away from the origin; this case is illustrated live in OneNote, without an added diagram.
+Demonstrate the graphical construction using the same numerical example in OneNote.
 
+Cover:
 
-The Tresca page now starts with an independent, initially collapsed “Deriving the Tresca criterion” dropdown. It links slip in ductile metals to the uniaxial tensile test at yield, constructs its Mohr circle (intercepts 0 and sigma_Y, centre and radius sigma_Y/2), and substitutes into the previously introduced radius equation. It distinguishes the calculated tensile-test maximum shear sigma_Y/2 from Tresca's hypothesis that the same critical absolute maximum shear governs general loading. The new diagram retains horizontal sigma and upward-positive plotted tau. Existing cases and the failure-surface reveal are unchanged; the derivation does not use the post-class solution macro.
+- Individual-face shear plotting convention.
+- Original face points.
+- Centre and radius.
+- Principal stress intercepts.
+- Principal orientations.
+- Maximum shear orientations.
+- Relationship between plotted shear and tensor shear.
 
+The complete graphical construction is retained within the worked solution on the same LiaScript page.
 
-The existing Tresca derivation dropdown is extended with the absolute principal-stress range and three plane-stress Mohr-circle diagrams: two tensile stresses, two compressive stresses, and opposite signs. Each shows all three pair circles with their centres; teal marks the largest circle and its radius, and blue marks the in-plane circle when smaller. The two same-sign diagrams sit side by side on desktop. The text derives the axis-parallel and diagonal surface boundaries, distinguishing absolute from in-plane maximum shear. All nine circles were independently checked for exact centres, radii and intercepts. Presentation-mode checks found no math errors, missing diagrams or equation overflow. Existing tensile-test derivation, outside case conditions and surface reveal, all other criteria, and all unrelated lesson text are preserved exactly.
+## Problem 2 — Graphical Mohr's circle
+
+Given:
+
+- sigma_x = 50 MPa
+- sigma_y = -10 MPa
+- tau_xy = 40 MPa
+
+Students should construct Mohr's circle and determine the results graphically rather than using the analytical principal stress and angle equations.
+
+### Numerical reference
+
+| Quantity | Result |
+|---|---:|
+| Circle centre | 20 MPa |
+| Circle radius | 50 MPa |
+| Larger in-plane principal stress | 70 MPa |
+| Smaller in-plane principal stress | -30 MPa |
+| Larger principal stress orientation | 26.57° |
+| Smaller principal stress orientation | 116.57° |
+| Maximum in-plane shear magnitude | 50 MPa |
+| Positive maximum shear orientation | -18.43° |
+| Negative maximum shear orientation | 71.57° |
+| Normal stress on maximum shear planes | 20 MPa |
+| Absolute maximum shear stress | 50 MPa |
+
+The zero through-thickness principal stress lies between the two in-plane principal stresses. Consequently, the absolute maximum shear stress equals the maximum in-plane shear stress in this example.
+
+The original PowerPoint diagram shows compression in y despite its unsigned 10 MPa label. The revised problem explicitly states -10 MPa.
+
+### Numerical answer checkers
+
+Both principal-stress problems contain numerical answer checkers.
+
+Current tolerances:
+
+- Stress: ±0.05 MPa.
+- Principal orientation: ±0.1°.
+
+Principal orientations equivalent modulo 180° are accepted.
+
+Allow for reasonable graphical measurement errors when discussing the second problem in class. The automated tolerances are tighter than may be achievable using a hand-drawn circle and protractor.
+
+## Failure criteria
+
+Introduce the distinction between:
+
+- Ductile yielding: Tresca and von Mises.
+- Brittle fracture: maximum normal stress criterion.
+
+Use sigma_Y for uniaxial yield strength and sigma_F for uniaxial fracture strength.
+
+### Tresca — Maximum shearing stress criterion
+
+Introduce Tresca using the physical observation that plastic deformation in ductile metals occurs through slip.
+
+The genuine tensile-test fracture photograph illustrates the importance of shear under tensile loading.
+
+Source: Ellis (2007), NASA/TM—2007-214968.
+
+Distinguish the observed fracture from the onset of yielding predicted by Tresca.
+
+#### Derivation
+
+Develop the criterion live in OneNote using a uniaxial tensile test at yield.
+
+$$\sigma_x=\sigma_Y,\qquad
+\sigma_y=0,\qquad
+\tau_{xy}=0$$
+
+Use Mohr's circle to establish:
+
+$$\tau_{\max}=\frac{\sigma_Y}{2}$$
+
+Tresca's hypothesis is that yielding under general loading occurs when the absolute maximum shear stress reaches this critical value.
+
+$$\tau_{\max}\geq\frac{\sigma_Y}{2}$$
+
+Introduce the general expression:
+
+$$\tau_{\max}=
+\frac{\sigma_{\max}-\sigma_{\min}}{2}$$
+
+For plane stress, consider the two in-plane principal stresses and zero.
+
+When both in-plane principal stresses have the same sign, zero is one of the extreme principal stresses. Yielding is predicted when:
+
+$$|\sigma_1|\geq\sigma_Y
+\quad\text{or}\quad
+|\sigma_2|\geq\sigma_Y$$
+
+When the in-plane principal stresses have opposite signs, zero lies between them. Yielding is predicted when:
+
+$$|\sigma_1-\sigma_2|\geq\sigma_Y$$
+
+Construct the hexagonal failure surface live using these two conditions.
+
+The complete derivation, including three-dimensional Mohr's circle diagrams for both tensile, both compressive and opposite-sign stress states, is available in the derivation dropdown.
+
+A detailed treatment of three-dimensional Mohr's circles is not essential for this Level 5 session. Use the diagrams if they help explain the criteria, but avoid extending the session into general three-dimensional stress transformations.
+
+### Von Mises
+
+State the general von Mises criterion. A full derivation from distortional strain energy is not required.
+
+Retain the original teaching sequence:
+
+1. General equation in stress components.
+2. Equation in principal stresses.
+3. Plane-stress simplification.
+4. Construction of the elliptical failure surface.
+5. Comparison of the equations for 3D, 2D and 1D stress states.
+
+Develop the plane-stress principal-stress equation live:
+
+$$\sigma_v^2=
+\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2$$
+
+At yield:
+
+$$\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2
+=\sigma_Y^2$$
+
+The ellipse is inclined at 45° to the principal-stress axes and passes through the four uniaxial yield-strength intercepts.
+
+Use the blank axes to construct the failure surface in OneNote.
+
+Develop the 2D and 1D simplifications of the general von Mises equation live. Completed equations are available behind the teaching reveal.
+
+For the assessed problem, students require the plane-stress component formulation:
+
+$$\sigma_v=
+\sqrt{\sigma_x^2-\sigma_x\sigma_y+
+\sigma_y^2+3\tau_{xy}^2}$$
+
+The more extensive treatment of von Mises is intentional. Tresca and maximum normal stress retain relatively simple principal-stress formulations for general stress states, whereas the von Mises component equation changes substantially when simplified to plane or uniaxial stress.
+
+Von Mises stress will also be encountered routinely in ABAQUS.
+
+### Brittle materials — Maximum normal stress criterion
+
+Introduce the simple hypothesis that fracture occurs when a principal normal stress reaches the material's fracture strength.
+
+For equal tensile and compressive fracture strengths:
+
+$$|\sigma_1|\geq\sigma_F
+\quad\text{or}\quad
+|\sigma_2|\geq\sigma_F$$
+
+Construct the square fracture surface live.
+
+Explain that tensile and compressive fracture strengths may differ. In this case, the limits on each principal-stress axis become:
+
+$$-\sigma_{Fc}\leq\sigma_i\leq\sigma_{Ft}$$
+
+The failure surface remains square but is no longer centred on the origin.
+
+No additional derivation is necessary.
+
+### Comparing failure criteria
+
+Construct or compare the Tresca and von Mises failure surfaces on the same axes.
+
+Ask students which criterion they would use and discuss the advantages and disadvantages before presenting the experimental comparison figure.
+
+Key discussion points:
+
+| Aspect | Tresca | Von Mises |
+|---|---|---|
+| Physical basis | Maximum shear stress | Distortion energy |
+| Hand calculation | Relatively simple | More involved |
+| Conservatism | At least as conservative as von Mises | Less conservative for some stress combinations |
+| Experimental agreement | Good approximation | Generally better for ductile metals |
+| ABAQUS | Available stress invariant | Default stress invariant |
+
+Both criteria agree for uniaxial stress.
+
+Both are available directly in ABAQUS, so computational complexity is not a significant consideration when using FEA.
+
+The choice of criterion should reflect material behaviour, experimental evidence and relevant design requirements.
+
+Retain the original experimental comparison figure from Dowling, Mechanical Behavior of Materials (1993).
+
+## Analytical Problem Q5
+
+Q5 is assessed work, worth 2% of the module mark.
+
+The separate numerical von Mises practice problem has been removed. Students instead complete their own randomised Blackboard assessment during or after the lectorial.
+
+The LiaScript page contains:
+
+- General plane-stress element diagram.
+- Stress component definitions.
+- Material yield strength definition.
+- Required numerical quantity.
+- Submission instructions.
+
+Students calculate the factor of safety against yielding using their individual Blackboard values.
+
+The Week 9 LiaScript specifies two decimal places.
+
+Ensure the Blackboard question uses the same rounding instruction.
+
+No Q5 worked solution, specimen numerical answer or automatic answer checker is included in the student-facing LiaScript.
+
+Do not add the moderator answer key to the repository.
+
+## Optional extension — Adhesive strength of a scarf joint
+
+Use this problem if time permits.
+
+It provides a practical application of the stress transformation equations and demonstrates that shear can govern failure even when a member is loaded in tension.
+
+Given:
+
+- Cross-section: 80 × 10 mm.
+- Rotation from x to x': 25° anticlockwise.
+- Allowable adhesive normal stress: 800 kPa.
+- Allowable adhesive shear stress: 600 kPa.
+
+The applied load acts in the y direction.
+
+The x' axis is normal to the adhesive plane, and the y' axis is parallel to it.
+
+### Geometry clarification
+
+The original PowerPoint geometry and handwritten solution were inconsistent about the definition of the 25° angle.
+
+The revised problem explicitly defines 25° as the rotation from the horizontal x axis to the joint normal x'.
+
+The adhesive plane is therefore inclined at 65° to the horizontal.
+
+The revised SVG uses a common rotation transformation for the adhesive joint and rotated coordinate system, ensuring perpendicularity.
+
+The revised geometry preserves the calculation in the original handwritten solution.
+
+### Delivery
+
+The relevant normal and shear stress transformation equations are supplied on the problem page.
+
+Students should:
+
+1. Determine the original stress state.
+2. Transform the stresses onto the adhesive plane.
+3. Calculate the load permitted by each allowable stress.
+4. Identify the governing load and failure mode.
+
+Develop the symbolic equations before substituting numerical values.
+
+Treat the calculated stresses as nominal values, neglecting local stress concentrations and adhesive joint-edge effects.
+
+### Numerical reference
+
+| Quantity | Result |
+|---|---:|
+| Cross-sectional area | 800 mm² |
+| Normal stress load limit | 3.583 kN |
+| Shear stress load limit | 1.253 kN |
+| Maximum permissible load | 1.25 kN |
+| Governing failure mode | Shear |
+
+At the unrounded governing load:
+
+- Adhesive normal stress = approximately 0.280 MPa.
+- Adhesive shear stress = 0.600 MPa.
+
+Connect the result back to the earlier discussion of shear under tensile loading.
+
+Do not imply that Tresca is being applied directly to the adhesive. This problem uses separate allowable normal and shear stress limits.
+
+## Worked-solution visibility and release
+
+Three unassessed worked solutions are controlled by the local Week 9 solution macro:
+
+1. Principal stresses and orientations.
+2. Graphical Mohr's circle.
+3. Optional scarf-joint problem.
+
+The macro definitions are located in the header of week09.md:
+
+```html
+@SolutionsHidden: <div class="week09-post-class" style="display: none;" hidden>
+@SolutionsVisible: <div class="week09-post-class">
+
+@Week09Solution: @SolutionsHidden
+```
+
+### Before the lectorial
+
+Use:
+
+```html
+@Week09Solution: @SolutionsHidden
+```
+
+This hides the full worked-solution dropdowns.
+
+### After the lectorial
+
+Use:
+
+```html
+@Week09Solution: @SolutionsVisible
+```
+
+This makes the three worked-solution dropdowns available.
+
+Only the final macro reference needs to be changed.
+
+### Independent teaching reveals
+
+The following reveals are independent of the worked-solution macro and remain accessible during class:
+
+- Tresca derivation.
+- Completed Tresca failure surface.
+- Completed von Mises equation and failure surface.
+- Completed 2D and 1D von Mises equations.
+- Maximum normal stress failure surface.
+- Comparison of Tresca and von Mises surfaces.
+
+Numerical answer checkers and retrieval questions also remain available.
+
+Hiding content is a presentation mechanism, not access control. Students can potentially inspect the raw LiaScript source.
+
+No assessed Q5 solution is included in the source.
+
+## After-class activities
+
+Students should:
+
+- Complete and submit Analytical Problem Q5.
+- Retain their workings for the analytical portfolio.
+- Complete the optional scarf-joint problem if further practice is useful.
+- Complete Week 10 preparation before the next lectorial.
+
+## Source material
+
+The Week 9 teaching material is based on:
+
+- KB5034_Week_9_2D Stresses & Plane Stress Elements.pptx.
+- Week 9 - Constructing Mohr's Circle & Problems.pdf.
+- Existing Panopto recordings.
+- KB5034 Assessment 001 hand-calculation brief.
+- Dowling, Mechanical Behavior of Materials (1993).
+- Ellis (2007), NASA/TM—2007-214968.
+
+The original PowerPoint remains the primary reference for the failure-criteria teaching sequence.
+
+## Pre-release checks
+
+- [ ] Confirm the desired worked-solution visibility.
+- [ ] Confirm all five Panopto recordings are accessible.
+- [ ] Confirm the Video 4 correction renders correctly.
+- [ ] Check LiaScript Presentation mode.
+- [ ] Check numerical answer checkers.
+- [ ] Check blank axes and completed failure-surface reveals.
+- [ ] Check scarf-joint diagram and worked solution.
+- [ ] Confirm Blackboard Q5 rounding instructions and deadline.
+- [ ] Confirm no assessed solution is included.
+- [ ] Merge develop into main when ready.
+
+## Validation status
+
+The final source review covered commit b868fdc on develop.
+
+The LiaScript equations, numerical reference solutions, answer-checker values, image references and key SVG geometries were reviewed.
+
+All 26 unique image references have corresponding repository files.
+
+The latest live LiaScript rendering and Panopto playback require a final local check before release.

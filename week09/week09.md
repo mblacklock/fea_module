@@ -1,7 +1,7 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 0.0.1
+version: 1.0.0
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
@@ -11,7 +11,7 @@ comment: KB5034 Week 9 - Topic 3: stress transformations, Mohr's circle and prin
 @SolutionsHidden: <div class="week09-post-class" style="display: none;" hidden>
 @SolutionsVisible: <div class="week09-post-class">
 
-@Week09Solution: @SolutionsVisible
+@Week09Solution: @SolutionsHidden
 -->
 
 # Week 9: Stress Transformations & Principal Stresses
@@ -1119,7 +1119,7 @@ Using the von Mises criterion, determine the factor of safety against yielding.
 
 Complete the Analytical Problem on Blackboard using your individual values. Give your answer to 2 decimal places and retain your workings for submission.
 
-## Optional Extension: Adhesive Strength of a Scarf Joint
+## Extension: Adhesive Strength of a Scarf Joint
 
 Two members of cross-section **80 × 10 mm** are glued along an inclined plane and subjected to tensile load $P$.
 
