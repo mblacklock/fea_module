@@ -4,7 +4,7 @@
 
 The in-class numerical problems are visible. Their worked solutions and numerical circle drawings are hidden in both Presentation and Textbook modes. Retrieval feedback and the failure-criterion decision feedback remain available during class.
 
-Release all five solution blocks together by changing the **single local macro definition** in the header of `week09.md`:
+Release all four solution blocks together by changing the **single local macro definition** in the header of `week09.md`:
 
 ```html
 @Week09Solution: <div class="week09-post-class" style="display: none;" hidden>
@@ -16,7 +16,7 @@ to:
 @Week09Solution: <div class="week09-post-class">
 ```
 
-Keep the five uses of `@Week09Solution` and their closing `</div>` tags. This restores the solution dropdowns without changing the problems. Nested dropdowns expose successive parts of a calculation; the three guided construction stages use normal LiaScript clicks. Numerical answers are not placed in student-visible click reveals or automatic checkers.
+Keep the four uses of `@Week09Solution` and their closing `</div>` tags. This restores the solution dropdowns without changing the problems. Nested dropdowns expose successive parts of a calculation; the shear convention, three construction stages and numerical circle are nested within the first problem's worked-solution dropdown. Numerical answers are not placed in student-visible click reveals or automatic checkers.
 
 Before class, retain the hidden macro above. Preview the selected state before publication. Hiding is for presentation, not access control: raw source remains readable. These are unassessed teaching examples; no Q5 answer key is included. No commit, push or release is automatic.
 
@@ -34,7 +34,7 @@ Before class, retain the hidden macro above. Preview the selected state before p
 
 The core is 130 minutes; extension is 20 minutes. Adjust within those blocks, especially the 25-minute construction/second-problem block. If construction needs longer, use extension time. Complete the core principal-stress and Q5 preparation before the extension.
 
-Use OneNote for live working. Students attempt first, compare next, then discuss the calculation together. The hidden source contains a step-by-step reference for the instructor; release the dropdowns after the lectorial. In the construction activity the displayed circle stays symbolic; students add numerical scales, points, centre, radius and angles to their own sketch.
+Use OneNote for live working. Students attempt first, compare next, then discuss the calculation together. The hidden source contains a step-by-step reference for the instructor; release the dropdowns after the lectorial. Demonstrate the construction live in OneNote; students add numerical scales, points, centre, radius and angles to their own sketch. The reference diagrams and full construction are retained inside the first problem's hidden post-class solution, rather than as separate student-facing pages.
 
 ## Sources inspected
 
@@ -71,5 +71,37 @@ The in-plane principal labels do not imply that the zero third principal stress 
 - Independently evaluated both stress transformations at each principal and maximum-shear orientation, including tensor shear signs. Cross-checked von Mises using component and three-principal-stress forms; checked scarf-joint force limits in N and MPa.
 - Checked the normalised von Mises ellipse and Tresca hexagon against their equations. Numerical circle axes cross at zero normal stress; X/Y coordinates and counterclockwise angle arcs use the agreed plotting convention.
 - Inspected every new SVG, checked XML and local image references, and exercised all new class pages in the local LiaScript renderer with no detected mathematical rendering errors or broken images. All four added retrieval/decision quizzes passed.
-- Tested all three guided construction stages. Confirmed the five solution blocks are hidden in Presentation and Textbook modes. A temporary ignored preview with the single macro switched to visible successfully rendered and expanded all five solution blocks and their nested parts.
+- Tested all three guided construction stages. Confirmed the four solution blocks are hidden in Presentation and Textbook modes. A temporary ignored preview with the single macro switched to visible successfully rendered and expanded all four solution blocks and their nested parts.
 - Pre-class body and further reading are preserved exactly. The only pre-class-header addition is the local release macro. Shared templates and assessment files are unchanged. No ABAQUS analysis is required or claimed.
+
+## Construction consolidated into the first worked solution
+
+The former individual-face shear and guided-construction pages are now within part 5 of the first problem's solution dropdown. All diagrams, plotting explanations and numerical results are retained. The reference equations are unchanged. The class construction is demonstrated live in OneNote. There are four uses of the same release macro; its definition and single-switch release procedure are unchanged.
+
+The first problem's five numbered solution parts match its five question parts: principal stresses; principal orientations; maximum in-plane shear magnitude; shear orientations and signs; circle construction. The individual-face convention and full construction are subsections of part 5.
+
+Graphical stress representations are supplied in solution parts 2 and 4, following the handwritten sketches. The student question no longer asks to sketch a principal element: part 5 asks only for Mohr's circle. Both new drawings use the first problem's values (60, 40, 20 MPa), rather than the second example's 70/−30/50 MPa results. Principal stresses are 72.36 and 27.64 MPa; maximum in-plane shear is 22.36 MPa with both normal stresses 50 MPa. The two illustrated orientations differ by 45°.
+
+The two initial graphical representations have been replaced by one large composite under solution part 4. The original stress state has dotted rays at +31.72° and −13.28°, with the 45° separation shown. Equivalent principal and maximum-in-plane-shear representations are placed along those directions. All values and sign conventions remain unchanged.
+
+
+## Failure-criteria sequence restored from the PowerPoint
+
+The failure-criteria section now follows the original Week 9 slides 11–19, which were reopened read-only and rendered in PowerPoint for visual inspection on 25 November 2026. This supersedes the earlier condensed criterion pages and their repeated three-panel diagram.
+
+- Slides 11–12: Tresca starts from the uniaxial maximum-shearing-stress limit. Same-sign and opposite-sign in-plane cases are treated separately, including the zero through-thickness principal stress. Blank axes precede a same-sign boundary reveal and a separate completed-hexagon reveal. The maximum-difference expression appears only as a summary after the case construction.
+- Slides 13–15: the original general stress-state diagram is retained as a PNG, with its transparent background flattened to white and outer whitespace trimmed. The general component equation precedes the principal-stress expression; the plane-stress reduction then gives the ellipse. Blank axes precede the completed-ellipse reveal.
+- Slide 16: both component and principal forms are compared for 3D, 2D and 1D stress states. The original slide leaves the 2D/1D entries for live completion; LiaScript supplies these on successive numbered clicks. The positive square root gives the existing Q5 plane-stress expression.
+- Slide 17: the concise maximum-normal-stress criterion has blank axes followed by the completed square in a reveal.
+- Slides 18–19: a separate blank-axes/completed-overlay page restores the Tresca/von Mises comparison. The existing experimental comparison image and Dowling (1993) attribution remain unchanged on the following comparison page.
+
+Deliberate presentation/notation departures:
+
+- In-plane plot axes use sigma_1 and sigma_2, as explicitly requested by the module leader, in place of the source slide's sigma_max/sigma_min labels. These are the two in-plane principal coordinates. Include the zero through-thickness principal stress before ordering the full 3D set; do not assume it is always the smallest.
+- Upper-case sigma_Y denotes yield strength, to distinguish it from the normal component sigma_y. The source's sigma_v is retained, with its equivalence to the numerical problem's sigma_VM stated. The general equation's half-times-six shear contribution is written as three times the shear-square sum; the expressions are identical.
+- The brittle criterion says fracture rather than yielding and uses S for equal tensile/compressive fracture strength magnitudes. A short note acknowledges unequal real-material strengths. No alternative brittle models are introduced.
+- Individual SVGs replace the source's drawn surfaces and the previous combined three-panel graphic. All blank/completed pairs use the same 700 by 580 viewBox, axis geometry, intercept labels and scale (160 pixels per strength unit). The square uses S rather than a yield-strength symbol. No failure surface is shown initially; the teaching dropdowns are independent of the post-class worked-solution switch.
+
+No original failure-criteria equation, case or teaching diagram was unavailable. The original experimental figure is retained; the old combined three-panel SVG is no longer referenced by the individual criterion pages.
+
+Validation for this restoration: checked actual SVG boundary coordinates against the Tresca, von Mises and maximum-normal-stress equations; checked the same/opposite-sign Tresca cases against the range of all three principal stresses; independently checked general component/principal von Mises equivalence, including plane stress, hydrostatic and uniaxial states. All local image references resolve and SVGs parse. In the local LiaScript preview, exercised the five surface/construction dropdowns and the numbered general/principal and 2D/1D equation steps, with no detected math rendering errors. Confirmed blank initial views and revealed diagrams; also checked Tresca dropdowns in Textbook mode. Exact text comparisons against the pre-edit snapshot confirm that everything before Tresca and from the existing experimental comparison page onwards is unchanged, including the pre-class material, both principal-stress problems, numerical von Mises problem, Q5 preparation, scarf joint and solution-release macros.
