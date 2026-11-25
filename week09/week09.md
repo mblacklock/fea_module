@@ -1,12 +1,17 @@
 <!--
 author: Matthew Blacklock
 email: matthew.blacklock@northumbria.ac.uk
-version: 0.0.1
+version: 1.0.0
 mode: Presentation
 import: https://raw.githubusercontent.com/MINT-the-GAP/lia-board-mode/main/README.md
         https://raw.githubusercontent.com/MINT-the-GAP/lia-annotation/main/README.md
         ../common/templates.md
 comment: KB5034 Week 9 - Topic 3: stress transformations, Mohr's circle and principal stresses; before-class study.
+
+@SolutionsHidden: <div class="week09-post-class" style="display: none;" hidden>
+@SolutionsVisible: <div class="week09-post-class">
+
+@Week09Solution: @SolutionsHidden
 -->
 
 # Week 9: Stress Transformations & Principal Stresses
@@ -28,8 +33,6 @@ By the end of this week, students will be able to:
 **PREPARATION STARTS HERE**
 
 In Week 8, we described the stresses acting on faces aligned with $x$ and $y$. This week, we will calculate the stresses acting on faces at other orientations through the **same material point**.
-
-Watch the five recordings embedded on the following pages in order. There are approximately **47 minutes of video**; allow **60–75 minutes** including notes and quick checks.
 
 Make notes on:
 
@@ -301,6 +304,970 @@ The normal stress on these maximum-in-plane-shear orientations is $C$. They lie 
 - [ ] I can calculate the two in-plane principal stresses and explain why shear stress is zero on principal planes.
 
 Bring your notes and a calculator to class. We will use these ideas in numerical examples and then introduce von Mises stress and factor of safety for Q5.
+
+## B. IN CLASS: Applying Stress Transformations and Failure Criteria
+
+**LECTORIAL STARTS HERE**
+
+<br>
+
+**Learning Outcome 3.2: Calculate principal stresses for simple engineering structures.**
+
+**Principal-stress notation:** For the 2D problems, $\sigma_1$ and $\sigma_2$ are the maximum and minimum **in-plane** principal stresses. In 3D, $\sigma_1\geq\sigma_2\geq\sigma_3$ denote the maximum, intermediate and minimum principal stresses.
+
+## Retrieval: Stress Transformations
+
+**1. If we rotate the coordinate axes used to describe the stresses at a point, do we change the actual stresses acting within the material?**
+
+<!-- data-solution-button="3" -->
+[( )] Yes
+[(X)] No
+****************************************
+We describe the same physical stress state using different face orientations. The component values can change; the principal stresses do not.
+****************************************
+
+{{1}}
+********************
+**2. What is the shear stress on a principal plane?**
+
+<!-- data-solution-button="3" -->
+[(X)] Zero
+[( )] The maximum in-plane shear stress
+[( )] Equal to the normal stress
+****************************************
+Principal planes carry normal stress and no shear stress. The normal stress itself may be tensile, compressive or zero.
+****************************************
+********************
+
+{{2}}
+********************
+**3. The physical axes rotate through 30°. What is the angular movement around Mohr's circle, in degrees?**
+
+<!-- data-solution-button="3" -->
+[[60]]
+****************************************
+The circle angle is twice the physical angle: $2\theta=60^\circ$. With our plotting convention, a counterclockwise physical rotation corresponds to counterclockwise movement around the circle from $X$.
+****************************************
+********************
+
+## Problem: Principal Stresses and Orientations
+
+Begin individually, then compare equations, signs and angles with a neighbour.
+
+The point is in plane stress:
+
+$$\sigma_x=60\text{ MPa},\qquad \sigma_y=40\text{ MPa},\qquad \tau_{xy}=20\text{ MPa}.$$
+
+![Original principal-stress problem with positive normal stresses and positive xy shear](images/PlaneStress_Week09_img03_PrincipalProblem.svg)<!-- style="width: 50%; display: block; margin: auto;" -->
+
+1. Calculate the two in-plane principal stresses.
+2. Determine the two principal orientations, identifying which carries the larger normal stress.
+3. Calculate the maximum **in-plane** shear-stress magnitude.
+4. Find both orientations of maximum in-plane shear and give the sign of $\tau_{x'y'}$ at each.
+5. Construct Mohr's circle to check your results.
+
+Measure all physical angles counterclockwise from $x$ to $x'$. Equivalent orientations differing by 180° are acceptable. Why are the two principal planes perpendicular?
+
+**Equations to use**
+
+In-plane principal stresses and orientations (the + sign gives $\sigma_1$; the − sign gives $\sigma_2$):
+
+$$\sigma_{1,2}=\frac{\sigma_x+\sigma_y}{2}\pm\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^{\,2}}.$$
+
+$$\tan(2\theta_p)=\frac{2\tau_{xy}}{\sigma_x-\sigma_y},\qquad\theta_{p2}=\theta_{p1}+90^\circ.$$
+
+Maximum in-plane shear and orientations
+
+$$\left|\tau_{\max,\mathrm{in\text{-}plane}}\right|=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^{\,2}},\qquad\theta_s=\theta_{p1}\pm45^\circ.$$
+
+Check which stress and shear sign correspond to each angle using:
+
+$$\begin{aligned}
+\sigma_{x'}&=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\theta)+\tau_{xy}\sin(2\theta),\\
+\tau_{x'y'}&=-\frac{\sigma_x-\sigma_y}{2}\sin(2\theta)+\tau_{xy}\cos(2\theta).
+\end{aligned}$$
+
+An inverse-tangent result alone does not identify which principal orientation carries $\sigma_1$. Use the transformed normal stress to label the principal directions, and the transformed shear stress to check the signs at $\theta_s$.
+
+**Check your answers**
+
+Enter numerical values only: stresses in **MPa** and physical angles in **degrees**, measured counterclockwise from $x$. Stress answers within 0.05 MPa and angles within 0.1° are accepted. Equivalent principal orientations differing by 180° are accepted; enter the orientation carrying $\sigma_1$.
+
+<div class="week09-answer-checks" style="display: flex; flex-wrap: wrap; gap: 1rem 3rem; align-items: flex-start;">
+<div style="flex: 1 1 20rem; max-width: 28rem; min-width: 0;">
+
+**$\sigma_1$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[72.36068]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (72.36067977499789)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\sigma_2$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[27.63932]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (27.639320225002102)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\theta_{p1}$ (degrees):**
+
+<!-- data-solution-button="3" -->
+[[31.717474]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(((value - (31.717474411461005) + 90) % 180 + 180) % 180 - 90) <= 0.1
+</script>
+****************************************
+Correct. This orientation corresponds to the larger in-plane principal stress.
+****************************************
+
+</div>
+<div style="flex: 1 1 20rem; max-width: 28rem; min-width: 0;">
+
+**$\tau_{\max}$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[22.36068]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (22.360679774997898)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\sigma_n$ on a maximum in-plane shear plane (MPa):**
+
+<!-- data-solution-button="3" -->
+[[50]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (50)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+</div>
+</div>
+
+@Week09Solution
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+<details>
+<summary>1. Principal stresses</summary>
+
+$$\begin{aligned}
+\sigma_{1,2}
+&=\frac{\sigma_x+\sigma_y}{2}\pm\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^{\,2}}\\
+&=\frac{60+40}{2}\pm\sqrt{\left(\frac{60-40}{2}\right)^2+20^2}\\
+&=50\pm\sqrt{500}\text{ MPa}.
+\end{aligned}$$
+
+$$\sigma_1=50+\sqrt{500}=\boxed{72.36\text{ MPa}},\qquad\sigma_2=50-\sqrt{500}=\boxed{27.64\text{ MPa}}.$$
+
+</details>
+
+<details>
+<summary>2. Principal orientations</summary>
+
+$$\tan(2\theta_p)=\frac{2\tau_{xy}}{\sigma_x-\sigma_y}=\frac{40}{20}=2.$$
+
+$$\theta_{p1}=\boxed{31.72^\circ},\qquad \theta_{p2}=\theta_{p1}+90^\circ=\boxed{121.72^\circ}.$$
+
+Substitution into the transformation equations gives $\sigma_{x'}=72.36\text{ MPa}$ and $\tau_{x'y'}=0$ at 31.72°. At 121.72°, $\sigma_{x'}=27.64\text{ MPa}$ and the shear stress is again zero. The two perpendicular directions are the principal directions of the same stress state.
+
+</details>
+
+<details>
+<summary>3. Maximum in-plane shear-stress magnitude</summary>
+
+$$\left|\tau_{\max,\mathrm{in\text{-}plane}}\right|=\sqrt{\left(\frac{60-40}{2}\right)^2+20^2}=\sqrt{500}=\boxed{22.36\text{ MPa}}.$$
+
+The absolute three-dimensional maximum shear is different here: including the third principal stress of zero gives $(72.36-0)/2=36.18\text{ MPa}$. Use the in-plane value for the question asked; include all three principal stresses when applying Tresca later.
+
+</details>
+
+<details>
+<summary>4. Maximum in-plane shear orientations and signs</summary>
+
+The maximum-shear orientations are 45° from the principal orientations:
+
+$$\theta_{s+}=\theta_{p1}-45^\circ=\boxed{-13.28^\circ},\qquad \theta_{s-}=\theta_{p1}+45^\circ=\boxed{76.72^\circ}.$$
+
+At −13.28°, $\tau_{x'y'}=+22.36\text{ MPa}$; at 76.72°, $\tau_{x'y'}=-22.36\text{ MPa}$. In both cases $\sigma_{x'}=\frac{60+40}{2}=50\text{ MPa}$. An angle of −13.28° means 13.28° clockwise.
+
+**Graphical representation**
+
+![Original stress state with dotted principal and maximum-shear directions and the equivalent rotated stress representations](images/PlaneStress_Week09_img12_RotatedStressStates.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+The maximum-in-plane-shear orientation is 45° clockwise from the principal orientation shown. Its normal stresses are both 50 MPa and its shear stress is +22.36 MPa. These are representations of the same stress state, rather than different loading cases.
+
+</details>
+
+<details>
+<summary>5. Mohr's circle</summary>
+
+**Individual-face shear plotting convention**
+Consider the shear acting on **each individual face**, and its tendency to turn the element about its centre:
+
+![Individual-face clockwise and anticlockwise shear tendencies and their plotted signs](images/PlaneStress_Week09_img04_FaceShearConvention.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+- Clockwise tendency plots **above** the horizontal axis.
+- Anticlockwise tendency plots **below** the horizontal axis.
+
+The vertical plotting axis is labelled $\tau$, positive upwards. For the positive tensor shear $\tau_{xy}$ shown on the problem's element:
+
+$$X=(\sigma_x,-\tau_{xy}),\qquad Y=(\sigma_y,+\tau_{xy}).$$
+
+Do not assign the plotted sign from the arrow's direction alone: a face's position also determines whether its shear tendency is clockwise or anticlockwise.
+
+**Constructing Mohr's circle**
+Use the **60, 40, 20 MPa** problem. Keep the same scale for normal and plotted shear stress.
+
+**a. Draw the axes.** Label normal stress $\sigma$ horizontally and plotted shear $\tau$ vertically. Mark the scale in MPa.
+
+![Blank equal-scale Mohr circle axes](images/PlaneStress_Week09_img05a_BlankCircleAxes.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+
+**b. Plot the two face points.** For this problem, $X=(60,-20)$ and $Y=(40,+20)$ MPa. Join them: they are opposite ends of a diameter. Find their midpoint on the normal-stress axis.
+
+![Symbolic face points X below and Y above the normal stress axis](images/PlaneStress_Week09_img05b_FacePoints.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+
+**c. Draw the circle.** Use the midpoint as centre $C$ and the distance to either face point as radius $R$. Read the principal stresses at the horizontal intercepts and the maximum in-plane shear magnitude at the top and bottom.
+
+![Symbolic Mohr circle showing centre, radius, principal intercepts, shear extrema and twice the principal angle](images/PlaneStress_Week09_img05c_CircleConstruction.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+The top has plotted shear $+R$; for the rotated $x'$ face this corresponds to tensor shear $\tau_{x'y'}=-R$. The bottom corresponds to $\tau_{x'y'}=+R$.
+
+**d. Read the angle.** Move counterclockwise from $X$ to the right-hand intercept through $2\theta_{p1}$. Halve this angle to obtain the physical counterclockwise rotation of the $x'$ axis. Do the same for a shear extremum and check the sign.
+
+**Numerical circle and angles**
+![Completed numerical circle for the 60, 40, 20 MPa stress state](images/PlaneStress_Week09_img07_PrincipalCircleSolution.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
+
+$C=50\text{ MPa}$, $R=22.36\text{ MPa}$. The intercepts are 27.64 MPa and 72.36 MPa. From $X$ to the right-hand intercept, $2\theta_{p1}=63.43^\circ$, giving $\theta_{p1}=31.72^\circ$ counterclockwise.
+
+From $X$ to the lower shear extremum is a clockwise circle movement of 26.57°, so the physical angle is −13.28° and $\tau_{x'y'}=+22.36\text{ MPa}$. The other shear orientation is 76.72° with $\tau_{x'y'}=-22.36\text{ MPa}$.
+
+</details>
+
+</details>
+</div>
+
+## Problem: Solve Using Mohr's Circle
+
+Use a **graphical construction first**. Read values and angles from your circle before checking them algebraically.
+
+$$\sigma_x=50\text{ MPa},\qquad \sigma_y=-10\text{ MPa},\qquad \tau_{xy}=40\text{ MPa}.$$
+
+![Second original problem with tension in x, compression in y and positive shear](images/PlaneStress_Week09_img06_CircleProblem.svg)<!-- style="width: 50%; display: block; margin: auto;" -->
+
+Sketch Mohr's circle by plotting X and Y, then determine:
+
+1. The centre and radius of Mohr's circle.
+2. Both in-plane principal stresses and their physical orientations.
+3. The maximum in-plane shear magnitude and both corresponding orientations, including the shear sign.
+4. The normal stress on a maximum-in-plane-shear plane.
+
+Do not use the equations to determine principal stresses/angles.
+
+**Check your answers**
+
+Enter numerical values only: stresses in **MPa** and physical angles in **degrees**, measured counterclockwise from $x$. Stress answers within 0.05 MPa and angles within 0.1° are accepted. Equivalent principal orientations differing by 180° are accepted; enter the orientation carrying $\sigma_1$.
+
+<div class="week09-answer-checks" style="display: flex; flex-wrap: wrap; gap: 1rem 3rem; align-items: flex-start;">
+<div style="flex: 1 1 20rem; max-width: 28rem; min-width: 0;">
+
+**$C$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[20]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (20)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$R$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[50]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (50)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\sigma_1$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[70]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (70)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\sigma_2$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[-30]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (-30)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+</div>
+<div style="flex: 1 1 20rem; max-width: 28rem; min-width: 0;">
+
+**$\theta_{p1}$ (degrees):**
+
+<!-- data-solution-button="3" -->
+[[26.565051]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(((value - (26.56505117707799) + 90) % 180 + 180) % 180 - 90) <= 0.1
+</script>
+****************************************
+Correct. This orientation corresponds to the larger in-plane principal stress.
+****************************************
+
+**$\tau_{\max}$ (MPa):**
+
+<!-- data-solution-button="3" -->
+[[50]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (50)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+**$\sigma_n$ on a maximum in-plane shear plane (MPa):**
+
+<!-- data-solution-button="3" -->
+[[20]]
+<script>
+const raw = "@input".trim();
+const value = Number(raw);
+raw.length > 0 && Number.isFinite(value) && Math.abs(value - (20)) <= 0.05
+</script>
+****************************************
+Correct. Your result agrees with this stress state.
+****************************************
+
+</div>
+</div>
+
+@Week09Solution
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+<details>
+<summary>1. Face points, centre and radius</summary>
+
+$$X=(50,-40),\qquad Y=(-10,+40)\quad\text{MPa}.$$
+
+$$C=\frac{50-10}{2}=\boxed{20\text{ MPa}},\qquad R=\sqrt{(50-20)^2+40^2}=\boxed{50\text{ MPa}}.$$
+
+![Completed circle for the 50, minus 10, 40 MPa stress state](images/PlaneStress_Week09_img08_CircleProblemSolution.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
+
+</details>
+
+<details>
+<summary>2. Principal stresses and physical angles</summary>
+
+The horizontal intercepts give:
+
+$$\sigma_1=C+R=\boxed{70\text{ MPa}},\qquad \sigma_2=C-R=\boxed{-30\text{ MPa}}.$$
+
+Start at $X=(50,-40)$, which represents the original $x$ face. The right-hand intercept is $\sigma_1=70\text{ MPa}$, and the left-hand intercept is $\sigma_2=-30\text{ MPa}$.
+
+The radius from $C$ to $X$ has a horizontal offset of 30 MPa and a downward offset of 40 MPa. Rotate this radius **counterclockwise from $X$ to the right-hand intercept**:
+
+$$2\theta_{p1}=\tan^{-1}\left(\frac{40}{30}\right)=53.13^\circ,
+\qquad \theta_{p1}=\boxed{26.57^\circ}.$$
+
+Because this rotation ends at the **right-hand intercept**, $\theta_{p1}=26.57^\circ$ corresponds to $\sigma_1=70\text{ MPa}$.
+
+Continue another $180^\circ$ around the circle to reach the left-hand intercept. This adds $90^\circ$ to the physical angle:
+
+$$2\theta_{p2}=53.13^\circ+180^\circ=233.13^\circ,
+\qquad \theta_{p2}=\boxed{116.57^\circ}.$$
+
+This rotation ends at the **left-hand intercept**, so $\theta_{p2}=116.57^\circ$ corresponds to $\sigma_2=-30\text{ MPa}$. Both physical angles are measured counterclockwise from $x$; the circle rotation is twice the physical rotation.
+
+</details>
+
+<details>
+<summary>3. Maximum in-plane shear and its orientations</summary>
+
+$$\left|\tau_{\max,\mathrm{in\text{-}plane}}\right|=R=\boxed{50\text{ MPa}}.$$
+
+The lower circle point gives positive tensor shear at $\theta_{s+}=26.565^\circ-45^\circ=\boxed{-18.43^\circ}$. The upper point gives negative tensor shear at $\theta_{s-}=26.565^\circ+45^\circ=\boxed{71.57^\circ}$.
+
+Therefore $\tau_{x'y'}=+50\text{ MPa}$ at −18.43° and −50 MPa at 71.57°. The normal stress on either maximum-in-plane-shear plane is $\boxed{20\text{ MPa}}$.
+
+Here the third principal stress, zero, lies between 70 and −30 MPa. Consequently the absolute three-dimensional maximum shear also equals 50 MPa.
+
+</details>
+
+</details>
+</div>
+
+## Failure Criteria: Ductile Yielding and Brittle Fracture
+
+**Ductile materials:** yielding — Tresca and von Mises.
+
+**Brittle materials:** fracture — maximum normal stress criterion.
+
+$\sigma_Y$: uniaxial yield strength.
+
+## Tresca: Maximum Shearing Stress Criterion
+
+<details>
+<summary><strong>Deriving the Tresca criterion</strong></summary>
+
+Plastic deformation in ductile metals occurs through **slip within the crystal structure**.
+
+![Shear failure in fractured tensile-test specimens](images/PlaneStress_Week09_img19_TensileShearFailure_Ellis2007.png)<!-- style="width: 80%; max-width: 42rem; display: block; margin: auto;" -->
+
+<div style="text-align: center;">
+
+**Example: shear failure in a tensile test.** Source: Ellis (2007), [NASA/TM—2007-214968](https://ntrs.nasa.gov/citations/20070031907).
+
+</div>
+
+The specimens are shown after fracture; the calculation below concerns the **onset of yielding**.
+
+**Uniaxial tensile test — onset of yielding:**
+
+$$\sigma_x=\sigma_Y,\qquad\sigma_y=0,\qquad\tau_{xy}=0.$$
+
+![Mohr's circle for uniaxial tension at yield, with face points, centre and radius labelled](images/PlaneStress_Week09_img18_TrescaTensileCircle.svg)<!-- style="width: 85%; max-width: 48rem; display: block; margin: auto;" -->
+
+Using the Mohr's circle radius equation:
+
+$$R=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}.$$
+
+Substitute the tensile-test stress state:
+
+$$R=\sqrt{\left(\frac{\sigma_Y-0}{2}\right)^2+0^2}=\frac{\sigma_Y}{2}.$$
+
+Hence, the maximum shear stress **in this tensile test at yielding** is:
+
+$$\tau_{\max}=R=\frac{\sigma_Y}{2}.$$
+
+**Tresca's hypothesis:** under general loading, yielding occurs when the **absolute maximum shear stress** reaches this same critical value:
+
+$$\boxed{\tau_{\max}\geq\frac{\sigma_Y}{2}}.$$
+
+The tensile-test result gives the critical value; applying it to **any stress state** is Tresca's hypothesis. Include all three principal stresses when finding the absolute maximum shear stress.
+
+**From the tensile test to general loading**
+
+For the largest and smallest of **all three principal stresses**:
+
+$$\tau_{\max}=\frac{\sigma_{\max}-\sigma_{\min}}{2}.$$
+
+Substituting into Tresca's criterion:
+
+$$\frac{\sigma_{\max}-\sigma_{\min}}{2}\geq\frac{\sigma_Y}{2}
+\quad\Rightarrow\quad\sigma_{\max}-\sigma_{\min}\geq\sigma_Y.$$
+
+For plane stress, use $\{\sigma_1,\sigma_2,0\}$, where $\sigma_1\geq\sigma_2$ are the two **in-plane** principal stresses. Here $\sigma_{\max}$ and $\sigma_{\min}$ are the extremes of the full set, including zero.
+
+The three Mohr circles have:
+
+$$\begin{aligned}
+C_{12}&=\frac{\sigma_1+\sigma_2}{2},&R_{12}&=\frac{|\sigma_1-\sigma_2|}{2},\\
+C_{10}&=\frac{\sigma_1}{2},&R_{10}&=\frac{|\sigma_1|}{2},\\
+C_{20}&=\frac{\sigma_2}{2},&R_{20}&=\frac{|\sigma_2|}{2}.
+\end{aligned}$$
+
+The subscripts identify the two intercepts of each circle. **Teal** highlights the largest circle and its radius $R_{\max}=\tau_{\max}$. **Blue** identifies the in-plane circle when it is smaller.
+
+**Case 1 — Same-sign principal stresses**
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 24rem; min-width: 0;">
+
+**Both tensile:** $\sigma_1\geq\sigma_2>0$. Zero is the smallest principal stress.
+
+![Three Mohr circles for two tensile in-plane principal stresses and zero through-thickness stress](images/PlaneStress_Week09_img20a_TrescaBothTensile.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{\sigma_1-0}{2}
+\quad\Rightarrow\quad\sigma_1\geq\sigma_Y.$$
+
+</div>
+<div style="flex: 1 1 24rem; min-width: 0;">
+
+**Both compressive:** $0>\sigma_1\geq\sigma_2$. Zero is the largest principal stress.
+
+![Three Mohr circles for two compressive in-plane principal stresses and zero through-thickness stress](images/PlaneStress_Week09_img20b_TrescaBothCompressive.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{0-\sigma_2}{2}
+\quad\Rightarrow\quad|\sigma_2|\geq\sigma_Y.$$
+
+</div>
+</div>
+
+Combining the tensile and compressive cases:
+
+$$\boxed{|\sigma_1|\geq\sigma_Y\quad\text{or}\quad|\sigma_2|\geq\sigma_Y}.$$
+
+The limits $\sigma_1=\pm\sigma_Y$ and $\sigma_2=\pm\sigma_Y$ produce the **vertical and horizontal boundaries** in the same-sign quadrants of the Tresca surface.
+
+**Case 2 — Opposite-sign principal stresses**
+
+$\sigma_1>0>\sigma_2$: zero lies between the two in-plane principal stresses. The in-plane circle is now the largest circle.
+
+![Three Mohr circles for opposite-sign in-plane principal stresses, with the largest circle spanning sigma 2 to sigma 1](images/PlaneStress_Week09_img20c_TrescaOppositeSigns.svg)<!-- style="width: 85%; max-width: 48rem; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{|\sigma_1-\sigma_2|}{2}.$$
+
+Substituting into Tresca's criterion:
+
+$$\frac{|\sigma_1-\sigma_2|}{2}\geq\frac{\sigma_Y}{2}
+\quad\Rightarrow\quad\boxed{|\sigma_1-\sigma_2|\geq\sigma_Y}.$$
+
+The limits $\sigma_1-\sigma_2=\pm\sigma_Y$ produce the **diagonal boundaries** in the opposite-sign quadrants.
+
+**Absolute versus in-plane maximum shear:** the in-plane circle only uses $\sigma_1$ and $\sigma_2$. The absolute maximum uses the largest of all three circles. For same-sign stresses it is larger than the in-plane maximum; for opposite-sign stresses they are equal.
+
+</details>
+
+**Yielding:** $\displaystyle\tau_{\max}\geq\frac{\sigma_Y}{2}$.
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+**Principal stresses have the same sign:**
+
+$$\boxed{|\sigma_1|\geq\sigma_Y}\quad\text{or}\quad\boxed{|\sigma_2|\geq\sigma_Y}$$
+
+</div>
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+**Principal stresses have opposite signs:**
+
+$$\boxed{|\sigma_1-\sigma_2|\geq\sigma_Y}$$
+
+</div>
+</div>
+
+For plane stress, include the **zero through-thickness principal stress** when finding $\tau_{\max}$.
+
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+<details>
+<summary><strong>Reveal Tresca failure surface</strong></summary>
+
+![Completed Tresca failure surface on identical axes](images/PlaneStress_Week09_img13c_TrescaSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+**No yielding inside the failure surface.**
+
+</details>
+
+## Von Mises Stress and Failure Surface
+
+![Original general three-dimensional stress-state diagram](images/PlaneStress_Week09_img14_GeneralStressState.png)<!-- style="width: 50%; max-width: 32rem; display: block; margin: auto;" -->
+
+$$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2
++6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
+
+$$\boxed{\sigma_v\geq\sigma_Y}\qquad\text{Yielding}$$
+
+**In terms of principal stresses:**
+
+$$\sigma_v^2=\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].$$
+
+**Plane stress:** the through-thickness principal stress is zero.
+
+$$\sigma_v^2=\hspace{14em}$$
+
+At yield, $\sigma_v=\sigma_Y$:
+
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+<details>
+<summary><strong>Reveal plane-stress equation and failure surface</strong></summary>
+
+$$\begin{aligned}
+\sigma_v^2
+&=\frac12\left[(\sigma_1-\sigma_2)^2+\sigma_2^2+\sigma_1^2\right]\\
+&=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.
+\end{aligned}$$
+
+At yield:
+
+$$\boxed{\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2=\sigma_Y^2.}$$
+
+![Completed von Mises failure surface on identical axes](images/PlaneStress_Week09_img15_VonMisesSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+**No yielding inside the failure surface.**
+
+</details>
+
+## Von Mises: 3D, 2D and 1D Stresses
+
+$$\boxed{\sigma_v\geq\sigma_Y}$$
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; align-items: start;">
+<div style="grid-column: 1 / -1; min-width: 0;">
+
+**Stress components — 3D stresses**
+
+$$\sigma_v^2=\frac12\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2+6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
+
+</div>
+<div style="grid-column: 1 / -1; min-width: 0;">
+
+**Principal stresses — 3D stresses**
+
+$$\sigma_v^2=\frac12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].$$
+
+</div>
+<div>
+
+**Stress components**
+
+</div>
+<div>
+
+**In terms of principal stresses**
+
+</div>
+<div style="min-width: 0;">
+
+**2D stresses**
+
+$$\sigma_v^2=\hspace{8em}$$
+
+</div>
+<div style="min-width: 0;">
+
+**2D stresses**
+
+$$\sigma_v^2=\hspace{8em}$$
+
+</div>
+<div style="min-width: 0;">
+
+**1D stresses**
+
+$$\sigma_v^2=\hspace{8em}$$
+
+</div>
+<div style="min-width: 0;">
+
+**1D stresses**
+
+$$\sigma_v^2=\hspace{8em}$$
+
+</div>
+</div>
+
+<br>
+
+<details>
+<summary><strong>Reveal completed 2D and 1D equations</strong></summary>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+<div style="min-height: 110px;">
+
+**2D stresses**
+
+$$\sigma_v^2=\sigma_{11}^2-\sigma_{11}\sigma_{22}+\sigma_{22}^2+3\tau_{12}^2.$$
+
+</div>
+<div style="min-height: 80px;">
+
+**1D stresses**
+
+$$\sigma_v^2=\sigma_{11}^2.$$
+
+</div>
+
+
+</div>
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+<div style="min-height: 110px;">
+
+**2D stresses**
+
+$$\sigma_v^2=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.$$
+
+</div>
+<div style="min-height: 80px;">
+
+**1D stresses**
+
+$$\sigma_v^2=\sigma^2.$$
+
+</div>
+
+
+</div>
+</div>
+
+For plane stress, $\sigma_{33}=\tau_{23}=\tau_{31}=0$. The principal form uses the two in-plane stresses and a zero through-thickness stress. For uniaxial stress, $\sigma$ is the only nonzero principal stress and $\sigma_v=|\sigma|$.
+
+In $x,y$ notation, the plane-stress result used for Q5 is:
+
+$$\boxed{\sigma_{\mathrm{VM}}=\sigma_v=\sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}.}$$
+
+</details>
+
+## Brittle Materials: Maximum Normal Stress Criterion
+
+$$\boxed{|\sigma_1|\geq\sigma_F}\quad\text{or}\quad\boxed{|\sigma_2|\geq\sigma_F}\qquad\text{Fracture}$$
+
+$\sigma_F$ is the **uniaxial fracture strength**. The square assumes equal tensile and compressive fracture strengths.
+
+![Blank principal-stress axes for live fracture-surface construction](images/PlaneStress_Week09_img16a_FractureAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+<details>
+<summary><strong>Reveal maximum normal stress surface</strong></summary>
+
+![Completed square fracture surface on identical axes](images/PlaneStress_Week09_img16b_MaxNormalSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+**No fracture inside the failure surface.**
+
+If the tensile and compressive strength magnitudes $\sigma_{Ft}$ and $\sigma_{Fc}$ differ, the square extends from $-\sigma_{Fc}$ to $+\sigma_{Ft}$ on each axis and is no longer centred on the origin.
+
+</details>
+
+## Comparing Failure Surfaces
+
+**Tresca and von Mises**
+
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 60rem; display: block; margin: auto;" -->
+
+**Discuss:** Which one should we use?
+
+<br>
+
+<details>
+<summary><strong>Reveal comparison of failure surfaces</strong></summary>
+
+![Tresca and von Mises surfaces on identical axes](images/PlaneStress_Week09_img17_CriteriaComparison.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+
+**Blue:** Tresca. **Teal:** von Mises.
+
+</details>
+
+## Comparing Failure Criteria
+
+![Original experimental comparison of ductile yielding and brittle fracture criteria](images/PlaneStress_Week09_img10_CriterionExperimentalComparison.png)<!-- style="width: 75%; display: block; margin: auto;" -->
+
+Source: Dowling, *Mechanical Behavior of Materials* (1993).
+
+## Analytical Problem: Von Mises Stress and Factor of Safety
+
+The general stress state at a point in a ductile material is defined by the stress components below.
+
+![Stress element](images/PlaneStress_Week09_img21_GeneralPrincipalProblem.svg)<!-- style="width: 60%; display: block; margin: auto;" -->
+
+| Quantity | Symbol |
+|---|---|
+| Normal stress in x | $\sigma_x$ |
+| Normal stress in y | $\sigma_y$ |
+| In-plane shear stress | $\tau_{xy}$ |
+| Material yield strength | $\sigma_Y$ |
+
+Using the von Mises criterion, determine the factor of safety against yielding.
+
+**Required numerical answer:** FOS (dimensionless).
+
+Complete the Analytical Problem on Blackboard using your individual values. Give your answer to 2 decimal places and retain your workings for submission.
+
+## Extension: Adhesive Strength of a Scarf Joint
+
+Two members of cross-section **80 × 10 mm** are glued along an inclined plane and subjected to tensile load $P$.
+
+![Scarf joint with the plane normal 25 degrees from horizontal, vertical tensile load and 80 by 10 mm cross-section](images/PlaneStress_Week09_img11_ScarfJoint.svg)<!-- style="width: 60%; display: block; margin: auto;" -->
+
+The angle is **25° from the horizontal $x$ axis to the joint's normal $x'$**. The adhesive plane itself is therefore 65° to horizontal. The member is loaded in $y$; $y'$ is along the adhesive plane.
+
+The allowable adhesive normal stress is **800 kPa**, and the allowable shear-stress magnitude is **600 kPa**.
+
+**Determine the maximum load $P$ that can be applied without failure of the adhesive joint.**
+
+1. Determine the original stress state in $x,y$.
+2. Calculate the normal and shear stresses acting on the adhesive plane in terms of $P$.
+3. Determine the maximum load permitted by each stress limit.
+4. Identify the governing failure mode and maximum permissible load.
+
+**Stress transformation equations (derived in the pre-class videos)**
+
+$$\sigma_{x'}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\theta)+\tau_{xy}\sin(2\theta)$$
+
+$$\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\sin(2\theta)+\tau_{xy}\cos(2\theta)$$
+
+@Week09Solution
+<details>
+<summary><strong>Reveal worked solution</strong></summary>
+
+<details>
+<summary>1. Original stress state</summary>
+
+The cross-sectional area is:
+
+$$A=bt=80(10)=800\text{ mm}^2$$
+
+The original stress state is:
+
+$$\sigma_x=0,\qquad \sigma_y=\frac{P}{A},\qquad \tau_{xy}=0$$
+
+The rotation angle is:
+
+$$\theta=25^\circ$$
+
+</details>
+
+<details>
+<summary>2. Stress transformation</summary>
+
+The normal stress transformation equation is:
+
+$$\sigma_{x'}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\theta)+\tau_{xy}\sin(2\theta)$$
+
+Substituting the original stress state:
+
+$$\sigma_{x'}=\frac{P}{2A}-\frac{P}{2A}\cos(2\theta)$$
+
+$$\boxed{\sigma_{x'}=\frac{P}{2A}[1-\cos(2\theta)]}$$
+
+The shear stress transformation equation is:
+
+$$\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\sin(2\theta)+\tau_{xy}\cos(2\theta)$$
+
+Substituting the original stress state:
+
+$$\boxed{\tau_{x'y'}=\frac{P}{2A}\sin(2\theta)}$$
+
+</details>
+
+<details>
+<summary>3. Maximum load based on normal stress</summary>
+
+The allowable normal stress is:
+
+$$\sigma_{\mathrm{allow}}=800\text{ kPa}=0.8\text{ MPa}$$
+
+At the limiting load:
+
+$$\sigma_{\mathrm{allow}}=\frac{P}{2A}[1-\cos(2\theta)]$$
+
+Rearranging for $P$:
+
+$$P_{\mathrm{normal}}=\frac{2A\sigma_{\mathrm{allow}}}{1-\cos(2\theta)}$$
+
+Substituting:
+
+$$P_{\mathrm{normal}}=\frac{2(800)(0.8)}{1-\cos(50^\circ)}$$
+
+$$\boxed{P_{\mathrm{normal}}=3.58\text{ kN}}$$
+
+</details>
+
+<details>
+<summary>4. Maximum load based on shear stress</summary>
+
+The allowable shear stress is:
+
+$$\tau_{\mathrm{allow}}=600\text{ kPa}=0.6\text{ MPa}$$
+
+At the limiting load:
+
+$$\tau_{\mathrm{allow}}=\frac{P}{2A}\sin(2\theta)$$
+
+Rearranging for $P$:
+
+$$P_{\mathrm{shear}}=\frac{2A\tau_{\mathrm{allow}}}{\sin(2\theta)}$$
+
+Substituting:
+
+$$P_{\mathrm{shear}}=\frac{2(800)(0.6)}{\sin(50^\circ)}$$
+
+$$\boxed{P_{\mathrm{shear}}=1.25\text{ kN}}$$
+
+</details>
+
+<details>
+<summary>5. Maximum permissible load</summary>
+
+Both the normal and shear stress limits must be satisfied.
+
+$$P_{\max}=\min(P_{\mathrm{normal}},P_{\mathrm{shear}})$$
+
+$$P_{\max}=\min(3.58,1.25)$$
+
+$$\boxed{P_{\max}=1.25\text{ kN}}$$
+
+The failure of the adhesive joint is governed by **shear stress**, despite the member being loaded in tension.
+
+This illustrates the importance of shear stresses under tensile loading, as discussed when introducing the Tresca criterion and examining the tensile test fracture images.
+
+</details>
+
+</details>
+</div>
+
+## Week 9 Completion Check
+
+- [ ] I can calculate principal stresses and identify the corresponding physical orientations.
+- [ ] I can construct Mohr's circle using individual-face shear tendencies and halve its angles correctly.
+- [ ] I can distinguish maximum in-plane shear from absolute maximum three-dimensional shear.
+- [ ] I can explain the purpose of Tresca, von Mises and maximum-normal-stress criteria.
+- [ ] I have identified my Analytical Problem values and recorded the remaining work and deadline.
+- [ ] I can calculate von Mises stress and factor of safety, and interpret the result.
+
+## C. INDEPENDENT STUDY: After class
+
+Complete the Analytical Problem using your own Blackboard values. Submit the numerical answer by the published deadline and retain your workings for the final analytical portfolio.
+
+Finish the optional scarf-joint extension if you want further practice applying stress transformations to an inclined plane.
+
+Complete the released Week 10 preparation before the next lectorial. The plane-stress finite element formulation and associated modelling activities follow in Week 10.
 
 ## Further reading
 

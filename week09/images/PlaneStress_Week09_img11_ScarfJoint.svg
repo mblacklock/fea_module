@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 10 10"
+            refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#5d6d7e"/>
+    </marker>
+
+    <marker id="arrow-purple" viewBox="0 0 10 10"
+            refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8b1e8f"/>
+    </marker>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10"
+            refX="9" refY="5" markerWidth="6" markerHeight="6"
+            orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/>
+    </marker>
+
+    <clipPath id="specimen-clip">
+      <rect x="270" y="60" width="140" height="420"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .member {
+      fill: #d8e6eb;
+      stroke: #2f4858;
+      stroke-width: 3;
+    }
+
+    .support {
+      fill: #e7dfc8;
+      stroke: #2f4858;
+      stroke-width: 3;
+    }
+
+    .joint {
+      stroke: #008982;
+      stroke-width: 5;
+    }
+
+    .axis {
+      stroke: #5d6d7e;
+      stroke-width: 2.5;
+      fill: none;
+      marker-end: url(#arrow-dark);
+    }
+
+    .rotated-axis {
+      stroke: #8b1e8f;
+      stroke-width: 3.5;
+      stroke-dasharray: 2 7;
+      stroke-linecap: round;
+      fill: none;
+      marker-end: url(#arrow-purple);
+    }
+
+    .load {
+      stroke: #2563eb;
+      stroke-width: 4;
+      marker-end: url(#arrow-blue);
+    }
+
+    .label {
+      font-family: "Times New Roman", serif;
+      font-size: 30px;
+      fill: #2f4858;
+      font-style: italic;
+    }
+
+    .rotated-label {
+      font-family: "Times New Roman", serif;
+      font-size: 30px;
+      fill: #8b1e8f;
+      font-style: italic;
+    }
+
+    .dimension {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      fill: #2f4858;
+    }
+
+    .angle {
+      stroke: #5d6d7e;
+      stroke-width: 2;
+      fill: none;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="white"/>
+
+  <!-- Specimen -->
+  <rect x="270" y="60" width="140" height="420"
+        class="member"/>
+
+  <!-- Fixed support -->
+  <rect x="230" y="30" width="220" height="30"
+        class="support"/>
+
+  <!-- Adhesive joint -->
+  <g clip-path="url(#specimen-clip)">
+    <g transform="translate(340 270) rotate(-25)">
+      <line x1="0" y1="-250"
+            x2="0" y2="250"
+            class="joint"/>
+    </g>
+  </g>
+
+  <!-- Global coordinate system -->
+  <line x1="50" y1="430" x2="150" y2="430"
+        class="axis"/>
+
+  <line x1="50" y1="430" x2="50" y2="330"
+        class="axis"/>
+
+  <text x="160" y="440" class="label">x</text>
+  <text x="40" y="315" class="label">y</text>
+
+  <!-- Applied tensile load -->
+  <line x1="340" y1="480" x2="340" y2="570"
+        class="load"/>
+
+  <text x="365" y="555" class="label">P</text>
+
+  <!-- Horizontal reference axis -->
+  <line x1="340" y1="270" x2="560" y2="270"
+        class="axis"/>
+
+  <text x="575" y="280" class="label">x</text>
+
+  <!-- Rotated coordinate system -->
+  <g transform="translate(340 270) rotate(-25)">
+
+    <!-- x' normal to adhesive joint -->
+    <line x1="0" y1="0" x2="220" y2="0"
+          class="rotated-axis"/>
+
+    <!-- y' parallel to adhesive joint -->
+    <line x1="0" y1="0" x2="0" y2="-145"
+          class="rotated-axis"/>
+
+    <!-- Right-angle marker -->
+    <path d="M0 -20 H20 V0"
+          stroke="#8b1e8f"
+          stroke-width="2"
+          fill="none"/>
+
+  </g>
+
+  <!-- Rotated axis labels -->
+  <text x="550" y="165" class="rotated-label">x′</text>
+  <text x="250" y="125" class="rotated-label">y′</text>
+
+  <!-- 25 degree angle -->
+  <path d="M430 270
+           A90 90 0 0 0 421.568 231.964"
+        class="angle"/>
+
+  <text x="445" y="252" class="label">25°</text>
+
+  <!-- Cross-section -->
+  <rect x="590" y="400" width="200" height="25"
+        class="member"/>
+
+  <text x="690" y="465"
+        text-anchor="middle"
+        class="dimension">80 mm</text>
+
+  <text x="810" y="420"
+        class="dimension">10 mm</text>
+
+</svg>
