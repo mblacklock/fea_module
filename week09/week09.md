@@ -751,191 +751,234 @@ Here the third principal stress, zero, lies between 70 and −30 MPa. Consequent
 
 ## Failure Criteria: Ductile Yielding and Brittle Fracture
 
-Principal stresses tell us the normal stresses on planes without shear. A failure criterion combines the stress state with material strength to predict a limiting condition.
+**Ductile materials:** yielding — Tresca and von Mises.
 
-**Ductile materials** can undergo substantial plastic deformation. We usually check the **onset of yielding**, using Tresca or von Mises.
+**Brittle materials:** fracture — maximum normal stress criterion.
 
-**Brittle materials** can fracture with little plastic deformation. A normal tensile stress can open cracks; tensile and compressive strengths may differ substantially. A maximum-normal-stress criterion is a simple fracture model.
-
-We will use $\sigma_Y$ for the material's uniaxial tensile yield strength. This is a material property, distinct from the stress component $\sigma_y$.
+$\sigma_Y$: uniaxial yield strength.
 
 ## Tresca: Maximum Shearing Stress Criterion
 
-Yielding begins when the **absolute maximum shearing stress** reaches the value at yield in a uniaxial tensile test:
+**Yielding:** $\displaystyle\tau_{\max}\geq\frac{\sigma_Y}{2}$.
 
-$$\tau_{\max,\mathrm{absolute}}\geq\frac{\sigma_Y}{2}.$$
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 22rem; min-width: 0;">
 
-For plane stress, consider the two in-plane principal stresses $\sigma_1$, $\sigma_2$ **and the through-thickness principal stress, zero**.
+**Principal stresses have the same sign:**
 
-**Same-sign in-plane principal stresses**
+$$\boxed{|\sigma_1|\geq\sigma_Y}\quad\text{or}\quad\boxed{|\sigma_2|\geq\sigma_Y}$$
 
-Zero is an extreme principal stress. Hence:
+</div>
+<div style="flex: 1 1 22rem; min-width: 0;">
 
-$$\tau_{\max,\mathrm{absolute}}=\frac{\max(|\sigma_1|,|\sigma_2|)}{2}.$$
+**Principal stresses have opposite signs:**
 
-Yielding occurs if $|\sigma_1|\geq\sigma_Y$ **or** $|\sigma_2|\geq\sigma_Y$. The boundaries in the first and third quadrants are horizontal and vertical lines.
+$$\boxed{|\sigma_1-\sigma_2|\geq\sigma_Y}$$
 
-**Opposite-sign in-plane principal stresses**
+</div>
+</div>
 
-Zero lies between them, so:
+For plane stress, include the **zero through-thickness principal stress** when finding $\tau_{\max}$.
 
-$$\tau_{\max,\mathrm{absolute}}=\frac{|\sigma_1-\sigma_2|}{2},\qquad
-|\sigma_1-\sigma_2|\geq\sigma_Y\quad\text{at yielding}.$$
-
-The boundaries in the second and fourth quadrants are the diagonal lines $\sigma_1-\sigma_2=\pm\sigma_Y$.
-
-**Construct the failure surface.** Use the same-sign cases first, then connect them using the opposite-sign cases. The axes are the two in-plane principal stresses; each intercept is the uniaxial yield strength.
-
-![Blank principal-stress axes with matching yield-strength intercepts](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
 <details>
-<summary><strong>Reveal same-sign boundary segments</strong></summary>
+<summary><strong>Reveal Tresca failure surface</strong></summary>
 
-![Horizontal and vertical Tresca boundaries for same-sign principal stresses](images/PlaneStress_Week09_img13b_TrescaSameSign.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Completed Tresca failure surface on identical axes](images/PlaneStress_Week09_img13c_TrescaSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
-</details>
-
-<details>
-<summary><strong>Reveal completed Tresca surface</strong></summary>
-
-![Completed Tresca hexagon including opposite-sign diagonal boundaries](images/PlaneStress_Week09_img13c_TrescaSurface.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
-
-No yielding is predicted **inside** the hexagon. Its boundary marks first yield.
-
-As a summary of both cases:
-
-$$\sigma_{\mathrm{T}}=\max(|\sigma_1|,|\sigma_2|,|\sigma_1-\sigma_2|),\qquad\sigma_{\mathrm{T}}\geq\sigma_Y\text{ at yielding}.$$
+**No yielding inside the failure surface.**
 
 </details>
 
 ## Von Mises Stress: General Stress State
 
-Von Mises combines the stress components into an **equivalent stress** $\sigma_v$. Yielding is predicted when $\boxed{\sigma_v\geq\sigma_Y}$.
+![Original general three-dimensional stress-state diagram](images/PlaneStress_Week09_img14_GeneralStressState.png)<!-- style="width: 50%; max-width: 32rem; display: block; margin: auto;" -->
 
-![Original PowerPoint diagram of the general three-dimensional stress components](images/PlaneStress_Week09_img14_GeneralStressState.png)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+$$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2
++6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
 
-For a general three-dimensional stress state:
+$$\boxed{\sigma_v\geq\sigma_Y}\qquad\text{Yielding}$$
 
-$$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2\right]
-+3\left(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2\right).$$
+## Von Mises: In Terms of Principal Stresses
 
-Here $\sigma_{11}=\sigma_x$, $\sigma_{22}=\sigma_y$, $\sigma_{33}=\sigma_z$, and $\tau_{12}=\tau_{xy}$, etc. The shear stresses on complementary faces are equal.
+$$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2
++6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
 
-{{1}}
-********************
-**In terms of principal stresses**, the shear components vanish:
+**In terms of principal stresses:**
 
 $$\sigma_v^2=\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].$$
 
-For this 3D expression, $\sigma_1\geq\sigma_2\geq\sigma_3$ are the maximum, intermediate and minimum principal stresses. The squared differences give the same value regardless of their order.
-********************
-
-## Von Mises: Elliptical Failure Surface
-
-For plane stress, the through-thickness principal stress is zero. Using $\sigma_1$ and $\sigma_2$ for the two **in-plane** principal stresses:
-
-$$\sigma_v^2=\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+\sigma_2^2+\sigma_1^2\right]
-=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.$$
-
-At first yield:
-
-$$\boxed{\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2=\sigma_Y^2.}$$
-
-This is an **ellipse**. Mark its four intercepts at $\pm\sigma_Y$, then sketch the boundary.
-
-![Blank principal-stress axes with matching yield-strength intercepts](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
 <details>
-<summary><strong>Reveal von Mises surface</strong></summary>
+<summary><strong>Reveal von Mises failure surface</strong></summary>
 
-![Completed von Mises ellipse through the four yield-strength intercepts](images/PlaneStress_Week09_img15_VonMisesSurface.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Completed von Mises failure surface on identical axes](images/PlaneStress_Week09_img15_VonMisesSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
-No yielding is predicted **inside** the ellipse. The boundary marks first yield.
+**No yielding inside the failure surface.**
 
 </details>
 
 ## Von Mises: 3D, 2D and 1D Stresses
 
-The same equivalent stress can be calculated from **stress components** or **principal stresses**. Here $\sigma_v=\sigma_{\mathrm{VM}}$.
+$$\boxed{\sigma_v\geq\sigma_Y}$$
 
-**3D stress state**
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; align-items: start;">
+<div>
+
+**Stress components**
+
+</div>
+<div>
+
+**In terms of principal stresses**
+
+</div>
+<div style="min-width: 0;">
+
+**3D stresses**
 
 $$\begin{aligned}
-\text{Components:}\quad\sigma_v^2
-&=\frac{(\sigma_x-\sigma_y)^2+(\sigma_y-\sigma_z)^2+(\sigma_z-\sigma_x)^2}{2}
-+3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2),\\[0.5em]
-\text{Principal:}\quad\sigma_v^2
-&=\frac{(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2}{2}.
+\sigma_v^2=\frac12\big[&(\sigma_{11}-\sigma_{22})^2\\
+&+(\sigma_{22}-\sigma_{33})^2\\
+&+(\sigma_{33}-\sigma_{11})^2\\
+&+6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\big].
 \end{aligned}$$
 
-{{1}}
-********************
-**2D plane stress** — set $\sigma_z=\tau_{yz}=\tau_{zx}=0$; one principal stress is zero.
+</div>
+<div style="min-width: 0;">
+
+**3D stresses**
 
 $$\begin{aligned}
-\text{Components:}\quad\sigma_v^2&=\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2,\\[0.5em]
-\text{In-plane principal:}\quad\sigma_v^2&=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.
+\sigma_v^2=\frac12\big[&(\sigma_1-\sigma_2)^2\\
+&+(\sigma_2-\sigma_3)^2\\
+&+(\sigma_3-\sigma_1)^2\big].
 \end{aligned}$$
 
-For Q5, take the positive square root:
+</div>
+<div style="min-width: 0;">
 
-$$\boxed{\sigma_{\mathrm{VM}}=\sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}.}$$
-********************
+**2D stresses**
 
-{{2}}
-********************
-**1D uniaxial stress** — only one normal stress is nonzero; all shear stresses are zero.
+$$\sigma_v^2=\underline{\hspace{8em}}$$
 
-$$\sigma_v^2=\sigma_x^2\quad\Rightarrow\quad\sigma_v=|\sigma_x|.$$
+</div>
+<div style="min-width: 0;">
 
-In principal stresses, the same result is $\sigma_v=|\sigma_{\mathrm{nonzero}}|$; the other two principal stresses are zero. Equivalent stress is non-negative in both tension and compression.
-********************
+**2D stresses**
+
+$$\sigma_v^2=\underline{\hspace{8em}}$$
+
+</div>
+<div style="min-width: 0;">
+
+**1D stresses**
+
+$$\sigma_v^2=\underline{\hspace{8em}}$$
+
+</div>
+<div style="min-width: 0;">
+
+**1D stresses**
+
+$$\sigma_v^2=\underline{\hspace{8em}}$$
+
+</div>
+</div>
+
+<details>
+<summary><strong>Reveal completed 2D and 1D equations</strong></summary>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+<div style="min-height: 110px;">
+
+**2D stresses**
+
+$$\sigma_v^2=\sigma_{11}^2-\sigma_{11}\sigma_{22}+\sigma_{22}^2+3\tau_{12}^2.$$
+
+</div>
+<div style="min-height: 80px;">
+
+**1D stresses**
+
+$$\sigma_v^2=\sigma_{11}^2.$$
+
+</div>
+
+
+</div>
+<div style="flex: 1 1 22rem; min-width: 0;">
+
+<div style="min-height: 110px;">
+
+**2D stresses**
+
+$$\sigma_v^2=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.$$
+
+</div>
+<div style="min-height: 80px;">
+
+**1D stresses**
+
+$$\sigma_v^2=\sigma^2.$$
+
+</div>
+
+
+</div>
+</div>
+
+For plane stress, $\sigma_{33}=\tau_{23}=\tau_{31}=0$. The principal form uses the two in-plane stresses and a zero through-thickness stress. For uniaxial stress, $\sigma$ is the only nonzero principal stress and $\sigma_v=|\sigma|$.
+
+In $x,y$ notation, the plane-stress result used for Q5 is:
+
+$$\boxed{\sigma_{\mathrm{VM}}=\sigma_v=\sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}.}$$
+
+</details>
 
 ## Brittle Materials: Maximum Normal Stress Criterion
 
-For brittle materials, compare the principal normal stresses with the **fracture strength**. For the square surface, assume equal tensile and compressive strength magnitudes $S$.
+$$\boxed{|\sigma_1|\geq S}\quad\text{or}\quad\boxed{|\sigma_2|\geq S}\qquad\text{Fracture}$$
 
-Fracture is predicted when:
+Assume equal tensile and compressive fracture strengths $S$.
 
-$$\boxed{|\sigma_1|\geq S\quad\text{or}\quad|\sigma_2|\geq S.}$$
-
-The four limits $\sigma_1=\pm S$ and $\sigma_2=\pm S$ form a **square**. Sketch these limits on the axes.
-
-![Blank principal-stress axes with equal tensile and compressive fracture strength S](images/PlaneStress_Week09_img16a_FractureAxes.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Blank principal-stress axes for live fracture-surface construction](images/PlaneStress_Week09_img16a_FractureAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
 <details>
 <summary><strong>Reveal maximum normal stress surface</strong></summary>
 
-![Square maximum-normal-stress fracture boundary at plus and minus S](images/PlaneStress_Week09_img16b_MaxNormalSurface.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Completed square fracture surface on identical axes](images/PlaneStress_Week09_img16b_MaxNormalSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
-No fracture is predicted **inside** the square. The boundary marks the fracture limit.
+**No fracture inside the failure surface.**
 
 </details>
 
-This is a **fracture** check, rather than a ductile-yield check. Real brittle materials may have different tensile and compressive strengths; the equal-strength square is a simplifying assumption.
+Real brittle materials may have different strengths in tension and compression.
 
 ## Comparing Failure Surfaces
 
-On the same axes and at the same uniaxial yield strength $\sigma_Y$, compare the Tresca hexagon with the von Mises ellipse.
+**Tresca and von Mises**
 
-![Blank principal-stress axes with matching yield-strength intercepts](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
 <details>
-<summary><strong>Reveal the two yield surfaces</strong></summary>
+<summary><strong>Reveal comparison of failure surfaces</strong></summary>
 
-![Tresca hexagon in blue and von Mises ellipse in teal on identical axes](images/PlaneStress_Week09_img17_CriteriaComparison.svg)<!-- style="width: 65%; max-width: 46rem; display: block; margin: auto;" -->
+![Tresca and von Mises surfaces on identical axes](images/PlaneStress_Week09_img17_CriteriaComparison.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
-**Blue:** Tresca. **Teal:** von Mises. They agree in uniaxial tension. The Tresca boundary lies within or on the von Mises boundary, so Tresca is at least as conservative for the same yield strength.
+**Blue:** Tresca. **Teal:** von Mises.
 
 </details>
 
 ## Comparing Failure Criteria
 
-Tresca and von Mises agree in uniaxial tension but differ for other combinations of principal stresses. The Tresca boundary lies within or on the von Mises boundary, so Tresca is at least as conservative for the same yield strength. Maximum normal stress is a different model of failure, rather than a substitute chosen because its calculation is shorter.
-
 ![Original experimental comparison of ductile yielding and brittle fracture criteria](images/PlaneStress_Week09_img10_CriterionExperimentalComparison.png)<!-- style="width: 75%; display: block; margin: auto;" -->
 
-The original comparison figure shows experimental data against proposed boundaries. Choose a criterion to match **material behaviour and the failure mode**. Source: Dowling, *Mechanical Behavior of Materials* (1993), reproduced in the original Week 9 presentation.
+Source: Dowling, *Mechanical Behavior of Materials* (1993), reproduced in the original Week 9 presentation.
 
 **A ductile steel component is being checked for the onset of yielding under combined stress. Which choice is appropriate? Explain your reasoning before checking.**
 
