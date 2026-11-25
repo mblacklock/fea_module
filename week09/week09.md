@@ -759,6 +759,118 @@ $\sigma_Y$: uniaxial yield strength.
 
 ## Tresca: Maximum Shearing Stress Criterion
 
+<details>
+<summary><strong>Deriving the Tresca criterion</strong></summary>
+
+Plastic deformation in ductile metals occurs through **slip within the crystal structure**.
+
+![Shear failure in fractured tensile-test specimens](images/PlaneStress_Week09_img19_TensileShearFailure_Ellis2007.png)<!-- style="width: 80%; max-width: 42rem; display: block; margin: auto;" -->
+
+<div style="text-align: center;">
+
+**Example: shear failure in a tensile test.** Source: Ellis (2007), [NASA/TM—2007-214968](https://ntrs.nasa.gov/citations/20070031907).
+
+</div>
+
+The specimens are shown after fracture; the calculation below concerns the **onset of yielding**.
+
+**Uniaxial tensile test — onset of yielding:**
+
+$$\sigma_x=\sigma_Y,\qquad\sigma_y=0,\qquad\tau_{xy}=0.$$
+
+![Mohr's circle for uniaxial tension at yield, with face points, centre and radius labelled](images/PlaneStress_Week09_img18_TrescaTensileCircle.svg)<!-- style="width: 85%; max-width: 48rem; display: block; margin: auto;" -->
+
+Using the Mohr's circle radius equation:
+
+$$R=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}.$$
+
+Substitute the tensile-test stress state:
+
+$$R=\sqrt{\left(\frac{\sigma_Y-0}{2}\right)^2+0^2}=\frac{\sigma_Y}{2}.$$
+
+Hence, the maximum shear stress **in this tensile test at yielding** is:
+
+$$\tau_{\max}=R=\frac{\sigma_Y}{2}.$$
+
+**Tresca's hypothesis:** under general loading, yielding occurs when the **absolute maximum shear stress** reaches this same critical value:
+
+$$\boxed{\tau_{\max}\geq\frac{\sigma_Y}{2}}.$$
+
+The tensile-test result gives the critical value; applying it to **any stress state** is Tresca's hypothesis. Include all three principal stresses when finding the absolute maximum shear stress.
+
+**From the tensile test to general loading**
+
+For the largest and smallest of **all three principal stresses**:
+
+$$\tau_{\max}=\frac{\sigma_{\max}-\sigma_{\min}}{2}.$$
+
+Substituting into Tresca's criterion:
+
+$$\frac{\sigma_{\max}-\sigma_{\min}}{2}\geq\frac{\sigma_Y}{2}
+\quad\Rightarrow\quad\sigma_{\max}-\sigma_{\min}\geq\sigma_Y.$$
+
+For plane stress, use $\{\sigma_1,\sigma_2,0\}$, where $\sigma_1\geq\sigma_2$ are the two **in-plane** principal stresses. Here $\sigma_{\max}$ and $\sigma_{\min}$ are the extremes of the full set, including zero.
+
+The three Mohr circles have:
+
+$$\begin{aligned}
+C_{12}&=\frac{\sigma_1+\sigma_2}{2},&R_{12}&=\frac{|\sigma_1-\sigma_2|}{2},\\
+C_{10}&=\frac{\sigma_1}{2},&R_{10}&=\frac{|\sigma_1|}{2},\\
+C_{20}&=\frac{\sigma_2}{2},&R_{20}&=\frac{|\sigma_2|}{2}.
+\end{aligned}$$
+
+The subscripts identify the two intercepts of each circle. **Teal** highlights the largest circle and its radius $R_{\max}=\tau_{\max}$. **Blue** identifies the in-plane circle when it is smaller.
+
+**Case 1 — Same-sign principal stresses**
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
+<div style="flex: 1 1 24rem; min-width: 0;">
+
+**Both tensile:** $\sigma_1\geq\sigma_2>0$. Zero is the smallest principal stress.
+
+![Three Mohr circles for two tensile in-plane principal stresses and zero through-thickness stress](images/PlaneStress_Week09_img20a_TrescaBothTensile.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{\sigma_1-0}{2}
+\quad\Rightarrow\quad\sigma_1\geq\sigma_Y.$$
+
+</div>
+<div style="flex: 1 1 24rem; min-width: 0;">
+
+**Both compressive:** $0>\sigma_1\geq\sigma_2$. Zero is the largest principal stress.
+
+![Three Mohr circles for two compressive in-plane principal stresses and zero through-thickness stress](images/PlaneStress_Week09_img20b_TrescaBothCompressive.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{0-\sigma_2}{2}
+\quad\Rightarrow\quad|\sigma_2|\geq\sigma_Y.$$
+
+</div>
+</div>
+
+Combining the tensile and compressive cases:
+
+$$\boxed{|\sigma_1|\geq\sigma_Y\quad\text{or}\quad|\sigma_2|\geq\sigma_Y}.$$
+
+The limits $\sigma_1=\pm\sigma_Y$ and $\sigma_2=\pm\sigma_Y$ produce the **vertical and horizontal boundaries** in the same-sign quadrants of the Tresca surface.
+
+**Case 2 — Opposite-sign principal stresses**
+
+$\sigma_1>0>\sigma_2$: zero lies between the two in-plane principal stresses. The in-plane circle is now the largest circle.
+
+![Three Mohr circles for opposite-sign in-plane principal stresses, with the largest circle spanning sigma 2 to sigma 1](images/PlaneStress_Week09_img20c_TrescaOppositeSigns.svg)<!-- style="width: 85%; max-width: 48rem; display: block; margin: auto;" -->
+
+$$\tau_{\max}=\frac{|\sigma_1-\sigma_2|}{2}.$$
+
+Substituting into Tresca's criterion:
+
+$$\frac{|\sigma_1-\sigma_2|}{2}\geq\frac{\sigma_Y}{2}
+\quad\Rightarrow\quad\boxed{|\sigma_1-\sigma_2|\geq\sigma_Y}.$$
+
+The limits $\sigma_1-\sigma_2=\pm\sigma_Y$ produce the **diagonal boundaries** in the opposite-sign quadrants.
+
+**Absolute versus in-plane maximum shear:** the in-plane circle only uses $\sigma_1$ and $\sigma_2$. The absolute maximum uses the largest of all three circles. For same-sign stresses it is larger than the in-plane maximum; for opposite-sign stresses they are equal.
+
+</details>
+
 **Yielding:** $\displaystyle\tau_{\max}\geq\frac{\sigma_Y}{2}$.
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: flex-start;">
@@ -791,7 +903,7 @@ For plane stress, include the **zero through-thickness principal stress** when f
 
 </details>
 
-## Von Mises Stress: General Stress State
+## Von Mises Stress and Failure Surface
 
 ![Original general three-dimensional stress-state diagram](images/PlaneStress_Week09_img14_GeneralStressState.png)<!-- style="width: 50%; max-width: 32rem; display: block; margin: auto;" -->
 
@@ -800,19 +912,30 @@ $$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{3
 
 $$\boxed{\sigma_v\geq\sigma_Y}\qquad\text{Yielding}$$
 
-## Von Mises: In Terms of Principal Stresses
-
-$$\sigma_v^2=\frac{1}{2}\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2
-+6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
-
 **In terms of principal stresses:**
 
 $$\sigma_v^2=\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].$$
 
+**Plane stress:** the through-thickness principal stress is zero.
+
+$$\sigma_v^2=\hspace{14em}$$
+
+At yield, $\sigma_v=\sigma_Y$:
+
 ![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
 <details>
-<summary><strong>Reveal von Mises failure surface</strong></summary>
+<summary><strong>Reveal plane-stress equation and failure surface</strong></summary>
+
+$$\begin{aligned}
+\sigma_v^2
+&=\frac12\left[(\sigma_1-\sigma_2)^2+\sigma_2^2+\sigma_1^2\right]\\
+&=\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2.
+\end{aligned}$$
+
+At yield:
+
+$$\boxed{\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2=\sigma_Y^2.}$$
 
 ![Completed von Mises failure surface on identical axes](images/PlaneStress_Week09_img15_VonMisesSurface.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
@@ -825,6 +948,20 @@ $$\sigma_v^2=\frac{1}{2}\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigm
 $$\boxed{\sigma_v\geq\sigma_Y}$$
 
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; align-items: start;">
+<div style="grid-column: 1 / -1; min-width: 0;">
+
+**Stress components — 3D stresses**
+
+$$\sigma_v^2=\frac12\left[(\sigma_{11}-\sigma_{22})^2+(\sigma_{22}-\sigma_{33})^2+(\sigma_{33}-\sigma_{11})^2+6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\right].$$
+
+</div>
+<div style="grid-column: 1 / -1; min-width: 0;">
+
+**Principal stresses — 3D stresses**
+
+$$\sigma_v^2=\frac12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].$$
+
+</div>
 <div>
 
 **Stress components**
@@ -837,56 +974,35 @@ $$\boxed{\sigma_v\geq\sigma_Y}$$
 </div>
 <div style="min-width: 0;">
 
-**3D stresses**
+**2D stresses**
 
-$$\begin{aligned}
-\sigma_v^2=\frac12\big[&(\sigma_{11}-\sigma_{22})^2\\
-&+(\sigma_{22}-\sigma_{33})^2\\
-&+(\sigma_{33}-\sigma_{11})^2\\
-&+6(\tau_{12}^2+\tau_{23}^2+\tau_{31}^2)\big].
-\end{aligned}$$
-
-</div>
-<div style="min-width: 0;">
-
-**3D stresses**
-
-$$\begin{aligned}
-\sigma_v^2=\frac12\big[&(\sigma_1-\sigma_2)^2\\
-&+(\sigma_2-\sigma_3)^2\\
-&+(\sigma_3-\sigma_1)^2\big].
-\end{aligned}$$
+$$\sigma_v^2=\hspace{8em}$$
 
 </div>
 <div style="min-width: 0;">
 
 **2D stresses**
 
-$$\sigma_v^2=\underline{\hspace{8em}}$$
-
-</div>
-<div style="min-width: 0;">
-
-**2D stresses**
-
-$$\sigma_v^2=\underline{\hspace{8em}}$$
+$$\sigma_v^2=\hspace{8em}$$
 
 </div>
 <div style="min-width: 0;">
 
 **1D stresses**
 
-$$\sigma_v^2=\underline{\hspace{8em}}$$
+$$\sigma_v^2=\hspace{8em}$$
 
 </div>
 <div style="min-width: 0;">
 
 **1D stresses**
 
-$$\sigma_v^2=\underline{\hspace{8em}}$$
+$$\sigma_v^2=\hspace{8em}$$
 
 </div>
 </div>
+
+<br>
 
 <details>
 <summary><strong>Reveal completed 2D and 1D equations</strong></summary>
@@ -942,9 +1058,9 @@ $$\boxed{\sigma_{\mathrm{VM}}=\sigma_v=\sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_
 
 ## Brittle Materials: Maximum Normal Stress Criterion
 
-$$\boxed{|\sigma_1|\geq S}\quad\text{or}\quad\boxed{|\sigma_2|\geq S}\qquad\text{Fracture}$$
+$$\boxed{|\sigma_1|\geq\sigma_F}\quad\text{or}\quad\boxed{|\sigma_2|\geq\sigma_F}\qquad\text{Fracture}$$
 
-Assume equal tensile and compressive fracture strengths $S$.
+$\sigma_F$ is the **uniaxial fracture strength**. The square assumes equal tensile and compressive fracture strengths.
 
 ![Blank principal-stress axes for live fracture-surface construction](images/PlaneStress_Week09_img16a_FractureAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
 
@@ -955,9 +1071,9 @@ Assume equal tensile and compressive fracture strengths $S$.
 
 **No fracture inside the failure surface.**
 
-</details>
+If the tensile and compressive strength magnitudes $\sigma_{Ft}$ and $\sigma_{Fc}$ differ, the square extends from $-\sigma_{Fc}$ to $+\sigma_{Ft}$ on each axis and is no longer centred on the origin.
 
-Real brittle materials may have different strengths in tension and compression.
+</details>
 
 ## Comparing Failure Surfaces
 

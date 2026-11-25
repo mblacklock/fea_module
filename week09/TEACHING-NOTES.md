@@ -110,3 +110,15 @@ Validation: reviewed the rendered Presentation pages against source slides 11, 1
 
 
 Presentation adjustment: all four blank/completed surface pairs are displayed at full available width, capped at 48rem. The blank axes now omit strength-intercept ticks and labels (sigma_Y or S), so these can be added live. Completed surfaces retain their strength labels; the axis geometry and stress scale are unchanged.
+
+
+Von Mises pages 17 and 18 are now combined as “Von Mises Stress and Failure Surface”. The original stress-state illustration, general equation, yielding condition and principal form are retained; the duplicate general equation is removed. A blank plane-stress equation precedes the blank axes for live completion. One dropdown reveals the zero-through-thickness substitution, simplified equation, yield-boundary equation and completed ellipse. The separate 3D/2D/1D consolidation activity is unchanged. This added live algebraic step connects the principal equation to the ellipse without extra explanatory prose.
+
+
+Brittle-page notation now uses sigma_F for uniaxial fracture strength, consistently with sigma_Y for yielding. The equal-strength square and single reveal are retained. Unequal tensile/compressive strength magnitudes sigma_Ft and sigma_Fc give limits -sigma_Fc to +sigma_Ft on both axes, shifting the square away from the origin; this case is illustrated live in OneNote, without an added diagram.
+
+
+The Tresca page now starts with an independent, initially collapsed “Deriving the Tresca criterion” dropdown. It links slip in ductile metals to the uniaxial tensile test at yield, constructs its Mohr circle (intercepts 0 and sigma_Y, centre and radius sigma_Y/2), and substitutes into the previously introduced radius equation. It distinguishes the calculated tensile-test maximum shear sigma_Y/2 from Tresca's hypothesis that the same critical absolute maximum shear governs general loading. The new diagram retains horizontal sigma and upward-positive plotted tau. Existing cases and the failure-surface reveal are unchanged; the derivation does not use the post-class solution macro.
+
+
+The existing Tresca derivation dropdown is extended with the absolute principal-stress range and three plane-stress Mohr-circle diagrams: two tensile stresses, two compressive stresses, and opposite signs. Each shows all three pair circles with their centres; teal marks the largest circle and its radius, and blue marks the in-plane circle when smaller. The two same-sign diagrams sit side by side on desktop. The text derives the axis-parallel and diagonal surface boundaries, distinguishing absolute from in-plane maximum shear. All nine circles were independently checked for exact centres, radii and intercepts. Presentation-mode checks found no math errors, missing diagrams or equation overflow. Existing tensile-test derivation, outside case conditions and surface reveal, all other criteria, and all unrelated lesson text are preserved exactly.

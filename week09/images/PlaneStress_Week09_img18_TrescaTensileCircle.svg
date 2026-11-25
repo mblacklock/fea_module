@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-labelledby="title desc">
+<title id="title">Mohr's circle for a uniaxial tensile test at the onset of yielding</title>
+<desc id="desc">Normal stress is positive to the right and plotted shear positive upwards. The face points are Y at zero and X at sigma Y. The circle centre is sigma Y over two, and the radius is sigma Y over two.</desc>
+<defs><marker id="axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596773" stroke="none"/></marker></defs>
+<style>text{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:28px;fill:#29434f}.axis{fill:none;stroke:#596773;stroke-width:2;marker-end:url(#axis)}.circle{fill:none;stroke:#246bd2;stroke-width:3}</style>
+<rect width="900" height="500" fill="white"/>
+<path class="axis" d="M75 250 H800"/><path class="axis" d="M280 455 V45"/>
+<text x="815" y="260">σ</text><text x="266" y="35">τ</text>
+<circle class="circle" cx="440" cy="250" r="160"/>
+<path d="M440 250 L553.137 136.863" fill="none" stroke="#008b85" stroke-width="3"/>
+<circle cx="280" cy="250" r="5" fill="#246bd2"/><circle cx="600" cy="250" r="5" fill="#246bd2"/><circle cx="440" cy="250" r="4" fill="#29434f"/>
+<text x="260" y="290" text-anchor="end">Y (0, 0)</text>
+<text x="620" y="290">X (σ<tspan baseline-shift="sub" font-size="18">Y</tspan>, 0)</text>
+<text x="440" y="295" text-anchor="middle">C = σ<tspan baseline-shift="sub" font-size="18">Y</tspan>/2</text>
+<text x="575" y="130">R = σ<tspan baseline-shift="sub" font-size="18">Y</tspan>/2</text>
+</svg>
