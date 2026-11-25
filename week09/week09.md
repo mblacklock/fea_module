@@ -1079,7 +1079,11 @@ If the tensile and compressive strength magnitudes $\sigma_{Ft}$ and $\sigma_{Fc
 
 **Tresca and von Mises**
 
-![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 48rem; display: block; margin: auto;" -->
+![Blank principal-stress axes for live failure-surface construction](images/PlaneStress_Week09_img13a_YieldAxes.svg)<!-- style="width: 100%; max-width: 60rem; display: block; margin: auto;" -->
+
+**Discuss:** Which one should we use?
+
+<br>
 
 <details>
 <summary><strong>Reveal comparison of failure surfaces</strong></summary>
@@ -1094,122 +1098,154 @@ If the tensile and compressive strength magnitudes $\sigma_{Ft}$ and $\sigma_{Fc
 
 ![Original experimental comparison of ductile yielding and brittle fracture criteria](images/PlaneStress_Week09_img10_CriterionExperimentalComparison.png)<!-- style="width: 75%; display: block; margin: auto;" -->
 
-Source: Dowling, *Mechanical Behavior of Materials* (1993), reproduced in the original Week 9 presentation.
+Source: Dowling, *Mechanical Behavior of Materials* (1993).
 
-**A ductile steel component is being checked for the onset of yielding under combined stress. Which choice is appropriate? Explain your reasoning before checking.**
+## Analytical Problem: Von Mises Stress and Factor of Safety
 
-<!-- data-solution-button="3" -->
-[(X)] Von Mises or Tresca, with a justified choice
-[( )] Maximum normal stress, without considering material behaviour
-[( )] Compare only the larger in-plane shear component with the tensile strength
-****************************************
-Von Mises and Tresca are ductile-yield criteria. Von Mises commonly represents ductile-metal yielding well; Tresca provides a more conservative alternative. Use the applicable material evidence or design requirement to justify the choice. Include the third principal stress in a Tresca calculation.
-****************************************
+The general stress state at a point in a ductile material is defined by the stress components below.
 
-## Problem: Von Mises Stress and Factor of Safety
+![Stress element](images/PlaneStress_Week09_img21_GeneralPrincipalProblem.svg)<!-- style="width: 60%; display: block; margin: auto;" -->
 
-**About 30 minutes, including the Q5 preparation on the following page.** Return to the original stress state:
+| Quantity | Symbol |
+|---|---|
+| Normal stress in x | $\sigma_x$ |
+| Normal stress in y | $\sigma_y$ |
+| In-plane shear stress | $\tau_{xy}$ |
+| Material yield strength | $\sigma_Y$ |
 
-$$\sigma_x=60\text{ MPa},\qquad\sigma_y=40\text{ MPa},\qquad\tau_{xy}=20\text{ MPa},\qquad\sigma_Y=250\text{ MPa}.$$
+Using the von Mises criterion, determine the factor of safety against yielding.
 
-![Stress element for the von Mises and factor-of-safety calculation](images/PlaneStress_Week09_img03_PrincipalProblem.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+**Required numerical answer:** FOS (dimensionless).
 
-1. Predict whether yielding is likely, and explain your initial judgement.
-2. Calculate $\sigma_{\mathrm{VM}}$ using the plane-stress equation.
-3. Determine the factor of safety against first yield, $n=\sigma_Y/\sigma_{\mathrm{VM}}$.
-4. State whether yielding is predicted. Explain what the factor of safety means if the stress components all scale proportionally with load.
-
-Compare with a neighbour before looking for feedback. An individual component being below 250 MPa does not by itself establish that the combined stress state is below yield.
-
-@Week09Solution
-<details>
-<summary><strong>Reveal worked solution</strong></summary>
-
-<details>
-<summary>1. Equivalent stress</summary>
-
-$$\sigma_{\mathrm{VM}}=\sqrt{60^2-60(40)+40^2+3(20)^2}=\sqrt{4000}=\boxed{63.25\text{ MPa}}.$$
-
-As an independent check, the principal stresses 72.3607, 27.6393 and 0 MPa give the same equivalent stress in the three-principal-stress equation.
-
-</details>
-
-<details>
-<summary>2. Factor of safety and interpretation</summary>
-
-$$n=\frac{\sigma_Y}{\sigma_{\mathrm{VM}}}=\frac{250}{63.2456}=\boxed{3.95}.$$
-
-Since $\sigma_{\mathrm{VM}}<\sigma_Y$, **yielding is not predicted**. Under proportional loading and the same linear-elastic assumptions, the load could be multiplied by about 3.95 before this criterion predicts first yield. This is a margin against yielding, not a prediction of fracture load or a check of every possible failure mode.
-
-</details>
-
-</details>
-</div>
-
-## Preparing for Analytical Problem Q5
-
-Q5 asks you to calculate the **von Mises factor of safety** for your own randomised plane-stress state and material yield strength.
-
-Use your current Blackboard question for the values, sign conventions, required precision and deadline. The in-class example practises the same method; its numerical values are not your assessed answer.
-
-Before working independently, identify the supplied $\sigma_x$, $\sigma_y$, $\tau_{xy}$ and $\sigma_Y$. Keep stress and strength in consistent units, retain signed normal stresses in the $-\sigma_x\sigma_y$ term, and record your substitutions before calculating $n$.
-
-Begin the setup in class and ask for help with any sign or unit uncertainty. Keep your own workings for the analytical portfolio. No randomised Q5 values or answer are reproduced here.
+Complete the Analytical Problem on Blackboard using your individual values. Give your answer to 2 decimal places and retain your workings for submission.
 
 ## Optional Extension: Adhesive Strength of a Scarf Joint
 
-**About 20 minutes, if time permits.** Two members of cross-section **80 × 10 mm** are glued along an inclined plane and subjected to tensile load $P$.
+Two members of cross-section **80 × 10 mm** are glued along an inclined plane and subjected to tensile load $P$.
 
-![Scarf joint with the plane normal 25 degrees from horizontal, vertical tensile load and 80 by 10 mm cross-section](images/PlaneStress_Week09_img11_ScarfJoint.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+![Scarf joint with the plane normal 25 degrees from horizontal, vertical tensile load and 80 by 10 mm cross-section](images/PlaneStress_Week09_img11_ScarfJoint.svg)<!-- style="width: 60%; display: block; margin: auto;" -->
 
 The angle is **25° from the horizontal $x$ axis to the joint's normal $x'$**. The adhesive plane itself is therefore 65° to horizontal. The member is loaded in $y$; $y'$ is along the adhesive plane.
 
 The allowable adhesive normal stress is **800 kPa**, and the allowable shear-stress magnitude is **600 kPa**.
 
-1. Write the original stress state in $x,y$ using $A=80(10)\text{ mm}^2$.
-2. Calculate the transformed normal and shear stresses on the adhesive plane as functions of $P$.
-3. Determine the load permitted by each adhesive limit.
-4. Select the maximum load satisfying **both** limits and identify which governs.
+**Determine the maximum load $P$ that can be applied without failure of the adhesive joint.**
 
-Treat the stresses as nominal values; neglect local end and joint-edge effects for this exercise.
+1. Determine the original stress state in $x,y$.
+2. Calculate the normal and shear stresses acting on the adhesive plane in terms of $P$.
+3. Determine the maximum load permitted by each stress limit.
+4. Identify the governing failure mode and maximum permissible load.
+
+**Stress transformation equations (derived in the pre-class videos)**
+
+$$\sigma_{x'}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\theta)+\tau_{xy}\sin(2\theta)$$
+
+$$\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\sin(2\theta)+\tau_{xy}\cos(2\theta)$$
 
 @Week09Solution
 <details>
 <summary><strong>Reveal worked solution</strong></summary>
 
 <details>
-<summary>1. Stress state and transformation</summary>
+<summary>1. Original stress state</summary>
 
-With $P$ in N, $A=800\text{ mm}^2$ gives stresses in MPa:
+The cross-sectional area is:
 
-$$\sigma_x=0,\qquad\sigma_y=\frac{P}{800},\qquad\tau_{xy}=0,\qquad\theta=25^\circ.$$
+$$A=bt=80(10)=800\text{ mm}^2$$
 
-The transformed normal stress is:
+The original stress state is:
 
-$$\sigma_{x'}=\frac{P}{1600}-\frac{P}{1600}\cos50^\circ=\frac{P}{800}\sin^225^\circ.$$
+$$\sigma_x=0,\qquad \sigma_y=\frac{P}{A},\qquad \tau_{xy}=0$$
 
-The transformed shear stress is:
+The rotation angle is:
 
-$$\tau_{x'y'}=\frac{P}{1600}\sin50^\circ.$$
-
-The normal stress is tensile and this signed shear is positive for the chosen $x',y'$ axes. Check the allowable shear using its magnitude.
+$$\theta=25^\circ$$
 
 </details>
 
 <details>
-<summary>2. Separate load limits and governing load</summary>
+<summary>2. Stress transformation</summary>
 
-Convert the allowable stresses: 800 kPa = 0.800 MPa and 600 kPa = 0.600 MPa.
+The normal stress transformation equation is:
 
-$$P_{\mathrm{normal}}=\frac{0.800(1600)}{1-\cos50^\circ}=3583.30\text{ N}=3.58\text{ kN},$$
+$$\sigma_{x'}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos(2\theta)+\tau_{xy}\sin(2\theta)$$
 
-$$P_{\mathrm{shear}}=\frac{0.600(1600)}{\sin50^\circ}=1253.19\text{ N}=1.25\text{ kN}.$$
+Substituting the original stress state:
 
-Both limits must hold, so:
+$$\sigma_{x'}=\frac{P}{2A}-\frac{P}{2A}\cos(2\theta)$$
 
-$$\boxed{P_{\max}=\min(P_{\mathrm{normal}},P_{\mathrm{shear}})\approx1.25\text{ kN},\quad\text{controlled by shear}.}$$
+$$\boxed{\sigma_{x'}=\frac{P}{2A}[1-\cos(2\theta)]}$$
 
-At the unrounded governing load, $\sigma_{x'}\approx0.280\text{ MPa}<0.800\text{ MPa}$ and $|\tau_{x'y'}|=0.600\text{ MPa}$.
+The shear stress transformation equation is:
+
+$$\tau_{x'y'}=-\frac{\sigma_x-\sigma_y}{2}\sin(2\theta)+\tau_{xy}\cos(2\theta)$$
+
+Substituting the original stress state:
+
+$$\boxed{\tau_{x'y'}=\frac{P}{2A}\sin(2\theta)}$$
+
+</details>
+
+<details>
+<summary>3. Maximum load based on normal stress</summary>
+
+The allowable normal stress is:
+
+$$\sigma_{\mathrm{allow}}=800\text{ kPa}=0.8\text{ MPa}$$
+
+At the limiting load:
+
+$$\sigma_{\mathrm{allow}}=\frac{P}{2A}[1-\cos(2\theta)]$$
+
+Rearranging for $P$:
+
+$$P_{\mathrm{normal}}=\frac{2A\sigma_{\mathrm{allow}}}{1-\cos(2\theta)}$$
+
+Substituting:
+
+$$P_{\mathrm{normal}}=\frac{2(800)(0.8)}{1-\cos(50^\circ)}$$
+
+$$\boxed{P_{\mathrm{normal}}=3.58\text{ kN}}$$
+
+</details>
+
+<details>
+<summary>4. Maximum load based on shear stress</summary>
+
+The allowable shear stress is:
+
+$$\tau_{\mathrm{allow}}=600\text{ kPa}=0.6\text{ MPa}$$
+
+At the limiting load:
+
+$$\tau_{\mathrm{allow}}=\frac{P}{2A}\sin(2\theta)$$
+
+Rearranging for $P$:
+
+$$P_{\mathrm{shear}}=\frac{2A\tau_{\mathrm{allow}}}{\sin(2\theta)}$$
+
+Substituting:
+
+$$P_{\mathrm{shear}}=\frac{2(800)(0.6)}{\sin(50^\circ)}$$
+
+$$\boxed{P_{\mathrm{shear}}=1.25\text{ kN}}$$
+
+</details>
+
+<details>
+<summary>5. Maximum permissible load</summary>
+
+Both the normal and shear stress limits must be satisfied.
+
+$$P_{\max}=\min(P_{\mathrm{normal}},P_{\mathrm{shear}})$$
+
+$$P_{\max}=\min(3.58,1.25)$$
+
+$$\boxed{P_{\max}=1.25\text{ kN}}$$
+
+The failure of the adhesive joint is governed by **shear stress**, despite the member being loaded in tension.
+
+This illustrates the importance of shear stresses under tensile loading, as discussed when introducing the Tresca criterion and examining the tensile test fracture images.
 
 </details>
 
@@ -1222,14 +1258,14 @@ At the unrounded governing load, $\sigma_{x'}\approx0.280\text{ MPa}<0.800\text{
 - [ ] I can construct Mohr's circle using individual-face shear tendencies and halve its angles correctly.
 - [ ] I can distinguish maximum in-plane shear from absolute maximum three-dimensional shear.
 - [ ] I can explain the purpose of Tresca, von Mises and maximum-normal-stress criteria.
+- [ ] I have identified my Analytical Problem values and recorded the remaining work and deadline.
 - [ ] I can calculate von Mises stress and factor of safety, and interpret the result.
-- [ ] I have identified my Q5 values and recorded the remaining work and deadline.
 
 ## C. INDEPENDENT STUDY: After class
 
-Complete analytical problem **Q5** using your own Blackboard values. Submit the numerical answer by the published deadline and retain your workings for the final analytical portfolio.
+Complete the Analytical Problem using your own Blackboard values. Submit the numerical answer by the published deadline and retain your workings for the final analytical portfolio.
 
-Review the worked solutions when released. Finish the optional scarf-joint extension if you want further practice applying stress transformations to an inclined plane.
+Finish the optional scarf-joint extension if you want further practice applying stress transformations to an inclined plane.
 
 Complete the released Week 10 preparation before the next lectorial. The plane-stress finite element formulation and associated modelling activities follow in Week 10.
 
