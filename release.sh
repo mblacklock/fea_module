@@ -25,19 +25,6 @@ if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/develop)" ]]; then
     exit 1
 fi
 
-echo '==> Changes to be released'
-git log --oneline origin/main..develop
-git diff --stat origin/main...develop
-
-echo
-printf 'Publish develop to main? This will update the student-facing content. [y/N] '
-read -r answer
-
-if [[ ! "$answer" =~ ^[Yy]$ ]]; then
-    echo 'Release cancelled.'
-    exit 0
-fi
-
 echo '==> Switching to main'
 git switch main
 git pull --ff-only origin main
