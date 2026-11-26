@@ -11,7 +11,7 @@ comment: KB5034 Week 9 - Topic 3: stress transformations, Mohr's circle and prin
 @SolutionsHidden: <div class="week09-post-class" style="display: none;" hidden>
 @SolutionsVisible: <div class="week09-post-class">
 
-@Week09Solution: @SolutionsHidden
+@Week09Solution: @SolutionsVisible
 -->
 
 # Week 9: Stress Transformations & Principal Stresses
