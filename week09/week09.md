@@ -525,41 +525,6 @@ The maximum-in-plane-shear orientation is 45° clockwise from the principal orie
 <details>
 <summary>5. Mohr's circle</summary>
 
-**Individual-face shear plotting convention**
-Consider the shear acting on **each individual face**, and its tendency to turn the element about its centre:
-
-![Individual-face clockwise and anticlockwise shear tendencies and their plotted signs](images/PlaneStress_Week09_img04_FaceShearConvention.svg)<!-- style="width: 100%; display: block; margin: auto;" -->
-
-- Clockwise tendency plots **above** the horizontal axis.
-- Anticlockwise tendency plots **below** the horizontal axis.
-
-The vertical plotting axis is labelled $\tau$, positive upwards. For the positive tensor shear $\tau_{xy}$ shown on the problem's element:
-
-$$X=(\sigma_x,-\tau_{xy}),\qquad Y=(\sigma_y,+\tau_{xy}).$$
-
-Do not assign the plotted sign from the arrow's direction alone: a face's position also determines whether its shear tendency is clockwise or anticlockwise.
-
-**Constructing Mohr's circle**
-Use the **60, 40, 20 MPa** problem. Keep the same scale for normal and plotted shear stress.
-
-**a. Draw the axes.** Label normal stress $\sigma$ horizontally and plotted shear $\tau$ vertically. Mark the scale in MPa.
-
-![Blank equal-scale Mohr circle axes](images/PlaneStress_Week09_img05a_BlankCircleAxes.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
-
-
-**b. Plot the two face points.** For this problem, $X=(60,-20)$ and $Y=(40,+20)$ MPa. Join them: they are opposite ends of a diameter. Find their midpoint on the normal-stress axis.
-
-![Symbolic face points X below and Y above the normal stress axis](images/PlaneStress_Week09_img05b_FacePoints.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
-
-
-**c. Draw the circle.** Use the midpoint as centre $C$ and the distance to either face point as radius $R$. Read the principal stresses at the horizontal intercepts and the maximum in-plane shear magnitude at the top and bottom.
-
-![Symbolic Mohr circle showing centre, radius, principal intercepts, shear extrema and twice the principal angle](images/PlaneStress_Week09_img05c_CircleConstruction.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
-
-The top has plotted shear $+R$; for the rotated $x'$ face this corresponds to tensor shear $\tau_{x'y'}=-R$. The bottom corresponds to $\tau_{x'y'}=+R$.
-
-**d. Read the angle.** Move counterclockwise from $X$ to the right-hand intercept through $2\theta_{p1}$. Halve this angle to obtain the physical counterclockwise rotation of the $x'$ axis. Do the same for a shear extremum and check the sign.
-
 **Numerical circle and angles**
 ![Completed numerical circle for the 60, 40, 20 MPa stress state](images/PlaneStress_Week09_img07_PrincipalCircleSolution.svg)<!-- style="width: 85%; display: block; margin: auto;" -->
 
@@ -588,6 +553,45 @@ Sketch Mohr's circle by plotting X and Y, then determine:
 4. The normal stress on a maximum-in-plane-shear plane.
 
 Do not use the equations to determine principal stresses/angles.
+
+**Individual-face shear plotting convention**
+Consider the shear acting on **each individual face**, and its tendency to turn the element about its centre:
+
+![Individual-face clockwise and anticlockwise shear tendencies and their plotted signs](images/PlaneStress_Week09_img04_FaceShearConvention.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+- Clockwise tendency plots **above** the horizontal axis.
+- Anticlockwise tendency plots **below** the horizontal axis.
+
+The vertical plotting axis is labelled $\tau$, positive upwards. For the positive tensor shear $\tau_{xy}$ shown on the problem's element:
+
+$$X=(\sigma_x,-\tau_{xy}),\qquad Y=(\sigma_y,+\tau_{xy}).$$
+
+Do not assign the plotted sign from the arrow's direction alone: a face's position also determines whether its shear tendency is clockwise or anticlockwise.
+
+<details>
+<summary><strong>Constructing Mohr's Circle</strong></summary>
+
+Keep the same scale for normal and plotted shear stress.
+
+**a. Draw the axes.** Label normal stress $\sigma$ horizontally and plotted shear $\tau$ vertically. Mark the scale in MPa.
+
+![Blank equal-scale Mohr circle axes](images/PlaneStress_Week09_img05a_BlankCircleAxes.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+
+**b. Plot the two face points.** Use $X=(\sigma_x,-\tau_{xy})$ and $Y=(\sigma_y,+\tau_{xy})$. Join them: they are opposite ends of a diameter. Find their midpoint on the normal-stress axis.
+
+![Symbolic face points X below and Y above the normal stress axis](images/PlaneStress_Week09_img05b_FacePoints.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+
+**c. Draw the circle.** Use the midpoint as centre $C$ and the distance to either face point as radius $R$. Read the principal stresses at the horizontal intercepts and the maximum in-plane shear magnitude at the top and bottom.
+
+![Symbolic Mohr circle showing centre, radius, principal intercepts, shear extrema and twice the principal angle](images/PlaneStress_Week09_img05c_CircleConstruction.svg)<!-- style="width: 80%; display: block; margin: auto;" -->
+
+The top has plotted shear $+R$; for the rotated $x'$ face this corresponds to tensor shear $\tau_{x'y'}=-R$. The bottom corresponds to $\tau_{x'y'}=+R$.
+
+**d. Read the angle.** Move counterclockwise from $X$ to the right-hand intercept through $2\theta_{p1}$. Halve this angle to obtain the physical counterclockwise rotation of the $x'$ axis. Do the same for a shear extremum and check the sign.
+
+</details>
 
 **Check your answers**
 

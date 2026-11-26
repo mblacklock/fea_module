@@ -42,8 +42,8 @@ A written correction is provided directly below the recording. The video does no
 | Minutes | Activity |
 |---|---|
 | 0–10 | Retrieval and discussion of stress transformations |
-| 10–40 | Analytical principal-stress problem and live Mohr's circle construction |
-| 40–65 | Independent graphical Mohr's circle problem |
+| 10–40 | Analytical principal-stress problem and graphical check |
+| 40–65 | Live graphical construction and graphical Mohr's circle problem |
 | 65–75 | Break |
 | 75–115 | Failure criteria: Tresca, von Mises, brittle fracture and comparison |
 | 115–130 | Independent work on Analytical Problem Q5 |
@@ -133,21 +133,7 @@ Equivalent physical orientations differing by 180° are acceptable.
 
 The distinction between maximum in-plane shear and absolute maximum shear becomes important when introducing Tresca.
 
-### Live Mohr's circle construction
-
-Demonstrate the graphical construction using the same numerical example in OneNote.
-
-Cover:
-
-- Individual-face shear plotting convention.
-- Original face points.
-- Centre and radius.
-- Principal stress intercepts.
-- Principal orientations.
-- Maximum shear orientations.
-- Relationship between plotted shear and tensor shear.
-
-The complete graphical construction is retained within the worked solution on the same LiaScript page.
+The completed numerical Mohr's circle remains in part 5 of this problem's worked solution as a graphical check of the analytical results. General sign-convention and construction guidance is on the following graphical-method problem page.
 
 ## Problem 2 — Graphical Mohr's circle
 
@@ -158,6 +144,14 @@ Given:
 - tau_xy = 40 MPa
 
 Students should construct Mohr's circle and determine the results graphically rather than using the analytical principal stress and angle equations.
+
+### Live Mohr's circle construction
+
+The individual-face shear sign diagram and explanation are visible on this problem page during class. The separate **Constructing Mohr's Circle** dropdown contains the existing axes, face-point and circle-construction diagrams with symbolic X=(sigma_x,-tau_xy) and Y=(sigma_y,+tau_xy) coordinates. No numerical solution values are supplied in that guidance.
+
+Demonstrate the construction live in OneNote, covering the plotting convention, face points, centre/radius, principal intercepts, physical versus circle angles, and the relationship between plotted and tensor shear signs.
+
+The sign convention and construction dropdown are outside `@Week09Solution`; they remain accessible with `@SolutionsHidden`. The completed numerical circle and this problem's worked solution remain within the existing release mechanism. The active source visibility setting is preserved.
 
 ### Numerical reference
 
@@ -519,3 +513,7 @@ The LiaScript equations, numerical reference solutions, answer-checker values, i
 All 26 unique image references have corresponding repository files.
 
 The latest live LiaScript rendering and Panopto playback require a final local check before release.
+
+### Graphical-construction reorganisation — 26 November 2026
+
+The two affected problem pages were checked in the local LiaScript renderer. With `@Week09Solution` set to `@SolutionsHidden` in a temporary preview copy, the face-shear convention remained visible and the independent construction dropdown opened correctly. Presentation and Textbook modes retained this access while hiding the numerical worked solutions. The construction diagrams loaded and no equation-rendering errors were detected. Source comparison confirmed that numerical answer checkers, completed numerical circles, pre-class content and the active source visibility setting were unchanged. This targeted check does not replace the remaining pre-release checks above.
