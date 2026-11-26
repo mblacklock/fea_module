@@ -753,6 +753,15 @@ Here the third principal stress, zero, lies between 70 and −30 MPa. Consequent
 </details>
 </div>
 
+## Interactive Mohr's Circle
+
+<iframe
+  src="https://mblacklock.github.io/fea_module/interactive/mohrs_circle_interactive.html"
+  width="100%"
+  height="1000"
+  style="border: none;">
+</iframe>
+
 ## Failure Criteria: Ductile Yielding and Brittle Fracture
 
 **Ductile materials:** yielding — Tresca and von Mises.
