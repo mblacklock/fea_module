@@ -2,6 +2,10 @@
 
 `README.md` is the student-facing LiaScript index. Each tutorial has its own folder, Markdown file and screenshot folder. Edit the standalone tutorial once; the Week 1 lesson and library both link to that same file.
 
+The module-wide principles are in [TEACHING-DESIGN.md](../TEACHING-DESIGN.md); development, multi-PC synchronisation and publication are in [README.md](../README.md). Keep tutorial-specific corrections and verification evidence here, and week-specific delivery decisions in weekly notes. Preserve original Word/PDF/image resources when adapting them into LiaScript.
+
+The intended delivery is a standalone LiaScript tutorial, not just a link to its original PDF. **Recorded exception:** Week 10 currently links four unchanged PDFs under `Topic3/files/`, as explicitly scoped for its pre-class release. They have not been converted into canonical LiaScript tutorials; see [Week 10 notes](../week10/TEACHING-NOTES.md) for source discrepancies requiring review. Do not imply that the library conversion is complete or silently expand a task to perform it.
+
 ## Sources
 
 | Tutorial | Word source in `ABAQUS tutorials/` | Screenshot folder |
@@ -31,11 +35,7 @@ The two Topic 1 tutorials are standalone LiaScript pages linked from Week 2 and 
 
 `General/OffCampusAccess/OffCampusAccess.md` combines two options for accessing ABAQUS outside campus, each on its own sidebar page. The MyAccess page uses the three supplied screenshots and click reveals for choosing a room and connecting. EB DZ is The Zone; SAN 201 is an alternative suggested by the module leader. Most rooms are listed after 5 pm on weekdays and at weekends. Availability figures in the screenshot are illustrative. The Learning Edition page includes the supplied download screenshot, vendor link, Windows requirement, University support limitation, 1000-node limit and CAD-import restriction.
 
-Open the entire `LiaScript` folder in VS Code so the preview server can serve the week folders, `abaqus/` and `course-links.js`. Open a tutorial Markdown file and use Alt+L. The current review server serves the whole folder at port 3010:
-
-http://localhost:3010/liascript/index.html?http://localhost:3010/abaqus/README.md
-
-The older port-3009 preview was limited to the Week 1 folder and cannot serve its sibling tutorial folders. Use the new preview for navigation between lessons.
+Use the whole-repository preview workflow in [README.md](../README.md#local-preview-and-checks). Ports are local to the current environment; old port-3009/3010 review links are historical, not a running service on another PC.
 
 The tutorials default to Presentation mode so reveal steps work when opened. Students can switch to Textbook mode to read all content at once. Board Mode provides a font-size control for demonstrations.
 

@@ -222,8 +222,6 @@ Complete these **four tutorials in order**. The first two build the same plate u
 | **3. [Apply symmetry boundary conditions](../abaqus/Topic3/files/KB5034_Wk9_3_SymmetryBCs.pdf)** | Model a quarter plate only when geometry, loading and constraints permit it. Restrain displacement normal to each symmetry cut; leave tangential displacement free. |
 | **4. [Partition a 2D model to aid meshing](../abaqus/Topic3/files/KB5034_Wk9_4_Partitioning.pdf)** | Partition around the hole, control local seeds and element shape, and compare stress distributions. Check compatible seed counts for a swept mesh. |
 
-**Material value:** use $E=200$ GPa ($200\,000\text{ N/mm}^2$ in an N–mm system). The input-file tutorial's opening paragraph contains a “200 MPa” typo; its figure and the CAE example give 200 GPa.
-
 ## Before-class Completion Check
 
 - [ ] I can explain how shape functions use nodal values to interpolate displacement.

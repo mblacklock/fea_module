@@ -2,7 +2,7 @@
 
 This document captures the reasoning behind the KB5034 module redesign, not just the final decisions. It's meant to be handed to a coding assistant (or read by a future you) so that content built later stays consistent with the *why*, not just the *what*.
 
-> **Status note — 18 November 2026:** This document preserves the original redesign rationale. Schedule, progress and open-decision statements below are historical and may have been superseded by the implemented lessons and subsequent module-leader decisions. Consult the current lessons for implemented content, [AGENTS.md](AGENTS.md) for implementation instructions and [README.md](README.md) for the development and publication workflow. Flag conflicts rather than treating historical planning statements as instructions to undo later work.
+> **Status note — 18 November 2026:** This document preserves the original redesign rationale. Schedule, progress and open-decision statements below are historical and may have been superseded by the implemented lessons and subsequent module-leader decisions. Consult [TEACHING-DESIGN.md](TEACHING-DESIGN.md) for current module-wide principles and weekly `TEACHING-NOTES.md` for local decisions and exceptions. The schedule, assessment proposals and open questions below are not automatically current instructions. Consult the current lessons for implemented content, [AGENTS.md](AGENTS.md) for implementation instructions and [README.md](README.md) for the development and publication workflow. Flag conflicts rather than treating historical planning statements as instructions to undo later work.
 
 ---
 

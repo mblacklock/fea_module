@@ -1,5 +1,13 @@
 # Week 10 — Pre-class authoring and source checks
 
+## Current tracked state and handoff — 27 November 2026
+
+The current `week10.md` is pre-class only; the in-class development and validation sections below describe a developed version subsequently removed for the pre-class release. The snapshot at `tmp/week10-release-backup/week10.md` is ignored and exists on this PC at this review. Git will not transfer it. Before resuming on another PC, explicitly arrange access to the snapshot or the relevant source version; these notes preserve rationale, not the complete removed lesson. Restore only the required in-class content/definitions after comparing current files, preserving subsequent pre-class edits.
+
+The current working lesson also omits the 200 GPa correction described below. That pre-existing edit is preserved by this documentation review. Confirm the desired correction separately; do not assume it is currently visible to students. The symmetry-dimension discrepancy remains unresolved. The four unchanged PDF tutorials remain a task-specific exception to the module-wide LiaScript delivery principle, not a completed conversion.
+
+See [TEACHING-DESIGN.md](../TEACHING-DESIGN.md) for general design and solution-release principles and [README.md](../README.md) for multi-PC workflow. Historical validation below applies to the version and activity described, not automatically to the current release or public hosting.
+
 ## Initial pre-class development
 
 Created `week10.md` on `develop`. There was no existing Week 10 LiaScript file or Topic 3 tutorial library in this checkout. The lesson follows Weeks 8–9: module title, exact current learning outcomes, before-class guidance, seven recording pages with Panopto embeds/direct links and click-revealed conceptual checks, four tutorial introductions, and an eight-item completion checklist. No in-class sequence, assessment or extra practical exercise is added. Shared templates and previous weeks are unchanged.

@@ -2,6 +2,10 @@
 
 The student lesson is `week01.md`. Keep it with `images/` and `other-files/` so the relative links work. The previous draft and verification files are preserved separately in `../tmp/week01-support/`.
 
+## Current guidance and historical evidence
+
+Module-wide design and workflow are maintained in [TEACHING-DESIGN.md](../TEACHING-DESIGN.md) and [README.md](../README.md). Local port numbers, saved previews and verification statements below describe earlier work, not a service or backup guaranteed to exist on another PC. For the current shared tutorial input file, follow [abaqus/AUTHORING.md](../abaqus/AUTHORING.md): the shared file was adapted, and its analytical expectations must not be represented as a verified ABAQUS run based on a different file. The older provenance/run statements below are retained as historical evidence, not a new verification of that shared file.
+
 ## Presenting and following along
 
 Open the whole `LiaScript` folder in VS Code so the preview can serve the neighbouring `abaqus` tutorials and `course-links.js`. Open `week01.md` with the installed LiaScript Preview extension in VS Code and press Alt+L. Select Presentation mode for teaching, with narration muted if desired. Students can use the same lesson in Presentation mode during class or Textbook mode afterwards. Expand answers after students have attempted the activities. These answers are available to students, so the checks are formative practice.
