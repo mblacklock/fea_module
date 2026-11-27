@@ -28,15 +28,13 @@ By the end of this week, students will be able to:
 
 **PREPARATION STARTS HERE**
 
-Complete the **seven recordings in order** (approximately 31 minutes combined), then the **four ABAQUS tutorials** below.
+Complete the **seven recordings in order** (approximately 30 minutes combined), then the **four ABAQUS tutorials** below.
 
 Week 8 supplied the plane-stress material relationship, $\boldsymbol{\sigma}=\mathbf{D}\boldsymbol{\varepsilon}$. This week connects nodal displacements to strains and integrates their contribution to the element stiffness:
 
 $$\mathbf{k}^{(e)}=t\int_{A^{(e)}}\mathbf{B}^{T}\mathbf{D}\mathbf{B}\,dA.$$
 
 Follow the purpose of each step: interpolate displacement, calculate strain, map the element geometry, then integrate. Use the recordings for the derivations; the checks ask you to interpret those steps.
-
-Bring your notes and the models you create to the lectorial.
 
 ## Video 1: Shape Functions — Formulation Overview
 
@@ -56,8 +54,8 @@ Why are shape functions needed before forming the element stiffness matrix?
 
 <!-- data-solution-button="3" -->
 [(X)] They express displacement within the element in terms of nodal displacement values.
-[( )] They determine the material properties without a material model.
-[( )] They specify the applied loads independently of the model.
+[( )] They interpolate strain directly from nodal strain values.
+[( )] They relate nodal forces directly to strain without a displacement field.
 ****************************************
 The interpolation connects the displacement field to the nodal unknowns. Differentiating it gives the strain–displacement relationship used in the stiffness integral.
 ****************************************
@@ -81,10 +79,10 @@ Why introduce parametric coordinates?
 
 <!-- data-solution-button="3" -->
 [(X)] To use a common reference element while mapping to the physical geometry.
-[( )] To replace the material properties.
-[( )] To remove the need for nodal coordinates.
+[( )] To make every physical element a square with sides of length two.
+[( )] To use reference-coordinate derivatives directly as physical-coordinate derivatives.
 ****************************************
-The reference coordinates describe position within an element. A mapping relates them to the physical $x,y$ coordinates; the geometry is still needed.
+The reference coordinates describe position within an element. A mapping relates them to the physical $x,y$ coordinates without changing the physical shape. Derivatives must also be transformed between the two coordinate systems.
 ****************************************
 ********************
 
@@ -105,9 +103,9 @@ The reference coordinates describe position within an element. A mapping relates
 What makes this element isoparametric?
 
 <!-- data-solution-button="3" -->
-[( )] Its physical sides must have equal length.
+[( )] The physical element must have the same square shape as the reference element.
 [(X)] The same shape functions interpolate both geometry and displacement.
-[( )] Every point in the element has the same displacement.
+[( )] Geometry uses bilinear shape functions, but displacement uses a higher-order interpolation.
 ****************************************
 The geometry uses $x=\sum_iN_ix_i$ and $y=\sum_iN_iy_i$; displacement uses $u=\sum_iN_iu_i$ and $v=\sum_iN_iv_i$. The nodal values differ, but the interpolation functions are the same.
 ****************************************
@@ -130,9 +128,9 @@ The geometry uses $x=\sum_iN_ix_i$ and $y=\sum_iN_iy_i$; displacement uses $u=\s
 Which statement about the shape functions is correct?
 
 <!-- data-solution-button="3" -->
-[( )] Each shape function equals one at every node.
+[( )] Each shape function equals one quarter throughout the element.
 [(X)] Each shape function equals one at its own node and zero at the other nodes.
-[( )] All shape functions equal zero everywhere inside the element.
+[( )] The shape functions sum to one only at the nodes.
 ****************************************
 This nodal property ensures that interpolation reproduces the prescribed nodal values. Their sum is one, so equal nodal displacements also give a constant displacement throughout the element.
 ****************************************
@@ -155,11 +153,11 @@ This nodal property ensures that interpolation reproduces the prescribed nodal v
 What does $\mathbf{B}$ do in $\boldsymbol{\varepsilon}=\mathbf{B}\mathbf{u}^{(e)}$?
 
 <!-- data-solution-button="3" -->
-[( )] It supplies the material stiffness.
-[( )] It converts applied pressure directly into nodal forces.
+[( )] It converts strain into stress at the point considered.
+[( )] It interpolates displacement at the point considered from nodal displacements.
 [(X)] It converts the element nodal displacements into strain at the point considered.
 ****************************************
-$\mathbf{B}$ contains spatial derivatives of the shape functions. The material matrix $\mathbf{D}$ then relates strain to stress.
+$\mathbf{B}$ contains spatial derivatives of the shape functions, so it gives strain rather than displacement. The shape functions interpolate displacement; the material matrix $\mathbf{D}$ relates strain to stress.
 ****************************************
 ********************
 
@@ -171,7 +169,7 @@ $\mathbf{B}$ contains spatial derivatives of the shape functions. The material m
 
 [Open the recording in Panopto](https://northumbria.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e187e120-82c5-49c4-b307-b50e00820039)
 
-**Look for:** Why the stiffness integral is evaluated in $\xi,\eta$ coordinates, and why $\det\mathbf{J}$ is needed to recover the physical area. Follow how the Jacobian entries are calculated from the shape-function derivatives and nodal coordinates.
+**Look for:** Both roles of the Jacobian: transforming shape-function derivatives from parametric to physical coordinates when forming $\mathbf{B}$, and transforming the area integral using $\det\mathbf{J}$. Follow how its entries are calculated from the shape-function derivatives and nodal coordinates.
 
 {{1}}
 ********************
@@ -181,10 +179,10 @@ Why does the Jacobian determinant appear in the stiffness integral?
 
 <!-- data-solution-button="3" -->
 [(X)] It accounts for the change in area between reference and physical coordinates.
-[( )] It is the material yield strength.
-[( )] It specifies the applied load.
+[( )] It multiplies each parametric shape-function derivative to give its physical derivative.
+[( )] It supplies the Gauss integration weights, replacing the quadrature weights.
 ****************************************
-The area transformation is $dA=\det\mathbf{J}\,d\xi\,d\eta$ for a correctly oriented mapping. A reference-coordinate area alone is not the physical area of the element.
+The area transformation is $dA=\det\mathbf{J}\,d\xi\,d\eta$ for a correctly oriented mapping. Separately, the inverse Jacobian transforms parametric shape-function derivatives into physical derivatives when forming $\mathbf{B}$. The determinant scales area; it does not replace that derivative transformation or the Gauss weights.
 ****************************************
 ********************
 
@@ -207,7 +205,7 @@ What is changed by using fewer integration points?
 <!-- data-solution-button="3" -->
 [( )] The number of displacement degrees of freedom at each node.
 [(X)] The numerical evaluation of the stiffness integral.
-[( )] The physical thickness of the plate.
+[( )] The order of the displacement interpolation within the element.
 ****************************************
 Integration points sample the integral; they are not extra mesh nodes. Reduced integration uses fewer sampling points, not fewer nodal unknowns. Its accuracy depends on the formulation and mesh, so it is not automatically less accurate in every problem.
 ****************************************
@@ -215,43 +213,16 @@ Integration points sample the integral; they are not extra mesh nodes. Reduced i
 
 ## Plane Stress Modelling in ABAQUS
 
-Complete these **four original tutorials in order**. The first two build the same plate using different workflows; the last two introduce symmetry and then improve the mesh around a hole.
+Complete these **four tutorials in order**. The first two build the same plate using different workflows; the last two introduce symmetry and improve the mesh around a hole. Save your input file and CAE models as you work.
 
-Use the existing tutorial instructions. Save your input file and CAE models so that you can revisit them during class. The original PDFs use the older outcome label **4.4**; these tutorials support **3.4** here.
+| Tutorial | Focus |
+|:--|:--|
+| **1. [Create a plane-stress model using an input file](../abaqus/Topic3/files/KB5034_Wk9_1_2D%20plane%20stress%20input.pdf)** | Connect the plate description to the keywords. Check node ordering, sets, plane-stress section/thickness and equivalent nodal loads. |
+| **2. [Create the model in ABAQUS CAE](../abaqus/Topic3/files/KB5034_Wk9_2_2D%20plane%20stress%20CAE.pdf)** | Relate the graphical workflow to the input file. Check material/section assignment, pressure direction and the full/reduced integration element code. |
+| **3. [Apply symmetry boundary conditions](../abaqus/Topic3/files/KB5034_Wk9_3_SymmetryBCs.pdf)** | Model a quarter plate only when geometry, loading and constraints permit it. Restrain displacement normal to each symmetry cut; leave tangential displacement free. |
+| **4. [Partition a 2D model to aid meshing](../abaqus/Topic3/files/KB5034_Wk9_4_Partitioning.pdf)** | Partition around the hole, control local seeds and element shape, and compare stress distributions. Check compatible seed counts for a swept mesh. |
 
-## Tutorial 1: Create a Plane Stress Model Using an Input File
-
-Build the four-node plate model and connect its physical description to the input-file keywords.
-
-**Pay attention to:** node ordering; two displacement degrees of freedom per node; node and element sets; plane-stress element type; thickness and material assignment; and the conversion of edge traction into equivalent nodal loads.
-
-For this example use **$E=200$ GPa**, as shown in the tutorial figure and the matching CAE example: $200\,000\text{ N/mm}^2$ in an N–mm system. The input tutorial's opening paragraph contains a “200 MPa” typo.
-
-[Open the original input-file tutorial (PDF)](../abaqus/Topic3/files/KB5034_Wk9_1_2D%20plane%20stress%20input.pdf)
-
-## Tutorial 2: Create a Plane Stress Model in ABAQUS CAE
-
-Create the same plate through the graphical interface and relate the CAE choices to the input-file model.
-
-**Pay attention to:** the 2D planar part, plane-stress thickness, material and section assignment, pressure direction, and the full/reduced integration option when assigning the element type. Check the element code rather than accepting the default.
-
-[Open the original CAE tutorial (PDF)](../abaqus/Topic3/files/KB5034_Wk9_2_2D%20plane%20stress%20CAE.pdf)
-
-## Tutorial 3: Apply Symmetry Boundary Conditions
-
-Use the symmetric geometry and loading to model a quarter of the plate. Add the boundary conditions representing the removed material.
-
-**Pay attention to:** symmetry of geometry **and** loading/boundary conditions. At a symmetry cut, restrain displacement normal to the cut while allowing tangential displacement. Check that your reduced geometry represents the intended portion of the full plate.
-
-[Open the original symmetry tutorial (PDF)](../abaqus/Topic3/files/KB5034_Wk9_3_SymmetryBCs.pdf)
-
-## Tutorial 4: Partition a 2D Model to Aid Meshing
-
-Continue with the quarter model. Partition the region around the hole to control mesh layout and concentrate refinement where the stress varies rapidly.
-
-**Pay attention to:** element shape, local edge seeds, compatible seed counts for a swept mesh, and the difference between refining the whole model and refining the region around the hole. Compare the resulting stress distributions as directed in the tutorial.
-
-[Open the original partitioning tutorial (PDF)](../abaqus/Topic3/files/KB5034_Wk9_4_Partitioning.pdf)
+**Material value:** use $E=200$ GPa ($200\,000\text{ N/mm}^2$ in an N–mm system). The input-file tutorial's opening paragraph contains a “200 MPa” typo; its figure and the CAE example give 200 GPa.
 
 ## Before-class Completion Check
 
