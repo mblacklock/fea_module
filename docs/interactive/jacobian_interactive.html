@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interactive Jacobian and element distortion</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:#29434f;font:16px system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:8px 18px 18px}p{margin:6px 0;line-height:1.45}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px}label{font-weight:600}select,button,input{padding:7px;border:1px solid #9eb2bb;border-radius:5px;background:white;color:inherit;font:inherit}button{cursor:pointer}button:hover{background:#e5f2f2}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #008b85;outline-offset:2px}.panel{margin-top:12px;background:white;border:1px solid #d4dfe3;border-radius:10px;padding:12px}.symbolic{display:flex;flex-wrap:wrap;gap:18px 48px;align-items:center;justify-content:center;font:26px Georgia,serif}.equation{display:flex;align-items:center;gap:12px;max-width:100%;overflow-x:auto}.matrix{display:grid;grid-template-columns:repeat(2,max-content);gap:10px 28px;padding:7px 15px;border-left:2px solid;border-right:2px solid;position:relative}.matrix:before,.matrix:after{content:"";position:absolute;inset:0;border-top:2px solid;border-bottom:2px solid;width:7px}.matrix:after{left:auto;right:0}.entry{text-align:center;white-space:nowrap}.classification{text-align:center;color:#007d79;font-weight:600;margin-top:14px}.plots{display:grid;grid-template-columns:1fr 1fr;gap:16px}h2{font-size:17px;margin:0 0 5px;text-align:center}svg{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}svg text{font:14px system-ui,sans-serif;fill:#29434f}.node{cursor:grab}.node:active{cursor:grabbing}.small{font-size:13px;color:#536b76}.nodes{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}.nodes label{display:grid;gap:4px}.pair{display:flex;gap:5px}.pair input{width:80px}.warning{color:#a12d34;font-size:13px}details{margin-top:10px}summary{cursor:pointer;font-size:14px}var{font-style:italic}@media(max-width:650px){.plots{grid-template-columns:1fr}main{padding:8px}.symbolic{font-size:22px;gap:16px}.matrix{gap:8px 15px}}
+.size-input{width:78px}
+</style></head><body><main>
+<p>Drag a node and watch the expressions change. Compare a rectangle, a parallelogram and a general quadrilateral.</p>
+<div class="controls">
+<label>Width (x) <input class="size-input" id="width" type="number" min="0.1" max="10" step="any" value="6" required></label>
+<label>Height (y) <input class="size-input" id="height" type="number" min="0.1" max="8" step="any" value="4" required></label>
+<button id="rectangle">Set rectangle</button><button id="reset">Reset 6 × 4</button>
+<label>Integration points <select id="integration"><option value="none">Hidden</option><option value="cps4">CPS4 — 2 × 2</option><option value="cps4r">CPS4R — 1 point</option></select></label></div>
+<section class="panel" aria-label="Symbolic Jacobian">
+<div class="symbolic" aria-live="polite">
+<div class="equation"><strong>J</strong> = <span class="matrix" id="matrix"><span class="entry" id="j00"></span><span class="entry" id="j01"></span><span class="entry" id="j10"></span><span class="entry" id="j11"></span></span></div>
+<div class="equation">det <strong>J</strong> = <span id="determinant"></span></div>
+</div><p id="classification" class="classification"></p>
+</section>
+<section class="panel"><div class="plots">
+<div><h2>Physical element (x, y)</h2><svg id="physical" viewBox="0 0 520 400" aria-label="Physical quadrilateral with draggable nodes and mapped grid"></svg></div>
+<div><h2>Reference element (ξ, η)</h2><svg id="reference" viewBox="0 0 520 400" aria-label="Reference square and integration points"></svg></div>
+</div>
+<p class="small">Corresponding grid lines show the mapping. Purple dots, when selected, show the integration points in both coordinate systems.</p>
+<p id="warning" class="warning" role="status" hidden></p>
+<details><summary>Edit node coordinates</summary>
+<div class="nodes" id="coordinates">
+<label>Node 1<span class="pair"><input id="x1" aria-label="Node 1 x" type="number" min="-2" max="10" step="0.1"><input id="y1" aria-label="Node 1 y" type="number" min="-2" max="8" step="0.1"></span></label>
+<label>Node 2<span class="pair"><input id="x2" aria-label="Node 2 x" type="number" min="-2" max="10" step="0.1"><input id="y2" aria-label="Node 2 y" type="number" min="-2" max="8" step="0.1"></span></label>
+<label>Node 3<span class="pair"><input id="x3" aria-label="Node 3 x" type="number" min="-2" max="10" step="0.1"><input id="y3" aria-label="Node 3 y" type="number" min="-2" max="8" step="0.1"></span></label>
+<label>Node 4<span class="pair"><input id="x4" aria-label="Node 4 x" type="number" min="-2" max="10" step="0.1"><input id="y4" aria-label="Node 4 y" type="number" min="-2" max="8" step="0.1"></span></label>
+</div>
+
+<p class="small">Each pair is x then y, in arbitrary length units. Dragging snaps coordinates to 0.1.</p></details>
+</section></main><script>
+'use strict';
+const $=id=>document.getElementById(id),corners=[[-1,-1],[1,-1],[1,1],[-1,1]];
+let nodes=[[0,0],[6,0],[6,4],[0,4]],dragging=null;
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v)),small=v=>Math.abs(v)<1e-10;
+function shape(xi,eta){return [(1-xi)*(1-eta),(1+xi)*(1-eta),(1+xi)*(1+eta),(1-xi)*(1+eta)].map(n=>n/4)}
+function mapping(points,xi,eta){const n=shape(xi,eta);return [0,1].map(k=>n.reduce((s,v,i)=>s+v*points[i][k],0))}
+function jacobian(points,xi,eta){const dxi=[-(1-eta),1-eta,1+eta,-(1+eta)],deta=[-(1-xi),-(1+xi),1+xi,1-xi];return [dxi,deta].map(d=>[0,1].map(k=>d.reduce((s,v,i)=>s+v*points[i][k]/4,0)))}
+function determinant(points,xi,eta){const j=jacobian(points,xi,eta);return j[0][0]*j[1][1]-j[0][1]*j[1][0]}
+
+// x=a0+a1*xi+a2*eta+a3*xi*eta, and similarly for y.
+function coefficients(points){return [0,1].map(k=>{
+ const [p1,p2,p3,p4]=points.map(p=>p[k]);
+ return [(p1+p2+p3+p4)/4,(-p1+p2+p3-p4)/4,(-p1-p2+p3+p4)/4,(p1-p2+p3-p4)/4];
+})}
+function symbolic(points){const [a,b]=coefficients(points);return {
+ matrix:[[[a[1],a[3]],[b[1],b[3]]],[[a[2],a[3]],[b[2],b[3]]]],
+ det:[a[1]*b[2]-b[1]*a[2],a[1]*b[3]-b[1]*a[3],a[3]*b[2]-b[3]*a[2]],
+ constantMatrix:small(a[3])&&small(b[3])
+}}
+const number=v=>Number(v.toPrecision(10)).toString();
+function expression(terms){let out='';for(const [value,variable] of terms){if(small(value))continue;const magnitude=Math.abs(value);const coefficient=variable&&small(magnitude-1)?'':number(magnitude);const term=coefficient+(variable?`<var>${variable}</var>`:'');out+=(out?(value<0?' − ':' + '):(value<0?'−':''))+term}return out||'0'}
+function integrationPoints(mode){if(mode==='cps4r')return [[0,0]];if(mode==='cps4'){const q=1/Math.sqrt(3);return [[-q,-q],[q,-q],[q,q],[-q,q]]}return []}
+const px=x=>90+37*x,py=y=>320-37*y,rx=xi=>260+145*xi,ry=eta=>190-145*eta;
+function path(points){return points.map((p,i)=>(i?'L':'M')+p.join(' ')).join(' ')}
+function render(){
+ const symbolicForm=symbolic(nodes),constant=small(symbolicForm.det[1])&&small(symbolicForm.det[2]);
+ for(let r=0;r<2;r++)for(let c=0;c<2;c++)$('j'+r+c).innerHTML=expression([[symbolicForm.matrix[r][c][0],''],[symbolicForm.matrix[r][c][1],r?'ξ':'η']]);
+ $('determinant').innerHTML=expression(symbolicForm.det.map((v,i)=>[v,['','ξ','η'][i]]));
+ const variables=[!small(symbolicForm.det[1])?'ξ':'',!small(symbolicForm.det[2])?'η':''].filter(Boolean).join(' and ');
+ $('classification').textContent=constant?'det J is constant: it does not depend on ξ or η.':`det J varies with ${variables}.`;
+ let physical='<path d="M16 320H500M90 385V12" stroke="#9aabb3" fill="none"/><text x="500" y="340">x</text><text x="98" y="20">y</text>';
+ for(let x=0;x<=10;x+=2)physical+=`<text x="${px(x)}" y="338" text-anchor="middle" style="font-size:11px">${x}</text>`;
+ for(let y=2;y<=8;y+=2)physical+=`<text x="77" y="${py(y)+4}" text-anchor="end" style="font-size:11px">${y}</text>`;
+ physical+=`<path d="${path(nodes.map(([x,y])=>[px(x),py(y)]))}Z" fill="#dfedf1" stroke="#29434f" stroke-width="2.5"/>`;
+ let reference='<rect x="115" y="45" width="290" height="290" fill="#dfedf1" stroke="#29434f" stroke-width="2"/>';
+ for(let k=0;k<=10;k++){const q=-1+k/5;for(const swap of [false,true]){
+  const refs=[swap?[-1,q]:[q,-1],swap?[1,q]:[q,1]];
+  physical+=`<path d="${path(refs.map(([x,y])=>mapping(nodes,x,y)).map(([x,y])=>[px(x),py(y)]))}" fill="none" stroke="#849ba5" stroke-width="0.8"/>`;
+  reference+=`<path d="${path(refs.map(([x,y])=>[rx(x),ry(y)]))}" fill="none" stroke="#aabcc4" stroke-width="0.8"/>`;
+ }}
+ reference+='<path d="M95 190H430M260 355V25" fill="none" stroke="#647783"/><text x="435" y="195">ξ</text><text x="267" y="24">η</text><text x="112" y="355">−1</text><text x="400" y="355">+1</text><text x="90" y="50">+1</text><text x="90" y="338">−1</text>';
+ corners.forEach(([x,y],i)=>{reference+=`<text x="${rx(x)+(x<0?12:-12)}" y="${ry(y)+(y<0?-10:20)}" text-anchor="middle">${i+1}</text>`});
+ nodes.forEach(([x,y],i)=>{physical+=`<circle class="node" data-node="${i}" cx="${px(x)}" cy="${py(y)}" r="9" fill="#246bd2"><title>Node ${i+1}: (${number(x)}, ${number(y)})</title></circle><text x="${px(x)+12}" y="${py(y)-12}" style="font-weight:700">${i+1}</text>`});
+ for(const [xi,eta] of integrationPoints($('integration').value)){
+  const [x,y]=mapping(nodes,xi,eta);
+  physical+=`<circle class="integration-point" cx="${px(x)}" cy="${py(y)}" r="6" fill="#8b1e8f" stroke="white" stroke-width="1.5"/>`;
+  reference+=`<circle class="integration-point" cx="${rx(xi)}" cy="${ry(eta)}" r="6" fill="#8b1e8f" stroke="white" stroke-width="1.5"/>`;
+ }
+ $('physical').innerHTML=physical;$('reference').innerHTML=reference;
+ const minimum=Math.min(...corners.map(([x,y])=>determinant(nodes,x,y)));
+ $('warning').hidden=minimum>0;$('warning').textContent=minimum<0?'Invalid mapping: det J is negative somewhere. Reset or move the nodes to restore a valid element.':'Invalid mapping: det J reaches zero.';
+}
+function sync(){nodes.forEach(([x,y],i)=>{$('x'+(i+1)).value=+x.toFixed(3);$('y'+(i+1)).value=+y.toFixed(3)});render()}
+for(let i=0;i<4;i++)for(const [k,name] of ['x','y'].entries()){
+ const field=$(name+(i+1));
+ field.addEventListener('input',e=>{const v=Number(e.target.value);if(e.target.value.trim()&&Number.isFinite(v)){nodes[i][k]=clamp(v,-2,k?8:10);render()}});
+ field.addEventListener('change',sync);
+}
+$('integration').addEventListener('change',render);
+$('rectangle').onclick=()=>{
+ if(!$('width').reportValidity()||!$('height').reportValidity())return;
+ const w=$('width').valueAsNumber,h=$('height').valueAsNumber;
+ if(!Number.isFinite(w)||!Number.isFinite(h))return;
+ nodes=[[0,0],[w,0],[w,h],[0,h]];sync();
+};
+$('reset').onclick=()=>{nodes=[[0,0],[6,0],[6,4],[0,4]];$('width').value=6;$('height').value=4;sync()};
+function svgPoint(svg,e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
+function move(e){if(dragging===null)return;const p=svgPoint($('physical'),e);nodes[dragging]=[clamp(Math.round((p.x-90)/37*10)/10,-2,10),clamp(Math.round((320-p.y)/37*10)/10,-2,8)];sync()}
+$('physical').addEventListener('pointerdown',e=>{const target=e.target.closest('[data-node]');if(!target)return;e.preventDefault();dragging=Number(target.dataset.node);$('physical').setPointerCapture(e.pointerId);move(e)});
+$('physical').addEventListener('pointermove',move);for(const event of ['pointerup','pointercancel','lostpointercapture'])$('physical').addEventListener(event,()=>dragging=null);
+sync();
+</script></body></html>

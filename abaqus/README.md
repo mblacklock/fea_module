@@ -52,3 +52,12 @@ Complete the two 1D guides in order, then move on to the 2D truss tutorial.
 1. @[course(Beam elements in ABAQUS)](Topic2/BeamElements/BeamElements.md) — create a cantilever using an input file and CAE.
 2. @[course(Mesh convergence in ABAQUS)](Topic2/MeshConvergence/MeshConvergence.md) — refine the mesh and compare linear and cubic beam elements.
 3. @[course(Distributed loads in ABAQUS)](Topic2/DistributedLoads/DistributedLoads.md) — apply distributed beam loads using an input file and CAE.
+
+## Topic 3: Plane stress elements
+
+**First used in Week 10.** Follow these tutorials in order.
+
+1. @[course(Create a plane-stress model using an input file)](Topic3/PlaneStressInput/PlaneStressInput.md)
+2. @[course(Create the model in ABAQUS CAE)](Topic3/PlaneStressCAE/PlaneStressCAE.md)
+3. @[course(Apply symmetry boundary conditions)](Topic3/SymmetryBCs/SymmetryBCs.md)
+4. @[course(Partition a 2D model to aid meshing)](Topic3/Partitioning/Partitioning.md)

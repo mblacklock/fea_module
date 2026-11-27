@@ -7,9 +7,12 @@ Student lessons and ABAQUS tutorials for **KB5034 Mechanics & Finite Element Ana
 - `weekNN/`: weekly lessons, diagrams and downloadable files.
 - `abaqus/`: standalone tutorials and the [student tutorial library](abaqus/README.md).
 - `common/`: shared LiaScript macros and styles.
+- `docs/interactive/`: standalone HTML tools for GitHub Pages embedding.
 - `course-links.js`: navigation between relative Markdown lessons in the LiaScript reader.
 - [AGENTS.md](AGENTS.md): concise implementation instructions for Codex.
-- [KB5034_Redesign_Reference.md](KB5034_Redesign_Reference.md): detailed educational rationale and historical planning context.
+- [TEACHING-DESIGN.md](TEACHING-DESIGN.md): current module-wide educational principles and known review items.
+- Weekly `TEACHING-NOTES.md` (where present): local teaching decisions, solution-release mechanisms and verification evidence.
+- [KB5034_Redesign_Reference.md](KB5034_Redesign_Reference.md): historical rationale and planning context; its progress and open-decision lists are not a current task list.
 - [abaqus/AUTHORING.md](abaqus/AUTHORING.md): tutorial sources, authoring conventions and verification notes.
 
 The parent teaching folder contains source presentations, notes, assessment documents and original Word tutorials. Those folders are outside this Git repository and are not backed up by pushing it. `tmp/` and `output/` are ignored local working folders.
@@ -17,6 +20,8 @@ The parent teaching folder contains source presentations, notes, assessment docu
 ## Development workflow
 
 ChatGPT supports educational design and review; Codex implements agreed changes and validates them; GitHub records revisions and supplies the published material.
+
+Repository guidance is the shared project memory across PCs and chats. Carry confirmed decisions from design discussions into the appropriate documentation alongside implementation; a central cloud conversation alone does not update another development chat's context.
 
 1. Work locally on `develop`, preserving any outstanding user edits.
 2. Implement the agreed changes and preview them locally.
@@ -28,6 +33,18 @@ ChatGPT supports educational design and review; Codex implements agreed changes 
 `main` is the published branch; `develop` is work in progress. Routine edits do not require a feature branch or pull request. Use a short-lived feature branch for substantial or experimental changes when isolation is useful. Do not commit, push or merge automatically.
 
 A development branch separates normal student links from work in progress; it does not make pushed content private. Keep restricted assessment material outside publicly accessible branches.
+
+## Switching PCs or starting a fresh chat
+
+1. Open this repository and inspect `git branch --show-current`, `git status --short --branch` and relevant local differences before changing anything. Preserve local work; do not automatically discard, overwrite, stash or reset it. If not on `develop`, inspect the situation before switching.
+2. Run `git fetch origin`. On `develop`, review `git log --oneline HEAD..origin/develop` and `git diff HEAD...origin/develop -- AGENTS.md README.md TEACHING-DESIGN.md abaqus/AUTHORING.md` plus the affected week's notes and files. Review incoming guidance as well as implementation changes.
+3. With a clean tree and a fast-forward update available, run `git pull --ff-only origin develop` before the new task. If local edits or diverging commits prevent safe synchronisation, preserve them and report the situation; agree how to reconcile it before dependent edits. Do not force an update. If remote access fails, report that the checkout's currency could not be verified.
+4. Read `AGENTS.md`, the guidance relevant to the task and the current implementation. Record confirmed durable decisions in the owning document, distinguishing suggestions and unresolved questions. Do not rely on another chat's memory.
+5. Before switching PCs, review completed work and its documentation. Commit and push to `develop` **when explicitly instructed**. Otherwise report what remains local; uncommitted or unpushed work will not be available through Git on the other PC.
+
+Ignored `tmp/`/`output/` files and parent-folder source resources are not transferred by Git. Do not use them as the only copy of context needed for a handoff: record their role in tracked notes and explicitly arrange transfer or retention of needed files. Do not assume another PC has the same paths, tools, preview port or ignored backups.
+
+For an approved release, review the complete `main`/`develop` difference and use the existing `release.sh` process from a clean, synchronised `develop` checkout. The script merges and pushes `main`; run it only with explicit publication instruction. Its suggestion to commit or stash a dirty tree is not permission for an agent to do either automatically.
 
 ## Local preview and checks
 
