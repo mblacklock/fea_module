@@ -8,6 +8,16 @@ The four plane-stress tutorials are now canonical LiaScript lessons under `abaqu
 
 See [TEACHING-DESIGN.md](../TEACHING-DESIGN.md) for general design and solution-release principles and [README.md](../README.md) for multi-PC workflow. Historical validation below applies to the version and activity described, not automatically to the current release or public hosting.
 
+## Final pre-class preparation decision and release approval — 27 November 2026
+
+All **seven recordings** and all **four ABAQUS tutorials** remain required pre-class preparation, in their existing order.
+
+The input-file tutorial remains required because understanding input-file structure is increasingly relevant to AI-assisted FE model generation, inspection and verification. Students need to understand the model definitions they generate or receive so they can inspect and verify them.
+
+The earlier suggestion to make the input-file tutorial optional is **superseded** by this final decision.
+
+The module leader has reviewed the current pre-class material and **approved it for release**. This records approval; it does not indicate that publication has occurred. The current weekly file remains pre-class only.
+
 ## Initial pre-class development
 
 Created `week10.md` on `develop`. There was no existing Week 10 LiaScript file or Topic 3 tutorial library in this checkout. The lesson follows Weeks 8–9: module title, exact current learning outcomes, before-class guidance, seven recording pages with Panopto embeds/direct links and click-revealed conceptual checks, four tutorial introductions, and an eight-item completion checklist. No in-class sequence, assessment or extra practical exercise is added. Shared templates and previous weeks are unchanged.
