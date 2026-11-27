@@ -4,7 +4,7 @@
 
 The current `week10.md` is pre-class only; the in-class development and validation sections below describe a developed version subsequently removed for the pre-class release. The snapshot at `tmp/week10-release-backup/week10.md` is ignored and exists on this PC at this review. Git will not transfer it. Before resuming on another PC, explicitly arrange access to the snapshot or the relevant source version; these notes preserve rationale, not the complete removed lesson. Restore only the required in-class content/definitions after comparing current files, preserving subsequent pre-class edits.
 
-The current working lesson also omits the 200 GPa correction described below. That pre-existing edit is preserved by this documentation review. Confirm the desired correction separately; do not assume it is currently visible to students. The symmetry-dimension discrepancy remains unresolved. The four unchanged PDF tutorials remain a task-specific exception to the module-wide LiaScript delivery principle, not a completed conversion.
+The four plane-stress tutorials are now canonical LiaScript lessons under `abaqus/Topic3/`; the current weekly overview links to them. The original PDFs remain unchanged. The module leader confirmed that symmetry geometry should match the screenshots: 15 × 15 mm quarter, corresponding to a 30 × 30 mm full plate. The converted tutorials state E=200 GPa consistently. See the latest conversion record below; earlier source-discrepancy notes describe the original resources.
 
 See [TEACHING-DESIGN.md](../TEACHING-DESIGN.md) for general design and solution-release principles and [README.md](../README.md) for multi-PC workflow. Historical validation below applies to the version and activity described, not automatically to the current release or public hosting.
 
@@ -209,3 +209,17 @@ Source comparison confirms the complete pre-class section and all content from �
 ### Pre-class release layout — 27 November 2026
 
 The four ABAQUS tutorial introductions and unchanged PDF links are consolidated on one page, with brief focus guidance and the original material-unit correction. The working `week10.md` remains pre-class only. The full snapshot is retained at ignored `tmp/week10-release-backup/week10.md`; when resuming in-class development, restore the in-class section and its release definitions rather than overwriting subsequent pre-class edits with the old snapshot.
+
+## Week 10 ABAQUS tutorial conversion — 27 November 2026
+
+Created four standalone Topic 3 LiaScript tutorials in the original order, with source screenshots, numbered sidebar steps, click reveals, prerequisite/next-guide navigation and the complete copyable/downloadable input file. Updated the four links on the single weekly tutorial-introduction page and added Topic 3 to the tutorial library. Recordings, retrieval questions, checklist and the pre-class-only state remain unchanged.
+
+The geometry now follows the confirmed screenshot choice: 15 × 15 mm quarter with hole centre (0,7.5), radius 2.5 mm and partition radius 3.5 mm; the full plate is 30 × 30 mm. The existing matching 30 mm diagram is used. Input-file unit/set-name/element-description errors are corrected, and the maximum stress check explicitly asks for integration-point S, Mises. The original 24.48 MPa value agrees with an independent single-element formulation calculation. Full conversion provenance and technical corrections are in [ABAQUS authoring notes](../abaqus/AUTHORING.md). No source Word/PDF or existing weekly activity is rewritten.
+
+### Conversion validation
+
+- Source sync: fetched origin and confirmed develop had no incoming commits before editing; the working tree was clean at task start.
+- All four tutorials were opened in the local LiaScript reader. All numbered sections were visited, Presentation reveal steps were exercised, Textbook mode was checked, and all 47 screenshot references loaded. No mathematical rendering errors were detected. The input tutorial's integration-point count and 24.48 MPa answer checks both accepted the intended answers.
+- The single Week 10 tutorial page renders four links to the new canonical guides. The shared course navigation helper resolves the lesson, library, previous and next destinations to the expected reader URLs. All local Markdown/image/download/import paths were checked.
+- The downloadable input file matches the supplied source byte-for-byte, and the four retained PDFs match their original files byte-for-byte. Source images/Word documents were not modified. The symmetry dimensions now match the confirmed screenshot choice.
+- The single-element stress reference was independently checked using the CPS4 formulation. ABAQUS itself was not run for this conversion. No commit, push, merge or publication performed.

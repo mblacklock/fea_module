@@ -24,7 +24,7 @@ An interactive tool needs a clear learning purpose and a meaningful student acti
 
 Standalone HTML tools live under `docs/interactive/` and use the established GitHub Pages/iframe approach. Week 9 embeds `https://mblacklock.github.io/fea_module/interactive/mohrs_circle_interactive.html`; the Jacobian tool uses the corresponding `jacobian_interactive.html` path in its developed lesson. Pages hosting has a separate URL from the branch-selecting raw Markdown reader: previewing `develop` does not establish that matching HTML is publicly deployed. Do not claim hosting is current without checking it. For local checks, use an ignored preview copy with a local iframe URL; keep temporary localhost addresses out of student lessons. Publication follows [README.md](README.md).
 
-Deliver ABAQUS tutorials as canonical standalone LiaScript lessons under `abaqus/`, following [AUTHORING.md](abaqus/AUTHORING.md), rather than merely linking original PDFs. Preserve source resources. Week 10 currently retains four original PDFs as an explicitly recorded exception from its pre-class task; conversion requires separately scoped work, not automatic changes during documentation maintenance.
+Deliver ABAQUS tutorials as canonical standalone LiaScript lessons under `abaqus/`, following [AUTHORING.md](abaqus/AUTHORING.md), rather than merely linking original PDFs. Preserve source resources. Week 10 now links four canonical Topic 3 LiaScript tutorials; its original PDFs remain unchanged as source resources. The separately authorised conversion is documented in the tutorial authoring notes.
 
 ## Consistency and decision boundaries
 
@@ -34,7 +34,7 @@ Keep mathematical notation, sign conventions, terminology and units consistent a
 
 ## Known matters requiring review
 
-- Week 10's original symmetry tutorial disagrees on plate/quarter-model dimensions. Its notes request author confirmation before student release; this review does not choose the geometry.
+- Week 10 symmetry geometry is confirmed to match the walkthrough screenshots: 15 × 15 mm quarter of a 30 × 30 mm full plate. The canonical tutorials implement this; original Word/PDF discrepancies remain in preserved sources.
 - Week 10's current lesson is pre-class only. Its in-class snapshot is ignored local material, not recoverable from a fresh clone; see its notes before resuming work on another PC.
-- Week 10's current working lesson omits the material-unit correction still described in its notes. Confirm the intended student-facing correction separately; this documentation task leaves the lesson untouched.
+- Week 10's converted tutorials state E=200 GPa=200000 MPa consistently; the original input-file Word prose has a preserved unit typo. The weekly overview links to the corrected tutorial.
 - Week 1's delivery notes retain older input-file provenance and run claims. For the current shared `abaqus/General/IntroToABAQUS/files/intro.inp`, use file-specific evidence in [AUTHORING.md](abaqus/AUTHORING.md); do not transfer a recorded run of another file to it.

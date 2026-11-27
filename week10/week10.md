@@ -217,10 +217,10 @@ Complete these **four tutorials in order**. The first two build the same plate u
 
 | Tutorial | Focus |
 |:--|:--|
-| **1. [Create a plane-stress model using an input file](../abaqus/Topic3/files/KB5034_Wk9_1_2D%20plane%20stress%20input.pdf)** | Connect the plate description to the keywords. Check node ordering, sets, plane-stress section/thickness and equivalent nodal loads. |
-| **2. [Create the model in ABAQUS CAE](../abaqus/Topic3/files/KB5034_Wk9_2_2D%20plane%20stress%20CAE.pdf)** | Relate the graphical workflow to the input file. Check material/section assignment, pressure direction and the full/reduced integration element code. |
-| **3. [Apply symmetry boundary conditions](../abaqus/Topic3/files/KB5034_Wk9_3_SymmetryBCs.pdf)** | Model a quarter plate only when geometry, loading and constraints permit it. Restrain displacement normal to each symmetry cut; leave tangential displacement free. |
-| **4. [Partition a 2D model to aid meshing](../abaqus/Topic3/files/KB5034_Wk9_4_Partitioning.pdf)** | Partition around the hole, control local seeds and element shape, and compare stress distributions. Check compatible seed counts for a swept mesh. |
+| **1. @[course(Create a plane-stress model using an input file)](../abaqus/Topic3/PlaneStressInput/PlaneStressInput.md)** | Connect the plate description to the keywords. Check node ordering, sets, plane-stress section/thickness and equivalent nodal loads. |
+| **2. @[course(Create the model in ABAQUS CAE)](../abaqus/Topic3/PlaneStressCAE/PlaneStressCAE.md)** | Relate the graphical workflow to the input file. Check material/section assignment, pressure direction and the full/reduced integration element code. |
+| **3. @[course(Apply symmetry boundary conditions)](../abaqus/Topic3/SymmetryBCs/SymmetryBCs.md)** | Model a quarter plate only when geometry, loading and constraints permit it. Restrain displacement normal to each symmetry cut; leave tangential displacement free. |
+| **4. @[course(Partition a 2D model to aid meshing)](../abaqus/Topic3/Partitioning/Partitioning.md)** | Partition around the hole, control local seeds and element shape, and compare stress distributions. Check compatible seed counts for a swept mesh. |
 
 ## Before-class Completion Check
 

@@ -4,7 +4,7 @@
 
 The module-wide principles are in [TEACHING-DESIGN.md](../TEACHING-DESIGN.md); development, multi-PC synchronisation and publication are in [README.md](../README.md). Keep tutorial-specific corrections and verification evidence here, and week-specific delivery decisions in weekly notes. Preserve original Word/PDF/image resources when adapting them into LiaScript.
 
-The intended delivery is a standalone LiaScript tutorial, not just a link to its original PDF. **Recorded exception:** Week 10 currently links four unchanged PDFs under `Topic3/files/`, as explicitly scoped for its pre-class release. They have not been converted into canonical LiaScript tutorials; see [Week 10 notes](../week10/TEACHING-NOTES.md) for source discrepancies requiring review. Do not imply that the library conversion is complete or silently expand a task to perform it.
+The intended delivery is a standalone LiaScript tutorial, not just a link to its original PDF. Week 10's four plane-stress tutorials are now converted under `Topic3/`; the original PDFs in `Topic3/files/` remain unchanged as source resources. The weekly lesson and tutorial library link to the canonical LiaScript guides.
 
 ## Sources
 
@@ -78,3 +78,25 @@ For the current `intro.inp`, the analytical Week 1 calculation predicts:
 - E11: 0.0025.
 
 These are analytical expectations, not a recorded Abaqus verification of the adapted file. An earlier Abaqus Learning Edition 2024 run verified the supplied original 110 mm/195 N input file; its results do not apply to the current shared input file. The revised tutorials 3 and 4 were checked against every substantive paragraph in their Word sources, and their sidebar sections and reveal steps were exercised in the local LiaScript renderer. Their local image, input-file, navigation and helper-script paths resolve.
+
+## Week 10 plane-stress tutorials — 27 November 2026
+
+The four canonical guides are `Topic3/PlaneStressInput/PlaneStressInput.md`, `Topic3/PlaneStressCAE/PlaneStressCAE.md`, `Topic3/SymmetryBCs/SymmetryBCs.md` and `Topic3/Partitioning/Partitioning.md`. Sources are `Wk9_1_2D plane stress input.docx`, `Wk9_2_2D plane stress CAE.docx`, `Wk9_3_SymmetryBCs.docx` and `Wk9_4_Partitioning.docx`, plus `ABAQUS tutorials/t4/`. The old Wk9 source names support current Week 10/LO3.4. Source Word/PDF files and all original screenshots are preserved.
+
+The substantive workflow and source questions are retained, organised into numbered pages and click reveals. Embedded screenshots are copied under descriptive names. `t4/38.png`–`40.png` supply the coarse/global stress comparisons referred to by the partitioning text but absent from the Word image sequence. `t4/34.png` supplies the full-model diagram with 30 × 30 mm dimensions. All 47 copied images are used. The complete input file is copied unchanged from `t4/plane_stress.inp` into `PlaneStressInput/files/` and displayed as copyable text.
+
+**Confirmed geometry decision:** the module leader requested matching the screenshots. The symmetry/partitioning guides therefore use a 15 × 15 mm quarter of a 30 × 30 mm full plate, hole centre (0,7.5), hole radius 2.5 mm, partition radius 3.5 mm. This supersedes the earlier unresolved 60/4 discrepancy. The 30 mm source diagram already matches those dimensions. Symmetry is U1=0 on both straight vertical-cut segments, U2=0 on the bottom cut; pressure −25 MPa is applied at the right outer edge. Do not clamp the hole or halve traction for the quarter model.
+
+Corrections made in the conversion: E=200 GPa=200000 MPa, not the input Word's 200 MPa typo; `load_nodes` consistently replaces the stray `cload_nodes`; the stiffness formula refers to a plane-stress element, not a truss; CPS4/CPS4R both have four nodes; the source rotations-only question is omitted because this plane-stress model has no active rotational DOFs. A single element is an initial workflow comparison, not a convergence claim. The partitioning prose no longer claims that outer-region mesh quality is irrelevant or that rectangular-looking elements guarantee accuracy. The intended sweep has five divisions across the ring and thirty along each arc, with Quad/Sweep controls stated explicitly.
+
+**Stress reference:** independently assembling and solving the 8-DOF single-CPS4 stiffness model with 2 × 2 Gauss integration gives U1 at the right nodes 0.00181916 mm, opposite U2 values ±0.00037638 mm, and maximum integration-point **von Mises** stress 24.47976635 MPa. Thus the Word's 24.4798/CAE's 24.5 reference is retained with an explicit stress measure and integration-point output position. S11 has a different maximum (approximately 25.9552 MPa); nodal extrapolation/averaging can also change a reported contour maximum. These are independent formulation checks, not a new recorded ABAQUS run.
+
+Element names/active DOFs and integration behaviour were checked against the [official 2D element library](https://docs.software.vt.edu/abaqusv2026/English/SIMACAEELMRefMap/simaelm-r-2delem.htm) and [continuum guidance](https://docs.software.vt.edu/abaqusv2026/English/SIMACAEELMRefMap/simaelm-c-solidcont.htm). No original PDF was rewritten, and no new simulation result is asserted for the hole model.
+
+### Conversion validation
+
+- Source sync: fetched origin and confirmed develop had no incoming commits before editing; the working tree was clean at task start.
+- All four tutorials were opened in the local LiaScript reader. All numbered sections were visited, Presentation reveal steps were exercised, Textbook mode was checked, and all 47 screenshot references loaded. No mathematical rendering errors were detected. The input tutorial's integration-point count and 24.48 MPa answer checks both accepted the intended answers.
+- The single Week 10 tutorial page renders four links to the new canonical guides. The shared course navigation helper resolves the lesson, library, previous and next destinations to the expected reader URLs. All local Markdown/image/download/import paths were checked.
+- The downloadable input file matches the supplied source byte-for-byte, and the four retained PDFs match their original files byte-for-byte. Source images/Word documents were not modified. The symmetry dimensions now match the confirmed screenshot choice.
+- The single-element stress reference was independently checked using the CPS4 formulation. ABAQUS itself was not run for this conversion. No commit, push, merge or publication performed.
